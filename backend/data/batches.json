@@ -1,0 +1,383 @@
+[
+  {
+    "batchId": "TF-APL-2026-001",
+    "fruitType": "apple",
+    "displayName": "Premium Apple",
+    "source": "Demo Farm A",
+    "location": "Chennai Warehouse",
+    "createdAt": "2026-07-08T08:00:00",
+    "lastUpdated": "2026-07-13T10:51:18.137383",
+    "latestAssessment": {
+      "visualClass": "rottenbanana",
+      "confidence": 0.7235,
+      "freshnessScore": 72.35,
+      "shelfLifeDays": 8,
+      "spoilageRisk": 27.65,
+      "riskLevel": "HIGH RISK",
+      "status": "WARNING",
+      "qualityAdvisory": "Inspection completed using TraceFresh AI.",
+      "suspiciousQualityFlag": true,
+      "reasons": [
+        "AI classified the fruit as rottenbanana."
+      ]
+    },
+    "latestSensors": {
+      "temperature": null,
+      "humidity": null,
+      "mq135": null,
+      "storageCondition": "Unknown"
+    },
+    "traceability": {
+      "lotId": "LOT-APL-01",
+      "packedDate": "2026-07-07",
+      "lastScanTime": "2026-07-13T10:51:18.137383",
+      "shipmentId": "SHIP-APL-110",
+      "node": "TF-PI-01"
+    },
+    "history": [
+      {
+        "timestamp": "2026-07-08T11:42:00",
+        "freshnessScore": 94,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      },
+      {
+        "timestamp": "2026-07-08T14:15:45.843550",
+        "freshnessScore": 97.0,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      },
+      {
+        "timestamp": "2026-07-09T07:29:34.145527",
+        "freshnessScore": 87.0,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      },
+      {
+        "timestamp": "2026-07-13T08:54:42.622986",
+        "freshnessScore": 99.6,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T09:00:09.131876",
+        "freshnessScore": 94.62,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      },
+      {
+        "timestamp": "2026-07-13T09:00:36.042736",
+        "freshnessScore": 66.31,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      },
+      {
+        "timestamp": "2026-07-13T09:11:54.314998",
+        "freshnessScore": 95.59,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      },
+      {
+        "timestamp": "2026-07-13T09:12:07.772888",
+        "freshnessScore": 78.09,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      },
+      {
+        "timestamp": "2026-07-13T09:12:22.353745",
+        "freshnessScore": 51.86,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T09:18:57.838092",
+        "freshnessScore": 87.55,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T09:26:07.302522",
+        "freshnessScore": 64.81,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T09:28:29.370912",
+        "freshnessScore": 63.37,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      },
+      {
+        "timestamp": "2026-07-13T09:40:21.823294",
+        "freshnessScore": 55.8,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      },
+      {
+        "timestamp": "2026-07-13T09:40:59.593320",
+        "freshnessScore": 49.73,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      },
+      {
+        "timestamp": "2026-07-13T09:45:40.139763",
+        "freshnessScore": 49.39,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      },
+      {
+        "timestamp": "2026-07-13T09:46:55.202512",
+        "freshnessScore": 63.01,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      },
+      {
+        "timestamp": "2026-07-13T10:00:31.307084",
+        "freshnessScore": 56.22,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      },
+      {
+        "timestamp": "2026-07-13T10:01:52.527170",
+        "freshnessScore": 55.06,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T10:16:16.379519",
+        "freshnessScore": 72.05,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T10:16:36.496090",
+        "freshnessScore": 78.85,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      },
+      {
+        "timestamp": "2026-07-13T10:17:10.991832",
+        "freshnessScore": 83.45,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T10:17:36.228235",
+        "freshnessScore": 99.34,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T10:25:09.085736",
+        "freshnessScore": 99.35,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T10:25:28.344248",
+        "freshnessScore": 98.98,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T10:45:29.980032",
+        "freshnessScore": 96.97,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T10:45:43.798744",
+        "freshnessScore": 98.0,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T10:49:50.381560",
+        "freshnessScore": 99.77,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T10:49:59.330034",
+        "freshnessScore": 99.26,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T10:50:37.930251",
+        "freshnessScore": 99.89,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T10:50:57.660505",
+        "freshnessScore": 96.21,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      },
+      {
+        "timestamp": "2026-07-13T10:51:12.849281",
+        "freshnessScore": 58.13,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-07-13T10:51:18.137383",
+        "freshnessScore": 72.35,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      }
+    ],
+    "passportUrl": "http://localhost:5173/passport/TF-APL-2026-001"
+  },
+  {
+    "batchId": "TF-BAN-2026-002",
+    "fruitType": "banana",
+    "displayName": "Export Banana Batch",
+    "source": "Demo Farm B",
+    "location": "Coimbatore Transit Hub",
+    "createdAt": "2026-07-08T09:10:00",
+    "lastUpdated": "2026-07-08T14:16:01.822895",
+    "latestAssessment": {
+      "visualClass": "freshbanana",
+      "confidence": 0.86,
+      "freshnessScore": 68.2,
+      "shelfLifeDays": 4.8,
+      "spoilageRisk": 43.8,
+      "riskLevel": "HIGH RISK",
+      "status": "WARNING",
+      "qualityAdvisory": "Elevated spoilage / deterioration risk detected. This batch requires immediate inspection and operational attention before further distribution.",
+      "suspiciousQualityFlag": true,
+      "reasons": [
+        "Visual profile is consistent with a fresh banana batch",
+        "Temperature is high enough to accelerate deterioration risk",
+        "Humidity is high and may accelerate spoilage or ripening",
+        "Gas reading is significantly elevated and may indicate active spoilage / ripening stress"
+      ]
+    },
+    "latestSensors": {
+      "temperature": 31.8,
+      "humidity": 82.0,
+      "mq135": 430.0,
+      "storageCondition": "Suboptimal"
+    },
+    "traceability": {
+      "lotId": "LOT-BAN-07",
+      "packedDate": "2026-07-07",
+      "lastScanTime": "2026-07-08T14:16:01.822895",
+      "shipmentId": "SHIP-BAN-203",
+      "node": "Coimbatore Transit Hub"
+    },
+    "history": [
+      {
+        "timestamp": "2026-07-08T12:20:00",
+        "freshnessScore": 74,
+        "riskLevel": "MONITOR",
+        "status": "MONITOR"
+      },
+      {
+        "timestamp": "2026-07-08T14:16:01.822895",
+        "freshnessScore": 68.2,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      }
+    ],
+    "passportUrl": "http://localhost:5173/passport/TF-BAN-2026-002"
+  },
+  {
+    "batchId": "TF-ORG-2026-003",
+    "fruitType": "orange",
+    "displayName": "Premium Orange Batch",
+    "source": "Demo Farm C",
+    "location": "Bengaluru Distribution Center",
+    "createdAt": "2026-07-08T07:40:00",
+    "lastUpdated": "2026-07-08T10:55:00",
+    "latestAssessment": {
+      "visualClass": "freshorange",
+      "confidence": 0.91,
+      "freshnessScore": 88,
+      "shelfLifeDays": 6.1,
+      "spoilageRisk": 12,
+      "riskLevel": "GOOD",
+      "status": "VERIFIED FRESH",
+      "qualityAdvisory": "No major quality concerns detected. Visual condition, freshness indicators, and storage readings remain within acceptable limits.",
+      "suspiciousQualityFlag": false,
+      "reasons": [
+        "Surface quality appears healthy and consistent with fresh oranges",
+        "Temperature is within the acceptable storage band",
+        "Current spoilage indicators remain low",
+        "No significant mismatch observed between visual and sensor conditions"
+      ]
+    },
+    "latestSensors": {
+      "temperature": 25.9,
+      "humidity": 65,
+      "mq135": 210,
+      "storageCondition": "Good"
+    },
+    "traceability": {
+      "lotId": "LOT-ORG-03",
+      "packedDate": "2026-07-07",
+      "lastScanTime": "2026-07-08T10:55:00",
+      "shipmentId": "SHIP-ORG-144",
+      "node": "Bengaluru Distribution Center"
+    },
+    "history": [
+      {
+        "timestamp": "2026-07-08T10:55:00",
+        "freshnessScore": 88,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      }
+    ],
+    "passportUrl": "http://localhost:5173/passport/TF-ORG-2026-003"
+  },
+  {
+    "batchId": "AB-004",
+    "fruitType": "apple",
+    "displayName": "Sandeep",
+    "source": "-",
+    "location": "Avadi",
+    "createdAt": "2026-07-09T07:47:58.613309",
+    "lastUpdated": "2026-07-09T07:48:32.888744",
+    "latestAssessment": {
+      "visualClass": "freshapple",
+      "confidence": 0.9,
+      "freshnessScore": 96.0,
+      "shelfLifeDays": 9.6,
+      "spoilageRisk": 4.0,
+      "riskLevel": "GOOD",
+      "status": "VERIFIED FRESH",
+      "qualityAdvisory": "No major suspicious quality pattern detected. Visual assessment and storage conditions indicate that this batch is currently in a healthy freshness range.",
+      "suspiciousQualityFlag": false,
+      "reasons": [
+        "Visual profile is consistent with a fresh apple batch",
+        "Temperature remains within an acceptable storage band",
+        "Humidity is currently within a stable storage range",
+        "Current gas reading does not indicate a strong spoilage signal"
+      ]
+    },
+    "latestSensors": {
+      "temperature": 25.0,
+      "humidity": 60.0,
+      "mq135": 180.0,
+      "storageCondition": "Optimal"
+    },
+    "traceability": {
+      "lotId": "223",
+      "packedDate": "2026-07-16",
+      "shipmentId": "52326",
+      "node": "Verified",
+      "lastScanTime": "2026-07-09T07:48:32.888744"
+    },
+    "history": [
+      {
+        "timestamp": "2026-07-09T07:48:32.888744",
+        "freshnessScore": 96.0,
+        "riskLevel": "GOOD",
+        "status": "VERIFIED FRESH"
+      }
+    ],
+    "passportUrl": "http://localhost:5173/passport/AB-004"
+  }
+]
