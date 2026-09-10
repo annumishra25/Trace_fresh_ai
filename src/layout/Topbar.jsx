@@ -149,43 +149,43 @@ function Topbar() {
   };
 
   return (
-    <div className="bg-[#07261c]/95 backdrop-blur-md border-b border-emerald-900/60 text-white px-6 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-4 sticky top-0 z-40 shadow-md">
+    <div className="bg-white dark:bg-[#0D2820] border-b border-[#DCE4DE] dark:border-[#23483D] text-[#101513] dark:text-[#F4F7F2] px-6 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-4 sticky top-0 z-40 shadow-xs">
       {/* Title Header */}
       <div>
         <div className="flex items-center gap-2.5">
-          <h2 className="text-xl font-black tracking-tight text-white flex items-center gap-2">
-            <span>TraceFresh AI</span>
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <h2 className="text-xl font-extrabold tracking-tight text-[#101513] dark:text-[#F4F7F2] flex items-center gap-2">
+            <span className="text-[#063C2F] dark:text-[#36B88A]">TraceFresh AI</span>
+            <span className="w-2 h-2 rounded-full bg-[#16805F]"></span>
           </h2>
-          <span className="text-[10px] font-mono font-bold bg-[#03140e] text-emerald-300 px-2 py-0.5 rounded border border-emerald-700/50">
+          <span className="text-[10px] font-mono font-bold bg-[#E8EEE7] dark:bg-[#123B2F] text-[#063C2F] dark:text-[#36B88A] px-2.5 py-0.5 rounded-md border border-[#DCE4DE] dark:border-[#23483D]">
             ENTERPRISE DASHBOARD
           </span>
         </div>
-        <p className="text-xs text-emerald-100/80 mt-0.5">
+        <p className="text-xs text-[#4E5B55] dark:text-[#AEBBB4] mt-0.5 font-medium">
           Real-Time Food Quality Intelligence & Multi-Modal Supply Chain Monitoring
         </p>
       </div>
 
       {/* Right Controls Bar */}
-      <div className="flex items-center gap-4 flex-wrap">
+      <div className="flex items-center gap-3 flex-wrap">
         {/* Live Clock Counter */}
-        <div className="flex items-center gap-2 bg-[#093124] px-3 py-1.5 rounded-xl border border-emerald-700/50 text-white text-xs font-mono font-semibold">
-          <Clock3 size={15} className="text-emerald-300" />
+        <div className="flex items-center gap-2 bg-[#F1F4EE] dark:bg-[#12342A] px-3 py-1.5 rounded-xl border border-[#DCE4DE] dark:border-[#23483D] text-[#101513] dark:text-[#F4F7F2] text-xs font-mono font-semibold">
+          <Clock3 size={15} className="text-[#4E5B55] dark:text-[#AEBBB4]" />
           <span>{currentTime.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })}</span>
         </div>
 
         {/* Day / Night Theme Switcher Button */}
         <button
           onClick={toggleTheme}
-          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-black border transition-all cursor-pointer shadow-sm ${
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
             isDark
-              ? "bg-[#093124] text-emerald-300 border-emerald-500/40 hover:bg-emerald-800/40 glow-emerald"
-              : "bg-emerald-600 text-white border-emerald-500 hover:bg-emerald-500"
+              ? "bg-[#12342A] text-[#36B88A] border-[#23483D] hover:bg-[#123B2F]"
+              : "bg-white text-[#063C2F] border-[#DCE4DE] hover:bg-[#F1F4EE]"
           }`}
           title="Click to toggle Day Mode / Night Mode theme"
         >
-          {isDark ? <Sun size={15} className="text-emerald-400 animate-spin-slow" /> : <Moon size={15} className="text-white" />}
-          <span>{isDark ? "☀️ DAY MODE" : "🌙 NIGHT MODE"}</span>
+          {isDark ? <Sun size={15} className="text-[#36B88A]" /> : <Moon size={15} className="text-[#063C2F]" />}
+          <span>{isDark ? "DAY MODE" : "NIGHT MODE"}</span>
         </button>
 
         {/* System Connection Badge */}
@@ -193,12 +193,12 @@ function Topbar() {
           onClick={toggleMode}
           className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
             isLiveMode
-              ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40 hover:bg-emerald-500/30"
-              : "bg-teal-500/20 text-teal-200 border-teal-500/40 hover:bg-teal-500/30"
+              ? "bg-[#DDF2E8] text-[#063C2F] border-[#16805F]/30 hover:bg-[#c9eade]"
+              : "bg-[#F1F4EE] text-[#4E5B55] border-[#DCE4DE] hover:bg-[#E8EEE7]"
           }`}
           title="Click to toggle Online vs Demo mode"
         >
-          <Wifi size={15} className={isLiveMode ? "text-emerald-400 animate-pulse" : "text-teal-300"} />
+          <Wifi size={15} className={isLiveMode ? "text-[#16805F]" : "text-[#78837D]"} />
           <span>{isLiveMode ? "ONLINE (Live Backend)" : "DEMO MODE (Sliders)"}</span>
         </button>
 
@@ -206,12 +206,12 @@ function Topbar() {
         <div className="relative" ref={dropdownRef}>
           <button
             onClick={() => setIsOpenAlerts(!isOpenAlerts)}
-            className="p-2 rounded-xl bg-[#093124] hover:bg-emerald-800/40 text-emerald-100 border border-emerald-700/50 transition-all cursor-pointer relative"
+            className="p-2 rounded-xl bg-white dark:bg-[#12342A] hover:bg-[#F1F4EE] dark:hover:bg-[#123B2F] text-[#4E5B55] dark:text-[#AEBBB4] border border-[#DCE4DE] dark:border-[#23483D] transition-all cursor-pointer relative"
             aria-label="Toggle notifications"
           >
-            <Bell size={18} />
+            <Bell size={17} />
             {unreadCount > 0 && (
-              <span className="absolute -top-1.5 -right-1.5 bg-rose-500 text-white text-[10px] font-black rounded-full w-5 h-5 flex items-center justify-center border-2 border-[#03140e] animate-bounce">
+              <span className="absolute -top-1 -right-1 bg-rose-600 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
                 {unreadCount}
               </span>
             )}
@@ -219,28 +219,28 @@ function Topbar() {
 
           {/* Floating Dropdown Drawer Overlay */}
           {isOpenAlerts && (
-            <div className="absolute right-0 mt-3 w-80 sm:w-96 bg-[#07261c] border border-emerald-800/80 rounded-3xl shadow-2xl z-50 overflow-hidden text-white animate-in fade-in slide-in-from-top-2 duration-200">
+            <div className="absolute right-0 mt-3 w-80 sm:w-96 bg-white dark:bg-[#0D2820] border border-[#DCE4DE] dark:border-[#23483D] rounded-2xl shadow-xl z-50 overflow-hidden text-[#101513] dark:text-[#F4F7F2]">
               {/* Drawer Header */}
-              <div className="p-4 border-b border-emerald-900/80 flex items-center justify-between bg-[#03140e]">
+              <div className="p-4 border-b border-[#DCE4DE] dark:border-[#23483D] flex items-center justify-between bg-[#F1F4EE] dark:bg-[#12342A]">
                 <div className="flex items-center gap-2">
-                  <Bell size={18} className="text-emerald-400" />
-                  <h3 className="font-bold text-sm text-white">System Alerts & Notifications</h3>
+                  <Bell size={17} className="text-[#063C2F] dark:text-[#36B88A]" />
+                  <h3 className="font-bold text-sm text-[#101513] dark:text-[#F4F7F2]">System Alerts & Notifications</h3>
                   {unreadCount > 0 && (
-                    <span className="px-2 py-0.5 text-[10px] font-bold bg-rose-500/20 text-rose-300 rounded-full border border-rose-500/30">
+                    <span className="px-2 py-0.5 text-[10px] font-bold bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 rounded-full">
                       {unreadCount} New
                     </span>
                   )}
                 </div>
                 <button
                   onClick={() => setIsOpenAlerts(false)}
-                  className="text-emerald-300/70 hover:text-white p-1 rounded-lg hover:bg-emerald-900/50"
+                  className="text-[#78837D] hover:text-[#101513] p-1 rounded-lg hover:bg-white"
                 >
                   <X size={16} />
                 </button>
               </div>
 
               {/* Drawer Controls Bar */}
-              <div className="p-3 bg-[#093124]/60 border-b border-emerald-800/60 flex items-center justify-between gap-2 text-xs">
+              <div className="p-3 bg-white dark:bg-[#0D2820] border-b border-[#DCE4DE] dark:border-[#23483D] flex items-center justify-between gap-2 text-xs">
                 <div className="flex items-center gap-1 font-mono">
                   {["ALL", "CRITICAL", "WARNING"].map((f) => (
                     <button
@@ -248,8 +248,8 @@ function Topbar() {
                       onClick={() => setActiveFilter(f)}
                       className={`px-2 py-0.5 rounded-lg text-[10px] font-bold transition ${
                         activeFilter === f
-                          ? "bg-emerald-700 text-white border border-emerald-500"
-                          : "text-emerald-300/70 hover:text-emerald-100"
+                          ? "bg-[#063C2F] text-white"
+                          : "text-[#4E5B55] hover:text-[#101513]"
                       }`}
                     >
                       {f}
@@ -260,7 +260,7 @@ function Topbar() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={markAllAsRead}
-                    className="text-[11px] font-semibold text-emerald-400 hover:underline flex items-center gap-1 cursor-pointer"
+                    className="text-[11px] font-semibold text-[#063C2F] dark:text-[#36B88A] hover:underline flex items-center gap-1 cursor-pointer"
                   >
                     <CheckCheck size={12} /> Mark Read
                   </button>
@@ -268,32 +268,32 @@ function Topbar() {
               </div>
 
               {/* Notification List Body */}
-              <div className="max-h-80 overflow-y-auto divide-y divide-emerald-900/60 p-2 space-y-1">
+              <div className="max-h-80 overflow-y-auto divide-y divide-[#E8EEE7] dark:divide-[#23483D] p-2 space-y-1">
                 {filteredNotifications.length === 0 ? (
-                  <div className="py-8 text-center text-emerald-300/60 text-xs flex flex-col items-center gap-2">
-                    <ShieldCheck size={28} className="text-emerald-500/50" />
+                  <div className="py-8 text-center text-[#78837D] text-xs flex flex-col items-center gap-2">
+                    <ShieldCheck size={28} className="text-[#78837D]" />
                     <span>No active notifications for selected filter.</span>
                   </div>
                 ) : (
                   filteredNotifications.map((item) => (
                     <div
                       key={item.id}
-                      className={`p-3 rounded-2xl transition-colors relative group ${
-                        item.read ? "bg-[#03140e]/40 opacity-80" : "bg-[#093124]/70 border border-emerald-700/50"
+                      className={`p-3 rounded-xl transition-colors relative group ${
+                        item.read ? "opacity-75 bg-[#F7F8F3] dark:bg-[#12342A]" : "bg-white dark:bg-[#0D2820] border border-[#DCE4DE] dark:border-[#23483D]"
                       }`}
                     >
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex items-start gap-2.5">
                           <div className="mt-0.5">{getSeverityIcon(item.severity)}</div>
                           <div>
-                            <div className="text-xs font-bold text-white flex items-center gap-1.5">
+                            <div className="text-xs font-bold text-[#101513] dark:text-[#F4F7F2] flex items-center gap-1.5">
                               <span>{item.title}</span>
                               {!item.read && (
-                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#16805F] inline-block"></span>
                               )}
                             </div>
-                            <p className="text-[11px] text-emerald-100/90 mt-1 leading-snug">{item.message}</p>
-                            <span className="text-[10px] text-emerald-300/60 font-mono mt-1.5 block">
+                            <p className="text-[11px] text-[#4E5B55] dark:text-[#AEBBB4] mt-1 leading-snug">{item.message}</p>
+                            <span className="text-[10px] text-[#78837D] font-mono mt-1.5 block">
                               {new Date(item.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                             </span>
                           </div>
@@ -301,7 +301,7 @@ function Topbar() {
 
                         <button
                           onClick={() => dismissNotification(item.id)}
-                          className="text-emerald-400/60 hover:text-white p-1 opacity-0 group-hover:opacity-100 transition"
+                          className="text-[#78837D] hover:text-[#101513] p-1 opacity-0 group-hover:opacity-100 transition"
                           title="Dismiss"
                         >
                           <X size={14} />
@@ -313,11 +313,11 @@ function Topbar() {
               </div>
 
               {/* Demo Presentation Helper Footer */}
-              <div className="p-3 bg-[#03140e] border-t border-emerald-900/80 flex items-center justify-between">
-                <span className="text-[10px] text-emerald-300/70 font-mono">Presenters Quick Demo:</span>
+              <div className="p-3 bg-[#F1F4EE] dark:bg-[#12342A] border-t border-[#DCE4DE] dark:border-[#23483D] flex items-center justify-between">
+                <span className="text-[10px] text-[#78837D] font-mono">Presenters Quick Demo:</span>
                 <button
                   onClick={simulateDemoAlert}
-                  className="px-3 py-1 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow transition cursor-pointer"
+                  className="px-3 py-1 rounded-lg text-xs font-bold bg-[#063C2F] text-white hover:bg-[#042E25] shadow transition cursor-pointer"
                 >
                   ⚡ Trigger Demo Alert
                 </button>
@@ -327,13 +327,13 @@ function Topbar() {
         </div>
 
         {/* Logged In User Profile & Logout */}
-        <div className="flex items-center gap-2.5 bg-[#093124] px-3.5 py-1.5 rounded-2xl border border-emerald-700/50">
-          <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center font-extrabold text-xs text-slate-950">
-            {user?.username ? user.username.charAt(0).toUpperCase() : <User size={14} />}
+        <div className="flex items-center gap-2.5 bg-white dark:bg-[#12342A] px-3.5 py-1.5 rounded-xl border border-[#DCE4DE] dark:border-[#23483D]">
+          <div className="w-6 h-6 rounded-lg bg-[#063C2F] text-white flex items-center justify-center font-bold text-xs">
+            {user?.username ? user.username.charAt(0).toUpperCase() : <User size={13} />}
           </div>
           <div className="text-left">
-            <div className="text-xs font-bold text-white">{user?.username || "Admin"}</div>
-            <div className="text-[9px] font-black text-emerald-400 uppercase tracking-wide">
+            <div className="text-xs font-bold text-[#101513] dark:text-[#F4F7F2]">{user?.username || "Admin"}</div>
+            <div className="text-[9px] font-bold text-[#16805F] dark:text-[#36B88A] uppercase tracking-wide">
               {role || "OPERATOR"}
             </div>
           </div>
@@ -341,10 +341,10 @@ function Topbar() {
           {logout && (
             <button
               onClick={logout}
-              className="p-1 text-emerald-300/70 hover:text-rose-400 transition ml-1"
+              className="p-1 text-[#78837D] hover:text-rose-600 transition ml-1"
               title="Logout"
             >
-              <LogOut size={14} />
+              <LogOut size={13} />
             </button>
           )}
         </div>

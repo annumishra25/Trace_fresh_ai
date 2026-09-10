@@ -1,24 +1,40 @@
 @import "tailwindcss";
 
 /* -------------------------------------------------------------
- * TRACEFRESH AI - PROFESSIONAL DAY & NIGHT THEME SYSTEM
+ * TRACEFRESH AI — ENTERPRISE SAAS DESIGN SYSTEM
  * ------------------------------------------------------------- */
 
+:root {
+  --font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html, body {
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
 /* ==========================================
-   DAY MODE (PROFESSIONAL MILKY WHITE & DARK GREEN WITH BOLD BLACK FONTS)
+   DAY MODE (PREMIUM ENTERPRISE MILKY WHITE #F7F8F3 & FOREST GREEN #063C2F)
    ========================================== */
-html.light {
-  background-color: #f4f8f5 !important;
-  color: #041a12 !important;
+html.light, html:not(.dark) {
+  background-color: #F7F8F3 !important;
+  color: #101513 !important;
 }
 
-html.light body {
-  background-color: #f4f8f5 !important;
-  color: #041a12 !important;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+html.light body, html:not(.dark) body {
+  background-color: #F7F8F3 !important;
+  color: #101513 !important;
 }
 
-/* Glass & Main Cards in Day Mode */
+/* Main Surface Cards in Light Mode */
 html.light .glass-card,
 html.light .bg-slate-950\/90,
 html.light .bg-slate-950\/70,
@@ -28,27 +44,30 @@ html.light .bg-slate-900\/95,
 html.light .bg-slate-900\/90,
 html.light .bg-slate-900\/80,
 html.light .bg-slate-800,
-html.light .bg-gradient-to-br {
-  background: #ffffff !important;
+html.light [class*="07261c"],
+html.light [class*="092a1f"],
+html.light [class*="093124"],
+html.light [class*="03140e"] {
+  background: #FFFFFF !important;
   background-image: none !important;
-  border: 1px solid rgba(6, 78, 59, 0.25) !important;
-  box-shadow: 0 10px 30px rgba(6, 78, 59, 0.08) !important;
-  color: #041a12 !important;
+  border: 1px solid #DCE4DE !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03) !important;
+  border-radius: 16px !important;
+  color: #101513 !important;
 }
 
-/* Inner containers & sub-boxes in Day Mode */
-html.light .bg-slate-900\/80,
-html.light .bg-slate-800\/70,
-html.light .bg-slate-800\/90,
-html.light .bg-slate-800\/60,
+/* Secondary Sub-Surfaces & Inner Panels in Light Mode */
 html.light div[class*="bg-slate-800"],
-html.light div[class*="bg-slate-900"] {
-  background-color: #f0f7f3 !important;
-  border-color: rgba(6, 78, 59, 0.18) !important;
-  color: #041a12 !important;
+html.light div[class*="bg-slate-900"],
+html.light [class*="041a12"],
+html.light [class*="093124"] {
+  background-color: #F1F4EE !important;
+  border: 1px solid #DCE4DE !important;
+  border-radius: 12px !important;
+  color: #101513 !important;
 }
 
-/* High-Contrast Bold Black Typography in Day Mode */
+/* Typography Hierarchy in Light Mode */
 html.light h1,
 html.light h2,
 html.light h3,
@@ -57,69 +76,83 @@ html.light h5,
 html.light h6,
 html.light .text-white,
 html.light .text-slate-100,
-html.light .text-slate-200,
-html.light .font-black,
-html.light .font-bold {
-  color: #000000 !important;
-  font-weight: 800 !important;
+html.light .text-slate-200 {
+  color: #101513 !important;
+  font-weight: 700 !important;
 }
 
 html.light p,
 html.light label,
 html.light .text-slate-300,
-html.light .text-slate-400,
+html.light .text-slate-400 {
+  color: #4E5B55 !important;
+  font-weight: 500 !important;
+}
+
 html.light .text-slate-500,
 html.light .text-emerald-100\/80,
 html.light .text-emerald-200\/80,
 html.light .text-emerald-300\/70 {
-  color: #083324 !important;
-  font-weight: 700 !important;
+  color: #78837D !important;
 }
 
 html.light .text-emerald-400,
 html.light .text-emerald-300,
-html.light .text-cyan-400,
 html.light .text-teal-300 {
-  color: #047857 !important;
-  font-weight: 800 !important;
+  color: #063C2F !important;
+  font-weight: 700 !important;
 }
 
-/* Form Controls & Sliders in Day Mode */
+/* Form Controls & Inputs in Light Mode */
 html.light input[type="text"],
 html.light input[type="password"],
 html.light select,
 html.light textarea {
-  background-color: #ffffff !important;
-  border: 1.5px solid #064e3b !important;
-  color: #000000 !important;
-  font-weight: 700 !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid #DCE4DE !important;
+  color: #101513 !important;
+  font-weight: 600 !important;
+  border-radius: 10px !important;
 }
 
 html.light input[type="range"] {
-  background-color: #d1e7dd !important;
+  background-color: #E8EEE7 !important;
 }
 
-/* Buttons in Day Mode */
-html.light button {
-  font-weight: 800 !important;
+/* Table in Light Mode */
+html.light table {
+  background-color: #FFFFFF !important;
+}
+
+html.light thead tr {
+  background-color: #F1F4EE !important;
+  border-bottom: 1px solid #DCE4DE !important;
+  color: #4E5B55 !important;
+}
+
+html.light tbody tr {
+  border-bottom: 1px solid #E8EEE7 !important;
+}
+
+html.light tbody tr:hover {
+  background-color: #F7F8F3 !important;
 }
 
 
 /* ==========================================
-   NIGHT MODE (UNIFIED MIDNIGHT FOREST & WHITE)
+   DARK MODE (CALM DEEP FOREST #071A15)
    ========================================== */
-html.dark, html:not(.light) {
-  background-color: #03140e !important;
-  color: #ffffff !important;
+html.dark {
+  background-color: #071A15 !important;
+  color: #F4F7F2 !important;
 }
 
-html.dark body, html:not(.light) body {
-  background-color: #03140e !important;
-  color: #ffffff !important;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+html.dark body {
+  background-color: #071A15 !important;
+  color: #F4F7F2 !important;
 }
 
-/* Glass & Main Cards in Night Mode */
+/* Surface Cards in Dark Mode */
 html.dark .glass-card,
 html.dark .bg-slate-950\/90,
 html.dark .bg-slate-950\/70,
@@ -127,37 +160,32 @@ html.dark .bg-slate-900,
 html.dark .bg-slate-900\/95,
 html.dark .bg-slate-900\/90,
 html.dark .bg-slate-900\/80,
-html:not(.light) .glass-card {
-  background-color: rgba(7, 36, 26, 0.92) !important;
-  border: 1px solid rgba(52, 211, 153, 0.25) !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45) !important;
+html.dark [class*="07261c"],
+html.dark [class*="092a1f"] {
+  background-color: #0D2820 !important;
+  background-image: none !important;
+  border: 1px solid #23483D !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 16px !important;
+  color: #F4F7F2 !important;
 }
 
-html.dark .bg-slate-950,
-html:not(.light) .bg-slate-950 {
-  background-color: #03140e !important;
+html.dark .bg-slate-950 {
+  background-color: #071A15 !important;
 }
 
-/* Inner containers & sub-boxes in Night Mode */
-html.dark .bg-slate-900\/80,
-html.dark .bg-slate-800,
-html.dark .bg-slate-800\/80,
-html.dark .bg-slate-800\/70,
-html.dark .bg-slate-800\/60,
-html:not(.light) .bg-slate-800 {
-  background-color: rgba(4, 24, 17, 0.85) !important;
-  border: 1px solid rgba(52, 211, 153, 0.2) !important;
+/* Sub-Surfaces in Dark Mode */
+html.dark div[class*="bg-slate-800"],
+html.dark div[class*="bg-slate-900"],
+html.dark [class*="041a12"],
+html.dark [class*="093124"] {
+  background-color: #12342A !important;
+  border: 1px solid #23483D !important;
+  border-radius: 12px !important;
+  color: #F4F7F2 !important;
 }
 
-html.dark .border-slate-800,
-html.dark .border-slate-800\/80,
-html.dark .border-slate-700,
-html.dark .border-slate-800\/60,
-html:not(.light) .border-slate-800 {
-  border-color: rgba(52, 211, 153, 0.22) !important;
-}
-
-/* Typography in Night Mode */
+/* Typography in Dark Mode */
 html.dark h1,
 html.dark h2,
 html.dark h3,
@@ -166,90 +194,69 @@ html.dark h5,
 html.dark h6,
 html.dark .text-white,
 html.dark .text-slate-100,
-html.dark .text-slate-200,
-html:not(.light) .text-white {
-  color: #ffffff !important;
+html.dark .text-slate-200 {
+  color: #F4F7F2 !important;
 }
 
 html.dark p,
 html.dark label,
 html.dark .text-slate-300,
-html.dark .text-slate-400,
-html:not(.light) .text-slate-300 {
-  color: #cbd5e1 !important;
+html.dark .text-slate-400 {
+  color: #AEBBB4 !important;
 }
 
 html.dark .text-emerald-400,
 html.dark .text-emerald-300,
-html.dark .text-cyan-400,
-html.dark .text-cyan-300,
 html.dark .text-teal-300 {
-  color: #34d399 !important;
+  color: #36B88A !important;
+}
+
+html.dark thead tr {
+  background-color: #123B2F !important;
+  border-bottom: 1px solid #23483D !important;
+  color: #AEBBB4 !important;
+}
+
+html.dark tbody tr {
+  border-bottom: 1px solid #23483D !important;
+}
+
+html.dark tbody tr:hover {
+  background-color: #12342A !important;
 }
 
 /* ==========================================
-   UTILITY CLASSES & ACCENT GLOWS
+   UTILITY CLASSES (RESTRAINED & ENTERPRISE)
    ========================================== */
 @layer utilities {
   .glass-card {
-    background: rgba(7, 36, 26, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(52, 211, 153, 0.25);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    background: #FFFFFF;
+    border: 1px solid #DCE4DE;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+    border-radius: 16px;
   }
 
   .glass-card-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .glass-card-hover:hover {
-    transform: translateY(-2px);
-    border-color: rgba(52, 211, 153, 0.45);
-    box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.35);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(6, 60, 47, 0.08);
   }
 
-  .glow-emerald {
-    box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.5);
-  }
-
-  .glow-mint {
-    box-shadow: 0 0 25px -5px rgba(52, 211, 153, 0.5);
-  }
-
-  .glow-white {
-    box-shadow: 0 0 25px -5px rgba(255, 255, 255, 0.35);
-  }
-
-  .glow-blue {
-    box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.4);
-  }
-
-  .glow-purple {
-    box-shadow: 0 0 25px -5px rgba(20, 184, 166, 0.4);
-  }
-
+  /* Strip out all neon glow utilities completely */
+  .glow-emerald,
+  .glow-mint,
+  .glow-white,
+  .glow-blue,
+  .glow-purple,
   .glow-rose {
-    box-shadow: 0 0 25px -5px rgba(244, 63, 94, 0.4);
+    box-shadow: none !important;
   }
 
   .bg-grid-pattern {
-    background-image: radial-gradient(rgba(52, 211, 153, 0.12) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(6, 60, 47, 0.04) 1px, transparent 1px);
     background-size: 24px 24px;
   }
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    opacity: 0.8;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 3s infinite ease-in-out;
 }
