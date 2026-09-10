@@ -1,21 +1,22 @@
 @import "tailwindcss";
 
 /* -------------------------------------------------------------
- * TRACEFRESH AI — ENTERPRISE DAYLIGHT DESIGN SYSTEM
+ * TRACEFRESH AI — BRIGHT LIGHT THEME (WHITE & GREEN) DESIGN SYSTEM
+ * High-Contrast Solid Black Fonts & Emerald Accents
  * ------------------------------------------------------------- */
 
 :root {
   --font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   
-  --bg-page: #F7F8F3;
+  --bg-page: #FFFFFF;
   --bg-surface: #FFFFFF;
-  --bg-subsurface: #F1F4EE;
-  --border-color: #DCE4DE;
+  --bg-subsurface: #F4F7F4;
+  --border-color: #D1D5DB;
   
-  --text-main: #101513;
-  --text-secondary: #4E5B55;
-  --text-muted: #78837D;
+  --text-main: #000000;
+  --text-secondary: #0F172A;
+  --text-muted: #1E293B;
   
   --brand-primary: #063C2F;
   --brand-hover: #042E25;
@@ -25,8 +26,8 @@
 
 html, body {
   font-family: var(--font-body);
-  background-color: #F7F8F3 !important;
-  color: #101513 !important;
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -35,77 +36,80 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: #101513;
+  color: #063C2F !important;
+  font-weight: 800 !important;
 }
 
-/* Base Card & Container Overrides for Daylight Theme */
+/* Force All Muted/Grey Text Classes to Pitch Black / Solid Dark Green for 100% Visibility */
+.text-\[\#4E5B55\],
+.text-\[\#78837D\],
+.text-\[\#AEBBB4\],
+.text-slate-300,
+.text-slate-400,
+.text-slate-500,
+.text-slate-600,
+.text-gray-400,
+.text-gray-500,
+.text-gray-600,
+.text-muted,
+p, label, span:not([class*="bg-[#063C2F]"]):not([class*="bg-emerald"]):not([class*="063C2F"]) {
+  color: #000000;
+}
+
+/* Bright Light Mode Container & Card Surface Overrides */
 .glass-card,
 [class*="bg-slate-900"],
 [class*="bg-slate-950"],
 [class*="03140e"],
 [class*="07261c"],
-[class*="092a1f"] {
+[class*="092a1f"],
+.bg-slate-900\/80,
+.bg-slate-900\/90 {
   background-color: #FFFFFF !important;
   background-image: none !important;
-  border: 1px solid #DCE4DE !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid #D1D5DB !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
   border-radius: 16px !important;
-  color: #101513 !important;
+  color: #000000 !important;
 }
 
-/* Inner Panels & Sub-containers */
+/* Sub-panels and inner sections */
 div[class*="bg-slate-800"],
 div[class*="041a12"],
-div[class*="093124"] {
-  background-color: #F1F4EE !important;
-  border: 1px solid #DCE4DE !important;
+div[class*="093124"],
+[class*="F7F8F3"] {
+  background-color: #F4F7F4 !important;
+  border: 1px solid #E2E8F0 !important;
   border-radius: 12px !important;
-  color: #101513 !important;
+  color: #000000 !important;
 }
 
-/* Typography Colors for High Contrast in Light Mode */
-.glass-card h1,
-.glass-card h2,
-.glass-card h3,
-.glass-card h4,
-.glass-card h5,
-.glass-card h6 {
-  color: #101513 !important;
-}
-
-.glass-card p,
-.glass-card label {
-  color: #4E5B55 !important;
-}
-
-/* Override text colors on white cards to avoid invisible text */
-.glass-card .text-slate-100,
-.glass-card .text-slate-200,
-.glass-card .text-slate-300 {
-  color: #101513 !important;
-}
-
-.glass-card .text-slate-400,
-.glass-card .text-slate-500 {
-  color: #4E5B55 !important;
-}
-
-.glass-card .text-emerald-300,
-.glass-card .text-emerald-400,
-.glass-card .text-teal-300 {
+/* Typography Headings inside cards */
+.glass-card h1, .glass-card h2, .glass-card h3, .glass-card h4, .glass-card h5, .glass-card h6 {
   color: #063C2F !important;
-  font-weight: 700 !important;
 }
 
-/* Preserve White Text on Dark Primary Buttons & Badges */
+/* Preserve White Text on Dark Brand Sidebar & Primary Buttons */
+aside, .w-64.h-screen, nav.sidebar {
+  background-color: #063C2F !important;
+}
+aside *, .w-64.h-screen * {
+  color: #FFFFFF !important;
+}
+aside [class*="AEBBB4"], .w-64.h-screen [class*="AEBBB4"] {
+  color: #DDF2E8 !important;
+}
+
 button[class*="063C2F"],
 button[class*="bg-emerald-600"],
 button[class*="bg-emerald-700"],
 a[class*="063C2F"],
 .btn-primary,
-.bg-brand-primary {
+.bg-brand-primary,
+[class*="063C2F"] {
   background-color: #063C2F !important;
   color: #FFFFFF !important;
+  font-weight: 700 !important;
 }
 
 button[class*="063C2F"] *,
@@ -114,22 +118,23 @@ button[class*="bg-emerald-600"] *,
   color: #FFFFFF !important;
 }
 
+
 /* Badges & Status Pills */
 .badge-success,
 [class*="DDF2E8"],
 [class*="bg-emerald-500/20"] {
   background-color: #DDF2E8 !important;
   color: #063C2F !important;
-  border: 1px solid rgba(22, 128, 95, 0.3) !important;
-  font-weight: 700 !important;
+  border: 1px solid #16805F !important;
+  font-weight: 800 !important;
 }
 
 .badge-warning,
 [class*="bg-amber-500/20"] {
   background-color: #FEF3C7 !important;
-  color: #92400E !important;
-  border: 1px solid rgba(217, 119, 6, 0.3) !important;
-  font-weight: 700 !important;
+  color: #78350F !important;
+  border: 1px solid #D97706 !important;
+  font-weight: 800 !important;
 }
 
 .badge-danger,
@@ -137,18 +142,19 @@ button[class*="bg-emerald-600"] *,
 [class*="bg-rose-900/30"] {
   background-color: #FEE2E2 !important;
   color: #991B1B !important;
-  border: 1px solid rgba(220, 38, 38, 0.3) !important;
-  font-weight: 700 !important;
+  border: 1px solid #DC2626 !important;
+  font-weight: 800 !important;
 }
 
-/* Inputs & Form Controls */
+/* Inputs & Controls */
 input[type="text"],
 input[type="password"],
 select,
 textarea {
   background-color: #FFFFFF !important;
-  border: 1px solid #DCE4DE !important;
-  color: #101513 !important;
+  border: 1px solid #9CA3AF !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
   border-radius: 10px !important;
 }
 
@@ -157,36 +163,41 @@ input[type="password"]:focus,
 select:focus,
 textarea:focus {
   border-color: #063C2F !important;
-  outline: 2px solid rgba(6, 60, 47, 0.15) !important;
+  outline: 2px solid rgba(6, 60, 47, 0.2) !important;
 }
 
 input[type="range"] {
-  background-color: #E8EEE7 !important;
+  background-color: #E2E8F0 !important;
   accent-color: #063C2F !important;
 }
 
 /* Tables */
 table {
   background-color: #FFFFFF !important;
-  color: #101513 !important;
+  color: #000000 !important;
 }
 
 thead tr {
-  background-color: #F1F4EE !important;
-  border-bottom: 1px solid #DCE4DE !important;
+  background-color: #E6EFEA !important;
+  border-bottom: 2px solid #063C2F !important;
   color: #063C2F !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
 }
 
 tbody tr {
-  border-bottom: 1px solid #E8EEE7 !important;
+  border-bottom: 1px solid #E5E7EB !important;
+}
+
+tbody tr td {
+  color: #000000 !important;
+  font-weight: 600 !important;
 }
 
 tbody tr:hover {
-  background-color: #F7F8F3 !important;
+  background-color: #F4F7F4 !important;
 }
 
-/* Strip Glowing Animations & Neon Borders */
+/* Strip Glowing Animations & Dark Shadows */
 .glow-emerald,
 .glow-mint,
 .glow-white,

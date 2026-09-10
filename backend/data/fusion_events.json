@@ -3246,5 +3246,37 @@
     "fusionStatus": "ATTENTION_REQUIRED",
     "overallRiskScore": 25.5,
     "freshnessIndex": 74
+  },
+  {
+    "eventId": "FUS-EVT-0407",
+    "batchId": "TF-APL-2026-001",
+    "timestamp": "2026-09-10T14:39:47.396169+00:00",
+    "fusionStatus": "ATTENTION_REQUIRED",
+    "overallRiskScore": 25.5,
+    "freshnessIndex": 74
+  },
+  {
+    "eventId": "FUS-EVT-0408",
+    "batchId": "TF-APL-2026-001",
+    "timestamp": "2026-09-10T14:39:49.033325+00:00",
+    "fusionStatus": "ATTENTION_REQUIRED",
+    "overallRiskScore": 25.5,
+    "freshnessIndex": 74
+  },
+  {
+    "eventId": "FUS-EVT-0409",
+    "batchId": "TF-APL-2026-001",
+    "timestamp": "2026-09-10T14:39:57.930627+00:00",
+    "fusionStatus": "ATTENTION_REQUIRED",
+    "overallRiskScore": 25.5,
+    "freshnessIndex": 74
+  },
+  {
+    "eventId": "FUS-EVT-0410",
+    "batchId": "TF-APL-2026-001",
+    "timestamp": "2026-09-10T14:39:59.482879+00:00",
+    "fusionStatus": "ATTENTION_REQUIRED",
+    "overallRiskScore": 25.5,
+    "freshnessIndex": 74
   }
 ]
