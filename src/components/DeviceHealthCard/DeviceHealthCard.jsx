@@ -27,37 +27,37 @@ function DeviceHealthCard({ nodeId = "TF-NODE-01" }) {
   const getStatusBadge = (status) => {
     switch (status) {
       case "ONLINE":
-        return <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-[#DDF2E8] text-[#063C2F] border border-[#16805F]/20">● ONLINE</span>;
+        return <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-[#E4F5EC] text-[#064C3B] border border-[#C3E9D5]">● ONLINE</span>;
       case "SIMULATED":
-        return <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-[#E8EEE7] text-[#0B604A] border border-[#0B604A]/20">● SIMULATED</span>;
+        return <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-[#FAFBF8] text-[#064C3B] border border-[#DDE4DF]">● SIMULATED</span>;
       case "STALE":
-        return <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-[#FEF3C7] text-[#92400E] border border-[#D97706]/20">● STALE</span>;
+        return <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-[#FEF3C7] text-[#92400E] border border-[#FDE68A]">● STALE</span>;
       case "ERROR":
-        return <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-[#FEE2E2] text-[#991B1B] border border-[#DC2626]/20">● ERROR</span>;
+        return <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-[#FEE2E2] text-[#991B1B] border border-[#FCA5A5]">● ERROR</span>;
       default:
-        return <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-[#F1F4EE] text-[#4E5B55] border border-[#DCE4DE]">● OFFLINE</span>;
+        return <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-[#F4F7F4] text-[#111715] border border-[#DDE4DF]">● OFFLINE</span>;
     }
   };
 
   return (
     <div
-      className={`bg-white dark:bg-[#0D2820] rounded-2xl p-5 border shadow-sm transition-all duration-300 relative overflow-hidden ${
-        isSelected ? "ring-2 ring-[#063C2F] dark:ring-[#36B88A] border-[#063C2F] dark:border-[#36B88A]" : "border-[#DCE4DE] dark:border-[#23483D] hover:shadow-md"
+      className={`bg-white rounded-2xl p-5 border shadow-xs transition-all duration-200 relative overflow-hidden ${
+        isSelected ? "ring-2 ring-[#064C3B] border-[#064C3B]" : "border-[#DDE4DF] hover:border-[#C3E9D5]"
       }`}
     >
       <div className="flex items-start justify-between mb-4 relative z-10">
         <div>
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold bg-[#F1F4EE] dark:bg-[#12342A] text-[#063C2F] dark:text-[#36B88A] px-2.5 py-1 rounded-md border border-[#DCE4DE] dark:border-[#23483D]">
+            <span className="text-xs font-extrabold bg-[#FAFBF8] text-[#064C3B] px-2.5 py-1 rounded-md border border-[#DDE4DF]">
               {node.nodeId}
             </span>
             <span className={`text-xs font-bold px-2.5 py-1 rounded-md border ${
-              isHardware ? "bg-[#DDF2E8] text-[#063C2F] border-[#16805F]/20" : "bg-[#F1F4EE] dark:bg-[#12342A] text-[#4E5B55] dark:text-[#AEBBB4] border-[#DCE4DE] dark:border-[#23483D]"
+              isHardware ? "bg-[#E4F5EC] text-[#064C3B] border-[#C3E9D5]" : "bg-[#FAFBF8] text-[#111715] border-[#DDE4DF]"
             }`}>
               {isHardware ? "📡 HARDWARE" : "SIMULATED"}
             </span>
           </div>
-          <h3 className="text-lg font-extrabold text-[#101513] dark:text-[#F4F7F2] mt-2.5">
+          <h3 className="text-lg font-extrabold text-[#111715] mt-2.5">
             {node.name || `TraceFresh Node ${nodeId}`}
           </h3>
         </div>
@@ -66,8 +66,8 @@ function DeviceHealthCard({ nodeId = "TF-NODE-01" }) {
           {getStatusBadge(node.status)}
           <button
             onClick={() => setSelectedNodeId(nodeId)}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-              isSelected ? "bg-[#063C2F] text-white dark:bg-[#36B88A] dark:text-[#042E25] shadow-sm" : "bg-[#F1F4EE] dark:bg-[#12342A] text-[#4E5B55] dark:text-[#AEBBB4] hover:text-[#101513] dark:hover:text-white"
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+              isSelected ? "bg-[#064C3B] text-white shadow-xs" : "bg-[#FAFBF8] text-[#111715] border border-[#DDE4DF] hover:bg-[#F4F7F4]"
             }`}
           >
             {isSelected ? "✓ Active Node" : "Select Node"}
@@ -76,39 +76,39 @@ function DeviceHealthCard({ nodeId = "TF-NODE-01" }) {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 my-4 relative z-10">
-        <div className="bg-[#F7F8F3] dark:bg-[#12342A] p-3 rounded-xl border border-[#DCE4DE] dark:border-[#23483D]">
-          <p className="text-xs font-medium text-[#78837D] dark:text-[#AEBBB4]">Last Sync</p>
-          <p className="text-sm font-bold text-[#101513] dark:text-[#F4F7F2] mt-1">{lastSeen}</p>
+        <div className="bg-[#FAFBF8] p-3 rounded-xl border border-[#DDE4DF]">
+          <p className="text-[10px] font-bold uppercase text-[#111715]">Last Sync</p>
+          <p className="text-sm font-bold text-[#111715] mt-1">{lastSeen}</p>
         </div>
 
-        <div className="bg-[#F7F8F3] dark:bg-[#12342A] p-3 rounded-xl border border-[#DCE4DE] dark:border-[#23483D]">
-          <p className="text-xs font-medium text-[#78837D] dark:text-[#AEBBB4]">Firmware</p>
-          <p className="text-sm font-bold text-[#101513] dark:text-[#F4F7F2] mt-1">{firmware}</p>
+        <div className="bg-[#FAFBF8] p-3 rounded-xl border border-[#DDE4DF]">
+          <p className="text-[10px] font-bold uppercase text-[#111715]">Firmware</p>
+          <p className="text-sm font-bold text-[#111715] mt-1">{firmware}</p>
         </div>
 
-        <div className="bg-[#F7F8F3] dark:bg-[#12342A] p-3 rounded-xl border border-[#DCE4DE] dark:border-[#23483D]">
-          <p className="text-xs font-medium text-[#78837D] dark:text-[#AEBBB4]">Wi-Fi RSSI</p>
-          <p className="text-sm font-bold text-[#063C2F] dark:text-[#36B88A] mt-1">
+        <div className="bg-[#FAFBF8] p-3 rounded-xl border border-[#DDE4DF]">
+          <p className="text-[10px] font-bold uppercase text-[#111715]">Wi-Fi RSSI</p>
+          <p className="text-sm font-bold text-[#064C3B] mt-1">
             {signal != null ? `${signal} dBm` : "N/A"}
           </p>
         </div>
 
-        <div className="bg-[#F7F8F3] dark:bg-[#12342A] p-3 rounded-xl border border-[#DCE4DE] dark:border-[#23483D]">
-          <p className="text-xs font-medium text-[#78837D] dark:text-[#AEBBB4]">Battery</p>
-          <p className="text-sm font-bold text-[#063C2F] dark:text-[#36B88A] mt-1">
+        <div className="bg-[#FAFBF8] p-3 rounded-xl border border-[#DDE4DF]">
+          <p className="text-[10px] font-bold uppercase text-[#111715]">Battery</p>
+          <p className="text-sm font-bold text-[#064C3B] mt-1">
             {battery != null ? `${battery}%` : "N/A"}
           </p>
         </div>
       </div>
 
-      <div className="border-t border-[#DCE4DE] dark:border-[#23483D] pt-3 flex items-center justify-between text-xs relative z-10">
+      <div className="border-t border-[#DDE4DF] pt-3 flex items-center justify-between text-xs relative z-10">
         <div className="flex items-center gap-2 font-medium">
-          <span className="text-[#78837D] dark:text-[#AEBBB4]">Sensors:</span>
-          <span className="font-bold text-[#063C2F] dark:text-[#36B88A]">{healthyCount} / {totalSensors} Healthy</span>
+          <span className="text-[#111715] font-bold">Sensors:</span>
+          <span className="font-extrabold text-[#064C3B]">{healthyCount} / {totalSensors} Healthy</span>
         </div>
         <div>
-          <span className="text-[#78837D] dark:text-[#AEBBB4]">Shipment: </span>
-          <span className="font-semibold text-[#101513] dark:text-[#F4F7F2]">{node.assignedShipmentId || "SHIP-APL-110"}</span>
+          <span className="text-[#111715] font-semibold">Shipment: </span>
+          <span className="font-extrabold text-[#111715]">{node.assignedShipmentId || "SHIP-APL-110"}</span>
         </div>
       </div>
     </div>

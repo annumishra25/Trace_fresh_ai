@@ -106,21 +106,21 @@ function HardwareSensorControl() {
   };
 
   return (
-    <div className="bg-white dark:bg-[#0D2820] text-[#101513] dark:text-[#F4F7F2] border border-[#DCE4DE] dark:border-[#23483D] rounded-2xl p-6 shadow-sm space-y-6 relative overflow-hidden">
+    <div className="bg-white text-[#111715] border border-[#DDE4DF] rounded-2xl p-6 shadow-xs space-y-6 relative overflow-hidden">
       {/* Header & Connection / Mode Selector */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#DCE4DE] dark:border-[#23483D] pb-4 relative z-10">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#DDE4DF] pb-4 relative z-10">
         <div>
           <div className="flex items-center gap-3 flex-wrap">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#101513] dark:text-[#F4F7F2] flex items-center gap-2">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#111715] flex items-center gap-2">
               <span>🔌 Hardware Model & Interactive Sensor Controls</span>
             </h2>
-            <span className={`text-xs font-bold px-2.5 py-0.5 rounded-md border ${
-              isLiveMode ? "bg-[#DDF2E8] text-[#063C2F] border-[#16805F]/20" : "bg-[#E8EEE7] text-[#0B604A] border-[#0B604A]/20"
+            <span className={`text-xs font-extrabold px-2.5 py-0.5 rounded-md border ${
+              isLiveMode ? "bg-[#E4F5EC] text-[#064C3B] border-[#C3E9D5]" : "bg-[#FAFBF8] text-[#064C3B] border-[#DDE4DF]"
             }`}>
               {isLiveMode ? "📡 ONLINE MODE (Live Backend)" : "🎛️ DEMO MODE (Interactive Sliders)"}
             </span>
           </div>
-          <p className="text-xs text-[#4E5B55] dark:text-[#AEBBB4] mt-1 font-medium">
+          <p className="text-xs text-[#56635D] mt-1 font-semibold">
             {isLiveMode
               ? "Running in Online Mode with real hardware sensor backend data stream."
               : "Demo Mode active: Scale slider bars up or down to dynamically adapt decision engine outputs in real time."}
@@ -129,19 +129,19 @@ function HardwareSensorControl() {
 
         <div className="flex items-center gap-3 flex-wrap">
           {/* Main Mode Switcher Toggle */}
-          <div className="flex items-center bg-[#F1F4EE] dark:bg-[#12342A] p-1 rounded-xl border border-[#DCE4DE] dark:border-[#23483D]">
+          <div className="flex items-center bg-[#FAFBF8] p-1 rounded-xl border border-[#DDE4DF]">
             <button
               onClick={() => { if (!isLiveMode) toggleMode(); }}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                isLiveMode ? "bg-[#063C2F] text-white dark:bg-[#36B88A] dark:text-[#042E25] shadow-sm" : "text-[#4E5B55] dark:text-[#AEBBB4] hover:text-[#101513] dark:hover:text-white"
+              className={`px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all cursor-pointer ${
+                isLiveMode ? "bg-[#064C3B] text-white shadow-xs" : "text-[#111715] hover:text-[#064C3B]"
               }`}
             >
               📡 Online Mode
             </button>
             <button
               onClick={() => { if (isLiveMode) toggleMode(); }}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                !isLiveMode ? "bg-[#063C2F] text-white dark:bg-[#36B88A] dark:text-[#042E25] shadow-sm" : "text-[#4E5B55] dark:text-[#AEBBB4] hover:text-[#101513] dark:hover:text-white"
+              className={`px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all cursor-pointer ${
+                !isLiveMode ? "bg-[#064C3B] text-white shadow-xs" : "text-[#111715] hover:text-[#064C3B]"
               }`}
             >
               🎛️ Demo Mode
@@ -149,20 +149,20 @@ function HardwareSensorControl() {
           </div>
 
           {/* Target Node Selector */}
-          <div className="flex items-center bg-[#F1F4EE] dark:bg-[#12342A] border border-[#DCE4DE] dark:border-[#23483D] rounded-xl p-1">
-            <span className="text-xs font-semibold px-2 text-[#78837D] dark:text-[#AEBBB4]">Node:</span>
+          <div className="flex items-center bg-[#FAFBF8] border border-[#DDE4DF] rounded-xl p-1">
+            <span className="text-xs font-extrabold px-2 text-[#56635D]">Node:</span>
             <button
               onClick={() => { setTargetNode("TF-NODE-01"); setSelectedNodeId("TF-NODE-01"); }}
-              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                targetNode === "TF-NODE-01" ? "bg-[#063C2F] text-white dark:bg-[#36B88A] dark:text-[#042E25]" : "text-[#4E5B55] dark:text-[#AEBBB4] hover:text-[#101513]"
+              className={`px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all cursor-pointer ${
+                targetNode === "TF-NODE-01" ? "bg-[#064C3B] text-white" : "text-[#111715] hover:text-[#064C3B]"
               }`}
             >
               TF-NODE-01
             </button>
             <button
               onClick={() => { setTargetNode("TF-NODE-02"); setSelectedNodeId("TF-NODE-02"); }}
-              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                targetNode === "TF-NODE-02" ? "bg-[#063C2F] text-white dark:bg-[#36B88A] dark:text-[#042E25]" : "text-[#4E5B55] dark:text-[#AEBBB4] hover:text-[#101513]"
+              className={`px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all cursor-pointer ${
+                targetNode === "TF-NODE-02" ? "bg-[#064C3B] text-white" : "text-[#111715] hover:text-[#064C3B]"
               }`}
             >
               TF-NODE-02
@@ -172,13 +172,13 @@ function HardwareSensorControl() {
           {/* Hardware Connection Toggle */}
           <button
             onClick={() => setHardwareConnected(!hardwareConnected)}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-2 border transition-all cursor-pointer ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-extrabold flex items-center gap-2 border transition-all cursor-pointer ${
               hardwareConnected
-                ? "bg-[#DDF2E8] text-[#063C2F] border-[#16805F]/30"
-                : "bg-[#FEE2E2] text-[#991B1B] border-[#DC2626]/30"
+                ? "bg-[#E4F5EC] text-[#064C3B] border-[#C3E9D5]"
+                : "bg-[#FEE2E2] text-[#991B1B] border-[#FCA5A5]"
             }`}
           >
-            <span className={`w-2 h-2 rounded-full ${hardwareConnected ? "bg-[#16805F]" : "bg-[#DC2626]"}`}></span>
+            <span className={`w-2 h-2 rounded-full ${hardwareConnected ? "bg-[#064C3B]" : "bg-[#DC2626]"}`}></span>
             {hardwareConnected ? "HARDWARE CONNECTED" : "HARDWARE DISCONNECTED"}
           </button>
         </div>
@@ -187,10 +187,10 @@ function HardwareSensorControl() {
       {/* Sensor Input Sliders Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 relative z-10">
         {/* Temperature Controller */}
-        <div className="bg-[#F7F8F3] dark:bg-[#12342A] p-4 rounded-xl border border-[#DCE4DE] dark:border-[#23483D] space-y-2">
+        <div className="bg-[#FAFBF8] p-4 rounded-xl border border-[#DDE4DF] space-y-2">
           <div className="flex justify-between items-center text-xs">
-            <label className="font-bold text-[#101513] dark:text-[#F4F7F2]">🌡️ Temperature (°C)</label>
-            <span className="font-bold text-[#D97706] text-sm">{sensorValues.temperature}°C</span>
+            <label className="font-extrabold text-[#111715]">🌡️ Temperature (°C)</label>
+            <span className="font-extrabold text-[#D97706] text-sm">{sensorValues.temperature}°C</span>
           </div>
           <input
             type="range"
@@ -199,9 +199,9 @@ function HardwareSensorControl() {
             step="0.5"
             value={sensorValues.temperature}
             onChange={(e) => handleChange("temperature", e.target.value)}
-            className="w-full h-2 bg-[#E8EEE7] dark:bg-[#184035] rounded-lg appearance-none cursor-pointer accent-[#063C2F] dark:accent-[#36B88A]"
+            className="w-full h-2 bg-[#E8EEE7] rounded-lg appearance-none cursor-pointer accent-[#064C3B]"
           />
-          <div className="flex justify-between text-[10px] text-[#78837D] dark:text-[#AEBBB4] font-medium">
+          <div className="flex justify-between text-[10px] text-[#56635D] font-bold">
             <span>-10°C</span>
             <span>25°C (Threshold)</span>
             <span>50°C</span>
@@ -209,10 +209,10 @@ function HardwareSensorControl() {
         </div>
 
         {/* Humidity Controller */}
-        <div className="bg-[#F7F8F3] dark:bg-[#12342A] p-4 rounded-xl border border-[#DCE4DE] dark:border-[#23483D] space-y-2">
+        <div className="bg-[#FAFBF8] p-4 rounded-xl border border-[#DDE4DF] space-y-2">
           <div className="flex justify-between items-center text-xs">
-            <label className="font-bold text-[#101513] dark:text-[#F4F7F2]">💧 Humidity (%)</label>
-            <span className="font-bold text-[#063C2F] dark:text-[#36B88A] text-sm">{sensorValues.humidity}%</span>
+            <label className="font-extrabold text-[#111715]">💧 Humidity (%)</label>
+            <span className="font-extrabold text-[#064C3B] text-sm">{sensorValues.humidity}%</span>
           </div>
           <input
             type="range"
@@ -221,9 +221,9 @@ function HardwareSensorControl() {
             step="1"
             value={sensorValues.humidity}
             onChange={(e) => handleChange("humidity", e.target.value)}
-            className="w-full h-2 bg-[#E8EEE7] dark:bg-[#184035] rounded-lg appearance-none cursor-pointer accent-[#063C2F] dark:accent-[#36B88A]"
+            className="w-full h-2 bg-[#E8EEE7] rounded-lg appearance-none cursor-pointer accent-[#064C3B]"
           />
-          <div className="flex justify-between text-[10px] text-[#78837D] dark:text-[#AEBBB4] font-medium">
+          <div className="flex justify-between text-[10px] text-[#56635D] font-bold">
             <span>0%</span>
             <span>75% (Optimum)</span>
             <span>100%</span>
@@ -231,10 +231,10 @@ function HardwareSensorControl() {
         </div>
 
         {/* CO2 Controller */}
-        <div className="bg-[#F7F8F3] dark:bg-[#12342A] p-4 rounded-xl border border-[#DCE4DE] dark:border-[#23483D] space-y-2">
+        <div className="bg-[#FAFBF8] p-4 rounded-xl border border-[#DDE4DF] space-y-2">
           <div className="flex justify-between items-center text-xs">
-            <label className="font-bold text-[#101513] dark:text-[#F4F7F2]">☁️ CO₂ Level (ppm)</label>
-            <span className="font-bold text-[#063C2F] dark:text-[#36B88A] text-sm">{sensorValues.co2} ppm</span>
+            <label className="font-extrabold text-[#111715]">☁️ CO₂ Level (ppm)</label>
+            <span className="font-extrabold text-[#064C3B] text-sm">{sensorValues.co2} ppm</span>
           </div>
           <input
             type="range"
@@ -243,9 +243,9 @@ function HardwareSensorControl() {
             step="25"
             value={sensorValues.co2}
             onChange={(e) => handleChange("co2", e.target.value)}
-            className="w-full h-2 bg-[#E8EEE7] dark:bg-[#184035] rounded-lg appearance-none cursor-pointer accent-[#063C2F] dark:accent-[#36B88A]"
+            className="w-full h-2 bg-[#E8EEE7] rounded-lg appearance-none cursor-pointer accent-[#064C3B]"
           />
-          <div className="flex justify-between text-[10px] text-[#78837D] dark:text-[#AEBBB4] font-medium">
+          <div className="flex justify-between text-[10px] text-[#56635D] font-bold">
             <span>300 ppm</span>
             <span>1000 ppm</span>
             <span>3000 ppm</span>
@@ -253,10 +253,10 @@ function HardwareSensorControl() {
         </div>
 
         {/* VOC Controller */}
-        <div className="bg-[#F7F8F3] dark:bg-[#12342A] p-4 rounded-xl border border-[#DCE4DE] dark:border-[#23483D] space-y-2">
+        <div className="bg-[#FAFBF8] p-4 rounded-xl border border-[#DDE4DF] space-y-2">
           <div className="flex justify-between items-center text-xs">
-            <label className="font-bold text-[#101513] dark:text-[#F4F7F2]">🧪 VOC Level (ppm)</label>
-            <span className="font-bold text-[#0B604A] dark:text-[#36B88A] text-sm">{sensorValues.voc} ppm</span>
+            <label className="font-extrabold text-[#111715]">🧪 VOC Level (ppm)</label>
+            <span className="font-extrabold text-[#064C3B] text-sm">{sensorValues.voc} ppm</span>
           </div>
           <input
             type="range"
@@ -265,9 +265,9 @@ function HardwareSensorControl() {
             step="0.1"
             value={sensorValues.voc}
             onChange={(e) => handleChange("voc", e.target.value)}
-            className="w-full h-2 bg-[#E8EEE7] dark:bg-[#184035] rounded-lg appearance-none cursor-pointer accent-[#063C2F] dark:accent-[#36B88A]"
+            className="w-full h-2 bg-[#E8EEE7] rounded-lg appearance-none cursor-pointer accent-[#064C3B]"
           />
-          <div className="flex justify-between text-[10px] text-[#78837D] dark:text-[#AEBBB4] font-medium">
+          <div className="flex justify-between text-[10px] text-[#56635D] font-bold">
             <span>0 ppm</span>
             <span>3 ppm</span>
             <span>10 ppm</span>
@@ -275,10 +275,10 @@ function HardwareSensorControl() {
         </div>
 
         {/* Combustible Spoilage Gas Controller */}
-        <div className="bg-[#F7F8F3] dark:bg-[#12342A] p-4 rounded-xl border border-[#DCE4DE] dark:border-[#23483D] space-y-2">
+        <div className="bg-[#FAFBF8] p-4 rounded-xl border border-[#DDE4DF] space-y-2">
           <div className="flex justify-between items-center text-xs">
-            <label className="font-bold text-[#101513] dark:text-[#F4F7F2]">⚠️ Spoilage / Ethylene Gas (ppm)</label>
-            <span className="font-bold text-[#DC2626] text-sm">{sensorValues.gas} ppm</span>
+            <label className="font-extrabold text-[#111715]">⚠️ Spoilage / Ethylene Gas (ppm)</label>
+            <span className="font-extrabold text-[#DC2626] text-sm">{sensorValues.gas} ppm</span>
           </div>
           <input
             type="range"
@@ -287,9 +287,9 @@ function HardwareSensorControl() {
             step="0.05"
             value={sensorValues.gas}
             onChange={(e) => handleChange("gas", e.target.value)}
-            className="w-full h-2 bg-[#E8EEE7] dark:bg-[#184035] rounded-lg appearance-none cursor-pointer accent-[#DC2626]"
+            className="w-full h-2 bg-[#E8EEE7] rounded-lg appearance-none cursor-pointer accent-[#DC2626]"
           />
-          <div className="flex justify-between text-[10px] text-[#78837D] dark:text-[#AEBBB4] font-medium">
+          <div className="flex justify-between text-[10px] text-[#56635D] font-bold">
             <span>0 ppm</span>
             <span>1.0 ppm (Warning)</span>
             <span>5.0 ppm</span>
@@ -297,10 +297,10 @@ function HardwareSensorControl() {
         </div>
 
         {/* Battery Level Controller */}
-        <div className="bg-[#F7F8F3] dark:bg-[#12342A] p-4 rounded-xl border border-[#DCE4DE] dark:border-[#23483D] space-y-2">
+        <div className="bg-[#FAFBF8] p-4 rounded-xl border border-[#DDE4DF] space-y-2">
           <div className="flex justify-between items-center text-xs">
-            <label className="font-bold text-[#101513] dark:text-[#F4F7F2]">🔋 Hardware Battery (%)</label>
-            <span className="font-bold text-[#063C2F] dark:text-[#36B88A] text-sm">{sensorValues.battery}%</span>
+            <label className="font-extrabold text-[#111715]">🔋 Hardware Battery (%)</label>
+            <span className="font-extrabold text-[#064C3B] text-sm">{sensorValues.battery}%</span>
           </div>
           <input
             type="range"
@@ -309,9 +309,9 @@ function HardwareSensorControl() {
             step="1"
             value={sensorValues.battery}
             onChange={(e) => handleChange("battery", e.target.value)}
-            className="w-full h-2 bg-[#E8EEE7] dark:bg-[#184035] rounded-lg appearance-none cursor-pointer accent-[#063C2F] dark:accent-[#36B88A]"
+            className="w-full h-2 bg-[#E8EEE7] rounded-lg appearance-none cursor-pointer accent-[#064C3B]"
           />
-          <div className="flex justify-between text-[10px] text-[#78837D] dark:text-[#AEBBB4] font-medium">
+          <div className="flex justify-between text-[10px] text-[#56635D] font-bold">
             <span>0%</span>
             <span>50%</span>
             <span>100%</span>
@@ -320,24 +320,24 @@ function HardwareSensorControl() {
       </div>
 
       {/* Control Actions & Scenario Presets */}
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-4 pt-4 border-t border-[#DCE4DE] dark:border-[#23483D] relative z-10">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-4 pt-4 border-t border-[#DDE4DF] relative z-10">
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-xs font-bold text-[#78837D] dark:text-[#AEBBB4] uppercase tracking-wider">Quick Presets:</span>
+          <span className="text-xs font-extrabold text-[#56635D] uppercase tracking-wider">Quick Presets:</span>
           <button
             onClick={() => applyPreset("OPTIMAL")}
-            className="px-3 py-1.5 rounded-lg text-xs font-bold bg-[#DDF2E8] text-[#063C2F] border border-[#16805F]/20 hover:bg-[#c9eadd] transition-all cursor-pointer"
+            className="px-3 py-1.5 rounded-lg text-xs font-extrabold bg-[#E4F5EC] text-[#064C3B] border border-[#C3E9D5] hover:bg-[#d0f0e0] transition-all cursor-pointer"
           >
             ✓ Optimal Cold Storage
           </button>
           <button
             onClick={() => applyPreset("HEAT_WARNING")}
-            className="px-3 py-1.5 rounded-lg text-xs font-bold bg-[#FEF3C7] text-[#92400E] border border-[#D97706]/20 hover:bg-[#fde68a] transition-all cursor-pointer"
+            className="px-3 py-1.5 rounded-lg text-xs font-extrabold bg-[#FEF3C7] text-[#92400E] border border-[#FDE68A] hover:bg-[#fde68a] transition-all cursor-pointer"
           >
             ⚡ Heat Rise Scenario
           </button>
           <button
             onClick={() => applyPreset("SPOILAGE_ALERT")}
-            className="px-3 py-1.5 rounded-lg text-xs font-bold bg-[#FEE2E2] text-[#991B1B] border border-[#DC2626]/20 hover:bg-[#fca5a5] transition-all cursor-pointer"
+            className="px-3 py-1.5 rounded-lg text-xs font-extrabold bg-[#FEE2E2] text-[#991B1B] border border-[#FCA5A5] hover:bg-[#fca5a5] transition-all cursor-pointer"
           >
             🚨 Spoilage & Gas Alert
           </button>
@@ -346,10 +346,10 @@ function HardwareSensorControl() {
         <div className="flex items-center gap-3 w-full lg:w-auto justify-end">
           <button
             onClick={() => setIsAutoStreaming(!isAutoStreaming)}
-            className={`px-4 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-xl text-xs font-extrabold border transition-all cursor-pointer ${
               isAutoStreaming
                 ? "bg-[#D97706] text-white border-[#D97706]"
-                : "bg-[#F1F4EE] dark:bg-[#12342A] text-[#101513] dark:text-[#F4F7F2] border-[#DCE4DE] dark:border-[#23483D]"
+                : "bg-[#FAFBF8] text-[#111715] border-[#DDE4DF]"
             }`}
           >
             {isAutoStreaming ? "⏸ STOP AUTO-STREAM" : "▶ START AUTO-STREAM (2s)"}
@@ -357,7 +357,7 @@ function HardwareSensorControl() {
 
           <button
             onClick={handleTransmit}
-            className="px-5 py-2 rounded-xl text-xs font-bold bg-[#063C2F] hover:bg-[#042E25] dark:bg-[#36B88A] dark:hover:bg-[#2EA077] text-white dark:text-[#042E25] shadow-sm transition-all cursor-pointer flex items-center gap-2"
+            className="px-5 py-2 rounded-xl text-xs font-extrabold bg-[#064C3B] hover:bg-[#042E25] text-white shadow-xs transition-all cursor-pointer flex items-center gap-2"
           >
             <span>📡 TRANSMIT SENSOR PACKET</span>
           </button>
@@ -365,7 +365,7 @@ function HardwareSensorControl() {
       </div>
 
       {statusMsg && (
-        <div className="bg-[#DDF2E8] border border-[#16805F]/30 text-[#063C2F] px-4 py-2 rounded-xl text-xs font-semibold text-center relative z-10">
+        <div className="bg-[#E4F5EC] border border-[#C3E9D5] text-[#064C3B] px-4 py-2 rounded-xl text-xs font-bold text-center relative z-10">
           {statusMsg}
         </div>
       )}

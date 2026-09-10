@@ -5,9 +5,9 @@ function InspectionInfo() {
 
   if (!activeBatch) {
     return (
-      <div className="bg-white rounded-2xl shadow-md p-6">
-        <h2 className="text-2xl font-bold mb-4">Inspection Summary</h2>
-        <p className="text-slate-500">No inspection summary available yet.</p>
+      <div className="bg-white border border-[#DDE4DF] rounded-2xl p-6 shadow-xs">
+        <h2 className="text-xl font-extrabold text-[#111715] mb-2 tracking-tight">Inspection Summary</h2>
+        <p className="text-[#56635D] text-xs font-semibold">No inspection summary available yet.</p>
       </div>
     );
   }
@@ -16,63 +16,63 @@ function InspectionInfo() {
   const trace = activeBatch.traceability || {};
 
   return (
-    <div className="bg-white rounded-2xl shadow-md p-6">
-      <h2 className="text-2xl font-bold mb-4">
+    <div className="bg-white border border-[#DDE4DF] rounded-2xl p-6 shadow-xs space-y-4">
+      <h2 className="text-xl font-extrabold text-[#111715] tracking-tight">
         Inspection Summary
       </h2>
 
-      <div className="space-y-3">
-        <div className="flex justify-between">
-          <span>Batch ID</span>
-          <span className="font-semibold">{activeBatch.batchId}</span>
+      <div className="space-y-2.5 text-xs font-semibold text-[#111715]">
+        <div className="flex justify-between py-1.5 border-b border-[#E8EEE7]">
+          <span className="text-[#56635D]">Batch ID</span>
+          <span className="font-extrabold text-[#064C3B]">{activeBatch.batchId}</span>
         </div>
 
-        <div className="flex justify-between">
-          <span>Fruit</span>
-          <span className="font-semibold capitalize">
+        <div className="flex justify-between py-1.5 border-b border-[#E8EEE7]">
+          <span className="text-[#56635D]">Fruit</span>
+          <span className="font-extrabold capitalize">
             {activeBatch.fruitType || "--"}
           </span>
         </div>
 
-        <div className="flex justify-between">
-          <span>Condition</span>
-          <span className="text-green-600 font-semibold">
+        <div className="flex justify-between py-1.5 border-b border-[#E8EEE7]">
+          <span className="text-[#56635D]">Condition</span>
+          <span className="text-[#064C3B] font-extrabold">
             {assessment.status || "--"}
           </span>
         </div>
 
-        <div className="flex justify-between">
-          <span>Inspection Time</span>
-          <span>
+        <div className="flex justify-between py-1.5 border-b border-[#E8EEE7]">
+          <span className="text-[#56635D]">Inspection Time</span>
+          <span className="text-[#56635D]">
             {trace.lastScanTime
               ? new Date(trace.lastScanTime).toLocaleString()
               : "--"}
           </span>
         </div>
 
-        <div className="flex justify-between">
-          <span>Node</span>
-          <span>{trace.node || activeBatch.location || "--"}</span>
+        <div className="flex justify-between py-1.5 border-b border-[#E8EEE7]">
+          <span className="text-[#56635D]">Node</span>
+          <span className="font-extrabold">{trace.node || activeBatch.location || "--"}</span>
         </div>
 
-        <div className="flex justify-between">
-          <span>Lot ID</span>
+        <div className="flex justify-between py-1.5 border-b border-[#E8EEE7]">
+          <span className="text-[#56635D]">Lot ID</span>
           <span>{trace.lotId || "--"}</span>
         </div>
 
-        <div className="flex justify-between">
-          <span>Shipment ID</span>
+        <div className="flex justify-between py-1.5 border-b border-[#E8EEE7]">
+          <span className="text-[#56635D]">Shipment ID</span>
           <span>{trace.shipmentId || "--"}</span>
         </div>
 
-        <div className="flex justify-between">
-          <span>Packed Date</span>
+        <div className="flex justify-between py-1.5 border-b border-[#E8EEE7]">
+          <span className="text-[#56635D]">Packed Date</span>
           <span>{trace.packedDate || "--"}</span>
         </div>
 
-        <div className="flex justify-between">
-          <span>Model Version</span>
-          <span>TraceFresh AI v1.0</span>
+        <div className="flex justify-between py-1.5">
+          <span className="text-[#56635D]">Model Version</span>
+          <span className="font-extrabold text-[#064C3B]">TraceFresh AI v1.0</span>
         </div>
       </div>
     </div>

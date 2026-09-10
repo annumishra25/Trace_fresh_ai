@@ -128941,5 +128941,401 @@
       "confidence": 0.9,
       "summaryStatement": "ATTENTION_REQUIRED condition assessment for apple (Composite Risk: 25.5/100)."
     }
+  },
+  {
+    "decisionId": "DEC-20260910-D542",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "demoScenario": "HEALTHY",
+    "timestamp": "2026-09-10T14:58:47.934650+00:00",
+    "fusionStatus": "ATTENTION_REQUIRED",
+    "overallRiskScore": 25.5,
+    "freshnessIndex": {
+      "score": 74,
+      "rating": "GOOD"
+    },
+    "confidence": {
+      "overallConfidence": 0.9,
+      "rating": "HIGH",
+      "sensorConfidence": 0.9,
+      "routeConfidence": 0.9,
+      "visualConfidence": 0.9,
+      "appliedPenalties": []
+    },
+    "componentRisks": {
+      "sensorRisk": {
+        "score": 50.0,
+        "weight": 0.4,
+        "rating": "MODERATE",
+        "confidence": 0.9
+      },
+      "routeRisk": {
+        "score": 15.0,
+        "weight": 0.25,
+        "rating": "LOW",
+        "confidence": 0.9
+      },
+      "visualRisk": {
+        "score": 5.0,
+        "weight": 0.35,
+        "rating": "LOW",
+        "confidence": 0.9
+      },
+      "baseWeightedRisk": 25.5
+    },
+    "crossSignalInteractions": {
+      "activeRules": [],
+      "combinedMultiplier": 1.0
+    },
+    "conflictResolution": {
+      "conflictDetected": false,
+      "conflictType": "NONE",
+      "recommendedStatus": "ATTENTION_REQUIRED",
+      "resolutionStrategy": "Flag for manual inspector review; elevate status to SIGNAL_CONFLICT for audit."
+    },
+    "estimatedShelfLife": {
+      "remainingDays": 5.3,
+      "minDays": 3.7,
+      "maxDays": 6.9,
+      "disclaimer": "Engineering decision support estimate. Not guaranteed biological expiration."
+    },
+    "explanation": {
+      "overallCondition": "ATTENTION_REQUIRED",
+      "summaryText": "ATTENTION_REQUIRED condition assessment for apple (Composite Risk: 25.5/100).",
+      "actionableDriver": "High environmental exposure risk (50.0/100)",
+      "primaryDrivers": [
+        "High environmental exposure risk (50.0/100)"
+      ],
+      "evidenceStatements": [
+        "Sensor Telemetry: Severe thermal/humidity excursion detected on node sensors (Risk: 50.0)",
+        "Route Engine: Shipment operating on-schedule along planned corridor.",
+        "Vision AI: Surface scan confirms clean, healthy produce appearance."
+      ],
+      "recommendation": "Review storage environment parameters. Keep under regular observation.",
+      "recommendedAction": "Review storage environment parameters. Keep under regular observation.",
+      "primaryContributors": [
+        "High environmental exposure risk (50.0/100)"
+      ],
+      "confidencePenalties": [
+        "Full signal confidence maintained"
+      ]
+    },
+    "confidencePenalties": {
+      "overallConfidence": 0.9,
+      "rating": "HIGH",
+      "sensorConfidence": 0.9,
+      "routeConfidence": 0.9,
+      "visualConfidence": 0.9,
+      "appliedPenalties": []
+    },
+    "passportSummary": {
+      "passportId": "PASSPORT-TF-APL-2026-001",
+      "batchId": "TF-APL-2026-001",
+      "produceType": "apple",
+      "originNode": "TF-NODE-01",
+      "freshnessIndex": 74,
+      "freshnessRating": "GOOD",
+      "conditionStatus": "ATTENTION_REQUIRED",
+      "estimatedRemainingDays": 5.3,
+      "confidence": 0.9,
+      "summaryStatement": "ATTENTION_REQUIRED condition assessment for apple (Composite Risk: 25.5/100)."
+    }
+  },
+  {
+    "decisionId": "DEC-20260910-A7B9",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "demoScenario": null,
+    "timestamp": "2026-09-10T14:58:49.546441+00:00",
+    "fusionStatus": "ATTENTION_REQUIRED",
+    "overallRiskScore": 25.5,
+    "freshnessIndex": {
+      "score": 74,
+      "rating": "GOOD"
+    },
+    "confidence": {
+      "overallConfidence": 0.9,
+      "rating": "HIGH",
+      "sensorConfidence": 0.9,
+      "routeConfidence": 0.9,
+      "visualConfidence": 0.9,
+      "appliedPenalties": []
+    },
+    "componentRisks": {
+      "sensorRisk": {
+        "score": 50.0,
+        "weight": 0.4,
+        "rating": "MODERATE",
+        "confidence": 0.9
+      },
+      "routeRisk": {
+        "score": 15.0,
+        "weight": 0.25,
+        "rating": "LOW",
+        "confidence": 0.9
+      },
+      "visualRisk": {
+        "score": 5.0,
+        "weight": 0.35,
+        "rating": "LOW",
+        "confidence": 0.9
+      },
+      "baseWeightedRisk": 25.5
+    },
+    "crossSignalInteractions": {
+      "activeRules": [],
+      "combinedMultiplier": 1.0
+    },
+    "conflictResolution": {
+      "conflictDetected": false,
+      "conflictType": "NONE",
+      "recommendedStatus": "ATTENTION_REQUIRED",
+      "resolutionStrategy": "Flag for manual inspector review; elevate status to SIGNAL_CONFLICT for audit."
+    },
+    "estimatedShelfLife": {
+      "remainingDays": 5.3,
+      "minDays": 3.7,
+      "maxDays": 6.9,
+      "disclaimer": "Engineering decision support estimate. Not guaranteed biological expiration."
+    },
+    "explanation": {
+      "overallCondition": "ATTENTION_REQUIRED",
+      "summaryText": "ATTENTION_REQUIRED condition assessment for apple (Composite Risk: 25.5/100).",
+      "actionableDriver": "High environmental exposure risk (50.0/100)",
+      "primaryDrivers": [
+        "High environmental exposure risk (50.0/100)"
+      ],
+      "evidenceStatements": [
+        "Sensor Telemetry: Severe thermal/humidity excursion detected on node sensors (Risk: 50.0)",
+        "Route Engine: Shipment operating on-schedule along planned corridor.",
+        "Vision AI: Surface scan confirms clean, healthy produce appearance."
+      ],
+      "recommendation": "Review storage environment parameters. Keep under regular observation.",
+      "recommendedAction": "Review storage environment parameters. Keep under regular observation.",
+      "primaryContributors": [
+        "High environmental exposure risk (50.0/100)"
+      ],
+      "confidencePenalties": [
+        "Full signal confidence maintained"
+      ]
+    },
+    "confidencePenalties": {
+      "overallConfidence": 0.9,
+      "rating": "HIGH",
+      "sensorConfidence": 0.9,
+      "routeConfidence": 0.9,
+      "visualConfidence": 0.9,
+      "appliedPenalties": []
+    },
+    "passportSummary": {
+      "passportId": "PASSPORT-TF-APL-2026-001",
+      "batchId": "TF-APL-2026-001",
+      "produceType": "apple",
+      "originNode": "TF-NODE-01",
+      "freshnessIndex": 74,
+      "freshnessRating": "GOOD",
+      "conditionStatus": "ATTENTION_REQUIRED",
+      "estimatedRemainingDays": 5.3,
+      "confidence": 0.9,
+      "summaryStatement": "ATTENTION_REQUIRED condition assessment for apple (Composite Risk: 25.5/100)."
+    }
+  },
+  {
+    "decisionId": "DEC-20260910-6527",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "demoScenario": "HEALTHY",
+    "timestamp": "2026-09-10T14:58:57.304410+00:00",
+    "fusionStatus": "ATTENTION_REQUIRED",
+    "overallRiskScore": 25.5,
+    "freshnessIndex": {
+      "score": 74,
+      "rating": "GOOD"
+    },
+    "confidence": {
+      "overallConfidence": 0.9,
+      "rating": "HIGH",
+      "sensorConfidence": 0.9,
+      "routeConfidence": 0.9,
+      "visualConfidence": 0.9,
+      "appliedPenalties": []
+    },
+    "componentRisks": {
+      "sensorRisk": {
+        "score": 50.0,
+        "weight": 0.4,
+        "rating": "MODERATE",
+        "confidence": 0.9
+      },
+      "routeRisk": {
+        "score": 15.0,
+        "weight": 0.25,
+        "rating": "LOW",
+        "confidence": 0.9
+      },
+      "visualRisk": {
+        "score": 5.0,
+        "weight": 0.35,
+        "rating": "LOW",
+        "confidence": 0.9
+      },
+      "baseWeightedRisk": 25.5
+    },
+    "crossSignalInteractions": {
+      "activeRules": [],
+      "combinedMultiplier": 1.0
+    },
+    "conflictResolution": {
+      "conflictDetected": false,
+      "conflictType": "NONE",
+      "recommendedStatus": "ATTENTION_REQUIRED",
+      "resolutionStrategy": "Flag for manual inspector review; elevate status to SIGNAL_CONFLICT for audit."
+    },
+    "estimatedShelfLife": {
+      "remainingDays": 5.3,
+      "minDays": 3.7,
+      "maxDays": 6.9,
+      "disclaimer": "Engineering decision support estimate. Not guaranteed biological expiration."
+    },
+    "explanation": {
+      "overallCondition": "ATTENTION_REQUIRED",
+      "summaryText": "ATTENTION_REQUIRED condition assessment for apple (Composite Risk: 25.5/100).",
+      "actionableDriver": "High environmental exposure risk (50.0/100)",
+      "primaryDrivers": [
+        "High environmental exposure risk (50.0/100)"
+      ],
+      "evidenceStatements": [
+        "Sensor Telemetry: Severe thermal/humidity excursion detected on node sensors (Risk: 50.0)",
+        "Route Engine: Shipment operating on-schedule along planned corridor.",
+        "Vision AI: Surface scan confirms clean, healthy produce appearance."
+      ],
+      "recommendation": "Review storage environment parameters. Keep under regular observation.",
+      "recommendedAction": "Review storage environment parameters. Keep under regular observation.",
+      "primaryContributors": [
+        "High environmental exposure risk (50.0/100)"
+      ],
+      "confidencePenalties": [
+        "Full signal confidence maintained"
+      ]
+    },
+    "confidencePenalties": {
+      "overallConfidence": 0.9,
+      "rating": "HIGH",
+      "sensorConfidence": 0.9,
+      "routeConfidence": 0.9,
+      "visualConfidence": 0.9,
+      "appliedPenalties": []
+    },
+    "passportSummary": {
+      "passportId": "PASSPORT-TF-APL-2026-001",
+      "batchId": "TF-APL-2026-001",
+      "produceType": "apple",
+      "originNode": "TF-NODE-01",
+      "freshnessIndex": 74,
+      "freshnessRating": "GOOD",
+      "conditionStatus": "ATTENTION_REQUIRED",
+      "estimatedRemainingDays": 5.3,
+      "confidence": 0.9,
+      "summaryStatement": "ATTENTION_REQUIRED condition assessment for apple (Composite Risk: 25.5/100)."
+    }
+  },
+  {
+    "decisionId": "DEC-20260910-99F6",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "demoScenario": null,
+    "timestamp": "2026-09-10T14:58:58.842806+00:00",
+    "fusionStatus": "ATTENTION_REQUIRED",
+    "overallRiskScore": 25.5,
+    "freshnessIndex": {
+      "score": 74,
+      "rating": "GOOD"
+    },
+    "confidence": {
+      "overallConfidence": 0.9,
+      "rating": "HIGH",
+      "sensorConfidence": 0.9,
+      "routeConfidence": 0.9,
+      "visualConfidence": 0.9,
+      "appliedPenalties": []
+    },
+    "componentRisks": {
+      "sensorRisk": {
+        "score": 50.0,
+        "weight": 0.4,
+        "rating": "MODERATE",
+        "confidence": 0.9
+      },
+      "routeRisk": {
+        "score": 15.0,
+        "weight": 0.25,
+        "rating": "LOW",
+        "confidence": 0.9
+      },
+      "visualRisk": {
+        "score": 5.0,
+        "weight": 0.35,
+        "rating": "LOW",
+        "confidence": 0.9
+      },
+      "baseWeightedRisk": 25.5
+    },
+    "crossSignalInteractions": {
+      "activeRules": [],
+      "combinedMultiplier": 1.0
+    },
+    "conflictResolution": {
+      "conflictDetected": false,
+      "conflictType": "NONE",
+      "recommendedStatus": "ATTENTION_REQUIRED",
+      "resolutionStrategy": "Flag for manual inspector review; elevate status to SIGNAL_CONFLICT for audit."
+    },
+    "estimatedShelfLife": {
+      "remainingDays": 5.3,
+      "minDays": 3.7,
+      "maxDays": 6.9,
+      "disclaimer": "Engineering decision support estimate. Not guaranteed biological expiration."
+    },
+    "explanation": {
+      "overallCondition": "ATTENTION_REQUIRED",
+      "summaryText": "ATTENTION_REQUIRED condition assessment for apple (Composite Risk: 25.5/100).",
+      "actionableDriver": "High environmental exposure risk (50.0/100)",
+      "primaryDrivers": [
+        "High environmental exposure risk (50.0/100)"
+      ],
+      "evidenceStatements": [
+        "Sensor Telemetry: Severe thermal/humidity excursion detected on node sensors (Risk: 50.0)",
+        "Route Engine: Shipment operating on-schedule along planned corridor.",
+        "Vision AI: Surface scan confirms clean, healthy produce appearance."
+      ],
+      "recommendation": "Review storage environment parameters. Keep under regular observation.",
+      "recommendedAction": "Review storage environment parameters. Keep under regular observation.",
+      "primaryContributors": [
+        "High environmental exposure risk (50.0/100)"
+      ],
+      "confidencePenalties": [
+        "Full signal confidence maintained"
+      ]
+    },
+    "confidencePenalties": {
+      "overallConfidence": 0.9,
+      "rating": "HIGH",
+      "sensorConfidence": 0.9,
+      "routeConfidence": 0.9,
+      "visualConfidence": 0.9,
+      "appliedPenalties": []
+    },
+    "passportSummary": {
+      "passportId": "PASSPORT-TF-APL-2026-001",
+      "batchId": "TF-APL-2026-001",
+      "produceType": "apple",
+      "originNode": "TF-NODE-01",
+      "freshnessIndex": 74,
+      "freshnessRating": "GOOD",
+      "conditionStatus": "ATTENTION_REQUIRED",
+      "estimatedRemainingDays": 5.3,
+      "confidence": 0.9,
+      "summaryStatement": "ATTENTION_REQUIRED condition assessment for apple (Composite Risk: 25.5/100)."
+    }
   }
 ]

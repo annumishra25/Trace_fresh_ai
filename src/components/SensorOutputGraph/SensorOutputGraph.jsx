@@ -12,20 +12,20 @@ import {
 import { useTelemetry } from "../../context/TelemetryContext";
 
 const METRIC_CONFIGS = {
-  temperature: { label: "Temperature", unit: "°C", color: "#f59e0b", stroke: "#d97706", threshold: 25, key: "temperature" },
-  humidity: { label: "Humidity", unit: "%", color: "#06b6d4", stroke: "#0891b2", threshold: 85, key: "humidity" },
-  co2: { label: "CO₂ Concentration", unit: "ppm", color: "#10b981", stroke: "#059669", threshold: 1000, key: "co2" },
-  voc: { label: "VOC Concentration", unit: "ppm", color: "#8b5cf6", stroke: "#7c3aed", threshold: 3.0, key: "voc" },
-  gas: { label: "Spoilage / Ethylene Gas", unit: "ppm", color: "#f43f5e", stroke: "#e11d48", threshold: 1.0, key: "gas" }
+  temperature: { label: "Temperature", unit: "°C", color: "#D97706", stroke: "#B45309", threshold: 25, key: "temperature" },
+  humidity: { label: "Humidity", unit: "%", color: "#0284C7", stroke: "#0369A1", threshold: 85, key: "humidity" },
+  co2: { label: "CO₂ Concentration", unit: "ppm", color: "#064C3B", stroke: "#042E25", threshold: 1000, key: "co2" },
+  voc: { label: "VOC Concentration", unit: "ppm", color: "#7C3AED", stroke: "#6D28D9", threshold: 3.0, key: "voc" },
+  gas: { label: "Spoilage / Ethylene Gas", unit: "ppm", color: "#DC2626", stroke: "#B91C1C", threshold: 1.0, key: "gas" }
 };
 
 function CustomTooltip({ active, payload, label }) {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-slate-900/95 text-white p-3 rounded-2xl shadow-xl border border-slate-700 text-xs font-mono">
-        <p className="font-bold text-slate-400 mb-1">⏰ {label}</p>
+      <div className="bg-white text-[#111715] p-3 rounded-xl shadow-lg border border-[#DDE4DF] text-xs font-mono">
+        <p className="font-extrabold text-[#56635D] mb-1">⏰ {label}</p>
         {payload.map((entry, index) => (
-          <p key={index} style={{ color: entry.color }} className="font-bold">
+          <p key={index} style={{ color: entry.color }} className="font-extrabold">
             {entry.name}: {entry.value} {entry.unit}
           </p>
         ))}
@@ -129,36 +129,33 @@ function SensorOutputGraph() {
   const isBreached = typeof latestValue === "number" && latestValue > cfg.threshold;
 
   return (
-    <div className="glass-card glass-card-hover rounded-3xl p-6 md:p-8 shadow-2xl space-y-6 relative overflow-hidden">
-      {/* Background Accent Glow */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
-
+    <div className="bg-white border border-[#DDE4DF] rounded-2xl p-6 md:p-8 shadow-xs space-y-6 relative overflow-hidden">
       {/* Header & Metric Selector Tabs */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 relative z-10">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 relative z-10 border-b border-[#DDE4DF] pb-4">
         <div>
-          <div className="flex items-center gap-3">
-            <h3 className="text-2xl font-black text-white">
-              📊 Real-Time Hardware Sensor Output Graph
+          <div className="flex items-center gap-3 flex-wrap">
+            <h3 className="text-xl sm:text-2xl font-extrabold text-[#111715] tracking-tight">
+              Real-Time Hardware Sensor Output Graph
             </h3>
-            <span className="text-xs font-mono font-bold bg-slate-800 text-cyan-300 px-3 py-1 rounded-full border border-slate-700">
-              {selectedNodeId}
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-[#E4F5EC] text-[#064C3B] border border-[#C3E9D5]">
+              ● {selectedNodeId}
             </span>
           </div>
-          <p className="text-slate-400 text-xs mt-1">
+          <p className="text-[#56635D] text-xs mt-1 font-semibold">
             Live time-series graph response to hardware telemetry & manual slider adjustments.
           </p>
         </div>
 
         {/* Metric Tabs */}
-        <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 overflow-x-auto">
+        <div className="flex items-center gap-1.5 bg-[#FAFBF8] p-1.5 rounded-xl border border-[#DDE4DF] overflow-x-auto">
           {Object.keys(METRIC_CONFIGS).map((mKey) => (
             <button
               key={mKey}
               onClick={() => setActiveMetric(mKey)}
-              className={`px-3.5 py-2 rounded-xl text-xs font-black transition-all cursor-pointer whitespace-nowrap ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-extrabold transition-all cursor-pointer whitespace-nowrap ${
                 activeMetric === mKey
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-600/30 scale-105"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-[#064C3B] text-white shadow-xs"
+                  : "text-[#111715] hover:text-[#064C3B]"
               }`}
             >
               {METRIC_CONFIGS[mKey].label}
@@ -169,32 +166,32 @@ function SensorOutputGraph() {
 
       {/* Metric KPI Indicator Banner */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 relative z-10">
-        <div className="bg-slate-900/90 p-4.5 rounded-2xl border border-slate-800 flex items-center justify-between">
+        <div className="bg-[#FAFBF8] p-4 rounded-xl border border-[#DDE4DF] flex items-center justify-between">
           <div>
-            <p className="text-xs font-mono font-bold text-slate-400 uppercase">Current Reading</p>
-            <p className="text-3xl font-black text-white mt-1 font-mono">
-              {latestValue} <span className="text-sm font-semibold text-slate-400">{cfg.unit}</span>
+            <p className="text-xs font-extrabold text-[#56635D] uppercase tracking-wider">Current Reading</p>
+            <p className="text-2xl sm:text-3xl font-extrabold text-[#111715] mt-1">
+              {latestValue} <span className="text-sm font-bold text-[#56635D]">{cfg.unit}</span>
             </p>
           </div>
-          <span className="w-4 h-4 rounded-full animate-pulse-glow" style={{ backgroundColor: cfg.color, boxShadow: `0 0 15px ${cfg.color}` }}></span>
+          <span className="w-3.5 h-3.5 rounded-full" style={{ backgroundColor: cfg.color }}></span>
         </div>
 
-        <div className="bg-slate-900/90 p-4.5 rounded-2xl border border-slate-800 flex items-center justify-between">
+        <div className="bg-[#FAFBF8] p-4 rounded-xl border border-[#DDE4DF] flex items-center justify-between">
           <div>
-            <p className="text-xs font-mono font-bold text-slate-400 uppercase">Warning Threshold</p>
-            <p className="text-3xl font-black text-amber-400 mt-1 font-mono">
-              &gt; {cfg.threshold} <span className="text-sm font-semibold text-slate-400">{cfg.unit}</span>
+            <p className="text-xs font-extrabold text-[#56635D] uppercase tracking-wider">Warning Threshold</p>
+            <p className="text-2xl sm:text-3xl font-extrabold text-[#D97706] mt-1">
+              &gt; {cfg.threshold} <span className="text-sm font-bold text-[#56635D]">{cfg.unit}</span>
             </p>
           </div>
-          <span className="text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2.5 py-1 rounded-lg">LIMIT</span>
+          <span className="text-xs font-extrabold bg-[#FEF3C7] text-[#92400E] border border-[#FDE68A] px-2.5 py-1 rounded-lg">LIMIT</span>
         </div>
 
-        <div className={`p-4.5 rounded-2xl border flex items-center justify-between transition-all ${
-          isBreached ? "bg-rose-500/20 border-rose-500/50 text-rose-300 glow-rose" : "bg-emerald-500/20 border-emerald-500/50 text-emerald-300 glow-emerald"
+        <div className={`p-4 rounded-xl border flex items-center justify-between transition-all ${
+          isBreached ? "bg-[#FEE2E2] border-[#FCA5A5] text-[#991B1B]" : "bg-[#E4F5EC] border-[#C3E9D5] text-[#064C3B]"
         }`}>
           <div>
-            <p className="text-xs font-bold uppercase opacity-80 font-mono">Condition Status</p>
-            <p className="text-xl font-black mt-1">
+            <p className="text-xs font-extrabold uppercase tracking-wider opacity-90">Condition Status</p>
+            <p className="text-lg font-extrabold mt-0.5">
               {isBreached ? "⚠️ THRESHOLD BREACH" : "✓ OPTIMAL RANGE"}
             </p>
           </div>
@@ -209,28 +206,28 @@ function SensorOutputGraph() {
             <AreaChart data={chartData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
               <defs>
                 <linearGradient id={`gradient-${cfg.key}`} x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor={cfg.color} stopOpacity={0.5} />
+                  <stop offset="5%" stopColor={cfg.color} stopOpacity={0.2} />
                   <stop offset="95%" stopColor={cfg.color} stopOpacity={0.0} />
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#1e293b" />
+              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E8EEE7" />
               <XAxis
                 dataKey="time"
-                tick={{ fontSize: 11, fill: "#94a3b8", fontWeight: 600 }}
-                axisLine={{ stroke: "#334155" }}
+                tick={{ fontSize: 11, fill: "#56635D", fontWeight: 700 }}
+                axisLine={{ stroke: "#DDE4DF" }}
                 tickLine={false}
               />
               <YAxis
-                tick={{ fontSize: 11, fill: "#94a3b8", fontWeight: 600 }}
-                axisLine={{ stroke: "#334155" }}
+                tick={{ fontSize: 11, fill: "#56635D", fontWeight: 700 }}
+                axisLine={{ stroke: "#DDE4DF" }}
                 tickLine={false}
                 unit={cfg.unit}
               />
               <Tooltip content={<CustomTooltip />} />
               <ReferenceLine
                 y={cfg.threshold}
-                label={{ value: `Max Limit: ${cfg.threshold} ${cfg.unit}`, fill: "#f43f5e", fontSize: 11, fontWeight: "bold" }}
-                stroke="#f43f5e"
+                label={{ value: `Max Limit: ${cfg.threshold} ${cfg.unit}`, fill: "#DC2626", fontSize: 11, fontWeight: "bold" }}
+                stroke="#DC2626"
                 strokeDasharray="4 4"
               />
               <Area
@@ -247,7 +244,7 @@ function SensorOutputGraph() {
             </AreaChart>
           </ResponsiveContainer>
         ) : (
-          <div className="h-full flex items-center justify-center text-slate-500 font-mono text-xs">
+          <div className="h-full flex items-center justify-center text-[#56635D] font-bold text-xs">
             Loading telemetry data stream...
           </div>
         )}
@@ -257,3 +254,4 @@ function SensorOutputGraph() {
 }
 
 export default SensorOutputGraph;
+

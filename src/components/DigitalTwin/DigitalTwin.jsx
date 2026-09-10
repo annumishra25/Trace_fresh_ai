@@ -1,5 +1,4 @@
 function DigitalTwin() {
-
   const devices = [
     "Camera",
     "SHT45",
@@ -12,40 +11,26 @@ function DigitalTwin() {
   ];
 
   return (
-    <div className="bg-white rounded-2xl shadow-md p-6">
-
-      <h2 className="text-2xl font-bold mb-5">
+    <div className="bg-white border border-[#DDE4DF] rounded-2xl p-6 shadow-xs">
+      <h2 className="text-xl font-extrabold text-[#111715] mb-4 tracking-tight">
         Device Health Matrix
       </h2>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-
         {devices.map((device) => (
-
           <div
             key={device}
-            className="
-              bg-green-50
-              rounded-xl
-              p-4
-              text-center
-            "
+            className="bg-[#FAFBF8] border border-[#DDE4DF] rounded-xl p-4 text-center space-y-1"
           >
-
-            <div className="font-semibold">
+            <div className="font-extrabold text-[#111715] text-sm">
               {device}
             </div>
-
-            <div className="text-green-600">
+            <div className="text-xs font-extrabold text-[#064C3B]">
               ● Healthy
             </div>
-
           </div>
-
         ))}
-
       </div>
-
     </div>
   );
 }

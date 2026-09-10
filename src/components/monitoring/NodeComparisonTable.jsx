@@ -88,17 +88,17 @@ function NodeComparisonTable() {
   ];
 
   return (
-    <div className="bg-white dark:bg-[#0D2820] border border-[#DCE4DE] dark:border-[#23483D] rounded-2xl p-6 shadow-sm">
+    <div className="bg-white border border-[#DDE4DF] rounded-2xl p-6 shadow-xs">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
         <div>
-          <span className="text-xs font-bold px-2.5 py-1 bg-[#DDF2E8] text-[#063C2F] border border-[#16805F]/20 rounded-md inline-flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#16805F]" />
+          <span className="text-xs font-extrabold px-2.5 py-1 bg-[#E4F5EC] text-[#064C3B] border border-[#C3E9D5] rounded-md inline-flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#064C3B]" />
             Side-by-Side Node Diagnostics
           </span>
-          <h2 className="text-xl sm:text-2xl font-extrabold text-[#101513] dark:text-[#F4F7F2] mt-2 tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-extrabold text-[#111715] mt-2 tracking-tight">
             Multi-Node Environmental & Device Comparison
           </h2>
-          <p className="text-[#4E5B55] dark:text-[#AEBBB4] text-xs sm:text-sm mt-1 font-medium">
+          <p className="text-[#56635D] text-xs sm:text-sm mt-1 font-semibold">
             Real-time telemetry comparison between registered smart monitoring nodes
           </p>
         </div>
@@ -107,28 +107,28 @@ function NodeComparisonTable() {
       <div className="overflow-x-auto">
         <table className="w-full text-left text-sm border-collapse">
           <thead>
-            <tr className="border-b border-[#DCE4DE] dark:border-[#23483D] bg-[#F1F4EE] dark:bg-[#12342A] text-[#063C2F] dark:text-[#36B88A] font-bold text-xs uppercase tracking-wider">
+            <tr className="border-b border-[#DDE4DF] bg-[#FAFBF8] text-[#064C3B] font-extrabold text-xs uppercase tracking-wider">
               <th className="py-3.5 px-4 rounded-l-lg">Telemetry Metric</th>
               <th className="py-3.5 px-4 text-center">
-                <span className="bg-white dark:bg-[#0D2820] text-[#063C2F] dark:text-[#36B88A] border border-[#DCE4DE] dark:border-[#23483D] px-2.5 py-1 rounded-md mr-1.5 text-xs font-bold shadow-sm">TF-NODE-01</span>
-                <span className="text-[#78837D] dark:text-[#AEBBB4] text-xs font-medium lowercase">(Container A)</span>
+                <span className="bg-white text-[#064C3B] border border-[#DDE4DF] px-2.5 py-1 rounded-md mr-1.5 text-xs font-extrabold shadow-xs">TF-NODE-01</span>
+                <span className="text-[#56635D] text-xs font-bold lowercase">(Container A)</span>
               </th>
               <th className="py-3.5 px-4 text-center rounded-r-lg">
-                <span className="bg-white dark:bg-[#0D2820] text-[#063C2F] dark:text-[#36B88A] border border-[#DCE4DE] dark:border-[#23483D] px-2.5 py-1 rounded-md mr-1.5 text-xs font-bold shadow-sm">TF-NODE-02</span>
-                <span className="text-[#78837D] dark:text-[#AEBBB4] text-xs font-medium lowercase">(Container B)</span>
+                <span className="bg-white text-[#064C3B] border border-[#DDE4DF] px-2.5 py-1 rounded-md mr-1.5 text-xs font-extrabold shadow-xs">TF-NODE-02</span>
+                <span className="text-[#56635D] text-xs font-bold lowercase">(Container B)</span>
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#DCE4DE] dark:divide-[#23483D]">
+          <tbody className="divide-y divide-[#DDE4DF]">
             {metrics.map((m, idx) => (
-              <tr key={idx} className="hover:bg-[#F7F8F3] dark:hover:bg-[#12342A]/50 transition-colors">
-                <td className="py-3.5 px-4 font-semibold text-[#101513] dark:text-[#F4F7F2]">{m.label}</td>
-                <td className="py-3.5 px-4 text-center font-semibold text-[#101513] dark:text-[#F4F7F2]">
+              <tr key={idx} className="hover:bg-[#FAFBF8] transition-colors">
+                <td className="py-3.5 px-4 font-bold text-[#111715]">{m.label}</td>
+                <td className="py-3.5 px-4 text-center font-bold text-[#111715]">
                   {m.isStatus ? (
-                    <span className={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-semibold ${
+                    <span className={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-extrabold ${
                       m.val1 === "ONLINE" || m.val1 === "SIMULATED"
-                        ? "bg-[#DDF2E8] text-[#063C2F] border border-[#16805F]/20"
-                        : "bg-[#FEF3C7] text-[#92400E] border border-[#D97706]/20"
+                        ? "bg-[#E4F5EC] text-[#064C3B] border border-[#C3E9D5]"
+                        : "bg-[#FEF3C7] text-[#92400E] border border-[#FDE68A]"
                     }`}>
                       {m.val1}
                     </span>
@@ -136,12 +136,12 @@ function NodeComparisonTable() {
                     <span>{m.val1}</span>
                   )}
                 </td>
-                <td className="py-3.5 px-4 text-center font-semibold text-[#101513] dark:text-[#F4F7F2]">
+                <td className="py-3.5 px-4 text-center font-bold text-[#111715]">
                   {m.isStatus ? (
-                    <span className={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-semibold ${
+                    <span className={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-extrabold ${
                       m.val2 === "ONLINE" || m.val2 === "SIMULATED"
-                        ? "bg-[#DDF2E8] text-[#063C2F] border border-[#16805F]/20"
-                        : "bg-[#FEF3C7] text-[#92400E] border border-[#D97706]/20"
+                        ? "bg-[#E4F5EC] text-[#064C3B] border border-[#C3E9D5]"
+                        : "bg-[#FEF3C7] text-[#92400E] border border-[#FDE68A]"
                     }`}>
                       {m.val2}
                     </span>
