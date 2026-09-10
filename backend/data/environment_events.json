@@ -52678,5 +52678,77 @@
     "observedValue": 46.7,
     "reason": "Cargo temperature (46.7\u00b0C) exceeds maximum safe threshold (25.0\u00b0C)",
     "confidence": 0.95
+  },
+  {
+    "id": "ENV-4391",
+    "nodeId": "TF-NODE-01",
+    "shipmentId": "SHIP-APL-110",
+    "eventType": "SENSOR_QUALITY_DEGRADED",
+    "severity": "MEDIUM",
+    "timestamp": "2026-09-06T16:54:41.488Z",
+    "metric": "sensorQuality",
+    "observedValue": 65,
+    "reason": "Sensor quality degraded: Stale: Telemetry is 334427 seconds old (>120s timeout)",
+    "confidence": 0.65
+  },
+  {
+    "id": "ENV-4392",
+    "nodeId": "TF-NODE-01",
+    "shipmentId": "SHIP-APL-110",
+    "eventType": "HIGH_TEMPERATURE_EXCURSION",
+    "severity": "CRITICAL",
+    "timestamp": "2026-09-06T16:54:41.488Z",
+    "metric": "temperatureC",
+    "observedValue": 46.7,
+    "reason": "Cargo temperature (46.7\u00b0C) exceeds maximum safe threshold (25.0\u00b0C)",
+    "confidence": 0.95
+  },
+  {
+    "id": "ENV-4393",
+    "nodeId": "TF-NODE-01",
+    "shipmentId": "SHIP-APL-110",
+    "eventType": "SENSOR_QUALITY_DEGRADED",
+    "severity": "MEDIUM",
+    "timestamp": "2026-09-06T16:54:41.488Z",
+    "metric": "sensorQuality",
+    "observedValue": 65,
+    "reason": "Sensor quality degraded: Stale: Telemetry is 334427 seconds old (>120s timeout)",
+    "confidence": 0.65
+  },
+  {
+    "id": "ENV-4394",
+    "nodeId": "TF-NODE-01",
+    "shipmentId": "SHIP-APL-110",
+    "eventType": "HIGH_TEMPERATURE_EXCURSION",
+    "severity": "CRITICAL",
+    "timestamp": "2026-09-06T16:54:41.488Z",
+    "metric": "temperatureC",
+    "observedValue": 46.7,
+    "reason": "Cargo temperature (46.7\u00b0C) exceeds maximum safe threshold (25.0\u00b0C)",
+    "confidence": 0.95
+  },
+  {
+    "id": "ENV-4395",
+    "nodeId": "TF-NODE-01",
+    "shipmentId": "SHIP-APL-110",
+    "eventType": "SENSOR_QUALITY_DEGRADED",
+    "severity": "MEDIUM",
+    "timestamp": "2026-09-06T16:54:41.488Z",
+    "metric": "sensorQuality",
+    "observedValue": 65,
+    "reason": "Sensor quality degraded: Stale: Telemetry is 334430 seconds old (>120s timeout)",
+    "confidence": 0.65
+  },
+  {
+    "id": "ENV-4396",
+    "nodeId": "TF-NODE-01",
+    "shipmentId": "SHIP-APL-110",
+    "eventType": "HIGH_TEMPERATURE_EXCURSION",
+    "severity": "CRITICAL",
+    "timestamp": "2026-09-06T16:54:41.488Z",
+    "metric": "temperatureC",
+    "observedValue": 46.7,
+    "reason": "Cargo temperature (46.7\u00b0C) exceeds maximum safe threshold (25.0\u00b0C)",
+    "confidence": 0.95
   }
 ]

@@ -95,43 +95,41 @@ function BatchScanControl() {
   const current = scanResult || selectedBatch;
 
   return (
-    <div className="glass-card border border-slate-800/80 rounded-3xl p-6 md:p-8 space-y-6 bg-slate-900/80 backdrop-blur-xl shadow-2xl relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 opacity-80" />
-      
+    <div className="bg-white border border-[#DCE4DE] rounded-2xl p-6 md:p-8 space-y-6 shadow-sm relative overflow-hidden">
       <div className="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-5">
         <div>
           <div className="flex items-center gap-2 mb-3 flex-wrap">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-sm">
+            <span className="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold bg-[#DDF2E8] text-[#063C2F] border border-[#16805F]/20">
               TraceFresh Telemetry & Batch Pipeline
             </span>
 
             <button
               onClick={toggleMode}
-              className={`inline-flex items-center px-3.5 py-1 rounded-full text-xs font-bold border transition-all cursor-pointer shadow-sm ${
+              className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-bold border transition-all cursor-pointer ${
                 isLiveMode
-                  ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30 glow-emerald hover:bg-emerald-500/20"
-                  : "bg-amber-500/10 text-amber-400 border-amber-500/30 hover:bg-amber-500/20"
+                  ? "bg-[#DDF2E8] text-[#063C2F] border-[#16805F]/30"
+                  : "bg-[#FEF3C7] text-[#92400E] border-[#D97706]/30"
               }`}
             >
               ● {isLiveMode ? "LIVE TELEMETRY MODE" : "DEMO MODE (Static)"}
             </button>
           </div>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-100 tracking-tight">
+          <h2 className="text-2xl font-extrabold text-[#101513] tracking-tight">
             Push Smart Node Telemetry into Batch Passport
           </h2>
 
-          <p className="text-slate-400 mt-2 max-w-3xl text-sm leading-relaxed">
+          <p className="text-[#4E5B55] mt-1 max-w-3xl text-xs sm:text-sm font-medium leading-relaxed">
             Select a smart node device and shipment batch to stream telemetry into the TraceFresh data pipeline and update the digital food passport.
           </p>
         </div>
 
-        <div className="bg-slate-950/60 rounded-2xl px-4 py-3 min-w-[260px] border border-slate-800/80 shadow-inner">
-          <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Active Monitoring Node</p>
+        <div className="bg-[#F7F8F3] rounded-xl px-4 py-3 min-w-[260px] border border-[#DCE4DE]">
+          <p className="text-xs text-[#78837D] font-bold uppercase tracking-wider">Active Monitoring Node</p>
           <select
             value={selectedNodeId}
             onChange={(e) => setSelectedNodeId(e.target.value)}
-            className="w-full mt-2 rounded-xl border border-slate-800 px-3 py-2 text-sm font-semibold text-slate-100 bg-slate-900 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+            className="w-full mt-2 rounded-lg border border-[#DCE4DE] px-3 py-2 text-xs font-bold text-[#101513] bg-white outline-none focus:border-[#063C2F] transition-colors"
           >
             {nodes.map((n) => (
               <option key={n.nodeId} value={n.nodeId}>
@@ -144,13 +142,13 @@ function BatchScanControl() {
 
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
         <div className="xl:col-span-1">
-          <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+          <label className="block text-xs font-bold uppercase tracking-wider text-[#78837D] mb-2">
             Select Batch
           </label>
           <select
             value={selectedBatchId}
             onChange={(e) => setSelectedBatchId(e.target.value)}
-            className="w-full rounded-2xl border border-slate-800 bg-slate-950/70 text-slate-100 px-4 py-3 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm font-medium transition-colors"
+            className="w-full rounded-xl border border-[#DCE4DE] bg-white text-[#101513] px-4 py-3 outline-none focus:border-[#063C2F] text-xs font-semibold transition-colors"
           >
             {batches.map((batch) => (
               <option key={batch.batchId} value={batch.batchId}>
@@ -161,19 +159,19 @@ function BatchScanControl() {
         </div>
 
         <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+          <label className="block text-xs font-bold uppercase tracking-wider text-[#78837D] mb-2">
             Visual Classification Class
           </label>
           <input
             value={visualClass}
             onChange={(e) => setVisualClass(e.target.value)}
-            className="w-full rounded-2xl border border-slate-800 bg-slate-950/70 text-slate-100 px-4 py-3 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm font-medium transition-colors"
+            className="w-full rounded-xl border border-[#DCE4DE] bg-white text-[#101513] px-4 py-3 outline-none focus:border-[#063C2F] text-xs font-semibold transition-colors"
             placeholder="freshapple / freshbanana / freshorange"
           />
         </div>
 
         <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+          <label className="block text-xs font-bold uppercase tracking-wider text-[#78837D] mb-2">
             AI Model Confidence
           </label>
           <input
@@ -183,7 +181,7 @@ function BatchScanControl() {
             max="1"
             value={confidence}
             onChange={(e) => setConfidence(e.target.value)}
-            className="w-full rounded-2xl border border-slate-800 bg-slate-950/70 text-slate-100 px-4 py-3 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm font-medium transition-colors"
+            className="w-full rounded-xl border border-[#DCE4DE] bg-white text-[#101513] px-4 py-3 outline-none focus:border-[#063C2F] text-xs font-semibold transition-colors"
           />
         </div>
       </div>
@@ -210,21 +208,21 @@ function BatchScanControl() {
         </div>
       )}
 
-      <div className="bg-slate-950/70 rounded-3xl border border-slate-800/80 p-5 space-y-4 shadow-inner">
+      <div className="bg-[#F7F8F3] rounded-2xl border border-[#DCE4DE] p-5 space-y-4">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <h3 className="text-xl font-bold text-slate-100 tracking-tight">
+            <h3 className="text-lg font-extrabold text-[#101513] tracking-tight">
               Telemetry Ingestion & Inspection Snapshot
             </h3>
-            <p className="text-slate-400 text-xs mt-1">
-              Active telemetry payload from node <span className="font-semibold font-mono text-blue-400">{selectedNodeId}</span>
+            <p className="text-[#4E5B55] text-xs mt-1 font-medium">
+              Active telemetry payload from node <span className="font-bold text-[#063C2F]">{selectedNodeId}</span>
             </p>
           </div>
 
           <button
             onClick={inspectBatch}
             disabled={sensorData.inspecting}
-            className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs uppercase tracking-wider shadow-lg glow-purple disabled:opacity-60 transition-all cursor-pointer"
+            className="px-4 py-2 rounded-xl bg-[#063C2F] hover:bg-[#042E25] text-white font-bold text-xs uppercase tracking-wider disabled:opacity-60 transition-all cursor-pointer"
           >
             {sensorData.inspecting ? "Running AI Inspection..." : "Inspect Batch"}
           </button>
@@ -239,7 +237,7 @@ function BatchScanControl() {
             <MetricCard label="Gas" value={`${activeTelemetry.sensors.gas?.value ?? "--"} ppm`} />
           </div>
         ) : (
-          <div className="text-slate-400 text-sm py-2">
+          <div className="text-[#4E5B55] text-xs py-2 font-medium">
             No telemetry packet received from node {selectedNodeId} yet. Run the telemetry simulator or select another node.
           </div>
         )}
@@ -249,7 +247,7 @@ function BatchScanControl() {
         <button
           onClick={handleRunScan}
           disabled={ingesting}
-          className="px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm tracking-wide shadow-lg glow-emerald disabled:opacity-60 transition-all cursor-pointer flex-1 text-center"
+          className="px-6 py-3 rounded-xl bg-[#063C2F] hover:bg-[#042E25] text-white font-bold text-xs uppercase tracking-wider disabled:opacity-60 transition-all cursor-pointer flex-1 text-center"
         >
           {ingesting ? "Processing Telemetry Pipeline..." : "Ingest Telemetry into Batch Passport"}
         </button>
@@ -259,7 +257,7 @@ function BatchScanControl() {
             href={`/passport/${current.batchId}`}
             target="_blank"
             rel="noreferrer"
-            className="px-6 py-3.5 rounded-2xl bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700/80 font-bold text-sm text-center transition-all cursor-pointer shadow-md"
+            className="px-6 py-3 rounded-xl bg-[#F1F4EE] hover:bg-[#E8EEE7] text-[#063C2F] border border-[#DCE4DE] font-bold text-xs uppercase tracking-wider text-center transition-all cursor-pointer"
           >
             Open Batch Digital Passport
           </a>
@@ -267,19 +265,19 @@ function BatchScanControl() {
       </div>
 
       {errorMsg && (
-        <div className="rounded-2xl border border-red-500/30 bg-red-500/10 text-red-400 p-4 text-sm font-medium">
+        <div className="rounded-xl border border-[#DC2626]/30 bg-[#FEE2E2] text-[#991B1B] p-4 text-xs font-semibold">
           {errorMsg}
         </div>
       )}
 
       {scanResult && (
-        <div className="rounded-3xl border border-emerald-500/30 bg-emerald-950/30 p-6 space-y-4 shadow-xl">
+        <div className="rounded-2xl border border-[#16805F]/30 bg-[#DDF2E8] p-5 space-y-4">
           <div>
-            <h3 className="text-2xl font-bold text-slate-100 tracking-tight">
+            <h3 className="text-xl font-extrabold text-[#063C2F] tracking-tight">
               TraceFresh Scan & Telemetry Result
             </h3>
-            <p className="text-slate-400 text-sm mt-1">
-              Batch <span className="font-semibold font-mono text-emerald-400">{scanResult.batchId}</span> was updated from node telemetry.
+            <p className="text-[#063C2F] text-xs mt-1 font-medium">
+              Batch <span className="font-bold">{scanResult.batchId}</span> was updated from node telemetry.
             </p>
           </div>
 
@@ -299,28 +297,28 @@ function BatchScanControl() {
 
 function InfoCard({ label, value, subValue }) {
   return (
-    <div className="bg-slate-950/60 rounded-2xl p-4 border border-slate-800/80 shadow-inner">
-      <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{label}</p>
-      <p className="text-base font-bold text-slate-100 mt-1">{value}</p>
-      {subValue && <p className="text-xs font-mono text-slate-400 mt-0.5">{subValue}</p>}
+    <div className="bg-[#F7F8F3] rounded-xl p-4 border border-[#DCE4DE]">
+      <p className="text-xs font-bold text-[#78837D] uppercase tracking-wider">{label}</p>
+      <p className="text-sm font-extrabold text-[#101513] mt-1">{value}</p>
+      {subValue && <p className="text-xs font-semibold text-[#063C2F] mt-0.5">{subValue}</p>}
     </div>
   );
 }
 
 function MetricCard({ label, value }) {
   return (
-    <div className="bg-slate-900/90 rounded-2xl border border-slate-800/80 p-3.5 shadow-sm">
-      <p className="text-xs font-medium text-slate-400">{label}</p>
-      <p className="text-lg font-bold text-slate-100 mt-1 font-mono">{value}</p>
+    <div className="bg-white rounded-xl border border-[#DCE4DE] p-3 shadow-xs">
+      <p className="text-xs font-medium text-[#78837D]">{label}</p>
+      <p className="text-base font-bold text-[#101513] mt-1">{value}</p>
     </div>
   );
 }
 
 function ResultCard({ label, value }) {
   return (
-    <div className="bg-slate-900/90 rounded-2xl border border-slate-800/80 p-3.5 shadow-sm">
-      <p className="text-xs font-medium text-slate-400">{label}</p>
-      <p className="text-lg font-bold text-emerald-400 mt-1 font-mono">{value ?? "N/A"}</p>
+    <div className="bg-white rounded-xl border border-[#16805F]/20 p-3 shadow-xs">
+      <p className="text-xs font-semibold text-[#063C2F]">{label}</p>
+      <p className="text-base font-extrabold text-[#063C2F] mt-1">{value ?? "N/A"}</p>
     </div>
   );
 }

@@ -3230,5 +3230,21 @@
     "fusionStatus": "ATTENTION_REQUIRED",
     "overallRiskScore": 25.5,
     "freshnessIndex": 74
+  },
+  {
+    "eventId": "FUS-EVT-0405",
+    "batchId": "TF-APL-2026-001",
+    "timestamp": "2026-09-10T13:48:29.101782+00:00",
+    "fusionStatus": "ATTENTION_REQUIRED",
+    "overallRiskScore": 25.5,
+    "freshnessIndex": 74
+  },
+  {
+    "eventId": "FUS-EVT-0406",
+    "batchId": "TF-APL-2026-001",
+    "timestamp": "2026-09-10T13:48:32.017732+00:00",
+    "fusionStatus": "ATTENTION_REQUIRED",
+    "overallRiskScore": 25.5,
+    "freshnessIndex": 74
   }
 ]

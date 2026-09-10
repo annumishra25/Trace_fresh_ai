@@ -5,10 +5,9 @@ function StatusCard() {
 
   if (!activeBatch) {
     return (
-      <div className="glass-card border border-slate-800/80 rounded-3xl p-6 bg-slate-900/80 backdrop-blur-xl shadow-2xl relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 opacity-80" />
-        <h2 className="text-xl font-bold text-slate-100 mb-4 tracking-tight">Current System Status</h2>
-        <p className="text-slate-400 text-sm">No active batch selected.</p>
+      <div className="bg-white border border-[#DCE4DE] rounded-2xl p-6 shadow-sm relative overflow-hidden">
+        <h2 className="text-xl font-extrabold text-[#101513] mb-4 tracking-tight">Current System Status</h2>
+        <p className="text-[#4E5B55] text-xs font-medium">No active batch selected.</p>
       </div>
     );
   }
@@ -22,63 +21,61 @@ function StatusCard() {
 
   const statusBadgeStyle =
     status === "VERIFIED FRESH"
-      ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 glow-emerald"
+      ? "bg-[#DDF2E8] text-[#063C2F] border border-[#16805F]/30"
       : status === "MONITOR"
-      ? "bg-amber-500/10 text-amber-400 border border-amber-500/30"
-      : "bg-rose-500/10 text-rose-400 border border-rose-500/30 glow-rose";
+      ? "bg-[#FEF3C7] text-[#92400E] border border-[#D97706]/30"
+      : "bg-[#FEE2E2] text-[#991B1B] border border-[#DC2626]/30";
 
   return (
-    <div className="glass-card border border-slate-800/80 rounded-3xl p-6 bg-slate-900/80 backdrop-blur-xl shadow-2xl relative overflow-hidden space-y-4">
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 opacity-80" />
+    <div className="bg-white border border-[#DCE4DE] rounded-2xl p-6 shadow-sm space-y-4 relative overflow-hidden">
+      <h2 className="text-xl font-extrabold text-[#101513] tracking-tight">Current Batch Status</h2>
 
-      <h2 className="text-xl font-bold text-slate-100 tracking-tight">Current Batch Status</h2>
-
-      <div className={`rounded-2xl p-4 shadow-inner ${statusBadgeStyle}`}>
+      <div className={`rounded-xl p-4 ${statusBadgeStyle}`}>
         <div className="text-xs uppercase tracking-wider font-bold opacity-80">Overall Batch Status</div>
-        <div className="text-2xl font-black tracking-tight mt-0.5">{status}</div>
+        <div className="text-2xl font-extrabold tracking-tight mt-0.5">{status}</div>
       </div>
 
-      <div className="space-y-2.5 text-xs">
-        <div className="flex justify-between items-center py-1 border-b border-slate-800/60">
-          <span className="text-slate-400 font-medium">Risk Level</span>
-          <span className="font-bold text-slate-100 font-mono">{riskLevel}</span>
+      <div className="space-y-2 text-xs">
+        <div className="flex justify-between items-center py-1.5 border-b border-[#E8EEE7]">
+          <span className="text-[#78837D] font-semibold">Risk Level</span>
+          <span className="font-bold text-[#101513]">{riskLevel}</span>
         </div>
 
-        <div className="flex justify-between items-center py-1 border-b border-slate-800/60">
-          <span className="text-slate-400 font-medium">Freshness Score</span>
-          <span className="font-bold text-emerald-400 font-mono text-sm">
+        <div className="flex justify-between items-center py-1.5 border-b border-[#E8EEE7]">
+          <span className="text-[#78837D] font-semibold">Freshness Score</span>
+          <span className="font-extrabold text-[#063C2F] text-sm">
             {assessment.freshnessScore ?? "N/A"}
           </span>
         </div>
 
-        <div className="flex justify-between items-center py-1 border-b border-slate-800/60">
-          <span className="text-slate-400 font-medium">Spoilage Risk</span>
-          <span className="font-bold text-amber-400 font-mono text-sm">
+        <div className="flex justify-between items-center py-1.5 border-b border-[#E8EEE7]">
+          <span className="text-[#78837D] font-semibold">Spoilage Risk</span>
+          <span className="font-bold text-[#D97706] text-sm">
             {assessment.spoilageRisk ?? "N/A"}%
           </span>
         </div>
 
-        <div className="flex justify-between items-center py-1 border-b border-slate-800/60">
-          <span className="text-slate-400 font-medium">Suspicious Pattern</span>
+        <div className="flex justify-between items-center py-1.5 border-b border-[#E8EEE7]">
+          <span className="text-[#78837D] font-semibold">Suspicious Pattern</span>
           <span
             className={
-              suspicious ? "text-rose-400 font-bold" : "text-emerald-400 font-bold"
+              suspicious ? "text-[#DC2626] font-bold" : "text-[#063C2F] font-bold"
             }
           >
             {suspicious ? "Flagged" : "Not Detected"}
           </span>
         </div>
 
-        <div className="flex justify-between items-center py-1 border-b border-slate-800/60">
-          <span className="text-slate-400 font-medium">Storage Condition</span>
-          <span className="font-semibold text-slate-200">
+        <div className="flex justify-between items-center py-1.5 border-b border-[#E8EEE7]">
+          <span className="text-[#78837D] font-semibold">Storage Condition</span>
+          <span className="font-bold text-[#101513]">
             {activeBatch.latestSensors?.storageCondition || "--"}
           </span>
         </div>
 
-        <div className="flex justify-between items-center py-1">
-          <span className="text-slate-400 font-medium">Last Update</span>
-          <span className="font-mono text-slate-300">
+        <div className="flex justify-between items-center py-1.5">
+          <span className="text-[#78837D] font-semibold">Last Update</span>
+          <span className="font-medium text-[#4E5B55]">
             {lastUpdated ? new Date(lastUpdated).toLocaleString() : "--"}
           </span>
         </div>

@@ -7,12 +7,11 @@ function PredictionCard() {
 
   if (!inspection) {
     return (
-      <div className="glass-card border border-slate-800/80 rounded-3xl p-6 bg-slate-900/80 backdrop-blur-xl shadow-2xl relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 opacity-80" />
-        <h2 className="text-xl font-bold text-slate-100 mb-4 tracking-tight">AI Prediction</h2>
+      <div className="bg-white border border-[#DCE4DE] rounded-2xl p-6 shadow-sm relative overflow-hidden">
+        <h2 className="text-xl font-extrabold text-[#101513] mb-4 tracking-tight">AI Prediction</h2>
 
-        <div className="h-40 flex items-center justify-center rounded-2xl border-2 border-dashed border-slate-800 bg-slate-950/60 text-slate-400 text-sm">
-          Click <strong className="mx-1 text-slate-200">Inspect Batch</strong> to run AI analysis.
+        <div className="h-40 flex items-center justify-center rounded-xl border-2 border-dashed border-[#DCE4DE] bg-[#F7F8F3] text-[#4E5B55] text-xs font-medium">
+          Click <strong className="mx-1 text-[#063C2F]">Inspect Batch</strong> to run AI analysis.
         </div>
       </div>
     );
@@ -23,19 +22,17 @@ function PredictionCard() {
   const isFresh = prediction.toLowerCase().includes("fresh");
 
   return (
-    <div className="glass-card border border-slate-800/80 rounded-3xl p-6 bg-slate-900/80 backdrop-blur-xl shadow-2xl relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 opacity-80" />
-
+    <div className="bg-white border border-[#DCE4DE] rounded-2xl p-6 shadow-sm relative overflow-hidden">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-bold text-slate-100 tracking-tight">
+        <h2 className="text-xl font-extrabold text-[#101513] tracking-tight">
           AI Prediction
         </h2>
 
         <span
-          className={`text-xs font-black px-3 py-1 rounded-full border shadow-md uppercase tracking-wider ${
+          className={`text-xs font-bold px-3 py-1 rounded-md border uppercase tracking-wider ${
             isFresh
-              ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30 glow-emerald"
-              : "bg-rose-500/10 text-rose-400 border-rose-500/30 glow-rose"
+              ? "bg-[#DDF2E8] text-[#063C2F] border-[#16805F]/20"
+              : "bg-[#FEE2E2] text-[#991B1B] border-[#DC2626]/20"
           }`}
         >
           {isFresh ? "FRESH" : "ROTTEN"}
@@ -43,32 +40,32 @@ function PredictionCard() {
       </div>
 
       <div className="space-y-3">
-        <div className="bg-slate-950/60 p-4 rounded-2xl border border-slate-800/80 flex items-center justify-between">
-          <span className="text-xs uppercase font-bold text-slate-400 tracking-wider">Classification</span>
-          <span className="text-base font-extrabold text-slate-100 font-mono">{prediction}</span>
+        <div className="bg-[#F7F8F3] p-4 rounded-xl border border-[#DCE4DE] flex items-center justify-between">
+          <span className="text-xs uppercase font-semibold text-[#78837D] tracking-wider">Classification</span>
+          <span className="text-base font-extrabold text-[#101513]">{prediction}</span>
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          <div className="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
-            <span className="text-[11px] font-semibold text-slate-400 block">Confidence</span>
-            <span className="text-lg font-bold text-blue-400 font-mono mt-0.5 block">{confidence.toFixed(2)}%</span>
+          <div className="bg-[#F7F8F3] p-3 rounded-xl border border-[#DCE4DE]">
+            <span className="text-xs font-medium text-[#78837D] block">Confidence</span>
+            <span className="text-lg font-extrabold text-[#063C2F] mt-0.5 block">{confidence.toFixed(2)}%</span>
           </div>
 
-          <div className="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
-            <span className="text-[11px] font-semibold text-slate-400 block">Fruit Type</span>
-            <span className="text-lg font-bold text-slate-200 capitalize mt-0.5 block">{sensorData.fruitType}</span>
+          <div className="bg-[#F7F8F3] p-3 rounded-xl border border-[#DCE4DE]">
+            <span className="text-xs font-medium text-[#78837D] block">Fruit Type</span>
+            <span className="text-lg font-extrabold text-[#101513] capitalize mt-0.5 block">{sensorData.fruitType}</span>
           </div>
         </div>
 
         <div className="space-y-2 text-xs pt-2">
-          <div className="flex justify-between items-center py-1 border-b border-slate-800/60">
-            <span className="text-slate-400">Batch ID</span>
-            <span className="font-mono text-slate-200 font-semibold">{sensorData.batchId}</span>
+          <div className="flex justify-between items-center py-1.5 border-b border-[#E8EEE7]">
+            <span className="text-[#78837D] font-medium">Batch ID</span>
+            <span className="font-bold text-[#101513]">{sensorData.batchId}</span>
           </div>
 
-          <div className="flex justify-between items-center py-1">
-            <span className="text-slate-400">Captured At</span>
-            <span className="font-mono text-slate-300">{inspection.capture.timestamp}</span>
+          <div className="flex justify-between items-center py-1.5">
+            <span className="text-[#78837D] font-medium">Captured At</span>
+            <span className="font-semibold text-[#4E5B55]">{inspection.capture.timestamp}</span>
           </div>
         </div>
       </div>

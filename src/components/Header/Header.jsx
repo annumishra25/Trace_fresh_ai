@@ -7,35 +7,35 @@ function Header() {
   const getRoleBadge = (r) => {
     switch (r) {
       case "ADMIN":
-        return "bg-emerald-400 text-slate-950";
+        return "bg-[#DDF2E8] text-[#063C2F] border border-[#16805F]/30";
       case "OPERATOR":
-        return "bg-sky-400 text-slate-950";
+        return "bg-[#E0F2FE] text-[#0369A1] border border-[#0284C7]/30";
       default:
-        return "bg-slate-300 text-slate-900";
+        return "bg-[#F1F4EE] text-[#4E5B55] border border-[#DCE4DE]";
     }
   };
 
   return (
-    <div className="bg-slate-900 text-white px-6 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800">
+    <div className="bg-white text-[#101513] px-6 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#DCE4DE] shadow-sm">
       <div>
         <div className="flex items-center gap-2">
-          <h1 className="text-2xl font-black tracking-tight text-white">TraceFresh AI</h1>
-          <span className="text-[10px] font-mono font-bold bg-slate-800 text-emerald-400 px-2 py-0.5 rounded border border-slate-700">
-            Step 9 Hardened
+          <h1 className="text-2xl font-extrabold tracking-tight text-[#063C2F]">TraceFresh AI</h1>
+          <span className="text-[10px] font-mono font-bold bg-[#DDF2E8] text-[#063C2F] px-2.5 py-0.5 rounded-full border border-[#16805F]/20">
+            Step 9 Enterprise
           </span>
         </div>
-        <p className="text-xs text-slate-400 mt-0.5">
+        <p className="text-xs text-[#4E5B55] mt-0.5 font-medium">
           AI-Powered Food Supply-Chain Monitoring & Digital Product Passport Platform
         </p>
       </div>
 
       {isAuthenticated && (
-        <div className="flex items-center gap-3 bg-slate-950 px-4 py-2 rounded-2xl border border-slate-800">
+        <div className="flex items-center gap-3 bg-[#F7F8F3] px-4 py-2 rounded-2xl border border-[#DCE4DE]">
           <div className="flex items-center gap-2">
-            <UserCheck size={16} className="text-emerald-400" />
+            <UserCheck size={16} className="text-[#063C2F]" />
             <div className="text-left">
-              <div className="text-xs font-bold text-slate-200">{user?.username}</div>
-              <span className={`text-[9px] font-black px-1.5 py-0.2 rounded uppercase ${getRoleBadge(role)}`}>
+              <div className="text-xs font-bold text-[#101513]">{user?.username}</div>
+              <span className={`text-[9px] font-black px-2 py-0.5 rounded-full uppercase ${getRoleBadge(role)}`}>
                 {role}
               </span>
             </div>
@@ -43,7 +43,7 @@ function Header() {
 
           <button
             onClick={logout}
-            className="p-1.5 text-slate-400 hover:text-rose-400 bg-slate-900 hover:bg-slate-800 rounded-xl border border-slate-800 transition-colors ml-2"
+            className="p-2 text-[#4E5B55] hover:text-[#DC2626] bg-white hover:bg-[#FEE2E2] rounded-xl border border-[#DCE4DE] transition-colors ml-2 shadow-xs"
             title="Log out"
           >
             <LogOut size={16} />

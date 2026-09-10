@@ -140,34 +140,32 @@ function EnvironmentalExposureCard() {
   };
 
   return (
-    <div className="glass-card border border-slate-800/80 rounded-3xl p-6 md:p-8 space-y-6 bg-slate-900/80 backdrop-blur-xl shadow-2xl relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 opacity-80" />
-
+    <div className="bg-white border border-[#DCE4DE] rounded-2xl p-6 md:p-8 space-y-6 shadow-sm relative overflow-hidden">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b pb-4 border-slate-800/80">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b pb-4 border-[#DCE4DE]">
         <div>
           <div className="flex items-center gap-2">
-            <h3 className="text-xl font-bold text-slate-100 tracking-tight">
+            <h3 className="text-xl font-extrabold text-[#101513] tracking-tight">
               Environmental Exposure & Sensor ML Engine
             </h3>
-            <span className="text-[10px] font-bold bg-slate-800 text-blue-400 px-2 py-0.5 rounded border border-slate-700 font-mono">
+            <span className="text-[10px] font-bold bg-[#F1F4EE] text-[#063C2F] px-2 py-0.5 rounded border border-[#DCE4DE]">
               v{modelMeta.version || "0.1.0"} ({modelMeta.type || "PROTOTYPE"})
             </span>
           </div>
-          <p className="text-xs text-slate-300 mt-1">
+          <p className="text-xs text-[#4E5B55] mt-1 font-medium">
             Real-time Exposure Metrics, Signal Diagnostics & Explainable Risk Inference ({selectedNodeId})
           </p>
         </div>
 
         <div className="flex items-center gap-2">
-          <span className={`px-3 py-1 rounded-full text-xs font-extrabold uppercase border shadow-sm ${
-            envStatus === "CRITICAL_RISK" ? "bg-rose-500/10 text-rose-400 border-rose-500/30 glow-rose" :
-            envStatus === "SUBOPTIMAL" ? "bg-amber-500/10 text-amber-400 border-amber-500/30" :
-            "bg-emerald-500/10 text-emerald-400 border-emerald-500/30 glow-emerald"
+          <span className={`px-3 py-1 rounded-md text-xs font-bold uppercase border ${
+            envStatus === "CRITICAL_RISK" ? "bg-[#FEE2E2] text-[#991B1B] border-[#DC2626]/20" :
+            envStatus === "SUBOPTIMAL" ? "bg-[#FEF3C7] text-[#92400E] border-[#D97706]/20" :
+            "bg-[#DDF2E8] text-[#063C2F] border-[#16805F]/20"
           }`}>
             {envStatus.replace("_", " ")}
           </span>
-          <span className="px-3 py-1 rounded-full text-xs font-extrabold border bg-slate-800/80 text-slate-200 border-slate-700">
+          <span className="px-3 py-1 rounded-md text-xs font-bold border bg-[#F1F4EE] text-[#101513] border-[#DCE4DE]">
             Signal: {quality.qualityScore}% ({quality.status})
           </span>
         </div>
@@ -176,46 +174,46 @@ function EnvironmentalExposureCard() {
       {/* Environmental Risk Gauge & Contributors */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Risk Score Display */}
-        <div className="bg-slate-950/80 rounded-2xl p-5 border border-slate-800/80 shadow-inner flex flex-col justify-between">
+        <div className="bg-[#F7F8F3] rounded-xl p-5 border border-[#DCE4DE] flex flex-col justify-between">
           <div>
-            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-300">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#78837D]">
               Environmental Risk Index
             </span>
             <div className="flex items-baseline gap-2 mt-2">
-              <span className={`text-5xl font-extrabold font-mono tracking-tight ${
-                riskScore >= 60 ? "text-rose-400" : riskScore >= 35 ? "text-amber-400" : "text-emerald-400"
+              <span className={`text-4xl font-extrabold tracking-tight ${
+                riskScore >= 60 ? "text-[#DC2626]" : riskScore >= 35 ? "text-[#D97706]" : "text-[#063C2F]"
               }`}>
                 {riskScore}
               </span>
-              <span className="text-slate-300 text-sm font-semibold">/ 100</span>
+              <span className="text-[#78837D] text-xs font-semibold">/ 100</span>
             </div>
           </div>
 
-          <div className="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-300 flex items-center justify-between font-mono">
+          <div className="mt-4 pt-3 border-t border-[#DCE4DE] text-xs text-[#4E5B55] flex items-center justify-between font-medium">
             <span>Model Confidence:</span>
-            <span className="font-bold text-slate-100">
+            <span className="font-bold text-[#101513]">
               {intel?.modelAssessment?.confidence ? `${Math.round(intel.modelAssessment.confidence * 100)}%` : "95%"}
             </span>
           </div>
         </div>
 
         {/* Explainable Contributors */}
-        <div className="md:col-span-2 bg-slate-950/70 rounded-2xl p-5 border border-slate-800/80 flex flex-col justify-between shadow-inner">
+        <div className="md:col-span-2 bg-[#F7F8F3] rounded-xl p-5 border border-[#DCE4DE] flex flex-col justify-between">
           <div>
-            <h4 className="font-bold text-slate-100 text-sm mb-2 flex items-center gap-1.5">
+            <h4 className="font-extrabold text-[#101513] text-sm mb-2 flex items-center gap-1.5">
               <span>🔍 Explainable Risk Contributors</span>
             </h4>
             <ul className="space-y-1.5">
               {factors.map((factor, idx) => (
-                <li key={idx} className="text-xs text-slate-200 flex items-start gap-2">
-                  <span className="text-amber-400 font-bold">•</span>
+                <li key={idx} className="text-xs text-[#101513] font-semibold flex items-start gap-2">
+                  <span className="text-[#063C2F] font-bold">•</span>
                   <span>{factor}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="text-[11px] text-slate-300 mt-3 pt-2 border-t border-slate-800 font-mono italic">
+          <div className="text-[11px] text-[#78837D] mt-3 pt-2 border-t border-[#DCE4DE] font-medium italic">
             * Decision-support exposure intelligence based on localized sensor bounds.
           </div>
         </div>
@@ -223,47 +221,47 @@ function EnvironmentalExposureCard() {
 
       {/* Cumulative Exposure Metrics Grid */}
       <div>
-        <h4 className="font-bold text-slate-100 text-sm mb-3">
+        <h4 className="font-extrabold text-[#101513] text-sm mb-3">
           Cumulative Exposure Breakdown
         </h4>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-slate-950/60 p-4 rounded-2xl border border-slate-800/80 space-y-1">
-            <p className="text-xs text-slate-300 font-semibold uppercase tracking-wider">Temp Above 25°C</p>
-            <p className="text-xl font-bold text-slate-100 font-mono">
-              {tempExp.aboveThresholdMinutes ?? 0} <span className="text-xs text-slate-400 font-normal">min</span>
+          <div className="bg-[#F7F8F3] p-4 rounded-xl border border-[#DCE4DE] space-y-1">
+            <p className="text-xs text-[#78837D] font-bold uppercase tracking-wider">Temp Above 25°C</p>
+            <p className="text-xl font-extrabold text-[#101513]">
+              {tempExp.aboveThresholdMinutes ?? 0} <span className="text-xs text-[#78837D] font-normal">min</span>
             </p>
-            <p className="text-[11px] text-slate-300 font-mono">
+            <p className="text-xs text-[#4E5B55] font-medium">
               Max Deviation: +{tempExp.maxDeviationC ?? 0}°C
             </p>
           </div>
 
-          <div className="bg-slate-950/60 p-4 rounded-2xl border border-slate-800/80 space-y-1">
-            <p className="text-xs text-slate-300 font-semibold uppercase tracking-wider">Thermal Excursions</p>
-            <p className="text-xl font-bold text-slate-100 font-mono">
-              {tempExp.excursionCount ?? 0} <span className="text-xs text-slate-400 font-normal">events</span>
+          <div className="bg-[#F7F8F3] p-4 rounded-xl border border-[#DCE4DE] space-y-1">
+            <p className="text-xs text-[#78837D] font-bold uppercase tracking-wider">Thermal Excursions</p>
+            <p className="text-xl font-extrabold text-[#101513]">
+              {tempExp.excursionCount ?? 0} <span className="text-xs text-[#78837D] font-normal">events</span>
             </p>
-            <p className="text-[11px] text-slate-300 font-mono">
+            <p className="text-xs text-[#4E5B55] font-medium">
               Cum. Degree-Hrs: {tempExp.cumulativeDeviationDegreeHours ?? 0}°C·h
             </p>
           </div>
 
-          <div className="bg-slate-950/60 p-4 rounded-2xl border border-slate-800/80 space-y-1">
-            <p className="text-xs text-slate-300 font-semibold uppercase tracking-wider">Humidity (&gt; 75%) Duration</p>
-            <p className="text-xl font-bold text-slate-100 font-mono">
-              {humExp.highHumidityMinutes ?? 0} <span className="text-xs text-slate-400 font-normal">min</span>
+          <div className="bg-[#F7F8F3] p-4 rounded-xl border border-[#DCE4DE] space-y-1">
+            <p className="text-xs text-[#78837D] font-bold uppercase tracking-wider">Humidity (&gt; 75%) Duration</p>
+            <p className="text-xl font-extrabold text-[#101513]">
+              {humExp.highHumidityMinutes ?? 0} <span className="text-xs text-[#78837D] font-normal">min</span>
             </p>
-            <p className="text-[11px] text-slate-300 font-mono">
+            <p className="text-xs text-[#4E5B55] font-medium">
               Excursions: {humExp.excursionCount ?? 0}
             </p>
           </div>
 
-          <div className="bg-slate-950/60 p-4 rounded-2xl border border-slate-800/80 space-y-1">
-            <p className="text-xs text-slate-300 font-semibold uppercase tracking-wider">Spoilage Gas Peak Signal</p>
-            <p className="text-xl font-bold text-slate-100 font-mono">
-              {gasExp.peakGasPpm ?? 0} <span className="text-xs text-slate-400 font-normal">ppm</span>
+          <div className="bg-[#F7F8F3] p-4 rounded-xl border border-[#DCE4DE] space-y-1">
+            <p className="text-xs text-[#78837D] font-bold uppercase tracking-wider">Spoilage Gas Peak Signal</p>
+            <p className="text-xl font-extrabold text-[#101513]">
+              {gasExp.peakGasPpm ?? 0} <span className="text-xs text-[#78837D] font-normal">ppm</span>
             </p>
-            <p className="text-[11px] text-slate-300 font-mono">
+            <p className="text-xs text-[#4E5B55] font-medium">
               Avg: {gasExp.averageGasPpm ?? 0} ppm
             </p>
           </div>
@@ -272,12 +270,12 @@ function EnvironmentalExposureCard() {
 
       {/* Live Anomaly Feed */}
       <div>
-        <h4 className="font-bold text-slate-100 text-sm mb-3">
+        <h4 className="font-extrabold text-[#101513] text-sm mb-3">
           Live Sensor Anomalies ({anomalies.length})
         </h4>
 
         {anomalies.length === 0 ? (
-          <div className="bg-emerald-500/10 border border-emerald-500/30 p-4 rounded-2xl text-emerald-300 text-xs font-semibold glow-emerald">
+          <div className="bg-[#DDF2E8] border border-[#16805F]/30 p-4 rounded-xl text-[#063C2F] text-xs font-bold">
             ✓ No environmental anomalies or sensor quality issues detected for {selectedNodeId}.
           </div>
         ) : (
@@ -285,27 +283,27 @@ function EnvironmentalExposureCard() {
             {anomalies.map((a, idx) => (
               <div
                 key={idx}
-                className={`p-3.5 rounded-2xl border text-xs flex flex-col md:flex-row md:items-center justify-between gap-2 shadow-sm ${
+                className={`p-3.5 rounded-xl border text-xs flex flex-col md:flex-row md:items-center justify-between gap-2 ${
                   a.severity === "CRITICAL"
-                    ? "bg-rose-950/40 border-rose-500/40 text-rose-200"
+                    ? "bg-[#FEE2E2] border-[#DC2626]/30 text-[#991B1B]"
                     : a.severity === "HIGH"
-                    ? "bg-amber-950/40 border-amber-500/40 text-amber-200"
-                    : "bg-blue-950/40 border-blue-500/40 text-blue-200"
+                    ? "bg-[#FEF3C7] border-[#D97706]/30 text-[#92400E]"
+                    : "bg-[#F1F4EE] border-[#DCE4DE] text-[#101513]"
                 }`}
               >
                 <div className="space-y-0.5">
                   <div className="flex items-center gap-2">
-                    <span className="font-bold uppercase text-[10px] bg-slate-900 px-2 py-0.5 rounded border border-slate-700 text-slate-100">
+                    <span className="font-bold uppercase text-[10px] bg-white px-2 py-0.5 rounded border border-[#DCE4DE] text-[#101513]">
                       {a.type}
                     </span>
-                    <span className="font-semibold text-slate-100">{a.reason}</span>
+                    <span className="font-bold">{a.reason}</span>
                   </div>
-                  <p className="text-[11px] opacity-80 font-mono text-slate-300">
+                  <p className="text-xs opacity-90 font-medium">
                     Observed: {a.observedValue} | Metric: {a.metric} | Confidence: {Math.round((a.confidence || 0.9) * 100)}%
                   </p>
                 </div>
 
-                <span className="font-mono text-[10px] text-slate-300">
+                <span className="text-xs font-semibold">
                   {new Date(a.timestamp).toLocaleTimeString()}
                 </span>
               </div>
