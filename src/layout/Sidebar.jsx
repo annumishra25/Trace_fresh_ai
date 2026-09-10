@@ -18,10 +18,10 @@ function Sidebar() {
   const { selectedNodeId, isLiveMode } = useTelemetry();
 
   const menuClass = ({ isActive }) =>
-    `flex items-center gap-3 px-3.5 py-2.5 text-xs font-semibold transition-all duration-150 cursor-pointer ${
+    `flex items-center gap-3 px-3.5 py-2.5 text-xs font-bold transition-all duration-150 cursor-pointer ${
       isActive
-        ? "bg-[#E4F5EC] text-[#064C3B] font-bold border-l-4 border-[#064C3B] rounded-r-lg"
-        : "text-[#56635D] hover:text-[#111715] hover:bg-[#F4F7F4] rounded-lg"
+        ? "bg-[#E4F5EC] text-[#064C3B] font-extrabold border-l-4 border-[#064C3B] rounded-r-lg shadow-xs"
+        : "text-[#111715] hover:text-[#064C3B] hover:bg-[#F4F7F4] rounded-lg"
     }`;
 
   return (
@@ -38,7 +38,7 @@ function Sidebar() {
               <h1 className="text-base font-extrabold tracking-tight text-[#064C3B]">
                 TRACEFRESH
               </h1>
-              <p className="text-[10px] text-[#56635D] font-mono font-bold uppercase tracking-wider">
+              <p className="text-[10px] text-[#064C3B] font-mono font-bold uppercase tracking-wider">
                 FOOD SUPPLY-CHAIN AI
               </p>
             </div>
@@ -48,71 +48,71 @@ function Sidebar() {
         {/* Primary Navigation Sections */}
         <div className="p-3.5 space-y-6">
           <div>
-            <p className="px-3 text-[10px] font-mono font-bold uppercase text-[#78837D] tracking-wider mb-2">
+            <p className="px-3 text-[10px] font-mono font-extrabold uppercase text-[#064C3B] tracking-wider mb-2">
               Monitoring & Intelligence
             </p>
             <div className="space-y-1">
               <NavLink to="/" className={menuClass}>
-                <LayoutDashboard size={17} />
+                <LayoutDashboard size={17} className="text-[#064C3B]" />
                 Overview Dashboard
               </NavLink>
 
               <NavLink to="/monitoring" className={menuClass}>
-                <Camera size={17} />
+                <Camera size={17} className="text-[#064C3B]" />
                 Multi-Node Console
               </NavLink>
 
               <NavLink to="/analytics" className={menuClass}>
-                <BarChart3 size={17} />
+                <BarChart3 size={17} className="text-[#064C3B]" />
                 Analytics & ML
               </NavLink>
 
               <NavLink to="/traceability" className={menuClass}>
-                <Package size={17} />
+                <Package size={17} className="text-[#064C3B]" />
                 Batch Traceability
               </NavLink>
             </div>
           </div>
 
           <div>
-            <p className="px-3 text-[10px] font-mono font-bold uppercase text-[#78837D] tracking-wider mb-2">
+            <p className="px-3 text-[10px] font-mono font-extrabold uppercase text-[#064C3B] tracking-wider mb-2">
               Logistics & Portals
             </p>
             <div className="space-y-1">
               <NavLink to="/consumer" className={menuClass}>
-                <QrCode size={17} />
+                <QrCode size={17} className="text-[#064C3B]" />
                 Consumer Passport
               </NavLink>
 
               <NavLink to="/logistics" className={menuClass}>
-                <Truck size={17} />
+                <Truck size={17} className="text-[#064C3B]" />
                 Route & Fleet
               </NavLink>
 
               <NavLink to="/warehouse" className={menuClass}>
-                <Warehouse size={17} />
+                <Warehouse size={17} className="text-[#064C3B]" />
                 Digital Twin Hub
               </NavLink>
 
               <NavLink to="/qrcode" className={menuClass}>
-                <QrCode size={17} />
+                <QrCode size={17} className="text-[#064C3B]" />
                 QR Center
               </NavLink>
             </div>
           </div>
 
           <div>
-            <p className="px-3 text-[10px] font-mono font-bold uppercase text-[#78837D] tracking-wider mb-2">
+            <p className="px-3 text-[10px] font-mono font-extrabold uppercase text-[#064C3B] tracking-wider mb-2">
               Hardware & Settings
             </p>
             <div className="space-y-1">
               <NavLink to="/devices" className={menuClass}>
-                <Cpu size={17} />
+                <Cpu size={17} className="text-[#064C3B]" />
                 Smart Nodes
               </NavLink>
 
               <NavLink to="/settings" className={menuClass}>
-                <Settings size={17} />
+                <Settings size={17} className="text-[#064C3B]" />
                 Platform Config
               </NavLink>
             </div>
@@ -126,21 +126,21 @@ function Sidebar() {
           <div className="flex items-center gap-2">
             <Radio size={14} className="text-[#064C3B]" />
             <div>
-              <div className="text-[11px] font-bold text-[#111715]">
+              <div className="text-[11px] font-extrabold text-[#111715]">
                 {selectedNodeId || "TF-NODE-01"}
               </div>
-              <div className="text-[9px] text-[#56635D] font-mono">
+              <div className="text-[9px] text-[#064C3B] font-mono font-bold">
                 {isLiveMode ? "LIVE BACKEND" : "DEMO SLIDERS"}
               </div>
             </div>
           </div>
 
-          <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-[#E4F5EC] text-[#064C3B] border border-[#C3E9D5]">
+          <span className="text-[9px] font-black px-2 py-0.5 rounded-full bg-[#E4F5EC] text-[#064C3B] border border-[#C3E9D5]">
             ONLINE
           </span>
         </div>
 
-        <div className="flex items-center justify-between text-[10px] text-[#78837D] font-mono pt-1">
+        <div className="flex items-center justify-between text-[10px] text-[#111715] font-mono font-bold pt-1">
           <span className="flex items-center gap-1">
             <ShieldCheck size={12} className="text-[#064C3B]" /> v1.0.0 Enterprise
           </span>
@@ -151,4 +151,5 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default Sidebar;
+

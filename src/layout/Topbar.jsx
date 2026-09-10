@@ -161,7 +161,7 @@ function Topbar() {
             ENTERPRISE
           </span>
         </div>
-        <p className="text-xs text-[#56635D] font-medium hidden sm:block">
+        <p className="text-xs text-[#111715] font-semibold hidden sm:block">
           Real-Time Food Quality Intelligence & Multi-Modal Supply Chain Monitoring
         </p>
       </div>
@@ -169,15 +169,15 @@ function Topbar() {
       {/* Right Controls Bar */}
       <div className="flex items-center gap-3 flex-wrap">
         {/* Live Clock Counter */}
-        <div className="hidden lg:flex items-center gap-2 bg-[#FAFBF8] px-3 py-1.5 rounded-xl border border-[#DDE4DF] text-[#111715] text-xs font-mono font-semibold">
-          <Clock3 size={15} className="text-[#56635D]" />
+        <div className="hidden lg:flex items-center gap-2 bg-[#FAFBF8] px-3 py-1.5 rounded-xl border border-[#DDE4DF] text-[#111715] text-xs font-mono font-bold">
+          <Clock3 size={15} className="text-[#064C3B]" />
           <span>{currentTime.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })}</span>
         </div>
 
         {/* Day / Night Theme Switcher Button */}
         <button
           onClick={toggleTheme}
-          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all cursor-pointer ${
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
             isDark
               ? "bg-[#0D2821] text-[#42B98E] border-[#23473D]"
               : "bg-white text-[#064C3B] border-[#DDE4DF] hover:bg-[#FAFBF8]"
@@ -191,14 +191,14 @@ function Topbar() {
         {/* System Connection Badge */}
         <button
           onClick={toggleMode}
-          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all cursor-pointer ${
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
             isLiveMode
               ? "bg-[#E4F5EC] text-[#064C3B] border-[#C3E9D5]"
-              : "bg-[#FAFBF8] text-[#56635D] border-[#DDE4DF] hover:bg-[#F4F7F4]"
+              : "bg-[#FAFBF8] text-[#111715] border-[#DDE4DF] hover:bg-[#F4F7F4]"
           }`}
           title="Click to toggle Online vs Demo mode"
         >
-          <Wifi size={15} className={isLiveMode ? "text-[#064C3B]" : "text-[#78837D]"} />
+          <Wifi size={15} className="text-[#064C3B]" />
           <span>{isLiveMode ? "ONLINE" : "DEMO MODE"}</span>
         </button>
 
@@ -206,16 +206,17 @@ function Topbar() {
         <div className="relative" ref={dropdownRef}>
           <button
             onClick={() => setIsOpenAlerts(!isOpenAlerts)}
-            className="p-2 rounded-xl bg-white hover:bg-[#FAFBF8] text-[#56635D] border border-[#DDE4DF] transition-all cursor-pointer relative"
+            className="p-2 rounded-xl bg-white hover:bg-[#FAFBF8] text-[#064C3B] border border-[#DDE4DF] transition-all cursor-pointer relative font-bold"
             aria-label="Toggle notifications"
           >
             <Bell size={17} />
             {unreadCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-rose-600 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 bg-rose-600 text-white text-[10px] font-extrabold rounded-full w-4 h-4 flex items-center justify-center">
                 {unreadCount}
               </span>
             )}
           </button>
+
 
           {/* Floating Dropdown Drawer Overlay */}
           {isOpenAlerts && (
