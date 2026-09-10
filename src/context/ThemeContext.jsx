@@ -4,18 +4,19 @@ const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("tf_theme") || "dark";
+    const saved = localStorage.getItem("tf_theme");
+    return saved === "dark" ? "dark" : "light";
   });
 
   useEffect(() => {
     localStorage.setItem("tf_theme", theme);
     const root = document.documentElement;
-    if (theme === "light") {
-      root.classList.add("light");
-      root.classList.remove("dark");
-    } else {
+    if (theme === "dark") {
       root.classList.add("dark");
       root.classList.remove("light");
+    } else {
+      root.classList.add("light");
+      root.classList.remove("dark");
     }
   }, [theme]);
 
@@ -33,7 +34,8 @@ export function ThemeProvider({ children }) {
 export function useTheme() {
   const context = useContext(ThemeContext);
   if (!context) {
-    return { theme: "dark", toggleTheme: () => {}, isDark: true };
+    return { theme: "light", toggleTheme: () => {}, isDark: false };
   }
   return context;
 }
+
