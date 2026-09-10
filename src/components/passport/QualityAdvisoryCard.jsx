@@ -5,32 +5,32 @@ const QualityAdvisoryCard = ({ assessment }) => {
   const flagged = assessment.suspiciousQualityFlag;
 
   return (
-    <div className="bg-white rounded-3xl shadow-md p-6">
+    <div className="bg-white rounded-2xl border border-[#DDE4DF] shadow-xs p-6">
       <PassportSectionHeader
         title="Quality Advisory"
         subtitle="AI-supported freshness and suspicious quality screening summary"
       />
 
       <div
-        className={`rounded-2xl p-5 border ${
+        className={`rounded-xl p-5 border ${
           flagged
-            ? "bg-amber-50 border-amber-200"
-            : "bg-green-50 border-green-200"
+            ? "bg-[#FEF3C7] border-[#FDE68A]"
+            : "bg-[#E4F5EC] border-[#C3E9D5]"
         }`}
       >
         <div className="flex items-start gap-4">
-          <div className="mt-1">
+          <div className="mt-0.5">
             {flagged ? (
-              <AlertTriangle className="text-amber-500" size={28} />
+              <AlertTriangle className="text-[#D97706]" size={28} />
             ) : (
-              <ShieldCheck className="text-green-600" size={28} />
+              <ShieldCheck className="text-[#064C3B]" size={28} />
             )}
           </div>
 
           <div>
             <h4
-              className={`text-xl font-bold ${
-                flagged ? "text-amber-700" : "text-green-700"
+              className={`text-lg font-extrabold ${
+                flagged ? "text-[#92400E]" : "text-[#064C3B]"
               }`}
             >
               {flagged
@@ -38,7 +38,7 @@ const QualityAdvisoryCard = ({ assessment }) => {
                 : "No Major Concern Detected"}
             </h4>
 
-            <p className="text-slate-700 mt-3 leading-7">
+            <p className="text-[#111715] font-semibold mt-2 leading-relaxed text-xs md:text-sm">
               {assessment.qualityAdvisory}
             </p>
           </div>

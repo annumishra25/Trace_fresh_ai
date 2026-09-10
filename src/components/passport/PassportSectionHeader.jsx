@@ -1,12 +1,12 @@
 const PassportSectionHeader = ({ title, subtitle }) => {
   return (
     <div className="mb-5">
-      <h3 className="text-2xl md:text-3xl font-bold text-slate-900">
+      <h3 className="text-xl md:text-2xl font-extrabold text-[#111715] tracking-tight">
         {title}
       </h3>
 
       {subtitle && (
-        <p className="text-slate-500 mt-1">
+        <p className="text-[#56635D] text-xs font-semibold mt-1">
           {subtitle}
         </p>
       )}

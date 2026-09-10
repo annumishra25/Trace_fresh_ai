@@ -2,16 +2,16 @@ import PassportSectionHeader from "./PassportSectionHeader";
 
 const DetailCard = ({ label, value }) => {
   return (
-    <div className="bg-slate-50 rounded-2xl p-4">
-      <p className="text-slate-500 text-sm">{label}</p>
-      <p className="text-lg font-semibold text-slate-900 mt-2">{value}</p>
+    <div className="bg-[#FAFBF8] border border-[#DDE4DF] rounded-xl p-4">
+      <p className="text-[#56635D] text-xs font-extrabold uppercase tracking-wider">{label}</p>
+      <p className="text-base font-extrabold text-[#111715] mt-1">{value}</p>
     </div>
   );
 };
 
 const TraceabilityDetailsCard = ({ traceability, batch }) => {
   return (
-    <div className="bg-white rounded-3xl shadow-md p-6">
+    <div className="bg-white rounded-2xl border border-[#DDE4DF] shadow-xs p-6">
       <PassportSectionHeader
         title="Traceability Details"
         subtitle="Digital identity and latest supply chain checkpoint information"

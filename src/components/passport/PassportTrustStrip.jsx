@@ -2,11 +2,11 @@ import { ShieldCheck, Clock3, Cpu, MapPin } from "lucide-react";
 
 const TrustItem = ({ icon, label, value }) => {
   return (
-    <div className="bg-slate-50 rounded-2xl p-4 flex items-start gap-3">
-      <div className="mt-1 text-blue-600">{icon}</div>
+    <div className="bg-[#FAFBF8] border border-[#DDE4DF] rounded-xl p-4 flex items-start gap-3">
+      <div className="mt-0.5 text-[#064C3B]">{icon}</div>
       <div>
-        <p className="text-slate-500 text-xs uppercase tracking-wide">{label}</p>
-        <p className="text-slate-900 font-semibold mt-1">{value}</p>
+        <p className="text-[#56635D] text-xs font-extrabold uppercase tracking-wide">{label}</p>
+        <p className="text-[#111715] font-extrabold text-sm mt-0.5">{value}</p>
       </div>
     </div>
   );
@@ -14,7 +14,7 @@ const TrustItem = ({ icon, label, value }) => {
 
 const PassportTrustStrip = ({ batch }) => {
   return (
-    <div className="bg-white rounded-3xl shadow-md p-6">
+    <div className="bg-white rounded-2xl border border-[#DDE4DF] shadow-xs p-6">
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
         <TrustItem
           icon={<ShieldCheck size={20} />}

@@ -3,7 +3,7 @@ import PassportSectionHeader from "./PassportSectionHeader";
 
 const ReasonCodesPanel = ({ reasons }) => {
   return (
-    <div className="bg-white rounded-3xl shadow-md p-6">
+    <div className="bg-white rounded-2xl border border-[#DDE4DF] shadow-xs p-6">
       <PassportSectionHeader
         title="Why this status was assigned"
         subtitle="Key AI and environmental factors influencing the current quality status"
@@ -13,10 +13,10 @@ const ReasonCodesPanel = ({ reasons }) => {
         {reasons.map((reason, index) => (
           <div
             key={index}
-            className="flex items-start gap-3 bg-slate-50 rounded-2xl p-4"
+            className="flex items-start gap-3 bg-[#FAFBF8] border border-[#DDE4DF] rounded-xl p-4"
           >
-            <CheckCircle2 className="text-green-600 mt-1 shrink-0" size={20} />
-            <p className="text-slate-700 leading-6">{reason}</p>
+            <CheckCircle2 className="text-[#064C3B] mt-0.5 shrink-0" size={18} />
+            <p className="text-[#111715] font-extrabold text-xs md:text-sm leading-relaxed">{reason}</p>
           </div>
         ))}
       </div>

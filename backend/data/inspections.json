@@ -28006,5 +28006,77 @@
       "visualEvents": []
     },
     "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-8DB4",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-10T15:05:38.511304+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-0DB7",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-10T15:09:03.673212+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
   }
 ]

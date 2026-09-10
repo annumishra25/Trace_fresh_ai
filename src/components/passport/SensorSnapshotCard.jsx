@@ -1,10 +1,10 @@
 import PassportSectionHeader from "./PassportSectionHeader";
 
-const SensorCard = ({ label, value, colorClass = "text-slate-900" }) => {
+const SensorCard = ({ label, value, colorClass = "text-[#111715]" }) => {
   return (
-    <div className="bg-slate-50 rounded-2xl p-4">
-      <p className="text-slate-500 text-sm">{label}</p>
-      <p className={`text-2xl md:text-3xl font-bold mt-2 ${colorClass}`}>
+    <div className="bg-[#FAFBF8] border border-[#DDE4DF] rounded-xl p-4">
+      <p className="text-[#56635D] text-xs font-extrabold uppercase tracking-wider">{label}</p>
+      <p className={`text-2xl md:text-3xl font-extrabold mt-1 ${colorClass}`}>
         {value}
       </p>
     </div>
@@ -13,7 +13,7 @@ const SensorCard = ({ label, value, colorClass = "text-slate-900" }) => {
 
 const SensorSnapshotCard = ({ sensors }) => {
   return (
-    <div className="bg-white rounded-3xl shadow-md p-6">
+    <div className="bg-white rounded-2xl border border-[#DDE4DF] shadow-xs p-6">
       <PassportSectionHeader
         title="Storage Condition Snapshot"
         subtitle="Environmental conditions captured during the latest quality assessment"
@@ -23,22 +23,22 @@ const SensorSnapshotCard = ({ sensors }) => {
         <SensorCard
           label="Temperature"
           value={`${sensors.temperature}°C`}
-          colorClass="text-red-500"
+          colorClass="text-[#D97706]"
         />
         <SensorCard
           label="Humidity"
           value={`${sensors.humidity}%`}
-          colorClass="text-sky-600"
+          colorClass="text-[#064C3B]"
         />
         <SensorCard
           label="Gas / MQ135"
           value={sensors.mq135}
-          colorClass="text-amber-600"
+          colorClass="text-[#111715]"
         />
         <SensorCard
           label="Storage Status"
           value={sensors.storageCondition}
-          colorClass="text-emerald-600"
+          colorClass="text-[#064C3B]"
         />
       </div>
     </div>
