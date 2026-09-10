@@ -1,72 +1,152 @@
 @import "tailwindcss";
 
 /* -------------------------------------------------------------
- * TRACEFRESH AI - DARK GREEN & WHITE DESIGN SYSTEM
+ * TRACEFRESH AI - PROFESSIONAL DAY & NIGHT THEME SYSTEM
  * ------------------------------------------------------------- */
 
-:root {
-  --bg-dark-deep: #03140e;
-  --bg-dark-main: #061d15;
-  --bg-dark-card: rgba(9, 42, 31, 0.88);
-  --border-emerald: rgba(52, 211, 153, 0.22);
-  --text-white: #ffffff;
-  --text-mint: #a7f3d0;
-  --accent-emerald: #10b981;
+/* ==========================================
+   DAY MODE (PROFESSIONAL MILKY WHITE & DARK GREEN WITH BOLD BLACK FONTS)
+   ========================================== */
+html.light {
+  background-color: #f4f8f5 !important;
+  color: #041a12 !important;
 }
 
-html, body {
-  background-color: #03140e;
-  color: #ffffff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  margin: 0;
-  padding: 0;
+html.light body {
+  background-color: #f4f8f5 !important;
+  color: #041a12 !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
+
+/* Glass & Main Cards in Day Mode */
+html.light .glass-card,
+html.light .bg-slate-950\/90,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950,
+html.light .bg-slate-900,
+html.light .bg-slate-900\/95,
+html.light .bg-slate-900\/90,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-800,
+html.light .bg-gradient-to-br {
+  background: #ffffff !important;
+  background-image: none !important;
+  border: 1px solid rgba(6, 78, 59, 0.25) !important;
+  box-shadow: 0 10px 30px rgba(6, 78, 59, 0.08) !important;
+  color: #041a12 !important;
+}
+
+/* Inner containers & sub-boxes in Day Mode */
+html.light .bg-slate-900\/80,
+html.light .bg-slate-800\/70,
+html.light .bg-slate-800\/90,
+html.light .bg-slate-800\/60,
+html.light div[class*="bg-slate-800"],
+html.light div[class*="bg-slate-900"] {
+  background-color: #f0f7f3 !important;
+  border-color: rgba(6, 78, 59, 0.18) !important;
+  color: #041a12 !important;
+}
+
+/* High-Contrast Bold Black Typography in Day Mode */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6,
+html.light .text-white,
+html.light .text-slate-100,
+html.light .text-slate-200,
+html.light .font-black,
+html.light .font-bold {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+html.light p,
+html.light label,
+html.light .text-slate-300,
+html.light .text-slate-400,
+html.light .text-slate-500,
+html.light .text-emerald-100\/80,
+html.light .text-emerald-200\/80,
+html.light .text-emerald-300\/70 {
+  color: #083324 !important;
+  font-weight: 700 !important;
+}
+
+html.light .text-emerald-400,
+html.light .text-emerald-300,
+html.light .text-cyan-400,
+html.light .text-teal-300 {
+  color: #047857 !important;
+  font-weight: 800 !important;
+}
+
+/* Form Controls & Sliders in Day Mode */
+html.light input[type="text"],
+html.light input[type="password"],
+html.light select,
+html.light textarea {
+  background-color: #ffffff !important;
+  border: 1.5px solid #064e3b !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+html.light input[type="range"] {
+  background-color: #d1e7dd !important;
+}
+
+/* Buttons in Day Mode */
+html.light button {
+  font-weight: 800 !important;
+}
+
 
 /* ==========================================
-   DARK GREEN MODE (DEFAULT & DARK SWITCH)
+   NIGHT MODE (UNIFIED MIDNIGHT FOREST & WHITE)
    ========================================== */
 html.dark, html:not(.light) {
-  background-color: #03140e;
-  color: #ffffff;
+  background-color: #03140e !important;
+  color: #ffffff !important;
 }
 
 html.dark body, html:not(.light) body {
-  background-color: #03140e;
-  color: #ffffff;
+  background-color: #03140e !important;
+  color: #ffffff !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Seamless translation of generic dark slate containers into rich Dark Green tones */
+/* Glass & Main Cards in Night Mode */
+html.dark .glass-card,
+html.dark .bg-slate-950\/90,
+html.dark .bg-slate-950\/70,
+html.dark .bg-slate-900,
+html.dark .bg-slate-900\/95,
+html.dark .bg-slate-900\/90,
+html.dark .bg-slate-900\/80,
+html:not(.light) .glass-card {
+  background-color: rgba(7, 36, 26, 0.92) !important;
+  border: 1px solid rgba(52, 211, 153, 0.25) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45) !important;
+}
+
 html.dark .bg-slate-950,
 html:not(.light) .bg-slate-950 {
   background-color: #03140e !important;
 }
 
-html.dark .bg-slate-950\/90,
-html:not(.light) .bg-slate-950\/90 {
-  background-color: rgba(6, 29, 21, 0.92) !important;
-}
-
-html.dark .bg-slate-950\/70,
-html.dark .bg-slate-950\/80,
-html:not(.light) .bg-slate-950\/70 {
-  background-color: rgba(6, 29, 21, 0.78) !important;
-}
-
-html.dark .bg-slate-900,
-html.dark .bg-slate-900\/95,
+/* Inner containers & sub-boxes in Night Mode */
 html.dark .bg-slate-900\/80,
-html.dark .bg-slate-900\/90,
-html.dark .bg-slate-900\/40,
-html:not(.light) .bg-slate-900 {
-  background-color: rgba(9, 42, 31, 0.88) !important;
-}
-
 html.dark .bg-slate-800,
 html.dark .bg-slate-800\/80,
-html.dark .bg-slate-800\/60,
 html.dark .bg-slate-800\/70,
+html.dark .bg-slate-800\/60,
 html:not(.light) .bg-slate-800 {
-  background-color: rgba(12, 56, 42, 0.75) !important;
+  background-color: rgba(4, 24, 17, 0.85) !important;
+  border: 1px solid rgba(52, 211, 153, 0.2) !important;
 }
 
 html.dark .border-slate-800,
@@ -77,76 +157,45 @@ html:not(.light) .border-slate-800 {
   border-color: rgba(52, 211, 153, 0.22) !important;
 }
 
+/* Typography in Night Mode */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6,
+html.dark .text-white,
 html.dark .text-slate-100,
 html.dark .text-slate-200,
-html:not(.light) .text-slate-100 {
+html:not(.light) .text-white {
   color: #ffffff !important;
 }
 
+html.dark p,
+html.dark label,
 html.dark .text-slate-300,
 html.dark .text-slate-400,
 html:not(.light) .text-slate-300 {
-  color: #a7f3d0 !important;
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-emerald-400,
+html.dark .text-emerald-300,
+html.dark .text-cyan-400,
+html.dark .text-cyan-300,
+html.dark .text-teal-300 {
+  color: #34d399 !important;
 }
 
 /* ==========================================
-   WHITE MODE (CRISP WHITE + DARK GREEN ACCENTS)
-   ========================================== */
-html.light {
-  background-color: #f2f7f4;
-  color: #042419;
-}
-
-html.light body {
-  background-color: #f2f7f4;
-  color: #042419;
-}
-
-html.light .glass-card {
-  background: rgba(255, 255, 255, 0.96) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(6, 78, 59, 0.15) !important;
-  box-shadow: 0 10px 30px rgba(6, 78, 59, 0.08) !important;
-}
-
-html.light .bg-slate-950\/90,
-html.light .bg-slate-950\/70,
-html.light .bg-slate-950 {
-  background-color: #ffffff !important;
-}
-
-html.light .bg-slate-900,
-html.light .bg-slate-800 {
-  background-color: #f8faf9 !important;
-}
-
-html.light .text-slate-100,
-html.light .text-slate-200,
-html.light .text-white {
-  color: #042419 !important;
-}
-
-html.light .text-slate-300,
-html.light .text-slate-400 {
-  color: #064e3b !important;
-}
-
-html.light .border-slate-800,
-html.light .border-slate-800\/80,
-html.light .border-slate-700 {
-  border-color: rgba(6, 78, 59, 0.2) !important;
-}
-
-/* ==========================================
-   UTILITY CLASSES & GLASSMORPHISM
+   UTILITY CLASSES & ACCENT GLOWS
    ========================================== */
 @layer utilities {
   .glass-card {
-    background: rgba(9, 42, 31, 0.82);
+    background: rgba(7, 36, 26, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(52, 211, 153, 0.25);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
   }
 

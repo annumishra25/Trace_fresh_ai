@@ -106,16 +106,18 @@ function HardwareSensorControl() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white rounded-3xl p-6 shadow-xl border border-slate-700/80 space-y-6">
+    <div className="glass-card border border-emerald-800/60 text-white rounded-3xl p-6 shadow-2xl space-y-6 relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 via-teal-300 to-green-400 opacity-90" />
+
       {/* Header & Connection / Mode Selector */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-700/70 pb-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-emerald-800/60 pb-4 relative z-10">
         <div>
           <div className="flex items-center gap-3 flex-wrap">
             <h2 className="text-2xl font-black tracking-tight text-white flex items-center gap-2">
               <span>🔌 Hardware Model & Interactive Sensor Controls</span>
             </h2>
             <span className={`text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full border ${
-              isLiveMode ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40" : "bg-purple-500/20 text-purple-300 border-purple-500/40"
+              isLiveMode ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40 glow-emerald" : "bg-teal-500/20 text-teal-200 border-teal-500/40"
             }`}>
               {isLiveMode ? "📡 ONLINE MODE (Live Backend)" : "🎛️ DEMO MODE (Interactive Sliders)"}
             </span>
@@ -129,11 +131,11 @@ function HardwareSensorControl() {
 
         <div className="flex items-center gap-3 flex-wrap">
           {/* Main Mode Switcher Toggle */}
-          <div className="flex items-center bg-slate-950 p-1.5 rounded-2xl border border-slate-700">
+          <div className="flex items-center bg-[#03140e] p-1.5 rounded-2xl border border-emerald-800/80">
             <button
               onClick={() => { if (!isLiveMode) toggleMode(); }}
               className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer ${
-                isLiveMode ? "bg-emerald-600 text-white shadow-md" : "text-slate-400 hover:text-white"
+                isLiveMode ? "bg-emerald-600 text-white shadow-md" : "text-slate-300 hover:text-white"
               }`}
             >
               📡 Online Mode
@@ -141,7 +143,7 @@ function HardwareSensorControl() {
             <button
               onClick={() => { if (isLiveMode) toggleMode(); }}
               className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer ${
-                !isLiveMode ? "bg-purple-600 text-white shadow-md" : "text-slate-400 hover:text-white"
+                !isLiveMode ? "bg-teal-600 text-white shadow-md" : "text-slate-300 hover:text-white"
               }`}
             >
               🎛️ Demo Mode (Sliders)
@@ -149,12 +151,12 @@ function HardwareSensorControl() {
           </div>
 
           {/* Target Node Selector */}
-          <div className="flex items-center bg-slate-800/90 border border-slate-700 rounded-2xl p-1">
-            <span className="text-xs font-semibold px-2 text-slate-400">Node:</span>
+          <div className="flex items-center bg-[#07261c] border border-emerald-800/80 rounded-2xl p-1">
+            <span className="text-xs font-semibold px-2 text-slate-300">Node:</span>
             <button
               onClick={() => { setTargetNode("TF-NODE-01"); setSelectedNodeId("TF-NODE-01"); }}
               className={`px-3 py-1 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                targetNode === "TF-NODE-01" ? "bg-blue-600 text-white shadow" : "text-slate-400 hover:text-white"
+                targetNode === "TF-NODE-01" ? "bg-emerald-600 text-white shadow" : "text-slate-300 hover:text-white"
               }`}
             >
               TF-NODE-01
@@ -162,7 +164,7 @@ function HardwareSensorControl() {
             <button
               onClick={() => { setTargetNode("TF-NODE-02"); setSelectedNodeId("TF-NODE-02"); }}
               className={`px-3 py-1 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                targetNode === "TF-NODE-02" ? "bg-purple-600 text-white shadow" : "text-slate-400 hover:text-white"
+                targetNode === "TF-NODE-02" ? "bg-teal-600 text-white shadow" : "text-slate-300 hover:text-white"
               }`}
             >
               TF-NODE-02
@@ -174,7 +176,7 @@ function HardwareSensorControl() {
             onClick={() => setHardwareConnected(!hardwareConnected)}
             className={`px-3.5 py-1.5 rounded-2xl text-xs font-extrabold flex items-center gap-2 border transition-all cursor-pointer ${
               hardwareConnected
-                ? "bg-emerald-600/30 text-emerald-300 border-emerald-500/50 hover:bg-emerald-600/40"
+                ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/50 hover:bg-emerald-500/30"
                 : "bg-rose-900/30 text-rose-300 border-rose-500/40 hover:bg-rose-900/50"
             }`}
           >
@@ -185,11 +187,11 @@ function HardwareSensorControl() {
       </div>
 
       {/* Sensor Input Sliders Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 relative z-10">
         {/* Temperature Controller */}
-        <div className="bg-slate-800/70 p-4 rounded-2xl border border-slate-700/60 space-y-2">
+        <div className="bg-[#093124]/70 p-4 rounded-2xl border border-emerald-800/60 space-y-2">
           <div className="flex justify-between items-center text-xs">
-            <label className="font-bold text-slate-200">🌡️ Temperature (°C)</label>
+            <label className="font-bold text-slate-100">🌡️ Temperature (°C)</label>
             <span className="font-mono font-bold text-amber-400 text-sm">{sensorValues.temperature}°C</span>
           </div>
           <input
@@ -199,9 +201,9 @@ function HardwareSensorControl() {
             step="0.5"
             value={sensorValues.temperature}
             onChange={(e) => handleChange("temperature", e.target.value)}
-            className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-amber-400"
+            className="w-full h-2 bg-[#03140e] rounded-lg appearance-none cursor-pointer accent-amber-400"
           />
-          <div className="flex justify-between text-[10px] text-slate-200 font-mono">
+          <div className="flex justify-between text-[10px] text-slate-300 font-mono">
             <span>-10°C</span>
             <span>25°C (Threshold)</span>
             <span>50°C</span>
@@ -209,10 +211,10 @@ function HardwareSensorControl() {
         </div>
 
         {/* Humidity Controller */}
-        <div className="bg-slate-800/70 p-4 rounded-2xl border border-slate-700/60 space-y-2">
+        <div className="bg-[#093124]/70 p-4 rounded-2xl border border-emerald-800/60 space-y-2">
           <div className="flex justify-between items-center text-xs">
-            <label className="font-bold text-slate-200">💧 Humidity (%)</label>
-            <span className="font-mono font-bold text-cyan-400 text-sm">{sensorValues.humidity}%</span>
+            <label className="font-bold text-slate-100">💧 Humidity (%)</label>
+            <span className="font-mono font-bold text-emerald-300 text-sm">{sensorValues.humidity}%</span>
           </div>
           <input
             type="range"
@@ -221,9 +223,9 @@ function HardwareSensorControl() {
             step="1"
             value={sensorValues.humidity}
             onChange={(e) => handleChange("humidity", e.target.value)}
-            className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+            className="w-full h-2 bg-[#03140e] rounded-lg appearance-none cursor-pointer accent-emerald-400"
           />
-          <div className="flex justify-between text-[10px] text-slate-200 font-mono">
+          <div className="flex justify-between text-[10px] text-slate-300 font-mono">
             <span>0%</span>
             <span>75% (Optimum)</span>
             <span>100%</span>
@@ -231,9 +233,9 @@ function HardwareSensorControl() {
         </div>
 
         {/* CO2 Controller */}
-        <div className="bg-slate-800/70 p-4 rounded-2xl border border-slate-700/60 space-y-2">
+        <div className="bg-[#093124]/70 p-4 rounded-2xl border border-emerald-800/60 space-y-2">
           <div className="flex justify-between items-center text-xs">
-            <label className="font-bold text-slate-200">☁️ CO₂ Level (ppm)</label>
+            <label className="font-bold text-slate-100">☁️ CO₂ Level (ppm)</label>
             <span className="font-mono font-bold text-emerald-400 text-sm">{sensorValues.co2} ppm</span>
           </div>
           <input
@@ -243,9 +245,9 @@ function HardwareSensorControl() {
             step="25"
             value={sensorValues.co2}
             onChange={(e) => handleChange("co2", e.target.value)}
-            className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-400"
+            className="w-full h-2 bg-[#03140e] rounded-lg appearance-none cursor-pointer accent-emerald-400"
           />
-          <div className="flex justify-between text-[10px] text-slate-200 font-mono">
+          <div className="flex justify-between text-[10px] text-slate-300 font-mono">
             <span>300 ppm</span>
             <span>1000 ppm</span>
             <span>3000 ppm</span>
@@ -253,10 +255,10 @@ function HardwareSensorControl() {
         </div>
 
         {/* VOC Controller */}
-        <div className="bg-slate-800/70 p-4 rounded-2xl border border-slate-700/60 space-y-2">
+        <div className="bg-[#093124]/70 p-4 rounded-2xl border border-emerald-800/60 space-y-2">
           <div className="flex justify-between items-center text-xs">
-            <label className="font-bold text-slate-200">🧪 VOC Level (ppm)</label>
-            <span className="font-mono font-bold text-purple-400 text-sm">{sensorValues.voc} ppm</span>
+            <label className="font-bold text-slate-100">🧪 VOC Level (ppm)</label>
+            <span className="font-mono font-bold text-teal-300 text-sm">{sensorValues.voc} ppm</span>
           </div>
           <input
             type="range"
@@ -265,9 +267,9 @@ function HardwareSensorControl() {
             step="0.1"
             value={sensorValues.voc}
             onChange={(e) => handleChange("voc", e.target.value)}
-            className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-purple-400"
+            className="w-full h-2 bg-[#03140e] rounded-lg appearance-none cursor-pointer accent-teal-400"
           />
-          <div className="flex justify-between text-[10px] text-slate-200 font-mono">
+          <div className="flex justify-between text-[10px] text-slate-300 font-mono">
             <span>0 ppm</span>
             <span>3 ppm</span>
             <span>10 ppm</span>
@@ -275,9 +277,9 @@ function HardwareSensorControl() {
         </div>
 
         {/* Combustible Spoilage Gas Controller */}
-        <div className="bg-slate-800/70 p-4 rounded-2xl border border-slate-700/60 space-y-2">
+        <div className="bg-[#093124]/70 p-4 rounded-2xl border border-emerald-800/60 space-y-2">
           <div className="flex justify-between items-center text-xs">
-            <label className="font-bold text-slate-200">⚠️ Spoilage / Ethylene Gas (ppm)</label>
+            <label className="font-bold text-slate-100">⚠️ Spoilage / Ethylene Gas (ppm)</label>
             <span className="font-mono font-bold text-rose-400 text-sm">{sensorValues.gas} ppm</span>
           </div>
           <input
@@ -287,9 +289,9 @@ function HardwareSensorControl() {
             step="0.05"
             value={sensorValues.gas}
             onChange={(e) => handleChange("gas", e.target.value)}
-            className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-rose-400"
+            className="w-full h-2 bg-[#03140e] rounded-lg appearance-none cursor-pointer accent-rose-400"
           />
-          <div className="flex justify-between text-[10px] text-slate-200 font-mono">
+          <div className="flex justify-between text-[10px] text-slate-300 font-mono">
             <span>0 ppm</span>
             <span>1.0 ppm (Warning)</span>
             <span>5.0 ppm</span>
@@ -297,10 +299,10 @@ function HardwareSensorControl() {
         </div>
 
         {/* Battery Level Controller */}
-        <div className="bg-slate-800/70 p-4 rounded-2xl border border-slate-700/60 space-y-2">
+        <div className="bg-[#093124]/70 p-4 rounded-2xl border border-emerald-800/60 space-y-2">
           <div className="flex justify-between items-center text-xs">
-            <label className="font-bold text-slate-200">🔋 Hardware Battery (%)</label>
-            <span className="font-mono font-bold text-lime-400 text-sm">{sensorValues.battery}%</span>
+            <label className="font-bold text-slate-100">🔋 Hardware Battery (%)</label>
+            <span className="font-mono font-bold text-emerald-300 text-sm">{sensorValues.battery}%</span>
           </div>
           <input
             type="range"
@@ -309,9 +311,9 @@ function HardwareSensorControl() {
             step="1"
             value={sensorValues.battery}
             onChange={(e) => handleChange("battery", e.target.value)}
-            className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-lime-400"
+            className="w-full h-2 bg-[#03140e] rounded-lg appearance-none cursor-pointer accent-emerald-400"
           />
-          <div className="flex justify-between text-[10px] text-slate-200 font-mono">
+          <div className="flex justify-between text-[10px] text-slate-300 font-mono">
             <span>0%</span>
             <span>50%</span>
             <span>100%</span>
@@ -320,9 +322,9 @@ function HardwareSensorControl() {
       </div>
 
       {/* Control Actions & Scenario Presets */}
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-4 pt-2 border-t border-slate-700/70">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-4 pt-2 border-t border-emerald-800/60 relative z-10">
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-xs font-bold text-slate-200 uppercase tracking-wider">Quick Presets:</span>
+          <span className="text-xs font-bold text-slate-100 uppercase tracking-wider">Quick Presets:</span>
           <button
             onClick={() => applyPreset("OPTIMAL")}
             className="px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30 transition-all cursor-pointer"
@@ -349,7 +351,7 @@ function HardwareSensorControl() {
             className={`px-4 py-2.5 rounded-2xl text-xs font-extrabold border transition-all cursor-pointer ${
               isAutoStreaming
                 ? "bg-amber-500 text-slate-950 border-amber-400 font-black animate-pulse"
-                : "bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700"
+                : "bg-[#07261c] text-slate-200 border-emerald-800/80 hover:bg-emerald-900/40"
             }`}
           >
             {isAutoStreaming ? "⏸ STOP AUTO-STREAM" : "▶ START AUTO-STREAM (2s)"}
@@ -357,7 +359,7 @@ function HardwareSensorControl() {
 
           <button
             onClick={handleTransmit}
-            className="px-6 py-2.5 rounded-2xl text-xs font-black bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/30 transition-all cursor-pointer flex items-center gap-2"
+            className="px-6 py-2.5 rounded-2xl text-xs font-black bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white shadow-lg shadow-emerald-600/30 transition-all cursor-pointer flex items-center gap-2"
           >
             <span>📡 TRANSMIT SENSOR PACKET</span>
           </button>
@@ -365,7 +367,7 @@ function HardwareSensorControl() {
       </div>
 
       {statusMsg && (
-        <div className="bg-emerald-500/20 border border-emerald-500/50 text-emerald-300 px-4 py-2 rounded-2xl text-xs font-bold text-center font-mono">
+        <div className="bg-emerald-500/20 border border-emerald-500/50 text-emerald-300 px-4 py-2 rounded-2xl text-xs font-bold text-center font-mono relative z-10">
           {statusMsg}
         </div>
       )}

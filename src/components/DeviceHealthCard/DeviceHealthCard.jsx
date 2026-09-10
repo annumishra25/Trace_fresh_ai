@@ -42,17 +42,17 @@ function DeviceHealthCard({ nodeId = "TF-NODE-01" }) {
   return (
     <div
       className={`glass-card glass-card-hover rounded-3xl p-6 shadow-2xl transition-all duration-300 relative overflow-hidden ${
-        isSelected ? "border-blue-500/80 ring-2 ring-blue-500/30 glow-blue" : "border-slate-800 hover:border-slate-700"
+        isSelected ? "border-emerald-500/80 ring-2 ring-emerald-500/30 glow-emerald" : "border-emerald-800/60 hover:border-emerald-700/80"
       }`}
     >
       <div className="flex items-start justify-between mb-4 relative z-10">
         <div>
           <div className="flex items-center gap-2">
-            <span className="text-xs font-mono font-bold bg-slate-800 text-slate-200 px-2.5 py-1 rounded-lg border border-slate-700">
+            <span className="text-xs font-mono font-bold bg-[#03140e] text-slate-200 px-2.5 py-1 rounded-lg border border-emerald-800/80">
               {node.nodeId}
             </span>
             <span className={`text-xs font-mono font-bold px-2.5 py-1 rounded-lg border ${
-              isHardware ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40" : "bg-slate-800 text-slate-400 border-slate-700"
+              isHardware ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40" : "bg-[#03140e] text-slate-300 border-emerald-800/80"
             }`}>
               {isHardware ? "📡 HARDWARE" : "SIMULATED"}
             </span>
@@ -67,7 +67,7 @@ function DeviceHealthCard({ nodeId = "TF-NODE-01" }) {
           <button
             onClick={() => setSelectedNodeId(nodeId)}
             className={`px-3.5 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer ${
-              isSelected ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30 scale-105" : "bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white"
+              isSelected ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 scale-105" : "bg-[#03140e] text-slate-200 hover:bg-emerald-900/40 hover:text-white"
             }`}
           >
             {isSelected ? "✓ Active Node" : "Select Node"}
@@ -76,24 +76,24 @@ function DeviceHealthCard({ nodeId = "TF-NODE-01" }) {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 my-5 relative z-10">
-        <div className="bg-slate-900/80 p-3.5 rounded-2xl border border-slate-800/80">
+        <div className="bg-[#041a12]/80 p-3.5 rounded-2xl border border-emerald-800/60">
           <p className="text-[11px] text-slate-400 font-mono">Last Sync</p>
           <p className="text-sm font-bold text-white mt-1 font-mono">{lastSeen}</p>
         </div>
 
-        <div className="bg-slate-900/80 p-3.5 rounded-2xl border border-slate-800/80">
+        <div className="bg-[#041a12]/80 p-3.5 rounded-2xl border border-emerald-800/60">
           <p className="text-[11px] text-slate-400 font-mono">Firmware</p>
           <p className="text-sm font-bold text-white mt-1 font-mono">{firmware}</p>
         </div>
 
-        <div className="bg-slate-900/80 p-3.5 rounded-2xl border border-slate-800/80">
+        <div className="bg-[#041a12]/80 p-3.5 rounded-2xl border border-emerald-800/60">
           <p className="text-[11px] text-slate-400 font-mono">Wi-Fi RSSI</p>
-          <p className="text-sm font-bold text-cyan-400 mt-1 font-mono">
+          <p className="text-sm font-bold text-teal-300 mt-1 font-mono">
             {signal != null ? `${signal} dBm` : "N/A"}
           </p>
         </div>
 
-        <div className="bg-slate-900/80 p-3.5 rounded-2xl border border-slate-800/80">
+        <div className="bg-[#041a12]/80 p-3.5 rounded-2xl border border-emerald-800/60">
           <p className="text-[11px] text-slate-400 font-mono">Battery</p>
           <p className="text-sm font-bold text-emerald-400 mt-1 font-mono">
             {battery != null ? `${battery}%` : "N/A"}
@@ -101,7 +101,7 @@ function DeviceHealthCard({ nodeId = "TF-NODE-01" }) {
         </div>
       </div>
 
-      <div className="border-t border-slate-800/80 pt-4 flex items-center justify-between text-xs text-slate-300 relative z-10">
+      <div className="border-t border-emerald-800/60 pt-4 flex items-center justify-between text-xs text-slate-300 relative z-10">
         <div className="flex items-center gap-2 font-medium">
           <span className="text-slate-400 font-mono">Sensors:</span>
           <span className="font-bold text-emerald-400 font-mono">{healthyCount} / {totalSensors} Healthy</span>

@@ -34,13 +34,13 @@ function MonitoringHeader() {
       case "ONLINE":
         return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 glow-emerald">● LIVE ONLINE</span>;
       case "SIMULATED":
-        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black bg-blue-500/20 text-blue-300 border border-blue-500/40 glow-blue">● SIMULATED</span>;
+        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black bg-teal-500/20 text-teal-300 border border-teal-500/40 glow-mint">● SIMULATED</span>;
       case "STALE":
         return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black bg-amber-500/20 text-amber-300 border border-amber-500/40">● STALE</span>;
       case "OFFLINE":
-        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black bg-slate-800 text-slate-400 border border-slate-700">● OFFLINE</span>;
+        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black bg-[#03140e] text-slate-300 border border-emerald-800/80">● OFFLINE</span>;
       default:
-        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black bg-slate-800 text-slate-300 border border-slate-700">{status}</span>;
+        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black bg-[#03140e] text-slate-200 border border-emerald-800/80">{status}</span>;
     }
   };
 
@@ -52,9 +52,9 @@ function MonitoringHeader() {
   };
 
   return (
-    <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 md:p-8 shadow-2xl border border-slate-800 border-t-2 border-t-blue-500/80 flex flex-col md:flex-row md:items-center justify-between gap-5 relative overflow-hidden">
+    <div className="glass-card rounded-3xl p-6 md:p-8 shadow-2xl border border-emerald-800/80 border-t-2 border-t-emerald-400 flex flex-col md:flex-row md:items-center justify-between gap-5 relative overflow-hidden">
       {/* Background Subtle Gradient Sparkle */}
-      <div className="absolute -top-12 -right-12 w-48 h-48 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute -top-12 -right-12 w-48 h-48 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="relative z-10">
         <div className="flex items-center gap-3 flex-wrap">
@@ -64,13 +64,13 @@ function MonitoringHeader() {
           {getStatusBadge(activeNode.status || connectionStatus)}
         </div>
         <p className="text-slate-300 text-xs mt-1.5 font-sans">
-          Active Monitoring Target: <span className="font-mono font-bold text-slate-100">{selectedNodeId}</span> — Telemetry Heartbeat: <span className="font-mono text-emerald-400 font-bold">{getTimeAgo()}</span>
+          Active Monitoring Target: <span className="font-mono font-bold text-white">{selectedNodeId}</span> — Telemetry Heartbeat: <span className="font-mono text-emerald-400 font-bold">{getTimeAgo()}</span>
         </p>
       </div>
 
       <div className="flex items-center gap-3 flex-wrap relative z-10">
         {/* Mode Switcher Segmented Control */}
-        <div className="flex items-center bg-slate-950 p-1.5 rounded-2xl border border-slate-800 shadow-inner">
+        <div className="flex items-center bg-[#03140e] p-1.5 rounded-2xl border border-emerald-800/80 shadow-inner">
           <button
             onClick={() => { if (!isLiveMode) toggleMode(); }}
             className={`px-4 py-2 rounded-xl text-xs font-black transition-all cursor-pointer ${
@@ -85,7 +85,7 @@ function MonitoringHeader() {
             onClick={() => { if (isLiveMode) toggleMode(); }}
             className={`px-4 py-2 rounded-xl text-xs font-black transition-all cursor-pointer ${
               !isLiveMode
-                ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg shadow-purple-600/30 scale-[1.02]"
+                ? "bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-lg shadow-teal-600/30 scale-[1.02]"
                 : "text-slate-300 hover:text-white"
             }`}
           >
@@ -94,12 +94,12 @@ function MonitoringHeader() {
         </div>
 
         {/* Node Target Switcher */}
-        <div className="flex items-center bg-slate-950 p-1.5 rounded-2xl border border-slate-800 shadow-inner">
+        <div className="flex items-center bg-[#03140e] p-1.5 rounded-2xl border border-emerald-800/80 shadow-inner">
           <button
             onClick={() => setSelectedNodeId("TF-NODE-01")}
             className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer ${
               selectedNodeId === "TF-NODE-01"
-                ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
+                ? "bg-emerald-600 text-white shadow-md shadow-emerald-600/30"
                 : "text-slate-300 hover:text-white"
             }`}
           >
@@ -109,7 +109,7 @@ function MonitoringHeader() {
             onClick={() => setSelectedNodeId("TF-NODE-02")}
             className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer ${
               selectedNodeId === "TF-NODE-02"
-                ? "bg-purple-600 text-white shadow-md shadow-purple-600/30"
+                ? "bg-teal-600 text-white shadow-md shadow-teal-600/30"
                 : "text-slate-300 hover:text-white"
             }`}
           >
