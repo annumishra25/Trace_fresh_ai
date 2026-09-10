@@ -1,0 +1,258 @@
+[
+  {
+    "nodeId": "TF-NODE-01",
+    "name": "TraceFresh Smart Node 01",
+    "status": "ONLINE",
+    "assignedBatchId": "TF-APL-2026-001",
+    "assignedShipmentId": "SHIP-APL-110",
+    "lastSeen": "2026-09-06T16:54:41.495863+00:00",
+    "lastTelemetryId": "TEL-20260906-165441-42AC",
+    "batteryPercent": 85,
+    "signalStrengthDbm": -60,
+    "gpsStatus": "LOCKED",
+    "sensorAvailability": {
+      "temperature": "OK",
+      "humidity": "OK",
+      "co2": "OK",
+      "voc": "OK",
+      "gas": "OK"
+    },
+    "latestTelemetry": {
+      "nodeId": "TF-NODE-01",
+      "batchId": "TF-APL-2026-001",
+      "shipmentId": "SHIP-APL-110",
+      "timestamp": "2026-09-06T16:54:41.488Z",
+      "sensors": {
+        "temperature": {
+          "value": 46.7,
+          "unit": "\u00b0C",
+          "status": "OK"
+        },
+        "humidity": {
+          "value": 71,
+          "unit": "%",
+          "status": "OK"
+        },
+        "co2": {
+          "value": 600,
+          "unit": "ppm",
+          "status": "OK"
+        },
+        "voc": {
+          "value": 1.5,
+          "unit": "ppm",
+          "status": "OK"
+        },
+        "gas": {
+          "value": 0.42,
+          "unit": "ppm",
+          "status": "OK"
+        }
+      },
+      "gps": {
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 38,
+        "status": "LOCKED"
+      },
+      "device": {
+        "batteryPercent": 85,
+        "signalStrengthDbm": -60,
+        "firmwareVersion": "1.0.0-HW"
+      },
+      "source": "hardware",
+      "telemetryId": "TEL-20260906-165441-42AC",
+      "serverReceivedAt": "2026-09-06T16:54:41.495863+00:00"
+    },
+    "source": "hardware",
+    "latestSensors": {
+      "temperature": {
+        "value": 46.7,
+        "unit": "\u00b0C",
+        "status": "OK"
+      },
+      "humidity": {
+        "value": 71,
+        "unit": "%",
+        "status": "OK"
+      },
+      "co2": {
+        "value": 600,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "voc": {
+        "value": 1.5,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "gas": {
+        "value": 0.42,
+        "unit": "ppm",
+        "status": "OK"
+      }
+    },
+    "firmwareVersion": "1.0.0-HW",
+    "sensorsMetadata": [
+      "temperature",
+      "humidity",
+      "co2",
+      "voc",
+      "gas",
+      "gps"
+    ],
+    "calibrationMetadata": {
+      "temperature": {
+        "status": "CALIBRATED",
+        "lastCalibratedAt": "2026-08-01T00:00:00Z"
+      },
+      "humidity": {
+        "status": "CALIBRATED",
+        "lastCalibratedAt": "2026-08-01T00:00:00Z"
+      },
+      "co2": {
+        "status": "REQUIRED",
+        "lastCalibratedAt": null
+      },
+      "voc": {
+        "status": "REQUIRED",
+        "lastCalibratedAt": null
+      },
+      "gas": {
+        "status": "REQUIRED",
+        "lastCalibratedAt": null
+      },
+      "gps": {
+        "status": "CALIBRATED",
+        "lastCalibratedAt": "2026-08-01T00:00:00Z"
+      }
+    }
+  },
+  {
+    "nodeId": "TF-NODE-02",
+    "name": "TraceFresh Smart Node 02",
+    "status": "SIMULATED",
+    "assignedBatchId": "TF-BAN-2026-002",
+    "assignedShipmentId": "SHIP-BAN-102",
+    "lastSeen": "2026-09-05T07:40:05.281740+00:00",
+    "lastTelemetryId": "TEL-20260905-074005-8D6E",
+    "batteryPercent": 92,
+    "signalStrengthDbm": -65,
+    "gpsStatus": "LOCKED",
+    "sensorAvailability": {
+      "temperature": "OK",
+      "humidity": "OK",
+      "co2": "OK",
+      "voc": "OK",
+      "gas": "OK"
+    },
+    "latestTelemetry": {
+      "telemetryId": "TEL-20260905-074005-8D6E",
+      "timestamp": "2026-09-05T07:40:05.271107+00:00",
+      "serverReceivedAt": "2026-09-05T07:40:05.281740+00:00",
+      "sensors": {
+        "temperature": {
+          "value": 6.4,
+          "unit": "C",
+          "status": "OK"
+        },
+        "humidity": {
+          "value": 73.5,
+          "unit": "%",
+          "status": "OK"
+        },
+        "co2": {
+          "value": 645,
+          "unit": "ppm",
+          "status": "OK"
+        },
+        "voc": {
+          "value": 1.1,
+          "unit": "ppm",
+          "status": "OK"
+        },
+        "gas": {
+          "value": 0.36,
+          "unit": "ppm",
+          "status": "OK"
+        }
+      },
+      "gps": {
+        "latitude": 12.9716,
+        "longitude": 77.5946,
+        "speedKmh": 38,
+        "accuracyM": 4,
+        "status": "LOCKED"
+      },
+      "device": {
+        "batteryPercent": 92,
+        "signalStrengthDbm": -65,
+        "firmwareVersion": "0.2.0"
+      },
+      "source": "simulator"
+    },
+    "source": "simulator",
+    "latestSensors": {
+      "temperature": {
+        "value": 6.4,
+        "unit": "C",
+        "status": "OK"
+      },
+      "humidity": {
+        "value": 73.5,
+        "unit": "%",
+        "status": "OK"
+      },
+      "co2": {
+        "value": 645,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "voc": {
+        "value": 1.1,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "gas": {
+        "value": 0.36,
+        "unit": "ppm",
+        "status": "OK"
+      }
+    },
+    "firmwareVersion": "0.2.0",
+    "sensorsMetadata": [
+      "temperature",
+      "humidity",
+      "co2",
+      "voc",
+      "gas",
+      "gps"
+    ],
+    "calibrationMetadata": {
+      "temperature": {
+        "status": "CALIBRATED",
+        "lastCalibratedAt": "2026-08-01T00:00:00Z"
+      },
+      "humidity": {
+        "status": "CALIBRATED",
+        "lastCalibratedAt": "2026-08-01T00:00:00Z"
+      },
+      "co2": {
+        "status": "REQUIRED",
+        "lastCalibratedAt": null
+      },
+      "voc": {
+        "status": "REQUIRED",
+        "lastCalibratedAt": null
+      },
+      "gas": {
+        "status": "REQUIRED",
+        "lastCalibratedAt": null
+      },
+      "gps": {
+        "status": "CALIBRATED",
+        "lastCalibratedAt": "2026-08-01T00:00:00Z"
+      }
+    }
+  }
+]

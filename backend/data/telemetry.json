@@ -1,0 +1,612 @@
+[
+  {
+    "nodeId": "TF-NODE-01",
+    "batchId": "TF-APL-2026-001",
+    "shipmentId": "SHIP-APL-110",
+    "timestamp": "2026-09-05T05:38:24.727312+00:00",
+    "sensors": {
+      "temperature": {
+        "value": 5.5,
+        "unit": "C",
+        "status": "OK"
+      },
+      "humidity": {
+        "value": 71.2,
+        "unit": "%",
+        "status": "OK"
+      },
+      "co2": {
+        "value": 600.2,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "voc": {
+        "value": 1.52,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "gas": {
+        "value": 0.41,
+        "unit": "ppm",
+        "status": "OK"
+      }
+    },
+    "gps": {
+      "latitude": 13.0832,
+      "longitude": 80.2716,
+      "speedKmh": 39.1,
+      "accuracyM": 4.2,
+      "status": "LOCKED"
+    },
+    "device": {
+      "batteryPercent": 84,
+      "signalStrengthDbm": -58,
+      "firmwareVersion": "0.1.0"
+    },
+    "source": "simulator",
+    "telemetryId": "TEL-20260905-053824-2867",
+    "serverReceivedAt": "2026-09-05T05:38:24.749278+00:00"
+  },
+  {
+    "nodeId": "TF-NODE-02",
+    "batchId": "TF-BAN-2026-002",
+    "shipmentId": "SHIP-BAN-102",
+    "timestamp": "2026-09-05T05:38:24.727822+00:00",
+    "sensors": {
+      "temperature": {
+        "value": 4.7,
+        "unit": "C",
+        "status": "OK"
+      },
+      "humidity": {
+        "value": 88.3,
+        "unit": "%",
+        "status": "OK"
+      },
+      "co2": {
+        "value": 520.0,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "voc": {
+        "value": 1.1,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "gas": {
+        "value": 0.36,
+        "unit": "ppm",
+        "status": "OK"
+      }
+    },
+    "gps": {
+      "latitude": 12.9713,
+      "longitude": 77.594,
+      "speedKmh": 36.5,
+      "accuracyM": 4.2,
+      "status": "LOCKED"
+    },
+    "device": {
+      "batteryPercent": 91,
+      "signalStrengthDbm": -58,
+      "firmwareVersion": "0.1.0"
+    },
+    "source": "simulator",
+    "telemetryId": "TEL-20260905-053824-7ED9",
+    "serverReceivedAt": "2026-09-05T05:38:24.750236+00:00"
+  },
+  {
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-05T07:34:14.354426+00:00",
+    "sensors": {
+      "temperature": {
+        "value": 6.2,
+        "unit": "C",
+        "status": "OK"
+      },
+      "humidity": {
+        "value": 72.5,
+        "unit": "%",
+        "status": "OK"
+      },
+      "co2": {
+        "value": null,
+        "unit": "ppm",
+        "status": "MISSING"
+      },
+      "voc": {
+        "value": 1.45,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "gas": {
+        "value": 0.38,
+        "unit": "ppm",
+        "status": "OK"
+      }
+    },
+    "gps": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "speedKmh": 0,
+      "accuracyM": 3.5,
+      "status": "LOCKED"
+    },
+    "device": {
+      "batteryPercent": 88,
+      "signalStrengthDbm": -59,
+      "firmwareVersion": "0.1.0"
+    },
+    "source": "hardware",
+    "telemetryId": "TEL-20260905-073414-4BB9",
+    "serverReceivedAt": "2026-09-05T07:34:14.358579+00:00"
+  },
+  {
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-05T07:40:05.271091+00:00",
+    "sensors": {
+      "temperature": {
+        "value": 5.8,
+        "unit": "C",
+        "status": "OK"
+      },
+      "humidity": {
+        "value": 71.2,
+        "unit": "%",
+        "status": "OK"
+      },
+      "co2": {
+        "value": null,
+        "unit": "ppm",
+        "status": "MISSING"
+      },
+      "voc": {
+        "value": 1.4,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "gas": {
+        "value": 0.35,
+        "unit": "ppm",
+        "status": "OK"
+      }
+    },
+    "gps": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "speedKmh": 32,
+      "accuracyM": 4,
+      "status": "LOCKED"
+    },
+    "device": {
+      "batteryPercent": 88,
+      "signalStrengthDbm": -59,
+      "firmwareVersion": "0.2.0"
+    },
+    "source": "hardware",
+    "telemetryId": "TEL-20260905-074005-6ADE",
+    "serverReceivedAt": "2026-09-05T07:40:05.274497+00:00"
+  },
+  {
+    "nodeId": "TF-NODE-02",
+    "timestamp": "2026-09-05T07:40:05.271107+00:00",
+    "sensors": {
+      "temperature": {
+        "value": 6.4,
+        "unit": "C",
+        "status": "OK"
+      },
+      "humidity": {
+        "value": 73.5,
+        "unit": "%",
+        "status": "OK"
+      },
+      "co2": {
+        "value": 645,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "voc": {
+        "value": 1.1,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "gas": {
+        "value": 0.36,
+        "unit": "ppm",
+        "status": "OK"
+      }
+    },
+    "gps": {
+      "latitude": 12.9716,
+      "longitude": 77.5946,
+      "speedKmh": 38,
+      "accuracyM": 4,
+      "status": "LOCKED"
+    },
+    "device": {
+      "batteryPercent": 92,
+      "signalStrengthDbm": -65,
+      "firmwareVersion": "0.2.0"
+    },
+    "source": "simulator",
+    "telemetryId": "TEL-20260905-074005-8D6E",
+    "serverReceivedAt": "2026-09-05T07:40:05.281740+00:00"
+  },
+  {
+    "nodeId": "TF-NODE-01",
+    "batchId": "TF-APL-2026-001",
+    "shipmentId": "SHIP-APL-110",
+    "timestamp": "2026-09-06T13:46:56.531Z",
+    "sensors": {
+      "temperature": {
+        "value": 19.8,
+        "unit": "\u00b0C",
+        "status": "OK"
+      },
+      "humidity": {
+        "value": 45,
+        "unit": "%",
+        "status": "OK"
+      },
+      "co2": {
+        "value": 1750,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "voc": {
+        "value": 8.2,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "gas": {
+        "value": 4.1,
+        "unit": "ppm",
+        "status": "OK"
+      }
+    },
+    "gps": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "speedKmh": 38,
+      "status": "LOCKED"
+    },
+    "device": {
+      "batteryPercent": 65,
+      "signalStrengthDbm": -60,
+      "firmwareVersion": "1.0.0-HW"
+    },
+    "source": "hardware",
+    "telemetryId": "TEL-20260906-134656-FDD5",
+    "serverReceivedAt": "2026-09-06T13:46:56.535847+00:00"
+  },
+  {
+    "nodeId": "TF-NODE-01",
+    "batchId": "TF-APL-2026-001",
+    "shipmentId": "SHIP-APL-110",
+    "timestamp": "2026-09-06T13:47:02.194Z",
+    "sensors": {
+      "temperature": {
+        "value": 19.8,
+        "unit": "\u00b0C",
+        "status": "OK"
+      },
+      "humidity": {
+        "value": 45,
+        "unit": "%",
+        "status": "OK"
+      },
+      "co2": {
+        "value": 1752,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "voc": {
+        "value": 8.2,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "gas": {
+        "value": 4.1,
+        "unit": "ppm",
+        "status": "OK"
+      }
+    },
+    "gps": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "speedKmh": 38,
+      "status": "LOCKED"
+    },
+    "device": {
+      "batteryPercent": 65,
+      "signalStrengthDbm": -60,
+      "firmwareVersion": "1.0.0-HW"
+    },
+    "source": "hardware",
+    "telemetryId": "TEL-20260906-134702-066F",
+    "serverReceivedAt": "2026-09-06T13:47:02.200214+00:00"
+  },
+  {
+    "nodeId": "TF-NODE-01",
+    "batchId": "TF-APL-2026-001",
+    "shipmentId": "SHIP-APL-110",
+    "timestamp": "2026-09-06T13:47:04.191Z",
+    "sensors": {
+      "temperature": {
+        "value": 19.9,
+        "unit": "\u00b0C",
+        "status": "OK"
+      },
+      "humidity": {
+        "value": 45.2,
+        "unit": "%",
+        "status": "OK"
+      },
+      "co2": {
+        "value": 1750,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "voc": {
+        "value": 8.2,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "gas": {
+        "value": 4.1,
+        "unit": "ppm",
+        "status": "OK"
+      }
+    },
+    "gps": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "speedKmh": 38,
+      "status": "LOCKED"
+    },
+    "device": {
+      "batteryPercent": 65,
+      "signalStrengthDbm": -60,
+      "firmwareVersion": "1.0.0-HW"
+    },
+    "source": "hardware",
+    "telemetryId": "TEL-20260906-134704-153C",
+    "serverReceivedAt": "2026-09-06T13:47:04.191326+00:00"
+  },
+  {
+    "nodeId": "TF-NODE-01",
+    "batchId": "TF-APL-2026-001",
+    "shipmentId": "SHIP-APL-110",
+    "timestamp": "2026-09-06T13:47:06.180Z",
+    "sensors": {
+      "temperature": {
+        "value": 19.9,
+        "unit": "\u00b0C",
+        "status": "OK"
+      },
+      "humidity": {
+        "value": 45.5,
+        "unit": "%",
+        "status": "OK"
+      },
+      "co2": {
+        "value": 1750,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "voc": {
+        "value": 8.2,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "gas": {
+        "value": 4.1,
+        "unit": "ppm",
+        "status": "OK"
+      }
+    },
+    "gps": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "speedKmh": 38,
+      "status": "LOCKED"
+    },
+    "device": {
+      "batteryPercent": 65,
+      "signalStrengthDbm": -60,
+      "firmwareVersion": "1.0.0-HW"
+    },
+    "source": "hardware",
+    "telemetryId": "TEL-20260906-134706-2789",
+    "serverReceivedAt": "2026-09-06T13:47:06.182422+00:00"
+  },
+  {
+    "nodeId": "TF-NODE-01",
+    "batchId": "TF-APL-2026-001",
+    "shipmentId": "SHIP-APL-110",
+    "timestamp": "2026-09-06T13:47:08.188Z",
+    "sensors": {
+      "temperature": {
+        "value": 19.7,
+        "unit": "\u00b0C",
+        "status": "OK"
+      },
+      "humidity": {
+        "value": 45.1,
+        "unit": "%",
+        "status": "OK"
+      },
+      "co2": {
+        "value": 1748,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "voc": {
+        "value": 8.2,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "gas": {
+        "value": 4.1,
+        "unit": "ppm",
+        "status": "OK"
+      }
+    },
+    "gps": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "speedKmh": 38,
+      "status": "LOCKED"
+    },
+    "device": {
+      "batteryPercent": 65,
+      "signalStrengthDbm": -60,
+      "firmwareVersion": "1.0.0-HW"
+    },
+    "source": "hardware",
+    "telemetryId": "TEL-20260906-134708-1216",
+    "serverReceivedAt": "2026-09-06T13:47:08.195386+00:00"
+  },
+  {
+    "nodeId": "TF-NODE-01",
+    "batchId": "TF-APL-2026-001",
+    "shipmentId": "SHIP-APL-110",
+    "timestamp": "2026-09-06T13:47:10.187Z",
+    "sensors": {
+      "temperature": {
+        "value": 19.9,
+        "unit": "\u00b0C",
+        "status": "OK"
+      },
+      "humidity": {
+        "value": 45.3,
+        "unit": "%",
+        "status": "OK"
+      },
+      "co2": {
+        "value": 1750,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "voc": {
+        "value": 8.2,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "gas": {
+        "value": 4.1,
+        "unit": "ppm",
+        "status": "OK"
+      }
+    },
+    "gps": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "speedKmh": 38,
+      "status": "LOCKED"
+    },
+    "device": {
+      "batteryPercent": 65,
+      "signalStrengthDbm": -60,
+      "firmwareVersion": "1.0.0-HW"
+    },
+    "source": "hardware",
+    "telemetryId": "TEL-20260906-134710-6409",
+    "serverReceivedAt": "2026-09-06T13:47:10.189719+00:00"
+  },
+  {
+    "nodeId": "TF-NODE-01",
+    "batchId": "TF-APL-2026-001",
+    "shipmentId": "SHIP-APL-110",
+    "timestamp": "2026-09-06T13:47:12.185Z",
+    "sensors": {
+      "temperature": {
+        "value": 20,
+        "unit": "\u00b0C",
+        "status": "OK"
+      },
+      "humidity": {
+        "value": 45.7,
+        "unit": "%",
+        "status": "OK"
+      },
+      "co2": {
+        "value": 1750,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "voc": {
+        "value": 8.2,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "gas": {
+        "value": 4.1,
+        "unit": "ppm",
+        "status": "OK"
+      }
+    },
+    "gps": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "speedKmh": 38,
+      "status": "LOCKED"
+    },
+    "device": {
+      "batteryPercent": 65,
+      "signalStrengthDbm": -60,
+      "firmwareVersion": "1.0.0-HW"
+    },
+    "source": "hardware",
+    "telemetryId": "TEL-20260906-134712-221E",
+    "serverReceivedAt": "2026-09-06T13:47:12.187534+00:00"
+  },
+  {
+    "nodeId": "TF-NODE-01",
+    "batchId": "TF-APL-2026-001",
+    "shipmentId": "SHIP-APL-110",
+    "timestamp": "2026-09-06T16:54:41.488Z",
+    "sensors": {
+      "temperature": {
+        "value": 46.7,
+        "unit": "\u00b0C",
+        "status": "OK"
+      },
+      "humidity": {
+        "value": 71,
+        "unit": "%",
+        "status": "OK"
+      },
+      "co2": {
+        "value": 600,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "voc": {
+        "value": 1.5,
+        "unit": "ppm",
+        "status": "OK"
+      },
+      "gas": {
+        "value": 0.42,
+        "unit": "ppm",
+        "status": "OK"
+      }
+    },
+    "gps": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "speedKmh": 38,
+      "status": "LOCKED"
+    },
+    "device": {
+      "batteryPercent": 85,
+      "signalStrengthDbm": -60,
+      "firmwareVersion": "1.0.0-HW"
+    },
+    "source": "hardware",
+    "telemetryId": "TEL-20260906-165441-42AC",
+    "serverReceivedAt": "2026-09-06T16:54:41.495863+00:00"
+  }
+]

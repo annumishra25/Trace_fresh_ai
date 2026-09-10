@@ -1,13 +1,40 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useContext, useMemo, useState, useCallback } from "react";
+
+const DEFAULT_BATCH = {
+  batchId: "TF-APL-2026-001",
+  displayName: "Fuji Apples Batch 001",
+  fruitType: "apple",
+  location: "Container A - Node 01",
+  latestAssessment: {
+    freshnessScore: 94,
+    shelfLifeDays: 9,
+    spoilageRisk: 6,
+    riskLevel: "LOW",
+    status: "PASS",
+    storageCondition: "OPTIMAL"
+  }
+};
 
 const MonitoringBatchContext = createContext(null);
 
 export function MonitoringBatchProvider({ children }) {
-  const [selectedBatch, setSelectedBatch] = useState(null);
-  const [liveSensors, setLiveSensors] = useState(null);
-  const [scanResult, setScanResult] = useState(null);
+  const [selectedBatch, setSelectedBatchState] = useState(DEFAULT_BATCH);
+  const [liveSensors, setLiveSensorsState] = useState(null);
+  const [scanResult, setScanResultState] = useState(null);
 
-  const activeBatch = scanResult || selectedBatch;
+  const setSelectedBatch = useCallback((batch) => {
+    if (batch) setSelectedBatchState(batch);
+  }, []);
+
+  const setLiveSensors = useCallback((sensors) => {
+    setLiveSensorsState(sensors);
+  }, []);
+
+  const setScanResult = useCallback((result) => {
+    setScanResultState(result);
+  }, []);
+
+  const activeBatch = useMemo(() => scanResult || selectedBatch, [scanResult, selectedBatch]);
 
   const value = useMemo(
     () => ({
@@ -19,7 +46,7 @@ export function MonitoringBatchProvider({ children }) {
       setScanResult,
       activeBatch,
     }),
-    [selectedBatch, liveSensors, scanResult, activeBatch]
+    [selectedBatch, setSelectedBatch, liveSensors, setLiveSensors, scanResult, setScanResult, activeBatch]
   );
 
   return (

@@ -1,1 +1,206 @@
 @import "tailwindcss";
+
+/* -------------------------------------------------------------
+ * TRACEFRESH AI - DARK GREEN & WHITE DESIGN SYSTEM
+ * ------------------------------------------------------------- */
+
+:root {
+  --bg-dark-deep: #03140e;
+  --bg-dark-main: #061d15;
+  --bg-dark-card: rgba(9, 42, 31, 0.88);
+  --border-emerald: rgba(52, 211, 153, 0.22);
+  --text-white: #ffffff;
+  --text-mint: #a7f3d0;
+  --accent-emerald: #10b981;
+}
+
+html, body {
+  background-color: #03140e;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================
+   DARK GREEN MODE (DEFAULT & DARK SWITCH)
+   ========================================== */
+html.dark, html:not(.light) {
+  background-color: #03140e;
+  color: #ffffff;
+}
+
+html.dark body, html:not(.light) body {
+  background-color: #03140e;
+  color: #ffffff;
+}
+
+/* Seamless translation of generic dark slate containers into rich Dark Green tones */
+html.dark .bg-slate-950,
+html:not(.light) .bg-slate-950 {
+  background-color: #03140e !important;
+}
+
+html.dark .bg-slate-950\/90,
+html:not(.light) .bg-slate-950\/90 {
+  background-color: rgba(6, 29, 21, 0.92) !important;
+}
+
+html.dark .bg-slate-950\/70,
+html.dark .bg-slate-950\/80,
+html:not(.light) .bg-slate-950\/70 {
+  background-color: rgba(6, 29, 21, 0.78) !important;
+}
+
+html.dark .bg-slate-900,
+html.dark .bg-slate-900\/95,
+html.dark .bg-slate-900\/80,
+html.dark .bg-slate-900\/90,
+html.dark .bg-slate-900\/40,
+html:not(.light) .bg-slate-900 {
+  background-color: rgba(9, 42, 31, 0.88) !important;
+}
+
+html.dark .bg-slate-800,
+html.dark .bg-slate-800\/80,
+html.dark .bg-slate-800\/60,
+html.dark .bg-slate-800\/70,
+html:not(.light) .bg-slate-800 {
+  background-color: rgba(12, 56, 42, 0.75) !important;
+}
+
+html.dark .border-slate-800,
+html.dark .border-slate-800\/80,
+html.dark .border-slate-700,
+html.dark .border-slate-800\/60,
+html:not(.light) .border-slate-800 {
+  border-color: rgba(52, 211, 153, 0.22) !important;
+}
+
+html.dark .text-slate-100,
+html.dark .text-slate-200,
+html:not(.light) .text-slate-100 {
+  color: #ffffff !important;
+}
+
+html.dark .text-slate-300,
+html.dark .text-slate-400,
+html:not(.light) .text-slate-300 {
+  color: #a7f3d0 !important;
+}
+
+/* ==========================================
+   WHITE MODE (CRISP WHITE + DARK GREEN ACCENTS)
+   ========================================== */
+html.light {
+  background-color: #f2f7f4;
+  color: #042419;
+}
+
+html.light body {
+  background-color: #f2f7f4;
+  color: #042419;
+}
+
+html.light .glass-card {
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(6, 78, 59, 0.15) !important;
+  box-shadow: 0 10px 30px rgba(6, 78, 59, 0.08) !important;
+}
+
+html.light .bg-slate-950\/90,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-slate-900,
+html.light .bg-slate-800 {
+  background-color: #f8faf9 !important;
+}
+
+html.light .text-slate-100,
+html.light .text-slate-200,
+html.light .text-white {
+  color: #042419 !important;
+}
+
+html.light .text-slate-300,
+html.light .text-slate-400 {
+  color: #064e3b !important;
+}
+
+html.light .border-slate-800,
+html.light .border-slate-800\/80,
+html.light .border-slate-700 {
+  border-color: rgba(6, 78, 59, 0.2) !important;
+}
+
+/* ==========================================
+   UTILITY CLASSES & GLASSMORPHISM
+   ========================================== */
+@layer utilities {
+  .glass-card {
+    background: rgba(9, 42, 31, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  }
+
+  .glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card-hover:hover {
+    transform: translateY(-2px);
+    border-color: rgba(52, 211, 153, 0.45);
+    box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.35);
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.5);
+  }
+
+  .glow-mint {
+    box-shadow: 0 0 25px -5px rgba(52, 211, 153, 0.5);
+  }
+
+  .glow-white {
+    box-shadow: 0 0 25px -5px rgba(255, 255, 255, 0.35);
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.4);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 25px -5px rgba(20, 184, 166, 0.4);
+  }
+
+  .glow-rose {
+    box-shadow: 0 0 25px -5px rgba(244, 63, 94, 0.4);
+  }
+
+  .bg-grid-pattern {
+    background-image: radial-gradient(rgba(52, 211, 153, 0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}

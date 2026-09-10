@@ -6,31 +6,34 @@
     "source": "Demo Farm A",
     "location": "Chennai Warehouse",
     "createdAt": "2026-07-08T08:00:00",
-    "lastUpdated": "2026-07-13T10:51:18.137383",
+    "lastUpdated": "2026-09-06T16:56:13.562500",
     "latestAssessment": {
       "visualClass": "rottenbanana",
-      "confidence": 0.7235,
-      "freshnessScore": 72.35,
-      "shelfLifeDays": 8,
-      "spoilageRisk": 27.65,
+      "confidence": 0.72,
+      "freshnessScore": 56.4,
+      "shelfLifeDays": 5.6,
+      "spoilageRisk": 47.6,
       "riskLevel": "HIGH RISK",
       "status": "WARNING",
-      "qualityAdvisory": "Inspection completed using TraceFresh AI.",
+      "qualityAdvisory": "Elevated spoilage / deterioration risk detected. This batch requires immediate inspection and operational attention before further distribution.",
       "suspiciousQualityFlag": true,
       "reasons": [
-        "AI classified the fruit as rottenbanana."
+        "Visual class 'rottenbanana' does not perfectly match the expected fresh apple profile",
+        "Temperature is high enough to accelerate deterioration risk",
+        "Humidity is currently within a stable storage range",
+        "Current gas reading does not indicate a strong spoilage signal"
       ]
     },
     "latestSensors": {
-      "temperature": null,
-      "humidity": null,
-      "mq135": null,
-      "storageCondition": "Unknown"
+      "temperature": 35.0,
+      "humidity": 60.0,
+      "mq135": 180.0,
+      "storageCondition": "High Risk"
     },
     "traceability": {
       "lotId": "LOT-APL-01",
       "packedDate": "2026-07-07",
-      "lastScanTime": "2026-07-13T10:51:18.137383",
+      "lastScanTime": "2026-09-06T16:56:13.562500",
       "shipmentId": "SHIP-APL-110",
       "node": "TF-PI-01"
     },
@@ -224,6 +227,12 @@
       {
         "timestamp": "2026-07-13T10:51:18.137383",
         "freshnessScore": 72.35,
+        "riskLevel": "HIGH RISK",
+        "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-09-06T16:56:13.562500",
+        "freshnessScore": 56.4,
         "riskLevel": "HIGH RISK",
         "status": "WARNING"
       }

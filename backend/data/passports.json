@@ -1,0 +1,209 @@
+[
+  {
+    "passportId": "PASS-BATCH-AAA-111",
+    "passportVersion": "1.0",
+    "qrId": "QR-BATCH-AAA-111-DBA2",
+    "publicToken": "TR-VER-7A01B9F40B464F11",
+    "issuedAt": "2026-09-05T08:59:34.838761+00:00",
+    "lastUpdated": "2026-09-05T08:59:34.838761+00:00",
+    "product": {
+      "name": "Premium Apples",
+      "commodity": "APPLES",
+      "batchId": "BATCH-AAA-111",
+      "shipmentId": "SHIP-APL-110"
+    },
+    "origin": "Yakima Valley Orchard, WA",
+    "destination": "Distribution Center Alpha, Seattle WA",
+    "journey": {
+      "status": "AT_RISK",
+      "routeId": "ROUTE-001",
+      "originName": "Yakima Valley Orchard, WA",
+      "destinationName": "Distribution Center Alpha, Seattle WA",
+      "plannedDistanceKm": 185.0,
+      "actualDistanceKm": 185.0,
+      "delayMinutes": 8,
+      "delayReason": "12-minute stationary period detected near Sriperumbudur checkpoint",
+      "lastCheckpoint": "Seattle Distribution Hub"
+    },
+    "environment": {
+      "status": "MONITORED",
+      "nodeId": "TF-NODE-01",
+      "temperatureSummary": {
+        "currentTempC": 4.2,
+        "averageTempC": 4.1,
+        "maxTempC": 5.0,
+        "minTempC": 3.5,
+        "excursionMinutes": 0
+      },
+      "humiditySummary": {
+        "currentHumidityPercent": 88.0,
+        "averageHumidityPercent": 87.5,
+        "highHumidityMinutes": 0.0
+      },
+      "exposureRiskScore": 10,
+      "sensorQualityScore": 65
+    },
+    "inspection": {
+      "inspectionCount": 0,
+      "latestVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 10,
+      "detectedAnomalies": [],
+      "imageQualityScore": 92,
+      "lastInspectedAt": "2026-09-05T08:59:34.838761+00:00"
+    },
+    "condition": {
+      "status": "NORMAL",
+      "freshnessIndex": 88,
+      "freshnessRating": "EXCELLENT",
+      "overallRiskScore": 11.2,
+      "confidence": 0.9,
+      "estimatedShelfLifeDays": 8.9,
+      "actionableRecommendation": "Shipment verified optimal. Continue standard transit and storage operations."
+    },
+    "verification": {
+      "verified": true,
+      "verificationStatus": "ACTIVE",
+      "issuer": "TraceFresh-AI Trust Protocol",
+      "lastVerifiedAt": "2026-09-05T08:59:34.838761+00:00"
+    },
+    "passportHash": "sha256:5a77f8a625a5c07d50346cc8bed7e950ee8d6c38c776f24836bb4ac1616ea587"
+  },
+  {
+    "passportId": "PASS-BATCH-BBB-222",
+    "passportVersion": "1.0",
+    "qrId": "QR-BATCH-BBB-222-C089",
+    "publicToken": "TR-VER-B59D28540BFB3243",
+    "issuedAt": "2026-09-05T08:59:35.012222+00:00",
+    "lastUpdated": "2026-09-05T08:59:35.012222+00:00",
+    "product": {
+      "name": "Premium Apples",
+      "commodity": "APPLES",
+      "batchId": "BATCH-BBB-222",
+      "shipmentId": "SHIP-APL-110"
+    },
+    "origin": "Yakima Valley Orchard, WA",
+    "destination": "Distribution Center Alpha, Seattle WA",
+    "journey": {
+      "status": "AT_RISK",
+      "routeId": "ROUTE-001",
+      "originName": "Yakima Valley Orchard, WA",
+      "destinationName": "Distribution Center Alpha, Seattle WA",
+      "plannedDistanceKm": 185.0,
+      "actualDistanceKm": 185.0,
+      "delayMinutes": 8,
+      "delayReason": "12-minute stationary period detected near Sriperumbudur checkpoint",
+      "lastCheckpoint": "Seattle Distribution Hub"
+    },
+    "environment": {
+      "status": "MONITORED",
+      "nodeId": "TF-NODE-01",
+      "temperatureSummary": {
+        "currentTempC": 4.2,
+        "averageTempC": 4.1,
+        "maxTempC": 5.0,
+        "minTempC": 3.5,
+        "excursionMinutes": 0
+      },
+      "humiditySummary": {
+        "currentHumidityPercent": 88.0,
+        "averageHumidityPercent": 87.5,
+        "highHumidityMinutes": 0.0
+      },
+      "exposureRiskScore": 10,
+      "sensorQualityScore": 65
+    },
+    "inspection": {
+      "inspectionCount": 0,
+      "latestVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 10,
+      "detectedAnomalies": [],
+      "imageQualityScore": 92,
+      "lastInspectedAt": "2026-09-05T08:59:35.012222+00:00"
+    },
+    "condition": {
+      "status": "NORMAL",
+      "freshnessIndex": 88,
+      "freshnessRating": "EXCELLENT",
+      "overallRiskScore": 11.2,
+      "confidence": 0.9,
+      "estimatedShelfLifeDays": 8.9,
+      "actionableRecommendation": "Shipment verified optimal. Continue standard transit and storage operations."
+    },
+    "verification": {
+      "verified": true,
+      "verificationStatus": "ACTIVE",
+      "issuer": "TraceFresh-AI Trust Protocol",
+      "lastVerifiedAt": "2026-09-05T08:59:35.012222+00:00"
+    },
+    "passportHash": "sha256:8c96741b9780c768a2f6728a197815559b845a3fc9f74306bc62e7955665a348"
+  },
+  {
+    "passportId": "PASS-TF-APL-2026-001",
+    "passportVersion": "1.0",
+    "qrId": "QR-TF-APL-2026-001",
+    "publicToken": "TR-VER-89A7B3E1F4C2D0E5",
+    "issuedAt": "2026-09-06T17:53:00.315123+00:00",
+    "lastUpdated": "2026-09-06T17:53:00.315123+00:00",
+    "product": {
+      "name": "Premium Apple",
+      "commodity": "APPLE",
+      "batchId": "TF-APL-2026-001",
+      "shipmentId": "SHIP-APL-110"
+    },
+    "origin": "Demo Farm A",
+    "destination": "Chennai Warehouse",
+    "journey": {
+      "status": "AT_RISK",
+      "routeId": "ROUTE-001",
+      "originName": "Demo Farm A",
+      "destinationName": "Chennai Warehouse",
+      "plannedDistanceKm": 185.0,
+      "actualDistanceKm": 185.0,
+      "delayMinutes": 8,
+      "delayReason": "Demo Replay: Normal transit",
+      "lastCheckpoint": "Seattle Distribution Hub"
+    },
+    "environment": {
+      "status": "MONITORED",
+      "nodeId": "TF-NODE-01",
+      "temperatureSummary": {
+        "currentTempC": 4.2,
+        "averageTempC": 4.1,
+        "maxTempC": 5.0,
+        "minTempC": 3.5,
+        "excursionMinutes": 0
+      },
+      "humiditySummary": {
+        "currentHumidityPercent": 88.0,
+        "averageHumidityPercent": 87.5,
+        "highHumidityMinutes": 0.0
+      },
+      "exposureRiskScore": 50,
+      "sensorQualityScore": 65
+    },
+    "inspection": {
+      "inspectionCount": 766,
+      "latestVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "detectedAnomalies": [],
+      "imageQualityScore": 95,
+      "lastInspectedAt": "2026-09-06T17:47:46.411807+00:00"
+    },
+    "condition": {
+      "status": "ATTENTION_REQUIRED",
+      "freshnessIndex": 74,
+      "freshnessRating": "GOOD",
+      "overallRiskScore": 25.5,
+      "confidence": 0.9,
+      "estimatedShelfLifeDays": 5.3,
+      "actionableRecommendation": "Review storage environment parameters. Keep under regular observation."
+    },
+    "verification": {
+      "verified": true,
+      "verificationStatus": "ACTIVE",
+      "issuer": "TraceFresh-AI Trust Protocol",
+      "lastVerifiedAt": "2026-09-06T17:53:00.315123+00:00"
+    },
+    "passportHash": "sha256:5ece76012b78aec4fc9be88915d792a394f393ef520a039f2b8c3fb4d23ff907"
+  }
+]

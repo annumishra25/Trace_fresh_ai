@@ -1,79 +1,87 @@
 function DigitalTwinWarehouse() {
-
   const zones = [
     {
       name: "Zone A1",
       temperature: "4°C",
       occupancy: "82%",
       risk: "LOW",
-      color: "bg-green-100"
+      badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/40",
+      accent: "from-emerald-500 to-teal-500"
     },
-
     {
       name: "Zone A2",
       temperature: "5°C",
       occupancy: "70%",
       risk: "LOW",
-      color: "bg-green-100"
+      badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/40",
+      accent: "from-emerald-500 to-cyan-500"
     },
-
     {
       name: "Zone B1",
       temperature: "9°C",
       occupancy: "91%",
       risk: "MEDIUM",
-      color: "bg-yellow-100"
+      badgeColor: "bg-amber-500/20 text-amber-300 border-amber-500/40",
+      accent: "from-amber-500 to-orange-500"
     },
-
     {
       name: "Zone B2",
       temperature: "12°C",
       occupancy: "95%",
       risk: "HIGH",
-      color: "bg-red-100"
+      badgeColor: "bg-rose-500/20 text-rose-300 border-rose-500/40",
+      accent: "from-rose-500 to-red-500"
     },
   ];
 
   return (
-    <div className="bg-white rounded-2xl shadow-md p-6">
+    <div className="glass-card bg-slate-900/80 border border-slate-800/80 rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl backdrop-blur-xl relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-emerald-500 to-indigo-500 opacity-80" />
 
-      <h2 className="text-2xl font-bold mb-5">
-        Warehouse Digital Twin
-      </h2>
-
-      <div className="grid grid-cols-2 gap-4">
-
-        {zones.map((zone) => (
-
-          <div
-            key={zone.name}
-            className={`${zone.color} p-5 rounded-xl`}
-          >
-
-            <h3 className="font-bold text-xl">
-              {zone.name}
-            </h3>
-
-            <p>
-              Temperature: {zone.temperature}
-            </p>
-
-            <p>
-              Occupancy: {zone.occupancy}
-            </p>
-
-            <p>
-              Risk: {zone.risk}
-            </p>
-
-          </div>
-
-        ))}
-
+      <div>
+        <h2 className="text-2xl font-black text-slate-100 tracking-tight flex items-center gap-2">
+          <span>Warehouse Digital Twin</span>
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        </h2>
+        <p className="text-xs text-slate-300 mt-1">
+          Real-Time Spatial Environmental Monitoring & Capacity Allocation
+        </p>
       </div>
 
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {zones.map((zone) => (
+          <div
+            key={zone.name}
+            className="bg-slate-950/80 p-6 rounded-2xl border border-slate-800/90 relative overflow-hidden hover:border-slate-700 transition-all shadow-lg space-y-4"
+          >
+            <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${zone.accent}`} />
+
+            <div className="flex items-center justify-between">
+              <h3 className="font-extrabold text-xl text-slate-100">
+                {zone.name}
+              </h3>
+              <span className={`text-xs font-black font-mono px-3 py-1 rounded-full border ${zone.badgeColor}`}>
+                {zone.risk} RISK
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 text-sm pt-2">
+              <div className="bg-slate-900/70 p-3 rounded-xl border border-slate-800/80">
+                <span className="text-xs font-bold text-slate-300 uppercase tracking-wider block">Temperature</span>
+                <span className="text-xl font-black text-slate-100 font-mono mt-1 block">{zone.temperature}</span>
+              </div>
+
+              <div className="bg-slate-900/70 p-3 rounded-xl border border-slate-800/80">
+                <span className="text-xs font-bold text-slate-300 uppercase tracking-wider block">Occupancy</span>
+                <span className="text-xl font-black text-cyan-300 font-mono mt-1 block">{zone.occupancy}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
 export default DigitalTwinWarehouse;
+

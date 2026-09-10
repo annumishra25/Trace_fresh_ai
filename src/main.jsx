@@ -1,20 +1,18 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 import App from "./App.jsx";
 import "./index.css";
 
-import { SensorProvider }
-from "./context/SensorContext";
+import { SensorProvider } from "./context/SensorContext";
+import { TelemetryProvider } from "./context/TelemetryContext";
+import { MonitoringBatchProvider } from "./context/MonitoringBatchContext";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-
+  <TelemetryProvider>
     <SensorProvider>
-
-      <App />
-
+      <MonitoringBatchProvider>
+        <App />
+      </MonitoringBatchProvider>
     </SensorProvider>
-
-  </StrictMode>
+  </TelemetryProvider>
 );

@@ -1,187 +1,387 @@
+import { useState, useEffect } from "react";
+import { useTelemetry } from "../context/TelemetryContext";
+import { getRoutes, getRouteById, triggerDemoReplay } from "../services/routeApi";
+import SupplyChainMap from "../components/SupplyChainMap/SupplyChainMap";
+
 function Logistics() {
+  const { activeTelemetry, selectedNodeId, isLiveMode } = useTelemetry();
+  const [routes, setRoutes] = useState([]);
+  const [selectedRouteId, setSelectedRouteId] = useState("ROUTE-001");
+  const [currentRoute, setCurrentRoute] = useState(null);
+  const [isReplaying, setIsReplaying] = useState(false);
+  const [replayStep, setReplayStep] = useState(0);
+
+  // Load routes on mount and poll every 4 seconds
+  useEffect(() => {
+    let isMounted = true;
+
+    const fetchRouteData = async () => {
+      const allRoutes = await getRoutes();
+      if (!isMounted) return;
+      setRoutes(allRoutes);
+
+      if (allRoutes.length > 0) {
+        const active = allRoutes.find(r => r.routeId === selectedRouteId) || allRoutes[0];
+        setCurrentRoute(prev => (prev?.routeId === active.routeId && prev?.lastUpdated === active.lastUpdated ? prev : active));
+      }
+    };
+
+    fetchRouteData();
+    const interval = setInterval(fetchRouteData, 4000);
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
+  }, [selectedRouteId]);
+
+  // Handle Demo Replay Step
+  const handleNextReplayStep = async () => {
+    setIsReplaying(true);
+    const nextStep = (replayStep % 10) + 1;
+    setReplayStep(nextStep);
+    const updated = await triggerDemoReplay(selectedRouteId, nextStep);
+    if (updated) {
+      setCurrentRoute(updated);
+    }
+  };
+
+  const handleResetReplay = async () => {
+    setReplayStep(0);
+    setIsReplaying(false);
+    const refreshed = await getRouteById(selectedRouteId);
+    if (refreshed) {
+      setCurrentRoute(refreshed);
+    }
+  };
+
+  // Derive metrics
+  const actualRoute = currentRoute?.actualRoute || {};
+  const gpsQuality = currentRoute?.gpsQuality || {};
+  const waypoints = currentRoute?.waypoints || [];
+  const events = currentRoute?.events || [];
+  const routeCondition = currentRoute?.routeCondition || "ON_ROUTE";
+
+  const liveTemp = activeTelemetry?.sensors?.temperature?.value != null
+    ? `${activeTelemetry.sensors.temperature.value}°C`
+    : "5.8°C";
+
+  const liveHum = activeTelemetry?.sensors?.humidity?.value != null
+    ? `${activeTelemetry.sensors.humidity.value}%`
+    : "71.2%";
+
+  const lat = activeTelemetry?.gps?.latitude || currentRoute?.actualTrack?.slice(-1)[0]?.latitude || 13.0827;
+  const lon = activeTelemetry?.gps?.longitude || currentRoute?.actualTrack?.slice(-1)[0]?.longitude || 80.2707;
+
   return (
-    <div className="space-y-6">
-
-      <h1 className="text-4xl font-bold">
-        Logistics Intelligence Center
-      </h1>
-
-      {/* Logistics KPIs */}
-
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-
-        <div className="bg-white rounded-2xl shadow-md p-5">
-          <h3 className="text-gray-500">
-            Active Vehicles
-          </h3>
-
-          <p className="text-4xl font-bold text-blue-600">
-            12
+    <div className="space-y-6 pb-12">
+      {/* Header & Controls */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h1 className="text-4xl font-black text-slate-100 tracking-tight">
+            Logistics Intelligence Center
+          </h1>
+          <p className="text-slate-300 mt-1 text-sm font-medium">
+            GPS Fleet Tracking, Waypoint Monitoring & Delay/Deviation Engine
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-md p-5">
-          <h3 className="text-gray-500">
-            Deliveries Today
+        <div className="flex flex-wrap items-center gap-3">
+          {/* Shipment Route Switcher */}
+          <div className="flex items-center gap-2 bg-slate-900/90 px-3 py-2 rounded-2xl border border-slate-800 text-xs font-bold">
+            <span className="text-slate-300">Route:</span>
+            <select
+              value={selectedRouteId}
+              onChange={(e) => setSelectedRouteId(e.target.value)}
+              className="bg-slate-950 text-blue-400 font-extrabold px-2 py-1 rounded-lg outline-none cursor-pointer border border-slate-800"
+            >
+              {routes.map((r) => (
+                <option key={r.routeId} value={r.routeId}>
+                  {r.shipmentId} ({r.name})
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="flex items-center gap-2 bg-slate-900/90 px-3 py-2 rounded-2xl border border-slate-800 text-xs font-bold text-slate-200">
+            <span>Node:</span>
+            <span className="font-mono font-black text-blue-400">{currentRoute?.nodeId || selectedNodeId}</span>
+            <span className="text-slate-600">|</span>
+            <span className={isLiveMode ? "text-emerald-400 font-extrabold" : "text-amber-400 font-extrabold"}>
+              {isLiveMode ? "📡 HARDWARE" : "🛰️ SIMULATED"}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Map & Route Overview Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Interactive Supply Chain Map */}
+        <div className="lg:col-span-2 space-y-4">
+          <div className="glass-card bg-slate-900/80 rounded-3xl border border-slate-800 p-5 space-y-4">
+            <div className="flex items-center justify-between px-1">
+              <div>
+                <h3 className="font-black text-slate-100 text-xl tracking-tight">
+                  Real-Time GPS Route Map
+                </h3>
+                <p className="text-xs text-slate-300">
+                  Comparing Planned Route (Dashed) vs Actual GPS Track (Solid)
+                </p>
+              </div>
+
+              {/* Status Badge */}
+              <div className="flex items-center gap-2">
+                <span className={`px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wide border ${
+                  routeCondition === "OFF_ROUTE"
+                    ? "bg-rose-500/20 text-rose-300 border-rose-500/40"
+                    : routeCondition === "ROUTE_DEVIATION"
+                    ? "bg-amber-500/20 text-amber-300 border-amber-500/40"
+                    : "bg-emerald-500/20 text-emerald-300 border-emerald-500/40"
+                }`}>
+                  {routeCondition === "OFF_ROUTE" ? "🚨 OFF ROUTE" : routeCondition === "ROUTE_DEVIATION" ? "⚠️ ROUTE DEVIATION" : "✓ ON ROUTE"}
+                </span>
+              </div>
+            </div>
+
+            {/* Map Container */}
+            <SupplyChainMap route={currentRoute} activeNodeId={selectedNodeId} />
+          </div>
+
+          {/* Interactive Expo Demo / Route Replay Panel */}
+          <div className="bg-slate-950 border border-slate-800 text-white rounded-3xl p-5 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="bg-blue-500/20 text-blue-300 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase border border-blue-500/40">
+                  EXPO DEMO MODE
+                </span>
+                <h4 className="font-extrabold text-sm text-slate-100">
+                  Interactive Route Replay Stream
+                </h4>
+              </div>
+              <p className="text-xs text-slate-300 mt-1">
+                Simulate transit progression, traffic stops, route deviation, and recovery for live demonstrations.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <button
+                onClick={handleNextReplayStep}
+                className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-extrabold px-4 py-2.5 rounded-xl transition shadow-lg flex items-center gap-2 cursor-pointer"
+              >
+                <span>▶ Step Replay</span>
+                <span className="bg-blue-950 px-2 py-0.5 rounded-lg text-[10px] font-mono">#{replayStep}/10</span>
+              </button>
+
+              <button
+                onClick={handleResetReplay}
+                className="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold px-3.5 py-2.5 rounded-xl border border-slate-700 transition cursor-pointer"
+              >
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Route Progress & Delay Panel */}
+        <div className="space-y-6">
+          {/* Transit Progress Card */}
+          <div className="glass-card bg-slate-900/80 rounded-3xl border border-slate-800 p-6 space-y-4">
+            <h3 className="font-black text-slate-100 text-lg border-b pb-3 border-slate-800">
+              Shipment Progress & ETA
+            </h3>
+
+            <div>
+              <div className="flex justify-between items-center text-xs font-bold mb-1.5">
+                <span className="text-slate-300">Route Completion</span>
+                <span className="text-cyan-300 font-black text-sm font-mono">{actualRoute.progressPercent ?? 0}%</span>
+              </div>
+              <div className="w-full bg-slate-950 h-3 rounded-full overflow-hidden border border-slate-800">
+                <div
+                  className="bg-gradient-to-r from-blue-500 to-cyan-400 h-full rounded-full transition-all duration-500"
+                  style={{ width: `${actualRoute.progressPercent ?? 0}%` }}
+                ></div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              <div className="bg-slate-950/80 p-3.5 rounded-2xl border border-slate-800">
+                <p className="text-slate-300 text-[11px] font-bold uppercase tracking-wider">Distance Traveled</p>
+                <p className="font-black text-slate-100 text-lg mt-0.5">
+                  {actualRoute.distanceKm ?? 0} <span className="text-xs text-slate-400 font-normal">/ {currentRoute?.plannedRoute?.distanceKm ?? 0} km</span>
+                </p>
+              </div>
+
+              <div className="bg-slate-950/80 p-3.5 rounded-2xl border border-slate-800">
+                <p className="text-slate-300 text-[11px] font-bold uppercase tracking-wider">Expected Arrival</p>
+                <p className="font-black text-emerald-400 text-sm mt-1 font-mono">
+                  {currentRoute?.plannedRoute?.expectedArrivalTime
+                    ? new Date(currentRoute.plannedRoute.expectedArrivalTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                    : "08:30 AM"}
+                </p>
+              </div>
+            </div>
+
+            {/* Delay Card */}
+            <div className={`p-4 rounded-2xl border ${
+              actualRoute.delayStatus === "DELAYED"
+                ? "bg-rose-500/20 border-rose-500/40 text-rose-200"
+                : actualRoute.delayStatus === "AT_RISK"
+                ? "bg-amber-500/20 border-amber-500/40 text-amber-200"
+                : "bg-emerald-500/20 border-emerald-500/40 text-emerald-200"
+            }`}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold uppercase tracking-wider">Delay Status</span>
+                <span className="font-black text-sm font-mono">
+                  {actualRoute.delayMinutes > 0 ? `+${actualRoute.delayMinutes} Min Delay` : "On Schedule"}
+                </span>
+              </div>
+
+              <p className="text-xs mt-1 leading-relaxed opacity-90">
+                <strong>Primary Reason:</strong> {actualRoute.delayReason || "Proceeding according to schedule."}
+              </p>
+            </div>
+          </div>
+
+          {/* Route Deviation Card */}
+          <div className="glass-card bg-slate-900/80 rounded-3xl border border-slate-800 p-6 space-y-4">
+            <h3 className="font-black text-slate-100 text-lg border-b pb-3 border-slate-800">
+              Route Deviation Metrics
+            </h3>
+
+            <div className="grid grid-cols-2 gap-3">
+              <div className="bg-slate-950/80 p-3.5 rounded-2xl border border-slate-800">
+                <p className="text-slate-300 text-[11px] font-bold uppercase tracking-wider">Current Deviation</p>
+                <p className="font-black text-slate-100 text-lg mt-0.5 font-mono">
+                  {actualRoute.currentDeviationMeters ?? 0} <span className="text-xs text-slate-400 font-normal">m</span>
+                </p>
+              </div>
+
+              <div className="bg-slate-950/80 p-3.5 rounded-2xl border border-slate-800">
+                <p className="text-slate-300 text-[11px] font-bold uppercase tracking-wider">Max Deviation</p>
+                <p className="font-black text-slate-100 text-lg mt-0.5 font-mono">
+                  {actualRoute.maxDeviationMeters ?? 0} <span className="text-xs text-slate-400 font-normal">m</span>
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between text-xs bg-slate-950/80 p-3.5 rounded-2xl border border-slate-800">
+              <span className="text-slate-300 font-bold">Off-Route Events Logged:</span>
+              <span className="font-black text-amber-300 font-mono">{actualRoute.deviationEventCount ?? 0} Events</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* KPI Overview Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="glass-card bg-slate-900/80 rounded-3xl p-5 border border-slate-800">
+          <p className="text-slate-300 text-xs font-bold uppercase tracking-wider">Active Node ID</p>
+          <p className="text-2xl font-black text-blue-400 font-mono mt-1">
+            {currentRoute?.nodeId || selectedNodeId}
+          </p>
+          <p className="text-[11px] text-slate-400 mt-1">Monitored Cold Storage Unit</p>
+        </div>
+
+        <div className="glass-card bg-slate-900/80 rounded-3xl p-5 border border-slate-800">
+          <p className="text-slate-300 text-xs font-bold uppercase tracking-wider">Live GPS Location</p>
+          <p className="text-base font-black text-slate-100 font-mono mt-1">
+            {lat.toFixed(4)}, {lon.toFixed(4)}
+          </p>
+          <p className="text-[11px] text-slate-400 mt-1">Accuracy ±{gpsQuality.averageAccuracyMeters || 4}m</p>
+        </div>
+
+        <div className="glass-card bg-slate-900/80 rounded-3xl p-5 border border-slate-800">
+          <p className="text-slate-300 text-xs font-bold uppercase tracking-wider">Cargo Temperature</p>
+          <p className="text-2xl font-black text-slate-100 font-mono mt-1">{liveTemp}</p>
+          <p className="text-[11px] text-emerald-400 font-bold mt-1">✓ Cold Chain Compliant</p>
+        </div>
+
+        <div className="glass-card bg-slate-900/80 rounded-3xl p-5 border border-slate-800">
+          <p className="text-slate-300 text-xs font-bold uppercase tracking-wider">Cargo Humidity</p>
+          <p className="text-2xl font-black text-cyan-300 font-mono mt-1">{liveHum}</p>
+          <p className="text-[11px] text-emerald-400 font-bold mt-1">✓ Optimal Range</p>
+        </div>
+      </div>
+
+      {/* Route Waypoints & Event Timeline Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Planned Waypoints Sequence */}
+        <div className="glass-card bg-slate-900/80 rounded-3xl border border-slate-800 p-6">
+          <h3 className="font-black text-slate-100 text-lg mb-4">
+            Planned Route Waypoints ({waypoints.length})
           </h3>
 
-          <p className="text-4xl font-bold text-green-600">
-            84
-          </p>
+          <div className="space-y-4 relative before:absolute before:left-4 before:top-3 before:bottom-3 before:w-0.5 before:bg-slate-800">
+            {waypoints.map((wp, idx) => (
+              <div key={idx} className="flex items-start gap-4 relative z-10">
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center font-black text-xs shadow-md border ${
+                  wp.status === "PASSED"
+                    ? "bg-emerald-500 text-slate-950 border-emerald-400"
+                    : "bg-slate-800 text-slate-300 border-slate-700"
+                }`}>
+                  {wp.sequence || idx + 1}
+                </div>
+
+                <div className="bg-slate-950/80 p-3.5 rounded-2xl border border-slate-800 flex-1 flex items-center justify-between">
+                  <div>
+                    <h4 className="font-extrabold text-sm text-slate-100">{wp.name}</h4>
+                    <p className="text-xs text-slate-400 font-mono">
+                      {wp.latitude.toFixed(4)}, {wp.longitude.toFixed(4)}
+                    </p>
+                  </div>
+
+                  <span className={`text-xs font-black px-3 py-1 rounded-full border ${
+                    wp.status === "PASSED"
+                      ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40"
+                      : "bg-slate-800 text-slate-400 border-slate-700"
+                  }`}>
+                    {wp.status || "PENDING"}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-md p-5">
-          <h3 className="text-gray-500">
-            Cold Chain Compliance
+        {/* Route Event Timeline */}
+        <div className="glass-card bg-slate-900/80 rounded-3xl border border-slate-800 p-6">
+          <h3 className="font-black text-slate-100 text-lg mb-4">
+            Route Event Timeline ({events.length})
           </h3>
 
-          <p className="text-4xl font-bold text-green-600">
-            98%
-          </p>
+          <div className="space-y-3 max-h-[360px] overflow-y-auto pr-1">
+            {events.length === 0 ? (
+              <p className="text-sm text-slate-400 italic">No events recorded yet.</p>
+            ) : (
+              events.map((evt, idx) => (
+                <div
+                  key={evt.id || idx}
+                  className={`p-3.5 rounded-2xl border text-xs space-y-1 ${
+                    evt.severity === "HIGH"
+                      ? "bg-rose-500/20 border-rose-500/40 text-rose-200"
+                      : evt.severity === "WARNING"
+                      ? "bg-amber-500/20 border-amber-500/40 text-amber-200"
+                      : "bg-slate-950/80 border-slate-800 text-slate-200"
+                  }`}
+                >
+                  <div className="flex items-center justify-between font-bold">
+                    <span className="uppercase text-[10px] tracking-wider bg-slate-900 px-2 py-0.5 rounded border border-slate-700">
+                      {evt.eventType}
+                    </span>
+                    <span className="font-mono text-[11px] opacity-80">
+                      {new Date(evt.timestamp).toLocaleTimeString()}
+                    </span>
+                  </div>
+
+                  <p className="font-extrabold text-sm text-slate-100">{evt.description}</p>
+                  {evt.durationMinutes && (
+                    <p className="text-[11px] font-mono">Duration: {evt.durationMinutes} minutes</p>
+                  )}
+                </div>
+              ))
+            )}
+          </div>
         </div>
-
-        <div className="bg-white rounded-2xl shadow-md p-5">
-          <h3 className="text-gray-500">
-            Logistics Alerts
-          </h3>
-
-          <p className="text-4xl font-bold text-red-500">
-            2
-          </p>
-        </div>
-
       </div>
-
-      {/* Vehicle Tracking */}
-
-      <div className="bg-white rounded-2xl shadow-md p-6">
-
-        <h2 className="text-2xl font-bold mb-4">
-          Active Vehicle Tracking
-        </h2>
-
-        <div className="grid md:grid-cols-4 gap-4">
-
-          <div>
-            <p className="text-gray-500">
-              Vehicle ID
-            </p>
-
-            <p className="font-bold">
-              TF-TRUCK-01
-            </p>
-          </div>
-
-          <div>
-            <p className="text-gray-500">
-              Current Location
-            </p>
-
-            <p className="font-bold">
-              Chennai
-            </p>
-          </div>
-
-          <div>
-            <p className="text-gray-500">
-              ETA
-            </p>
-
-            <p className="font-bold">
-              02:15 Hours
-            </p>
-          </div>
-
-          <div>
-            <p className="text-gray-500">
-              Status
-            </p>
-
-            <p className="font-bold text-green-600">
-              IN TRANSIT
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-      {/* Cold Chain Conditions */}
-
-      <div className="bg-white rounded-2xl shadow-md p-6">
-
-        <h2 className="text-2xl font-bold mb-4">
-          Cold Chain Conditions
-        </h2>
-
-        <div className="grid md:grid-cols-4 gap-4">
-
-          <div>
-            <p className="text-gray-500">
-              Cargo Temperature
-            </p>
-
-            <p className="font-bold">
-              4.5°C
-            </p>
-          </div>
-
-          <div>
-            <p className="text-gray-500">
-              Cargo Humidity
-            </p>
-
-            <p className="font-bold">
-              92%
-            </p>
-          </div>
-
-          <div>
-            <p className="text-gray-500">
-              Compliance
-            </p>
-
-            <p className="font-bold text-green-600">
-              PASS
-            </p>
-          </div>
-
-          <div>
-            <p className="text-gray-500">
-              Risk
-            </p>
-
-            <p className="font-bold text-green-600">
-              LOW
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-      {/* Logistics Alerts */}
-
-      <div className="bg-white rounded-2xl shadow-md p-6">
-
-        <h2 className="text-2xl font-bold mb-4">
-          Logistics Alerts
-        </h2>
-
-        <div className="space-y-3">
-
-          <div className="bg-yellow-50 p-4 rounded-xl">
-            Vehicle TF-TRUCK-03 delayed by 30 minutes.
-          </div>
-
-          <div className="bg-red-50 p-4 rounded-xl">
-            Cargo temperature exceeded threshold for 5 minutes.
-          </div>
-
-        </div>
-
-      </div>
-
     </div>
   );
 }

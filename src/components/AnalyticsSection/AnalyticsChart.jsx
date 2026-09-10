@@ -1,110 +1,56 @@
 import {
-LineChart,
-Line,
-XAxis,
-YAxis,
-CartesianGrid,
-Tooltip,
-ResponsiveContainer,
-Area,
-AreaChart
+  Area,
+  AreaChart,
+  CartesianGrid,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis
 } from "recharts";
 
-function AnalyticsChart({
-title,
-data,
-dataKey
-}) {
-return ( <div
-   className="
-     bg-white
-     rounded-2xl
-     shadow-md
-     p-6
-     hover:shadow-xl
-     transition-all
-   "
- >
+function AnalyticsChart({ title, data = [], dataKey, color = "#2563eb" }) {
+  if (!data || data.length === 0) {
+    return (
+      <div className="bg-white rounded-2xl shadow-md p-6 border border-slate-100">
+        <h2 className="text-xl font-bold text-slate-900 mb-2">{title}</h2>
+        <p className="text-slate-400 text-sm">No telemetry available</p>
+      </div>
+    );
+  }
 
-```
-  <div className="flex justify-between mb-5">
+  const gradId = `grad_${dataKey}_${color.replace("#", "")}`;
 
-    <h2 className="text-xl font-bold">
-      {title}
-    </h2>
+  return (
+    <div className="bg-white rounded-2xl shadow-md p-6 border border-slate-100 hover:shadow-lg transition-all">
+      <div className="flex justify-between items-center mb-5">
+        <h2 className="text-xl font-bold text-slate-900">{title}</h2>
+        <span className="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-semibold">Live Stream</span>
+      </div>
 
-    <div className="text-green-600 text-sm font-medium">
-      Live
+      <ResponsiveContainer width="100%" height={260}>
+        <AreaChart data={data}>
+          <defs>
+            <linearGradient id={gradId} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor={color} stopOpacity={0.3} />
+              <stop offset="95%" stopColor={color} stopOpacity={0.0} />
+            </linearGradient>
+          </defs>
+          <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+          <XAxis dataKey="time" stroke="#64748b" textAnchor="end" />
+          <YAxis stroke="#64748b" />
+          <Tooltip />
+          <Area
+            type="monotone"
+            dataKey={dataKey}
+            stroke={color}
+            strokeWidth={2.5}
+            fillOpacity={1}
+            fill={`url(#${gradId})`}
+          />
+        </AreaChart>
+      </ResponsiveContainer>
     </div>
-
-  </div>
-
-  <ResponsiveContainer
-    width="100%"
-    height={300}
-  >
-
-    <AreaChart data={data}>
-
-      <defs>
-
-        <linearGradient
-          id="colorData"
-          x1="0"
-          y1="0"
-          x2="0"
-          y2="1"
-        >
-
-          <stop
-            offset="5%"
-            stopColor="#2563eb"
-            stopOpacity={0.4}
-          />
-
-          <stop
-            offset="95%"
-            stopColor="#2563eb"
-            stopOpacity={0}
-          />
-
-        </linearGradient>
-
-      </defs>
-
-      <CartesianGrid
-        strokeDasharray="3 3"
-      />
-
-      <XAxis dataKey="time" />
-
-      <YAxis />
-
-      <Tooltip />
-
-      <Area
-        type="monotone"
-        dataKey={dataKey}
-        stroke="#2563eb"
-        fillOpacity={1}
-        fill="url(#colorData)"
-      />
-
-      <Line
-        type="monotone"
-        dataKey={dataKey}
-        stroke="#2563eb"
-        strokeWidth={3}
-        dot={false}
-      />
-
-    </AreaChart>
-
-  </ResponsiveContainer>
-
-</div>
-
-);
+  );
 }
 
 export default AnalyticsChart;

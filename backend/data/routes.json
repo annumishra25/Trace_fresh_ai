@@ -1,0 +1,2118 @@
+[
+  {
+    "routeId": "ROUTE-001",
+    "shipmentId": "SHIP-APL-110",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "name": "Krishnagiri to Chennai Port Apple Express",
+    "status": "IN_TRANSIT",
+    "transitState": "IN_TRANSIT",
+    "routeCondition": "ON_ROUTE",
+    "origin": {
+      "name": "Krishnagiri Cold Storage",
+      "latitude": 12.5266,
+      "longitude": 78.2144
+    },
+    "destination": {
+      "name": "Chennai Port Cold Terminal",
+      "latitude": 13.0827,
+      "longitude": 80.2707
+    },
+    "waypoints": [
+      {
+        "sequence": 1,
+        "name": "Krishnagiri Origin Hub",
+        "latitude": 12.5266,
+        "longitude": 78.2144,
+        "status": "PASSED"
+      },
+      {
+        "sequence": 2,
+        "name": "Vellore Transit Checkpoint",
+        "latitude": 12.9165,
+        "longitude": 79.1325,
+        "status": "PASSED"
+      },
+      {
+        "sequence": 3,
+        "name": "Sriperumbudur Distribution Center",
+        "latitude": 12.9645,
+        "longitude": 79.9463,
+        "status": "PENDING"
+      },
+      {
+        "sequence": 4,
+        "name": "Chennai Port Terminal",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "status": "PENDING"
+      }
+    ],
+    "plannedRoute": {
+      "distanceKm": 260.5,
+      "durationMinutes": 270,
+      "departureTime": "2026-09-05T04:00:00Z",
+      "expectedArrivalTime": "2026-09-05T08:30:00Z"
+    },
+    "actualRoute": {
+      "distanceKm": 598.84,
+      "durationMinutes": 210,
+      "actualDepartureTime": "2026-09-05T04:05:00Z",
+      "estimatedArrivalTime": "2026-09-05T08:38:00Z",
+      "delayMinutes": 8,
+      "delayStatus": "AT_RISK",
+      "delayReason": "Demo Replay: Normal transit",
+      "progressPercent": 100,
+      "currentDeviationMeters": 0.0,
+      "maxDeviationMeters": 3233.9,
+      "offRouteDurationMinutes": 7,
+      "deviationEventCount": 2
+    },
+    "gpsQuality": {
+      "pointsReceived": 593,
+      "validPoints": 578,
+      "rejectedPoints": 15,
+      "averageAccuracyMeters": 5.2,
+      "longestGapSeconds": 35,
+      "gpsState": "GPS_LOCKED"
+    },
+    "actualTrack": [
+      {
+        "timestamp": "2026-09-05T04:05:00Z",
+        "latitude": 12.5266,
+        "longitude": 78.2144,
+        "speedKmh": 0,
+        "accuracyM": 4,
+        "nodeId": "TF-NODE-01",
+        "source": "hardware"
+      },
+      {
+        "timestamp": "2026-09-05T05:30:00Z",
+        "latitude": 12.7409,
+        "longitude": 78.6853,
+        "speedKmh": 62,
+        "accuracyM": 5,
+        "nodeId": "TF-NODE-01",
+        "source": "hardware"
+      },
+      {
+        "timestamp": "2026-09-05T06:45:00Z",
+        "latitude": 12.9165,
+        "longitude": 79.1325,
+        "speedKmh": 58,
+        "accuracyM": 4,
+        "nodeId": "TF-NODE-01",
+        "source": "hardware"
+      },
+      {
+        "timestamp": "2026-09-05T07:40:05Z",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32,
+        "accuracyM": 4,
+        "nodeId": "TF-NODE-01",
+        "source": "hardware"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:13.098779+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:13.117506+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:13.246585+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:13.314109+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:13.442145+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:13.495684+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:13.561822+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:13.672486+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:13.808996+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:14.012014+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:14.127378+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:14.308279+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:14.384716+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:14.455105+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:14.668700+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:14.901121+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:14.987206+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:51:15.052156+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:23.626932+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:23.637331+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:23.671794+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:23.712542+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:23.753748+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:23.772307+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:23.821512+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:23.874370+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:23.912220+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:23.983961+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:24.045533+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:24.130429+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:24.190697+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:24.226848+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:24.325769+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:24.412981+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:24.486428+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:05:24.511433+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:35.324380+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:35.336540+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:35.374289+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:35.425649+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:35.476349+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:35.504512+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:35.559955+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:35.619533+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:35.678612+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:35.774207+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:35.846785+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:35.968843+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:36.012824+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:36.044118+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:36.156530+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:36.265425+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:36.331191+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:36.368138+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:56.416326+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:56.441943+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:56.549711+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:56.650768+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:56.774848+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:56.822568+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:56.948438+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:57.132314+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:57.311480+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:57.568186+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:57.680303+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:57.885218+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:57.949104+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:58.011415+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:58.271486+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:58.450831+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:58.566539+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:11:58.619983+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:21.739265+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:21.752050+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:21.792305+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:21.826829+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:21.869468+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:21.897955+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:21.959770+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:22.006258+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:22.055463+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:22.139882+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:22.207869+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:22.306224+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:22.348540+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:22.387276+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:22.489429+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:22.597607+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:22.663735+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:22.691420+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:52.303440+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:52.318187+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:52.358833+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:52.401239+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:52.437431+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:52.458361+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:52.495902+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:52.542395+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:52.588025+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:52.670694+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:52.735834+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:52.843730+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:52.895469+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:52.929858+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:53.057746+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:53.169158+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:53.244000+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:18:53.274053+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:16.699746+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:16.714627+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:16.752945+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:16.793746+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:16.834349+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:16.857699+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:16.900966+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:16.950462+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:17.002516+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:17.081066+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:17.153032+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:17.237846+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:17.281211+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:17.308098+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:17.403747+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:17.506338+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:17.582735+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:17.607380+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:47.358754+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:47.387708+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:47.506846+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:47.614589+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:47.741682+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:47.787203+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:47.929251+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:48.171162+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:48.270981+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:48.561903+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:48.731393+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:49.156638+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:49.296453+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:49.343556+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:49.776971+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:49.926816+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:50.051374+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:19:50.106097+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:58.817977+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:58.833553+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:58.871229+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:58.915159+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:58.952714+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:58.981343+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:59.055918+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:59.109838+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:59.184986+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:59.279845+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:59.357838+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:59.469757+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:59.549195+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:59.590685+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:59.679144+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:59.776503+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:59.835951+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:24:59.867470+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:23.914910+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:23.929855+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:24.017697+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:24.063978+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:24.114821+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:24.146059+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:24.206909+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:24.264809+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:24.343929+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:24.446648+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:24.515894+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:24.623182+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:24.677465+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:24.707274+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:24.830429+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:24.956594+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:25.025041+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:25:25.056970+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:39.957273+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:39.978276+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:40.070584+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:40.186393+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:40.288214+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:40.325979+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:40.473774+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:40.616264+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:40.747061+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:40.911683+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:41.012364+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:41.273322+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:41.320314+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:41.386153+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:41.636610+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:41.863492+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:41.995280+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T08:59:42.121570+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-06T13:44:36.922087+00:00",
+        "latitude": 12.58221,
+        "longitude": 78.42003,
+        "speedKmh": 62.0,
+        "accuracyM": 4.0,
+        "nodeId": "TF-NODE-01",
+        "source": "demo_replay"
+      },
+      {
+        "timestamp": "2026-09-06T16:54:41.488Z",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 38.0,
+        "accuracyM": 5.0,
+        "nodeId": "TF-NODE-01",
+        "source": "hardware"
+      }
+    ],
+    "events": [
+      {
+        "id": "EVT-001",
+        "eventType": "DEPARTURE",
+        "timestamp": "2026-09-05T04:05:00Z",
+        "description": "Shipment departed Krishnagiri Cold Storage",
+        "location": {
+          "latitude": 12.5266,
+          "longitude": 78.2144
+        },
+        "severity": "INFO"
+      },
+      {
+        "id": "EVT-002",
+        "eventType": "CHECKPOINT",
+        "timestamp": "2026-09-05T06:45:00Z",
+        "description": "Vellore Transit Checkpoint reached",
+        "location": {
+          "latitude": 12.9165,
+          "longitude": 79.1325
+        },
+        "severity": "INFO"
+      },
+      {
+        "id": "EVT-003",
+        "eventType": "STOP_DELAY",
+        "timestamp": "2026-09-05T07:20:00Z",
+        "description": "Vehicle stationary for 12 minutes (Traffic / Rest stop)",
+        "location": {
+          "latitude": 12.9645,
+          "longitude": 79.9463
+        },
+        "durationMinutes": 12,
+        "severity": "WARNING"
+      },
+      {
+        "id": "EVT-004",
+        "eventType": "ROUTE_DEVIATION",
+        "timestamp": "2026-09-05T07:32:00Z",
+        "description": "Minor route deviation detected (320m off planned polyline)",
+        "location": {
+          "latitude": 13.0102,
+          "longitude": 80.1245
+        },
+        "severity": "WARNING"
+      },
+      {
+        "eventType": "ROUTE_DEVIATION",
+        "timestamp": "2026-09-06T13:44:36.922087+00:00",
+        "description": "Shipment entered ROUTE_DEVIATION (3234m off planned route)",
+        "location": {
+          "latitude": 12.58221,
+          "longitude": 78.42003
+        },
+        "severity": "WARNING",
+        "id": "EVT-005"
+      },
+      {
+        "eventType": "ROUTE_RECOVERY",
+        "timestamp": "2026-09-06T16:54:41.488Z",
+        "description": "Shipment returned to planned route (0m deviation)",
+        "location": {
+          "latitude": 13.0827,
+          "longitude": 80.2707
+        },
+        "severity": "INFO",
+        "id": "EVT-006"
+      }
+    ]
+  },
+  {
+    "routeId": "ROUTE-002",
+    "shipmentId": "SHIP-BAN-102",
+    "batchId": "TF-BAN-2026-002",
+    "nodeId": "TF-NODE-02",
+    "name": "Mysuru to Bengaluru Supermarket Corridor",
+    "status": "IN_TRANSIT",
+    "transitState": "IN_TRANSIT",
+    "routeCondition": "ON_ROUTE",
+    "origin": {
+      "name": "Mysuru Banana Plantation",
+      "latitude": 12.2958,
+      "longitude": 76.6394
+    },
+    "destination": {
+      "name": "Bengaluru Central Supermarket Hub",
+      "latitude": 12.9716,
+      "longitude": 77.5946
+    },
+    "waypoints": [
+      {
+        "sequence": 1,
+        "name": "Mysuru Plantation Farm",
+        "latitude": 12.2958,
+        "longitude": 76.6394,
+        "status": "PASSED"
+      },
+      {
+        "sequence": 2,
+        "name": "Mandya Cold Storage",
+        "latitude": 12.5218,
+        "longitude": 76.8951,
+        "status": "PASSED"
+      },
+      {
+        "sequence": 3,
+        "name": "Ramanagara Transit Checkpoint",
+        "latitude": 12.715,
+        "longitude": 77.2814,
+        "status": "PENDING"
+      },
+      {
+        "sequence": 4,
+        "name": "Bengaluru Distribution Center",
+        "latitude": 12.9716,
+        "longitude": 77.5946,
+        "status": "PENDING"
+      }
+    ],
+    "plannedRoute": {
+      "distanceKm": 145.0,
+      "durationMinutes": 180,
+      "departureTime": "2026-09-05T05:00:00Z",
+      "expectedArrivalTime": "2026-09-05T08:00:00Z"
+    },
+    "actualRoute": {
+      "distanceKm": 98.2,
+      "durationMinutes": 140,
+      "actualDepartureTime": "2026-09-05T05:02:00Z",
+      "estimatedArrivalTime": "2026-09-05T08:02:00Z",
+      "delayMinutes": 2,
+      "delayStatus": "ON_TIME",
+      "delayReason": "Transit proceeding on schedule",
+      "progressPercent": 68,
+      "currentDeviationMeters": 85,
+      "maxDeviationMeters": 420,
+      "offRouteDurationMinutes": 0,
+      "deviationEventCount": 0
+    },
+    "gpsQuality": {
+      "pointsReceived": 323,
+      "validPoints": 288,
+      "rejectedPoints": 35,
+      "averageAccuracyMeters": 4.1,
+      "longestGapSeconds": 22,
+      "gpsState": "GPS_LOCKED"
+    },
+    "actualTrack": [
+      {
+        "timestamp": "2026-09-05T05:02:00Z",
+        "latitude": 12.2958,
+        "longitude": 76.6394,
+        "speedKmh": 0,
+        "accuracyM": 3,
+        "nodeId": "TF-NODE-02",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T06:15:00Z",
+        "latitude": 12.5218,
+        "longitude": 76.8951,
+        "speedKmh": 52,
+        "accuracyM": 4,
+        "nodeId": "TF-NODE-02",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-05T07:40:05Z",
+        "latitude": 12.9716,
+        "longitude": 77.5946,
+        "speedKmh": 38,
+        "accuracyM": 4,
+        "nodeId": "TF-NODE-02",
+        "source": "simulator"
+      }
+    ],
+    "events": [
+      {
+        "id": "EVT-101",
+        "eventType": "DEPARTURE",
+        "timestamp": "2026-09-05T05:02:00Z",
+        "description": "Shipment departed Mysuru Farm",
+        "location": {
+          "latitude": 12.2958,
+          "longitude": 76.6394
+        },
+        "severity": "INFO"
+      },
+      {
+        "id": "EVT-102",
+        "eventType": "CHECKPOINT",
+        "timestamp": "2026-09-05T06:15:00Z",
+        "description": "Mandya Cold Storage checkpoint reached",
+        "location": {
+          "latitude": 12.5218,
+          "longitude": 76.8951
+        },
+        "severity": "INFO"
+      }
+    ]
+  }
+]

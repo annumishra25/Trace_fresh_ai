@@ -1,19 +1,23 @@
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { fetchAllBatches } from "../services/batchApi";
 import BatchQRCodeCard from "../components/qr/BatchQRCodeCard";
 import CreateBatchModal from "../components/qr/CreateBatchModal";
 import UpdateBatchModal from "../components/qr/UpdateBatchModal";
-import { Plus, RefreshCcw, QrCode, Search } from "lucide-react";
+import { Plus, RefreshCcw, QrCode, Search, ShieldCheck, ExternalLink } from "lucide-react";
 
 const QRCodeCenter = () => {
+  const navigate = useNavigate();
   const [batches, setBatches] = useState([]);
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState("");
   const [search, setSearch] = useState("");
+  const [verifyTokenInput, setVerifyTokenInput] = useState("");
 
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [selectedBatch, setSelectedBatch] = useState(null);
+  const [showScannerModal, setShowScannerModal] = useState(false);
 
   const loadBatches = async () => {
     try {
@@ -65,25 +69,68 @@ const QRCodeCenter = () => {
     );
   };
 
+  const handleQuickVerify = (e) => {
+    e.preventDefault();
+    if (!verifyTokenInput.trim()) return;
+    const token = verifyTokenInput.trim();
+    navigate(`/verify/${token}`);
+  };
+
   return (
-    <div className="min-h-screen bg-slate-100 px-4 md:px-8 py-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
-          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 rounded-full px-4 py-2 text-sm font-medium mb-4">
-            TraceFresh AI • QR Batch Identity Layer
+    <div className="space-y-6">
+      <div>
+        <div className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <div className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 border border-blue-500/40 rounded-full px-4 py-1.5 text-xs font-bold mb-3">
+              TraceFresh AI • Step 8 QR Identity & Passport Layer
+            </div>
+
+            <h1 className="text-4xl md:text-5xl font-black text-slate-100 tracking-tight leading-tight">
+              QR Code Control Center
+            </h1>
+
+            <p className="text-slate-300 text-sm mt-2 max-w-4xl leading-relaxed">
+              Manage unique QR identities, issue consumer public verification tokens, and inspect batch passport status.
+            </p>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
-            QR Code Control Center
-          </h1>
-
-          <p className="text-slate-600 text-lg mt-3 max-w-4xl leading-7">
-            Create, manage, and update TraceFresh digital produce batches.
-            Every batch here is linked to a QR-powered consumer freshness passport.
-          </p>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setShowScannerModal(true)}
+              className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 px-5 py-3 rounded-2xl font-bold text-xs transition-colors shadow-lg cursor-pointer"
+            >
+              <QrCode size={18} className="text-emerald-400" />
+              Simulate QR Scanner
+            </button>
+          </div>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-md p-6 mb-6">
+        {/* Quick Public Token Lookup Bar */}
+        <div className="glass-card bg-slate-900/90 rounded-3xl p-6 mb-6 text-white border border-slate-800 shadow-xl">
+          <form onSubmit={handleQuickVerify} className="flex flex-col md:flex-row items-center gap-4">
+            <div className="flex-1">
+              <label className="text-xs font-black uppercase tracking-wider text-emerald-400 block mb-1">
+                🔍 Quick Public Verification Token Lookup
+              </label>
+              <input
+                type="text"
+                value={verifyTokenInput}
+                onChange={(e) => setVerifyTokenInput(e.target.value)}
+                placeholder="Enter token (e.g. TR-VER-89A7B3E1F4C2D0E5)..."
+                className="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-3 text-xs text-white font-mono placeholder:text-slate-500 focus:outline-none focus:border-emerald-400"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full md:w-auto px-6 py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center justify-center gap-2 shadow-lg cursor-pointer"
+            >
+              <ShieldCheck size={16} />
+              Verify Passport →
+            </button>
+          </form>
+        </div>
+
+        <div className="glass-card bg-slate-900/80 rounded-3xl border border-slate-800 p-6 mb-6">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_auto] gap-4 items-center">
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
@@ -92,21 +139,21 @@ const QRCodeCenter = () => {
                 placeholder="Search by batch ID, fruit, source, location..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full border border-slate-200 rounded-2xl pl-11 pr-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full bg-slate-950 border border-slate-800 rounded-2xl pl-11 pr-4 py-3 text-sm text-slate-100 placeholder:text-slate-400 outline-none focus:border-blue-500 transition"
               />
             </div>
 
             <button
               onClick={loadBatches}
-              className="inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 px-5 py-3 rounded-2xl font-medium"
+              className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 px-5 py-3 rounded-2xl font-bold text-xs border border-slate-700 transition cursor-pointer"
             >
-              <RefreshCcw size={18} />
+              <RefreshCcw size={16} />
               Refresh
             </button>
 
             <button
               onClick={() => setShowCreateModal(true)}
-              className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-2xl font-medium"
+              className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-5 py-3 rounded-2xl font-bold text-xs shadow-lg transition cursor-pointer"
             >
               <Plus size={18} />
               Create New Batch
@@ -118,40 +165,40 @@ const QRCodeCenter = () => {
           <SummaryTile
             title="Total Batches"
             value={batches.length}
-            accent="text-blue-600"
+            accent="text-blue-400 font-mono"
           />
           <SummaryTile
             title="Verified Fresh"
             value={batches.filter((b) => b.latestAssessment?.status === "VERIFIED FRESH").length}
-            accent="text-green-600"
+            accent="text-emerald-400 font-mono"
           />
           <SummaryTile
             title="Monitor"
             value={batches.filter((b) => b.latestAssessment?.status === "MONITOR").length}
-            accent="text-amber-500"
+            accent="text-amber-400 font-mono"
           />
           <SummaryTile
-            title="QR Ready"
+            title="Active QR Tokens"
             value={batches.length}
-            accent="text-purple-600"
+            accent="text-cyan-300 font-mono"
           />
         </div>
 
         {loading ? (
-          <div className="bg-white rounded-3xl shadow-md p-10 text-center">
+          <div className="glass-card bg-slate-900/80 rounded-3xl border border-slate-800 p-10 text-center">
             <div className="w-14 h-14 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-5"></div>
-            <h2 className="text-2xl font-bold text-slate-900">Loading QR batch records...</h2>
+            <h2 className="text-2xl font-black text-slate-100">Loading QR batch records...</h2>
           </div>
         ) : errorMsg ? (
-          <div className="bg-white rounded-3xl shadow-md p-10 text-center">
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">Unable to load QR center</h2>
-            <p className="text-slate-600">{errorMsg}</p>
+          <div className="glass-card bg-slate-900/80 rounded-3xl border border-slate-800 p-10 text-center">
+            <h2 className="text-2xl font-black text-rose-400 mb-3">Unable to load QR center</h2>
+            <p className="text-slate-300">{errorMsg}</p>
           </div>
         ) : filteredBatches.length === 0 ? (
-          <div className="bg-white rounded-3xl shadow-md p-10 text-center">
+          <div className="glass-card bg-slate-900/80 rounded-3xl border border-slate-800 p-10 text-center">
             <QrCode size={42} className="mx-auto text-slate-400 mb-4" />
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">No batches found</h2>
-            <p className="text-slate-600">
+            <h2 className="text-2xl font-black text-slate-100 mb-3">No batches found</h2>
+            <p className="text-slate-300">
               Try adjusting your search or create a new batch.
             </p>
           </div>
@@ -183,14 +230,66 @@ const QRCodeCenter = () => {
         }}
         onBatchUpdated={handleBatchUpdated}
       />
+
+      {/* QR Scanner Simulator Modal */}
+      {showScannerModal && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="bg-slate-900 rounded-3xl p-6 max-w-md w-full space-y-4 border border-slate-800 shadow-2xl">
+            <div className="flex items-center justify-between border-b pb-3 border-slate-800">
+              <div className="flex items-center gap-2">
+                <QrCode size={20} className="text-emerald-400" />
+                <h3 className="text-lg font-black text-slate-100">QR Code Scanner Simulator</h3>
+              </div>
+              <button
+                onClick={() => setShowScannerModal(false)}
+                className="text-slate-400 hover:text-white font-bold"
+              >
+                ✕
+              </button>
+            </div>
+
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Simulate scanning a physical QR code box identity. Select a batch to resolve its token to the consumer portal.
+            </p>
+
+            <div className="space-y-2 max-h-60 overflow-y-auto pr-1">
+              {batches.map((b) => (
+                <button
+                  key={b.batchId}
+                  onClick={() => {
+                    setShowScannerModal(false);
+                    navigate(`/verify/TR-VER-89A7B3E1F4C2D0E5`);
+                  }}
+                  className="w-full text-left p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-blue-500 hover:bg-slate-800/80 transition-all flex items-center justify-between cursor-pointer"
+                >
+                  <div>
+                    <div className="text-xs font-extrabold text-slate-100">{b.displayName}</div>
+                    <div className="text-[10px] text-slate-400 font-mono">Batch: {b.batchId}</div>
+                  </div>
+                  <ExternalLink size={14} className="text-blue-400" />
+                </button>
+              ))}
+            </div>
+
+            <div className="pt-2">
+              <button
+                onClick={() => setShowScannerModal(false)}
+                className="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs transition-colors cursor-pointer"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 const SummaryTile = ({ title, value, accent }) => (
-  <div className="bg-white rounded-3xl shadow-md p-5">
-    <p className="text-slate-500 text-sm">{title}</p>
-    <p className={`text-3xl font-bold mt-2 ${accent}`}>{value}</p>
+  <div className="glass-card bg-slate-900/80 rounded-3xl border border-slate-800 p-5">
+    <p className="text-slate-300 text-xs font-bold uppercase tracking-wider">{title}</p>
+    <p className={`text-3xl font-black mt-2 ${accent}`}>{value}</p>
   </div>
 );
 

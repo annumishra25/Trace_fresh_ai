@@ -13,42 +13,56 @@ import Warehouse from "./pages/Warehouse";
 import ConsumerPortal from "./pages/ConsumerPortal";
 import Logistics from "./pages/Logistics";
 
-// NEW: QR-driven public batch passport page
 import BatchPassport from "./pages/BatchPassport";
+import PublicVerification from "./pages/PublicVerification";
+import Login from "./pages/Login";
+
+import { AuthProvider } from "./context/AuthContext";
+import { ThemeProvider } from "./context/ThemeContext";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* =========================
-            PUBLIC QR / CUSTOMER ROUTE
-            ========================= */}
-        <Route path="/passport/:batchId" element={<BatchPassport />} />
+    <ThemeProvider>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            {/* =========================
+                PUBLIC UNAUTHENTICATED ROUTES
+                ========================= */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/passport/:batchId" element={<BatchPassport />} />
+            <Route path="/verify/:publicToken" element={<PublicVerification />} />
+            <Route path="/verify" element={<PublicVerification />} />
 
-        {/* =========================
-            DASHBOARD ROUTES
-            ========================= */}
-        <Route
-          path="*"
-          element={
-            <DashboardLayout>
-              <Routes>
-                <Route path="/" element={<Overview />} />
-                <Route path="/monitoring" element={<Monitoring />} />
-                <Route path="/analytics" element={<Analytics />} />
-                <Route path="/devices" element={<Devices />} />
-                <Route path="/traceability" element={<Traceability />} />
-                <Route path="/qrcode" element={<QRCodeCenter />} />
-                <Route path="/settings" element={<Settings />} />
-                <Route path="/warehouse" element={<Warehouse />} />
-                <Route path="/consumer" element={<ConsumerPortal />} />
-                <Route path="/logistics" element={<Logistics />} />
-              </Routes>
-            </DashboardLayout>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+            {/* =========================
+                PROTECTED DASHBOARD ROUTES
+                ========================= */}
+            <Route
+              path="*"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <Routes>
+                      <Route path="/" element={<Overview />} />
+                      <Route path="/monitoring" element={<Monitoring />} />
+                      <Route path="/analytics" element={<Analytics />} />
+                      <Route path="/devices" element={<Devices />} />
+                      <Route path="/traceability" element={<Traceability />} />
+                      <Route path="/qrcode" element={<QRCodeCenter />} />
+                      <Route path="/settings" element={<Settings />} />
+                      <Route path="/warehouse" element={<Warehouse />} />
+                      <Route path="/consumer" element={<ConsumerPortal />} />
+                      <Route path="/logistics" element={<Logistics />} />
+                    </Routes>
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 

@@ -1,18 +1,18 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, useCallback, useMemo } from "react";
 import { calculateHealthMetrics } from "../utils/foodHealthEngine";
 import { detectAnomalies } from "../utils/anomalyEngine";
+import { BACKEND_BASE_URL } from "../config/appConfig";
 
 const SensorContext = createContext();
 
-const PI_BASE_URL = "http://10.87.65.109:5000";
-const AI_BACKEND_URL = "http://127.0.0.1:5000";
+const API_ROOT = BACKEND_BASE_URL.replace(/\/api$/, "");
 
 export const SensorProvider = ({ children }) => {
   const [sensorData, setSensorData] = useState({
-    temperature: 25.4,
-    humidity: 64,
-    voc: 120,
-    co2: 450,
+    temperature: 5.5,
+    humidity: 71.0,
+    voc: 1.5,
+    co2: 600.0,
     ethylene: 0.25,
     weight: 245,
 
@@ -26,9 +26,9 @@ export const SensorProvider = ({ children }) => {
 
     history: [],
 
-    batchId: "UNKNOWN",
-    fruitType: "Unknown",
-    nodeId: "Unknown",
+    batchId: "TF-APL-2026-001",
+    fruitType: "Apple",
+    nodeId: "TF-NODE-01",
 
     sensorStatus: {
       dht11: "unknown",
@@ -48,19 +48,18 @@ export const SensorProvider = ({ children }) => {
 
     backendLive: false,
 
-    // NEW
     inspection: null,
     inspecting: false,
   });
 
-  const inspectBatch = async () => {
+  const inspectBatch = useCallback(async () => {
     try {
       setSensorData((prev) => ({
         ...prev,
         inspecting: true,
       }));
 
-      const response = await fetch(`${AI_BACKEND_URL}/api/inspect`, {
+      const response = await fetch(`${API_ROOT}/api/inspect`, {
         method: "POST",
       });
 
@@ -84,87 +83,70 @@ export const SensorProvider = ({ children }) => {
         throw new Error(result.message);
       }
     } catch (err) {
-      console.error(err);
+      console.warn("Sensor inspection endpoint note:", err.message);
 
       setSensorData((prev) => ({
         ...prev,
         inspecting: false,
       }));
     }
-  };
+  }, []);
 
   useEffect(() => {
     const fetchAllData = async () => {
       try {
-        const [sensorRes, historyRes] = await Promise.all([
-          fetch(`${PI_BASE_URL}/api/sensors`),
-          fetch(`${PI_BASE_URL}/api/history`),
-        ]);
+        const sensorRes = await fetch(`${API_ROOT}/api/sensors`);
+        if (!sensorRes.ok) return;
 
         const sensorPayload = await sensorRes.json();
-        const historyPayload = await historyRes.json();
 
         setSensorData((prev) => {
-          const temperature =
-            sensorPayload.temperature ?? prev.temperature;
+          const formattedTemp = Number(sensorPayload.temperature ?? prev.temperature).toFixed(1);
+          const humidity = sensorPayload.humidity ?? prev.humidity;
+          const voc = sensorPayload.voc ?? prev.voc;
+          const co2 = sensorPayload.co2 ?? prev.co2;
+          const formattedEth = Number(sensorPayload.ethylene ?? prev.ethylene).toFixed(2);
+          const formattedWeight = Number(sensorPayload.weight ?? prev.weight).toFixed(1);
 
-          const humidity =
-            sensorPayload.humidity ?? prev.humidity;
-
-          const voc =
-            sensorPayload.voc ?? prev.voc;
-
-          const co2 =
-            sensorPayload.co2 ?? prev.co2;
-
-          const ethylene =
-            sensorPayload.ethylene ?? prev.ethylene;
-
-          const weight =
-            sensorPayload.weight ?? prev.weight;
+          if (
+            String(prev.temperature) === String(formattedTemp) &&
+            String(prev.humidity) === String(humidity) &&
+            String(prev.voc) === String(voc) &&
+            String(prev.co2) === String(co2) &&
+            String(prev.ethylene) === String(formattedEth) &&
+            String(prev.weight) === String(formattedWeight) &&
+            prev.backendLive === true
+          ) {
+            return prev;
+          }
 
           const metrics = calculateHealthMetrics({
-            temperature,
+            temperature: formattedTemp,
             humidity,
             voc,
             co2,
-            ethylene,
-            weight,
+            ethylene: formattedEth,
+            weight: formattedWeight,
           });
 
           const alerts = detectAnomalies({
-            temperature,
+            temperature: formattedTemp,
             humidity,
             voc,
             co2,
-            ethylene,
-            weight,
+            ethylene: formattedEth,
+            weight: formattedWeight,
           });
-
-          const backendHistory = Array.isArray(historyPayload.history)
-            ? historyPayload.history.map((item) => ({
-                time: item.timestamp
-                  ? new Date(item.timestamp).toLocaleTimeString()
-                  : "--",
-
-                temperature: item.temperature,
-                humidity: item.humidity,
-                voc: item.voc,
-                co2: item.co2,
-                ethylene: item.ethylene,
-                weight: item.weight,
-              }))
-            : [];
 
           return {
             ...prev,
 
-            temperature: Number(temperature).toFixed(1),
+            temperature: formattedTemp,
             humidity,
             voc,
             co2,
-            ethylene: Number(ethylene).toFixed(2),
-            weight: Number(weight).toFixed(1),
+            ethylene: formattedEth,
+            weight: formattedWeight,
 
             healthScore: metrics.healthScore,
             shelfLife: metrics.shelfLife,
@@ -173,51 +155,30 @@ export const SensorProvider = ({ children }) => {
 
             alerts,
 
-            history: backendHistory,
+            batchId: sensorPayload.batch_id || prev.batchId,
+            fruitType: sensorPayload.fruit_type || prev.fruitType,
+            nodeId: sensorPayload.node_id || prev.nodeId,
 
-            batchId: sensorPayload.batch_id || "UNKNOWN",
-            fruitType: sensorPayload.fruit_type || "Unknown",
-            nodeId: sensorPayload.node_id || "Unknown",
-
-            sensorStatus: sensorPayload.sensor_status || {
-              dht11: "unknown",
-              mq135: "unknown",
-            },
+            sensorStatus: sensorPayload.sensor_status || prev.sensorStatus,
 
             airQualityStatus:
-              sensorPayload.air_quality_status || "Unknown",
+              sensorPayload.air_quality_status || prev.airQualityStatus,
 
-            gasDetected: sensorPayload.gas_detected ?? false,
+            gasDetected: sensorPayload.gas_detected ?? prev.gasDetected,
 
             cameraStatus:
-              sensorPayload.camera_status || "unknown",
+              sensorPayload.camera_status || prev.cameraStatus,
 
-            systemStatus:
-              sensorPayload.system_status || "offline",
-
-            dataSource:
-              sensorPayload.data_source || {},
-
-            notes:
-              sensorPayload.notes || {},
+            systemStatus: "ONLINE",
 
             lastUpdated:
-              sensorPayload.timestamp || null,
-
-            lastCapture:
-              sensorPayload.last_capture || null,
+              sensorPayload.timestamp || prev.lastUpdated || new Date().toISOString(),
 
             backendLive: true,
           };
         });
       } catch (err) {
-        console.error(err);
-
-        setSensorData((prev) => ({
-          ...prev,
-          backendLive: false,
-          systemStatus: "offline",
-        }));
+        // Silently preserve current sensor data on error to prevent flickering
       }
     };
 
@@ -228,13 +189,62 @@ export const SensorProvider = ({ children }) => {
     return () => clearInterval(interval);
   }, []);
 
+  const updateSensorValues = useCallback((newValues) => {
+    setSensorData((prev) => {
+      const formattedTemp = Number(newValues.temperature ?? prev.temperature).toFixed(1);
+      const humidity = Number(newValues.humidity ?? prev.humidity);
+      const voc = Number(newValues.voc ?? prev.voc);
+      const co2 = Number(newValues.co2 ?? prev.co2);
+      const formattedEth = Number(newValues.gas ?? newValues.ethylene ?? prev.ethylene).toFixed(2);
+      const formattedWeight = Number(newValues.weight ?? prev.weight).toFixed(1);
+
+      const metrics = calculateHealthMetrics({
+        temperature: formattedTemp,
+        humidity,
+        voc,
+        co2,
+        ethylene: formattedEth,
+        weight: formattedWeight,
+      });
+
+      const alerts = detectAnomalies({
+        temperature: formattedTemp,
+        humidity,
+        voc,
+        co2,
+        ethylene: formattedEth,
+        weight: formattedWeight,
+      });
+
+      return {
+        ...prev,
+        temperature: formattedTemp,
+        humidity,
+        voc,
+        co2,
+        ethylene: formattedEth,
+        weight: formattedWeight,
+        healthScore: metrics.healthScore,
+        shelfLife: metrics.shelfLife,
+        spoilageRisk: metrics.spoilageRisk,
+        riskLevel: metrics.riskLevel,
+        alerts,
+        lastUpdated: new Date().toISOString()
+      };
+    });
+  }, []);
+
+  const value = useMemo(
+    () => ({
+      sensorData,
+      inspectBatch,
+      updateSensorValues,
+    }),
+    [sensorData, inspectBatch, updateSensorValues]
+  );
+
   return (
-    <SensorContext.Provider
-      value={{
-        sensorData,
-        inspectBatch,
-      }}
-    >
+    <SensorContext.Provider value={value}>
       {children}
     </SensorContext.Provider>
   );

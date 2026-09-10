@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: tracefresh_db
+    restart: always
+    environment:
+      POSTGRES_DB: tracefresh_db
+      POSTGRES_USER: tracefresh_user
+      POSTGRES_PASSWORD: tracefresh_secure_password_2026
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tracefresh_user -d tracefresh_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tracefresh_backend
+    restart: always
+    environment:
+      FLASK_ENV: production
+      PORT: 5000
+      HOST: 0.0.0.0
+      SECRET_KEY: tracefresh-production-secret-key-2026
+      JWT_SECRET_KEY: tracefresh-production-jwt-key-2026
+      DATABASE_URL: postgresql://tracefresh_user:tracefresh_secure_password_2026@postgres:5432/tracefresh_db
+      CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+    ports:
+      - "5000:5000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

@@ -42,13 +42,13 @@ const BatchPassport = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-100 flex items-center justify-center px-4">
-        <div className="bg-white rounded-3xl shadow-md p-10 text-center max-w-xl w-full">
+      <div className="min-h-screen flex items-center justify-center px-4">
+        <div className="glass-card bg-slate-900/90 rounded-3xl border border-slate-800 p-10 text-center max-w-xl w-full shadow-2xl">
           <div className="w-14 h-14 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-5"></div>
-          <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+          <h1 className="text-2xl md:text-3xl font-black text-slate-100 mb-3">
             Loading TraceFresh Passport
           </h1>
-          <p className="text-slate-600 text-lg leading-7">
+          <p className="text-slate-300 text-sm leading-relaxed">
             Fetching the latest batch freshness, traceability, and quality screening record...
           </p>
         </div>
@@ -58,13 +58,13 @@ const BatchPassport = () => {
 
   if (errorMsg) {
     return (
-      <div className="min-h-screen bg-slate-100 flex items-center justify-center px-4">
-        <div className="bg-white rounded-3xl shadow-md p-10 text-center max-w-xl w-full">
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+      <div className="min-h-screen flex items-center justify-center px-4">
+        <div className="glass-card bg-slate-900/90 rounded-3xl border border-slate-800 p-10 text-center max-w-xl w-full shadow-2xl">
+          <h1 className="text-3xl md:text-4xl font-black text-rose-400 mb-4">
             Passport Load Failed
           </h1>
-          <p className="text-slate-600 text-lg leading-7 mb-6">{errorMsg}</p>
-          <p className="text-sm text-slate-500">
+          <p className="text-slate-200 text-base leading-relaxed mb-6">{errorMsg}</p>
+          <p className="text-xs text-slate-400">
             Please verify that the backend is running and the batch ID is valid.
           </p>
         </div>
@@ -74,12 +74,12 @@ const BatchPassport = () => {
 
   if (!batch) {
     return (
-      <div className="min-h-screen bg-slate-100 flex items-center justify-center px-4">
-        <div className="bg-white rounded-3xl shadow-md p-10 text-center max-w-xl w-full">
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+      <div className="min-h-screen flex items-center justify-center px-4">
+        <div className="glass-card bg-slate-900/90 rounded-3xl border border-slate-800 p-10 text-center max-w-xl w-full shadow-2xl">
+          <h1 className="text-3xl md:text-4xl font-black text-slate-100 mb-4">
             Batch Passport Not Found
           </h1>
-          <p className="text-slate-600 text-lg leading-7">
+          <p className="text-slate-300 text-base leading-relaxed">
             The requested TraceFresh AI batch passport could not be found.
           </p>
         </div>
@@ -90,18 +90,18 @@ const BatchPassport = () => {
   const { latestAssessment, latestSensors, traceability } = batch;
 
   return (
-    <div className="min-h-screen bg-slate-100">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-10">
-        <div className="mb-8">
-          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 rounded-full px-4 py-2 text-sm font-medium mb-4">
+    <div className="space-y-6 pb-10">
+      <div>
+        <div className="mb-6">
+          <div className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 border border-blue-500/40 rounded-full px-4 py-1.5 text-xs font-bold mb-3">
             TraceFresh AI • Consumer Verification Portal
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-black text-slate-100 tracking-tight leading-tight">
             Consumer Freshness Passport
           </h1>
 
-          <p className="text-slate-600 text-lg mt-3 max-w-4xl leading-7">
+          <p className="text-slate-300 text-sm mt-2 max-w-4xl leading-relaxed">
             A QR-linked batch quality passport powered by TraceFresh AI for
             freshness verification, spoilage monitoring, traceability, and
             suspicious quality screening.
@@ -118,11 +118,11 @@ const BatchPassport = () => {
           <ReasonCodesPanel reasons={latestAssessment.reasons} />
           <TraceabilityDetailsCard traceability={traceability} batch={batch} />
 
-          <div className="bg-white rounded-3xl shadow-md p-6 border-l-4 border-blue-500">
-            <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+          <div className="glass-card bg-slate-900/80 rounded-3xl p-6 md:p-8 border border-slate-800 border-l-4 border-l-blue-500 space-y-3">
+            <h3 className="text-xl md:text-2xl font-black text-slate-100 tracking-tight">
               Verification Note
             </h3>
-            <p className="text-slate-700 leading-7 text-base md:text-lg">
+            <p className="text-slate-200 leading-relaxed text-sm md:text-base">
               This quality passport was generated by TraceFresh AI using visual
               fruit analysis and environmental condition monitoring. The
               advisory and screening outcome are intended as quality-support
