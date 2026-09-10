@@ -149,19 +149,19 @@ function Topbar() {
   };
 
   return (
-    <div className="bg-white dark:bg-[#0D2820] border-b border-[#DCE4DE] dark:border-[#23483D] text-[#101513] dark:text-[#F4F7F2] px-6 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-4 sticky top-0 z-40 shadow-xs">
+    <div className="bg-white border-b border-[#DDE4DF] text-[#111715] px-6 h-16 flex items-center justify-between gap-4 sticky top-0 z-40 shadow-xs">
       {/* Title Header */}
       <div>
         <div className="flex items-center gap-2.5">
-          <h2 className="text-xl font-extrabold tracking-tight text-[#101513] dark:text-[#F4F7F2] flex items-center gap-2">
-            <span className="text-[#063C2F] dark:text-[#36B88A]">TraceFresh AI</span>
-            <span className="w-2 h-2 rounded-full bg-[#16805F]"></span>
+          <h2 className="text-lg font-extrabold tracking-tight text-[#111715] flex items-center gap-2">
+            <span className="text-[#064C3B]">TraceFresh AI</span>
+            <span className="w-2 h-2 rounded-full bg-[#064C3B]"></span>
           </h2>
-          <span className="text-[10px] font-mono font-bold bg-[#E8EEE7] dark:bg-[#123B2F] text-[#063C2F] dark:text-[#36B88A] px-2.5 py-0.5 rounded-md border border-[#DCE4DE] dark:border-[#23483D]">
-            ENTERPRISE DASHBOARD
+          <span className="text-[10px] font-mono font-bold bg-[#E4F5EC] text-[#064C3B] px-2.5 py-0.5 rounded-md border border-[#C3E9D5]">
+            ENTERPRISE
           </span>
         </div>
-        <p className="text-xs text-[#4E5B55] dark:text-[#AEBBB4] mt-0.5 font-medium">
+        <p className="text-xs text-[#56635D] font-medium hidden sm:block">
           Real-Time Food Quality Intelligence & Multi-Modal Supply Chain Monitoring
         </p>
       </div>
@@ -169,44 +169,44 @@ function Topbar() {
       {/* Right Controls Bar */}
       <div className="flex items-center gap-3 flex-wrap">
         {/* Live Clock Counter */}
-        <div className="flex items-center gap-2 bg-[#F1F4EE] dark:bg-[#12342A] px-3 py-1.5 rounded-xl border border-[#DCE4DE] dark:border-[#23483D] text-[#101513] dark:text-[#F4F7F2] text-xs font-mono font-semibold">
-          <Clock3 size={15} className="text-[#4E5B55] dark:text-[#AEBBB4]" />
+        <div className="hidden lg:flex items-center gap-2 bg-[#FAFBF8] px-3 py-1.5 rounded-xl border border-[#DDE4DF] text-[#111715] text-xs font-mono font-semibold">
+          <Clock3 size={15} className="text-[#56635D]" />
           <span>{currentTime.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })}</span>
         </div>
 
         {/* Day / Night Theme Switcher Button */}
         <button
           onClick={toggleTheme}
-          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all cursor-pointer ${
             isDark
-              ? "bg-[#12342A] text-[#36B88A] border-[#23483D] hover:bg-[#123B2F]"
-              : "bg-white text-[#063C2F] border-[#DCE4DE] hover:bg-[#F1F4EE]"
+              ? "bg-[#0D2821] text-[#42B98E] border-[#23473D]"
+              : "bg-white text-[#064C3B] border-[#DDE4DF] hover:bg-[#FAFBF8]"
           }`}
           title="Click to toggle Day Mode / Night Mode theme"
         >
-          {isDark ? <Sun size={15} className="text-[#36B88A]" /> : <Moon size={15} className="text-[#063C2F]" />}
+          {isDark ? <Sun size={15} className="text-[#42B98E]" /> : <Moon size={15} className="text-[#064C3B]" />}
           <span>{isDark ? "DAY MODE" : "NIGHT MODE"}</span>
         </button>
 
         {/* System Connection Badge */}
         <button
           onClick={toggleMode}
-          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all cursor-pointer ${
             isLiveMode
-              ? "bg-[#DDF2E8] text-[#063C2F] border-[#16805F]/30 hover:bg-[#c9eade]"
-              : "bg-[#F1F4EE] text-[#4E5B55] border-[#DCE4DE] hover:bg-[#E8EEE7]"
+              ? "bg-[#E4F5EC] text-[#064C3B] border-[#C3E9D5]"
+              : "bg-[#FAFBF8] text-[#56635D] border-[#DDE4DF] hover:bg-[#F4F7F4]"
           }`}
           title="Click to toggle Online vs Demo mode"
         >
-          <Wifi size={15} className={isLiveMode ? "text-[#16805F]" : "text-[#78837D]"} />
-          <span>{isLiveMode ? "ONLINE (Live Backend)" : "DEMO MODE (Sliders)"}</span>
+          <Wifi size={15} className={isLiveMode ? "text-[#064C3B]" : "text-[#78837D]"} />
+          <span>{isLiveMode ? "ONLINE" : "DEMO MODE"}</span>
         </button>
 
         {/* Interactive Notification Bell Icon & Drawer */}
         <div className="relative" ref={dropdownRef}>
           <button
             onClick={() => setIsOpenAlerts(!isOpenAlerts)}
-            className="p-2 rounded-xl bg-white dark:bg-[#12342A] hover:bg-[#F1F4EE] dark:hover:bg-[#123B2F] text-[#4E5B55] dark:text-[#AEBBB4] border border-[#DCE4DE] dark:border-[#23483D] transition-all cursor-pointer relative"
+            className="p-2 rounded-xl bg-white hover:bg-[#FAFBF8] text-[#56635D] border border-[#DDE4DF] transition-all cursor-pointer relative"
             aria-label="Toggle notifications"
           >
             <Bell size={17} />
@@ -219,37 +219,37 @@ function Topbar() {
 
           {/* Floating Dropdown Drawer Overlay */}
           {isOpenAlerts && (
-            <div className="absolute right-0 mt-3 w-80 sm:w-96 bg-white dark:bg-[#0D2820] border border-[#DCE4DE] dark:border-[#23483D] rounded-2xl shadow-xl z-50 overflow-hidden text-[#101513] dark:text-[#F4F7F2]">
+            <div className="absolute right-0 mt-3 w-80 sm:w-96 bg-white border border-[#DDE4DF] rounded-2xl shadow-xl z-50 overflow-hidden text-[#111715]">
               {/* Drawer Header */}
-              <div className="p-4 border-b border-[#DCE4DE] dark:border-[#23483D] flex items-center justify-between bg-[#F1F4EE] dark:bg-[#12342A]">
+              <div className="p-4 border-b border-[#DDE4DF] flex items-center justify-between bg-[#FAFBF8]">
                 <div className="flex items-center gap-2">
-                  <Bell size={17} className="text-[#063C2F] dark:text-[#36B88A]" />
-                  <h3 className="font-bold text-sm text-[#101513] dark:text-[#F4F7F2]">System Alerts & Notifications</h3>
+                  <Bell size={17} className="text-[#064C3B]" />
+                  <h3 className="font-bold text-sm text-[#111715]">System Alerts & Notifications</h3>
                   {unreadCount > 0 && (
-                    <span className="px-2 py-0.5 text-[10px] font-bold bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 rounded-full">
+                    <span className="px-2 py-0.5 text-[10px] font-bold bg-rose-100 text-rose-800 rounded-full">
                       {unreadCount} New
                     </span>
                   )}
                 </div>
                 <button
                   onClick={() => setIsOpenAlerts(false)}
-                  className="text-[#78837D] hover:text-[#101513] p-1 rounded-lg hover:bg-white"
+                  className="text-[#78837D] hover:text-[#111715] p-1 rounded-lg hover:bg-white cursor-pointer"
                 >
                   <X size={16} />
                 </button>
               </div>
 
               {/* Drawer Controls Bar */}
-              <div className="p-3 bg-white dark:bg-[#0D2820] border-b border-[#DCE4DE] dark:border-[#23483D] flex items-center justify-between gap-2 text-xs">
+              <div className="p-3 bg-white border-b border-[#DDE4DF] flex items-center justify-between gap-2 text-xs">
                 <div className="flex items-center gap-1 font-mono">
                   {["ALL", "CRITICAL", "WARNING"].map((f) => (
                     <button
                       key={f}
                       onClick={() => setActiveFilter(f)}
-                      className={`px-2 py-0.5 rounded-lg text-[10px] font-bold transition ${
+                      className={`px-2 py-0.5 rounded-lg text-[10px] font-bold transition cursor-pointer ${
                         activeFilter === f
-                          ? "bg-[#063C2F] text-white"
-                          : "text-[#4E5B55] hover:text-[#101513]"
+                          ? "bg-[#064C3B] text-white"
+                          : "text-[#56635D] hover:text-[#111715]"
                       }`}
                     >
                       {f}
@@ -260,7 +260,7 @@ function Topbar() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={markAllAsRead}
-                    className="text-[11px] font-semibold text-[#063C2F] dark:text-[#36B88A] hover:underline flex items-center gap-1 cursor-pointer"
+                    className="text-[11px] font-semibold text-[#064C3B] hover:underline flex items-center gap-1 cursor-pointer"
                   >
                     <CheckCheck size={12} /> Mark Read
                   </button>
@@ -268,7 +268,7 @@ function Topbar() {
               </div>
 
               {/* Notification List Body */}
-              <div className="max-h-80 overflow-y-auto divide-y divide-[#E8EEE7] dark:divide-[#23483D] p-2 space-y-1">
+              <div className="max-h-80 overflow-y-auto divide-y divide-[#EAEFEA] p-2 space-y-1">
                 {filteredNotifications.length === 0 ? (
                   <div className="py-8 text-center text-[#78837D] text-xs flex flex-col items-center gap-2">
                     <ShieldCheck size={28} className="text-[#78837D]" />
@@ -279,20 +279,20 @@ function Topbar() {
                     <div
                       key={item.id}
                       className={`p-3 rounded-xl transition-colors relative group ${
-                        item.read ? "opacity-75 bg-[#F7F8F3] dark:bg-[#12342A]" : "bg-white dark:bg-[#0D2820] border border-[#DCE4DE] dark:border-[#23483D]"
+                        item.read ? "opacity-75 bg-[#FAFBF8]" : "bg-white border border-[#DDE4DF]"
                       }`}
                     >
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex items-start gap-2.5">
                           <div className="mt-0.5">{getSeverityIcon(item.severity)}</div>
                           <div>
-                            <div className="text-xs font-bold text-[#101513] dark:text-[#F4F7F2] flex items-center gap-1.5">
+                            <div className="text-xs font-bold text-[#111715] flex items-center gap-1.5">
                               <span>{item.title}</span>
                               {!item.read && (
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#16805F] inline-block"></span>
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#064C3B] inline-block"></span>
                               )}
                             </div>
-                            <p className="text-[11px] text-[#4E5B55] dark:text-[#AEBBB4] mt-1 leading-snug">{item.message}</p>
+                            <p className="text-[11px] text-[#56635D] mt-1 leading-snug">{item.message}</p>
                             <span className="text-[10px] text-[#78837D] font-mono mt-1.5 block">
                               {new Date(item.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                             </span>
@@ -301,7 +301,7 @@ function Topbar() {
 
                         <button
                           onClick={() => dismissNotification(item.id)}
-                          className="text-[#78837D] hover:text-[#101513] p-1 opacity-0 group-hover:opacity-100 transition"
+                          className="text-[#78837D] hover:text-[#111715] p-1 opacity-0 group-hover:opacity-100 transition cursor-pointer"
                           title="Dismiss"
                         >
                           <X size={14} />
@@ -313,11 +313,11 @@ function Topbar() {
               </div>
 
               {/* Demo Presentation Helper Footer */}
-              <div className="p-3 bg-[#F1F4EE] dark:bg-[#12342A] border-t border-[#DCE4DE] dark:border-[#23483D] flex items-center justify-between">
+              <div className="p-3 bg-[#FAFBF8] border-t border-[#DDE4DF] flex items-center justify-between">
                 <span className="text-[10px] text-[#78837D] font-mono">Presenters Quick Demo:</span>
                 <button
                   onClick={simulateDemoAlert}
-                  className="px-3 py-1 rounded-lg text-xs font-bold bg-[#063C2F] text-white hover:bg-[#042E25] shadow transition cursor-pointer"
+                  className="px-3 py-1 rounded-lg text-xs font-bold bg-[#064C3B] text-white hover:bg-[#04382B] shadow transition cursor-pointer"
                 >
                   ⚡ Trigger Demo Alert
                 </button>
@@ -327,13 +327,13 @@ function Topbar() {
         </div>
 
         {/* Logged In User Profile & Logout */}
-        <div className="flex items-center gap-2.5 bg-white dark:bg-[#12342A] px-3.5 py-1.5 rounded-xl border border-[#DCE4DE] dark:border-[#23483D]">
-          <div className="w-6 h-6 rounded-lg bg-[#063C2F] text-white flex items-center justify-center font-bold text-xs">
+        <div className="flex items-center gap-2.5 bg-white px-3.5 py-1.5 rounded-xl border border-[#DDE4DF]">
+          <div className="w-6 h-6 rounded-lg bg-[#064C3B] text-white flex items-center justify-center font-bold text-xs">
             {user?.username ? user.username.charAt(0).toUpperCase() : <User size={13} />}
           </div>
           <div className="text-left">
-            <div className="text-xs font-bold text-[#101513] dark:text-[#F4F7F2]">{user?.username || "Admin"}</div>
-            <div className="text-[9px] font-bold text-[#16805F] dark:text-[#36B88A] uppercase tracking-wide">
+            <div className="text-xs font-bold text-[#111715]">{user?.username || "Admin"}</div>
+            <div className="text-[9px] font-bold text-[#064C3B] uppercase tracking-wide">
               {role || "OPERATOR"}
             </div>
           </div>
@@ -341,7 +341,7 @@ function Topbar() {
           {logout && (
             <button
               onClick={logout}
-              className="p-1 text-[#78837D] hover:text-rose-600 transition ml-1"
+              className="p-1 text-[#78837D] hover:text-rose-600 transition ml-1 cursor-pointer"
               title="Logout"
             >
               <LogOut size={13} />
@@ -353,4 +353,4 @@ function Topbar() {
   );
 }
 
-export default Topbar;
+export default Topbar;

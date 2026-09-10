@@ -9,8 +9,8 @@ function SystemHealth() {
   ];
 
   return (
-    <div className="bg-white border border-[#DCE4DE] rounded-2xl p-6 shadow-sm space-y-4 relative overflow-hidden">
-      <h2 className="text-xl font-extrabold text-[#101513] tracking-tight">
+    <div className="bg-white border border-[#DDE4DF] rounded-2xl p-6 shadow-xs space-y-4 relative overflow-hidden">
+      <h2 className="text-lg font-extrabold text-[#111715] tracking-tight">
         System Health Diagnostics
       </h2>
 
@@ -18,12 +18,12 @@ function SystemHealth() {
         {systems.map((item) => (
           <div
             key={item}
-            className="flex items-center justify-between p-3 rounded-xl bg-[#F7F8F3] border border-[#DCE4DE]"
+            className="flex items-center justify-between p-3.5 rounded-xl bg-[#FAFBF8] border border-[#DDE4DF]"
           >
-            <span className="text-xs font-semibold text-[#101513]">{item}</span>
+            <span className="text-xs font-semibold text-[#111715]">{item}</span>
 
-            <span className="text-xs font-bold text-[#063C2F] flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#16805F]" /> Operational
+            <span className="text-xs font-bold text-[#064C3B] flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[#064C3B]" /> Operational
             </span>
           </div>
         ))}
@@ -32,4 +32,4 @@ function SystemHealth() {
   );
 }
 
-export default SystemHealth;
+export default SystemHealth;
