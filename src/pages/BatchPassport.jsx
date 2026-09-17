@@ -11,32 +11,49 @@ import PassportTrustStrip from "../components/passport/PassportTrustStrip";
 import AIQualityScreeningCard from "../components/passport/AIQualityScreeningCard";
 
 import { fetchBatchById } from "../services/batchApi";
+import { useSensorData } from "../context/SensorContext";
 
 const BatchPassport = () => {
   const { batchId } = useParams();
+  const sensorCtx = useSensorData();
+  const sensorData = sensorCtx?.sensorData;
 
   const [batch, setBatch] = useState(null);
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
-    const loadBatch = async () => {
+    let isMounted = true;
+    const loadBatch = async (isSilent = false) => {
       try {
-        setLoading(true);
+        if (!isSilent) setLoading(true);
         setErrorMsg("");
 
         const batchData = await fetchBatchById(batchId);
-        setBatch(batchData);
+        if (isMounted) {
+          setBatch(batchData);
+        }
       } catch (error) {
         console.error("Failed to load batch passport:", error);
-        setErrorMsg("Unable to load this TraceFresh batch passport right now.");
+        if (isMounted && !isSilent) {
+          setErrorMsg("Unable to load this TraceFresh batch passport right now.");
+        }
       } finally {
-        setLoading(false);
+        if (isMounted && !isSilent) {
+          setLoading(false);
+        }
       }
     };
 
     if (batchId) {
-      loadBatch();
+      loadBatch(false);
+      const interval = setInterval(() => {
+        loadBatch(true);
+      }, 2000);
+      return () => {
+        isMounted = false;
+        clearInterval(interval);
+      };
     }
   }, [batchId]);
 
@@ -89,6 +106,20 @@ const BatchPassport = () => {
 
   const { latestAssessment, latestSensors, traceability } = batch;
 
+  // Real-time live sensors from dashboard context if matching batchId or fallback to batch.latestSensors
+  const activeSensors = (sensorData && (sensorData.batchId === batchId || !sensorData.batchId))
+    ? {
+        temperature: sensorData.temperature,
+        humidity: sensorData.humidity,
+        voc: sensorData.voc,
+        mq135: sensorData.voc,
+        co2: sensorData.co2,
+        ethylene: sensorData.ethylene,
+        weight: sensorData.weight,
+        storageCondition: sensorData.status === "SAFE" ? "Optimal" : "Suboptimal"
+      }
+    : (latestSensors || {});
+
   return (
     <div className="space-y-6 pb-10">
       <div>
@@ -114,7 +145,7 @@ const BatchPassport = () => {
           <FreshnessSummary assessment={latestAssessment} />
           <AIQualityScreeningCard batch={batch} />
           <QualityAdvisoryCard assessment={latestAssessment} />
-          <SensorSnapshotCard sensors={latestSensors} />
+          <SensorSnapshotCard sensors={activeSensors} />
           <ReasonCodesPanel reasons={latestAssessment.reasons} />
           <TraceabilityDetailsCard traceability={traceability} batch={batch} />
 

@@ -3,8 +3,7 @@ export function detectAnomalies(sensorData) {
   const alerts = [];
 
   // Temperature
-
-  if (sensorData.temperature > 30) {
+  if (sensorData.temperature != null && sensorData.temperature > 30) {
     alerts.push({
       severity: "HIGH",
       message:
@@ -13,8 +12,7 @@ export function detectAnomalies(sensorData) {
   }
 
   // Humidity
-
-  if (sensorData.humidity < 55) {
+  if (sensorData.humidity != null && sensorData.humidity < 55) {
     alerts.push({
       severity: "MEDIUM",
       message:
