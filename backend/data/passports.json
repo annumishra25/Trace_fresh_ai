@@ -4,8 +4,8 @@
     "passportVersion": "1.0",
     "qrId": "QR-BATCH-AAA-111-DBA2",
     "publicToken": "TR-VER-7A01B9F40B464F11",
-    "issuedAt": "2026-09-05T08:59:34.838761+00:00",
-    "lastUpdated": "2026-09-05T08:59:34.838761+00:00",
+    "issuedAt": "2026-09-18T16:26:11.765032+00:00",
+    "lastUpdated": "2026-09-18T16:26:11.765032+00:00",
     "product": {
       "name": "Premium Apples",
       "commodity": "APPLES",
@@ -22,7 +22,7 @@
       "plannedDistanceKm": 185.0,
       "actualDistanceKm": 185.0,
       "delayMinutes": 8,
-      "delayReason": "12-minute stationary period detected near Sriperumbudur checkpoint",
+      "delayReason": "Demo Replay: Normal transit",
       "lastCheckpoint": "Seattle Distribution Hub"
     },
     "environment": {
@@ -40,7 +40,7 @@
         "averageHumidityPercent": 87.5,
         "highHumidityMinutes": 0.0
       },
-      "exposureRiskScore": 10,
+      "exposureRiskScore": 50,
       "sensorQualityScore": 65
     },
     "inspection": {
@@ -49,32 +49,32 @@
       "visualRiskScore": 10,
       "detectedAnomalies": [],
       "imageQualityScore": 92,
-      "lastInspectedAt": "2026-09-05T08:59:34.838761+00:00"
+      "lastInspectedAt": "2026-09-18T16:26:11.765032+00:00"
     },
     "condition": {
-      "status": "NORMAL",
-      "freshnessIndex": 88,
-      "freshnessRating": "EXCELLENT",
-      "overallRiskScore": 11.2,
+      "status": "ATTENTION_REQUIRED",
+      "freshnessIndex": 72,
+      "freshnessRating": "GOOD",
+      "overallRiskScore": 27.2,
       "confidence": 0.9,
-      "estimatedShelfLifeDays": 8.9,
-      "actionableRecommendation": "Shipment verified optimal. Continue standard transit and storage operations."
+      "estimatedShelfLifeDays": 7.4,
+      "actionableRecommendation": "Review storage environment parameters. Keep under regular observation."
     },
     "verification": {
       "verified": true,
       "verificationStatus": "ACTIVE",
       "issuer": "TraceFresh-AI Trust Protocol",
-      "lastVerifiedAt": "2026-09-05T08:59:34.838761+00:00"
+      "lastVerifiedAt": "2026-09-18T16:26:11.765032+00:00"
     },
-    "passportHash": "sha256:5a77f8a625a5c07d50346cc8bed7e950ee8d6c38c776f24836bb4ac1616ea587"
+    "passportHash": "sha256:5b606e503922089f5f34fa23adf89eb8cc7bc81ab6de85b415811419dee5a152"
   },
   {
     "passportId": "PASS-BATCH-BBB-222",
     "passportVersion": "1.0",
     "qrId": "QR-BATCH-BBB-222-C089",
     "publicToken": "TR-VER-B59D28540BFB3243",
-    "issuedAt": "2026-09-05T08:59:35.012222+00:00",
-    "lastUpdated": "2026-09-05T08:59:35.012222+00:00",
+    "issuedAt": "2026-09-18T16:26:12.340521+00:00",
+    "lastUpdated": "2026-09-18T16:26:12.340521+00:00",
     "product": {
       "name": "Premium Apples",
       "commodity": "APPLES",
@@ -91,7 +91,7 @@
       "plannedDistanceKm": 185.0,
       "actualDistanceKm": 185.0,
       "delayMinutes": 8,
-      "delayReason": "12-minute stationary period detected near Sriperumbudur checkpoint",
+      "delayReason": "Demo Replay: Normal transit",
       "lastCheckpoint": "Seattle Distribution Hub"
     },
     "environment": {
@@ -109,7 +109,7 @@
         "averageHumidityPercent": 87.5,
         "highHumidityMinutes": 0.0
       },
-      "exposureRiskScore": 10,
+      "exposureRiskScore": 50,
       "sensorQualityScore": 65
     },
     "inspection": {
@@ -118,32 +118,32 @@
       "visualRiskScore": 10,
       "detectedAnomalies": [],
       "imageQualityScore": 92,
-      "lastInspectedAt": "2026-09-05T08:59:35.012222+00:00"
+      "lastInspectedAt": "2026-09-18T16:26:12.340521+00:00"
     },
     "condition": {
-      "status": "NORMAL",
-      "freshnessIndex": 88,
-      "freshnessRating": "EXCELLENT",
-      "overallRiskScore": 11.2,
+      "status": "ATTENTION_REQUIRED",
+      "freshnessIndex": 72,
+      "freshnessRating": "GOOD",
+      "overallRiskScore": 27.2,
       "confidence": 0.9,
-      "estimatedShelfLifeDays": 8.9,
-      "actionableRecommendation": "Shipment verified optimal. Continue standard transit and storage operations."
+      "estimatedShelfLifeDays": 7.4,
+      "actionableRecommendation": "Review storage environment parameters. Keep under regular observation."
     },
     "verification": {
       "verified": true,
       "verificationStatus": "ACTIVE",
       "issuer": "TraceFresh-AI Trust Protocol",
-      "lastVerifiedAt": "2026-09-05T08:59:35.012222+00:00"
+      "lastVerifiedAt": "2026-09-18T16:26:12.340521+00:00"
     },
-    "passportHash": "sha256:8c96741b9780c768a2f6728a197815559b845a3fc9f74306bc62e7955665a348"
+    "passportHash": "sha256:1f59bf64a39a6871bd420085eeb6269d80cca79ccc10e7f49dffba40dc584afc"
   },
   {
     "passportId": "PASS-TF-APL-2026-001",
     "passportVersion": "1.0",
     "qrId": "QR-TF-APL-2026-001",
     "publicToken": "TR-VER-89A7B3E1F4C2D0E5",
-    "issuedAt": "2026-09-06T17:53:00.315123+00:00",
-    "lastUpdated": "2026-09-06T17:53:00.315123+00:00",
+    "issuedAt": "2026-09-18T16:26:13.394698+00:00",
+    "lastUpdated": "2026-09-18T16:26:13.394698+00:00",
     "product": {
       "name": "Premium Apple",
       "commodity": "APPLE",
@@ -182,12 +182,12 @@
       "sensorQualityScore": 65
     },
     "inspection": {
-      "inspectionCount": 766,
+      "inspectionCount": 819,
       "latestVisualStatus": "VERIFIED_FRESH",
       "visualRiskScore": 5,
       "detectedAnomalies": [],
       "imageQualityScore": 95,
-      "lastInspectedAt": "2026-09-06T17:47:46.411807+00:00"
+      "lastInspectedAt": "2026-09-18T16:25:46.197131+00:00"
     },
     "condition": {
       "status": "ATTENTION_REQUIRED",
@@ -202,8 +202,8 @@
       "verified": true,
       "verificationStatus": "ACTIVE",
       "issuer": "TraceFresh-AI Trust Protocol",
-      "lastVerifiedAt": "2026-09-06T17:53:00.315123+00:00"
+      "lastVerifiedAt": "2026-09-18T16:26:13.394698+00:00"
     },
-    "passportHash": "sha256:5ece76012b78aec4fc9be88915d792a394f393ef520a039f2b8c3fb4d23ff907"
+    "passportHash": "sha256:11b0680570e371084fcf67a85eb6236238723565777bb76d97bd011b06890605"
   }
 ]

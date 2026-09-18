@@ -34,10 +34,10 @@ export function Sidebar({ isOpen, onClose }) {
   ];
 
   const menuClass = ({ isActive }) =>
-    `flex items-center gap-3 px-3.5 py-2.5 text-xs font-semibold rounded-xl transition-all duration-200 cursor-pointer ${
+    `flex items-center gap-3.5 px-4 py-3 text-[13.5px] font-bold rounded-xl transition-all duration-200 cursor-pointer ${
       isActive
-        ? "bg-blue-600 text-white font-bold shadow-md shadow-blue-600/30"
-        : "text-slate-400 hover:text-white hover:bg-white/10"
+        ? "bg-blue-600 text-white font-extrabold shadow-md shadow-blue-600/35"
+        : "text-slate-300 hover:text-white hover:bg-slate-800/80"
     }`;
 
   const sidebarContent = (
@@ -75,7 +75,7 @@ export function Sidebar({ isOpen, onClose }) {
         </div>
 
         {/* Navigation Menu Links */}
-        <nav className="p-4 space-y-1.5 overflow-y-auto max-h-[calc(100vh-190px)]">
+        <nav className="p-3.5 space-y-1.5 overflow-y-auto max-h-[calc(100vh-190px)]">
           {navItems.map((item) => {
             const IconComponent = item.icon;
             return (
@@ -85,8 +85,8 @@ export function Sidebar({ isOpen, onClose }) {
                 onClick={onClose}
                 className={menuClass}
               >
-                <IconComponent size={18} className="shrink-0" />
-                <span className="tracking-tight">{item.label}</span>
+                <IconComponent size={20} className="shrink-0" />
+                <span className="tracking-tight text-sm font-bold">{item.label}</span>
               </NavLink>
             );
           })}

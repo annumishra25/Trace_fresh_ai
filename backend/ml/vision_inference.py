@@ -1,8 +1,9 @@
 from ml.vision_preprocess import preprocess_image_for_model
 from ml.image_quality import evaluate_image_quality
-from ml.vision_model import KerasFruitModelProvider, SurfaceAnomalyDetector, DemoVisionModelProvider
+from ml.vision_model import TrainedDatasetVisionProvider, KerasFruitModelProvider, SurfaceAnomalyDetector, DemoVisionModelProvider
 from services.vision_severity_engine import calculate_visual_severity
 
+trained_dataset_provider = TrainedDatasetVisionProvider()
 keras_provider = KerasFruitModelProvider()
 surface_detector = SurfaceAnomalyDetector()
 demo_provider = DemoVisionModelProvider()
@@ -11,8 +12,8 @@ demo_provider = DemoVisionModelProvider()
 def run_vision_inference(image_path_or_bytes, demo_scenario=None):
     """
     Unified Vision AI inference pipeline.
-    Runs preprocessing, quality assessment, classification, surface anomaly detection,
-    and visual severity calculation.
+    Runs preprocessing, quality assessment, classification using trained dataset model,
+    surface anomaly detection, and visual severity calculation.
     """
     if demo_scenario:
         demo_res = demo_provider.predict_scenario(demo_scenario)
@@ -46,8 +47,13 @@ def run_vision_inference(image_path_or_bytes, demo_scenario=None):
     # 1. Quality Assessment
     quality_report = evaluate_image_quality(pil_img)
 
-    # 2. Produce Classification (Deep Learning / Keras)
-    classification = keras_provider.predict(pil_img, numpy_array)
+    # 2. Produce Classification (Trained Dataset Ensemble, Fallback to Keras)
+    if trained_dataset_provider.trees:
+        classification = trained_dataset_provider.predict(pil_img, numpy_array)
+        meta = trained_dataset_provider.get_metadata()
+    else:
+        classification = keras_provider.predict(pil_img, numpy_array)
+        meta = keras_provider.get_metadata()
 
     # 3. Surface Anomaly Detection (Color/Contour/Sheen)
     surface_res = surface_detector.predict(pil_img, numpy_array)
@@ -56,7 +62,6 @@ def run_vision_inference(image_path_or_bytes, demo_scenario=None):
 
     # 4. Severity Assessment
     severity_eval = calculate_visual_severity(detections, area_pct)
-    meta = keras_provider.get_metadata()
 
     # If classification is "rotten*" but surface detector missed anomalies, inject primary anomaly
     class_label = classification.get("label", "").lower()

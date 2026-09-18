@@ -69,8 +69,8 @@
       "deviationEventCount": 2
     },
     "gpsQuality": {
-      "pointsReceived": 593,
-      "validPoints": 578,
+      "pointsReceived": 647,
+      "validPoints": 632,
       "rejectedPoints": 15,
       "averageAccuracyMeters": 5.2,
       "longestGapSeconds": 35,
@@ -1912,6 +1912,492 @@
         "accuracyM": 5.0,
         "nodeId": "TF-NODE-01",
         "source": "hardware"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:58.558082+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:58.594053+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:58.657562+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:58.702868+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:58.743351+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:58.772109+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:58.824751+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:58.868371+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:58.920512+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:59.009345+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:59.080550+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:59.211326+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:59.289314+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:59.313028+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:59.404209+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:59.486384+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:59.569628+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:59.607747+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:44.963347+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:44.980234+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.056470+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.122415+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.162683+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.188229+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.247550+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.295330+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.364884+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.475990+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.543180+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.655879+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.709679+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.746154+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.852930+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.974351+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:46.067804+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:46.108521+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:17.904885+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:17.920416+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:17.958063+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.024658+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.085622+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.124133+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.203134+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.245792+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.299770+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.384535+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.446512+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.580770+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.623868+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.655378+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.758498+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.894917+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.954685+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:19.009354+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-01",
+        "source": "simulator"
       }
     ],
     "events": [
@@ -1992,7 +2478,7 @@
     "name": "Mysuru to Bengaluru Supermarket Corridor",
     "status": "IN_TRANSIT",
     "transitState": "IN_TRANSIT",
-    "routeCondition": "ON_ROUTE",
+    "routeCondition": "OFF_ROUTE",
     "origin": {
       "name": "Mysuru Banana Plantation",
       "latitude": 12.2958,
@@ -2040,22 +2526,22 @@
       "expectedArrivalTime": "2026-09-05T08:00:00Z"
     },
     "actualRoute": {
-      "distanceKm": 98.2,
+      "distanceKm": 388.37,
       "durationMinutes": 140,
       "actualDepartureTime": "2026-09-05T05:02:00Z",
       "estimatedArrivalTime": "2026-09-05T08:02:00Z",
       "delayMinutes": 2,
       "delayStatus": "ON_TIME",
       "delayReason": "Transit proceeding on schedule",
-      "progressPercent": 68,
-      "currentDeviationMeters": 85,
-      "maxDeviationMeters": 420,
+      "progressPercent": 0,
+      "currentDeviationMeters": 290172.0,
+      "maxDeviationMeters": 290172.0,
       "offRouteDurationMinutes": 0,
-      "deviationEventCount": 0
+      "deviationEventCount": 2
     },
     "gpsQuality": {
-      "pointsReceived": 323,
-      "validPoints": 288,
+      "pointsReceived": 332,
+      "validPoints": 297,
       "rejectedPoints": 35,
       "averageAccuracyMeters": 4.1,
       "longestGapSeconds": 22,
@@ -2088,6 +2574,87 @@
         "accuracyM": 4,
         "nodeId": "TF-NODE-02",
         "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:59.080571+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-02",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:59.313046+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-02",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:24:59.404238+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-02",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.543207+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-02",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.746171+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-02",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:25:45.852962+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-02",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.446541+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-02",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.655404+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-02",
+        "source": "simulator"
+      },
+      {
+        "timestamp": "2026-09-18T16:26:18.758525+00:00",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "speedKmh": 32.4,
+        "accuracyM": 4.2,
+        "nodeId": "TF-NODE-02",
+        "source": "simulator"
       }
     ],
     "events": [
@@ -2112,6 +2679,28 @@
           "longitude": 76.8951
         },
         "severity": "INFO"
+      },
+      {
+        "eventType": "ROUTE_DEVIATION",
+        "timestamp": "2026-09-18T16:24:59.080571+00:00",
+        "description": "Shipment entered ROUTE_DEVIATION (290172m off planned route)",
+        "location": {
+          "latitude": 13.0827,
+          "longitude": 80.2707
+        },
+        "severity": "WARNING",
+        "id": "EVT-003"
+      },
+      {
+        "eventType": "OFF_ROUTE",
+        "timestamp": "2026-09-18T16:24:59.404238+00:00",
+        "description": "Shipment entered OFF_ROUTE (290172m off planned route)",
+        "location": {
+          "latitude": 13.0827,
+          "longitude": 80.2707
+        },
+        "severity": "HIGH",
+        "id": "EVT-004"
       }
     ]
   }

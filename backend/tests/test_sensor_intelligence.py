@@ -46,25 +46,27 @@ class TestSensorIntelligence(unittest.TestCase):
         self.assertEqual(norm["gasPpm"], 180.0)
 
     def test_evaluate_sensor_quality(self):
+        from datetime import datetime, timezone
+        now_iso = datetime.now(timezone.utc).isoformat()
         # Good quality
-        good_rec = {"temperatureC": 20.0, "humidityPct": 60.0, "gasPpm": 150.0, "timestamp": "2026-09-05T12:00:00Z"}
+        good_rec = {"temperatureC": 20.0, "humidityPct": 60.0, "gasPpm": 150.0, "timestamp": now_iso}
         res_good = evaluate_sensor_quality(good_rec)
         self.assertEqual(res_good["status"], "GOOD")
         self.assertGreaterEqual(res_good["qualityScore"], 85)
 
         # Missing temperature (critical)
-        missing_temp = {"humidityPct": 60.0, "timestamp": "2026-09-05T12:00:00Z"}
+        missing_temp = {"humidityPct": 60.0, "timestamp": now_iso}
         res_bad = evaluate_sensor_quality(missing_temp)
         self.assertLess(res_bad["qualityScore"], 80)
         self.assertIn("Critical: Temperature sensor reading missing", res_bad["issues"])
 
         # Impossible jump
         hist = [
-            {"temperatureC": 20.0, "timestamp": "2026-09-05T12:00:00Z"},
-            {"temperatureC": 35.0, "timestamp": "2026-09-05T12:00:05Z"}  # 15°C jump in 5s
+            {"temperatureC": 20.0, "timestamp": now_iso},
+            {"temperatureC": 35.0, "timestamp": now_iso}  # 15°C jump in 5s
         ]
         res_jump = evaluate_sensor_quality(hist[1], hist)
-        self.assertIn("DEGRADED", [res_jump["status"], "BAD"])
+        self.assertIn(res_jump["status"], ["DEGRADED", "BAD"])
 
     def test_environmental_baseline(self):
         series = [10.0, 15.0, 20.0, 25.0, 30.0]

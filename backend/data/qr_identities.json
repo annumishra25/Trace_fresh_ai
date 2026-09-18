@@ -5,8 +5,8 @@
     "publicToken": "TR-VER-89A7B3E1F4C2D0E5",
     "status": "ACTIVE",
     "createdAt": "2026-09-01T08:00:00Z",
-    "lastScannedAt": "2026-09-06T17:53:00.162463+00:00",
-    "scanCount": 33,
+    "lastScannedAt": "2026-09-18T16:26:13.393687+00:00",
+    "scanCount": 36,
     "replacedBy": null,
     "deactivationReason": null
   },
@@ -28,8 +28,8 @@
     "publicToken": "TR-VER-7A01B9F40B464F11",
     "status": "ACTIVE",
     "createdAt": "2026-09-05T08:24:58.156108+00:00",
-    "lastScannedAt": "2026-09-05T08:59:34.836496+00:00",
-    "scanCount": 5,
+    "lastScannedAt": "2026-09-18T16:26:11.764221+00:00",
+    "scanCount": 8,
     "replacedBy": null,
     "deactivationReason": null
   },
@@ -40,8 +40,8 @@
     "publicToken": "TR-VER-B59D28540BFB3243",
     "status": "ACTIVE",
     "createdAt": "2026-09-05T08:24:58.166519+00:00",
-    "lastScannedAt": "2026-09-05T08:59:35.009405+00:00",
-    "scanCount": 5,
+    "lastScannedAt": "2026-09-18T16:26:12.339880+00:00",
+    "scanCount": 8,
     "replacedBy": null,
     "deactivationReason": null
   },
@@ -78,9 +78,9 @@
     "createdAt": "2026-09-05T08:24:58.576669+00:00",
     "lastScannedAt": "2026-09-05T08:24:58.656888+00:00",
     "scanCount": 3,
-    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-85F0",
+    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-253A",
     "deactivationReason": "Replaced by new QR generation",
-    "deactivatedAt": "2026-09-05T08:59:36.064895+00:00"
+    "deactivatedAt": "2026-09-18T16:26:14.091184+00:00"
   },
   {
     "qrId": "QR-TF-TEST-LIFECYCLE-001-2FB3",
@@ -91,9 +91,9 @@
     "createdAt": "2026-09-05T08:24:58.637776+00:00",
     "lastScannedAt": "2026-09-05T08:25:23.760323+00:00",
     "scanCount": 2,
-    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-85F0",
+    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-253A",
     "deactivationReason": "Replaced by new QR generation",
-    "deactivatedAt": "2026-09-05T08:59:36.064895+00:00"
+    "deactivatedAt": "2026-09-18T16:26:14.091184+00:00"
   },
   {
     "qrId": "QR-TF-TEST-LIFECYCLE-001-1723",
@@ -104,9 +104,9 @@
     "createdAt": "2026-09-05T08:25:23.746003+00:00",
     "lastScannedAt": "2026-09-05T08:25:23.784288+00:00",
     "scanCount": 1,
-    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-85F0",
+    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-253A",
     "deactivationReason": "Replaced by new QR generation",
-    "deactivatedAt": "2026-09-05T08:59:36.064895+00:00"
+    "deactivatedAt": "2026-09-18T16:26:14.091184+00:00"
   },
   {
     "qrId": "QR-TF-TEST-LIFECYCLE-001-61C2",
@@ -117,9 +117,9 @@
     "createdAt": "2026-09-05T08:58:42.102614+00:00",
     "lastScannedAt": "2026-09-05T08:58:42.177606+00:00",
     "scanCount": 2,
-    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-85F0",
+    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-253A",
     "deactivationReason": "Replaced by new QR generation",
-    "deactivatedAt": "2026-09-05T08:59:36.064895+00:00"
+    "deactivatedAt": "2026-09-18T16:26:14.091184+00:00"
   },
   {
     "qrId": "QR-TF-TEST-LIFECYCLE-001-6520",
@@ -130,9 +130,9 @@
     "createdAt": "2026-09-05T08:58:42.149360+00:00",
     "lastScannedAt": "2026-09-05T08:58:42.225783+00:00",
     "scanCount": 1,
-    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-85F0",
+    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-253A",
     "deactivationReason": "Replaced by new QR generation",
-    "deactivatedAt": "2026-09-05T08:59:36.064895+00:00"
+    "deactivatedAt": "2026-09-18T16:26:14.091184+00:00"
   },
   {
     "qrId": "QR-TF-TEST-LIFECYCLE-001-0C91",
@@ -143,9 +143,9 @@
     "createdAt": "2026-09-05T08:59:12.398581+00:00",
     "lastScannedAt": "2026-09-05T08:59:12.462307+00:00",
     "scanCount": 2,
-    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-85F0",
+    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-253A",
     "deactivationReason": "Replaced by new QR generation",
-    "deactivatedAt": "2026-09-05T08:59:36.064895+00:00"
+    "deactivatedAt": "2026-09-18T16:26:14.091184+00:00"
   },
   {
     "qrId": "QR-TF-TEST-LIFECYCLE-001-8A52",
@@ -156,9 +156,9 @@
     "createdAt": "2026-09-05T08:59:12.442003+00:00",
     "lastScannedAt": "2026-09-05T08:59:12.523990+00:00",
     "scanCount": 1,
-    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-85F0",
+    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-253A",
     "deactivationReason": "Replaced by new QR generation",
-    "deactivatedAt": "2026-09-05T08:59:36.064895+00:00"
+    "deactivatedAt": "2026-09-18T16:26:14.091184+00:00"
   },
   {
     "qrId": "QR-TF-TEST-LIFECYCLE-001-05BB",
@@ -169,9 +169,9 @@
     "createdAt": "2026-09-05T08:59:35.980416+00:00",
     "lastScannedAt": "2026-09-05T08:59:36.090325+00:00",
     "scanCount": 2,
-    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-85F0",
+    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-253A",
     "deactivationReason": "Replaced by new QR generation",
-    "deactivatedAt": "2026-09-05T08:59:36.064895+00:00"
+    "deactivatedAt": "2026-09-18T16:26:14.091184+00:00"
   },
   {
     "qrId": "QR-TF-TEST-LIFECYCLE-001-85F0",
@@ -182,9 +182,9 @@
     "createdAt": "2026-09-05T08:59:36.064895+00:00",
     "lastScannedAt": "2026-09-05T08:59:36.167801+00:00",
     "scanCount": 1,
-    "replacedBy": null,
-    "deactivationReason": "Test Revocation",
-    "deactivatedAt": "2026-09-05T08:59:36.130157+00:00"
+    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-253A",
+    "deactivationReason": "Replaced by new QR generation",
+    "deactivatedAt": "2026-09-18T16:26:14.091184+00:00"
   },
   {
     "qrId": "QR-TF-ORG-2026-003-A5F2",
@@ -221,5 +221,83 @@
     "scanCount": 0,
     "replacedBy": null,
     "deactivationReason": null
+  },
+  {
+    "qrId": "QR-TF-TEST-LIFECYCLE-001-8830",
+    "batchId": "TF-TEST-LIFECYCLE-001",
+    "containerId": "CONT-TF-TEST-LIFECYCLE-001",
+    "publicToken": "TR-VER-5A0D5AA94ECB0A70",
+    "status": "REPLACED",
+    "createdAt": "2026-09-18T16:24:53.877189+00:00",
+    "lastScannedAt": "2026-09-18T16:24:53.921816+00:00",
+    "scanCount": 2,
+    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-253A",
+    "deactivationReason": "Replaced by new QR generation",
+    "deactivatedAt": "2026-09-18T16:26:14.091184+00:00"
+  },
+  {
+    "qrId": "QR-TF-TEST-LIFECYCLE-001-4487",
+    "batchId": "TF-TEST-LIFECYCLE-001",
+    "containerId": "CONT-TF-TEST-LIFECYCLE-001",
+    "publicToken": "TR-VER-E555B5DDB82004E1",
+    "status": "REVOKED",
+    "createdAt": "2026-09-18T16:24:53.907240+00:00",
+    "lastScannedAt": "2026-09-18T16:24:53.953119+00:00",
+    "scanCount": 1,
+    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-253A",
+    "deactivationReason": "Replaced by new QR generation",
+    "deactivatedAt": "2026-09-18T16:26:14.091184+00:00"
+  },
+  {
+    "qrId": "QR-TF-TEST-LIFECYCLE-001-2F74",
+    "batchId": "TF-TEST-LIFECYCLE-001",
+    "containerId": "CONT-TF-TEST-LIFECYCLE-001",
+    "publicToken": "TR-VER-3AEC11AC1A1EBC11",
+    "status": "REPLACED",
+    "createdAt": "2026-09-18T16:25:40.992814+00:00",
+    "lastScannedAt": "2026-09-18T16:25:41.035587+00:00",
+    "scanCount": 2,
+    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-253A",
+    "deactivationReason": "Replaced by new QR generation",
+    "deactivatedAt": "2026-09-18T16:26:14.091184+00:00"
+  },
+  {
+    "qrId": "QR-TF-TEST-LIFECYCLE-001-1FF6",
+    "batchId": "TF-TEST-LIFECYCLE-001",
+    "containerId": "CONT-TF-TEST-LIFECYCLE-001",
+    "publicToken": "TR-VER-F183D487809D3F19",
+    "status": "REVOKED",
+    "createdAt": "2026-09-18T16:25:41.021792+00:00",
+    "lastScannedAt": "2026-09-18T16:25:41.070994+00:00",
+    "scanCount": 1,
+    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-253A",
+    "deactivationReason": "Replaced by new QR generation",
+    "deactivatedAt": "2026-09-18T16:26:14.091184+00:00"
+  },
+  {
+    "qrId": "QR-TF-TEST-LIFECYCLE-001-EB49",
+    "batchId": "TF-TEST-LIFECYCLE-001",
+    "containerId": "CONT-TF-TEST-LIFECYCLE-001",
+    "publicToken": "TR-VER-3E7C2BBBD0BFCAAA",
+    "status": "REPLACED",
+    "createdAt": "2026-09-18T16:26:14.059484+00:00",
+    "lastScannedAt": "2026-09-18T16:26:14.105947+00:00",
+    "scanCount": 2,
+    "replacedBy": "QR-TF-TEST-LIFECYCLE-001-253A",
+    "deactivationReason": "Replaced by new QR generation",
+    "deactivatedAt": "2026-09-18T16:26:14.091184+00:00"
+  },
+  {
+    "qrId": "QR-TF-TEST-LIFECYCLE-001-253A",
+    "batchId": "TF-TEST-LIFECYCLE-001",
+    "containerId": "CONT-TF-TEST-LIFECYCLE-001",
+    "publicToken": "TR-VER-B47B602E8F7B1F8D",
+    "status": "REVOKED",
+    "createdAt": "2026-09-18T16:26:14.091184+00:00",
+    "lastScannedAt": "2026-09-18T16:26:14.138890+00:00",
+    "scanCount": 1,
+    "replacedBy": null,
+    "deactivationReason": "Test Revocation",
+    "deactivatedAt": "2026-09-18T16:26:14.124282+00:00"
   }
 ]
