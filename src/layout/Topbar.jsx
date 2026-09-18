@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from "react";
+import { useLocation } from "react-router-dom";
 import {
   Bell,
   Wifi,
@@ -11,26 +12,44 @@ import {
   ShieldCheck,
   User,
   LogOut,
-  Sun,
-  Moon
+  Search,
+  Camera,
+  Menu,
+  Activity
 } from "lucide-react";
 import { useTelemetry } from "../context/TelemetryContext";
 import { useSensorData } from "../context/SensorContext";
 import { useAuth } from "../context/AuthContext";
-import { useTheme } from "../context/ThemeContext";
+import FruitScanModal from "../components/monitoring/FruitScanModal";
 
-function Topbar() {
-  const { isLiveMode, activeTelemetry, connectionStatus, toggleMode, selectedNodeId } = useTelemetry();
+const routeTitleMap = {
+  "/": "Overview",
+  "/monitoring": "Monitoring",
+  "/analytics": "Analytics",
+  "/traceability": "Traceability",
+  "/consumer": "Consumer Portal",
+  "/logistics": "Logistics",
+  "/warehouse": "Warehouse",
+  "/devices": "Devices",
+  "/settings": "Settings",
+  "/qrcode": "QR Center",
+  "/qr-center": "QR Center"
+};
+
+export function Topbar({ onOpenMobileSidebar }) {
+  const location = useLocation();
+  const { isLiveMode, toggleMode, selectedNodeId } = useTelemetry();
   const { sensorData } = useSensorData();
   const { user, role, logout } = useAuth();
-  const { theme, toggleTheme, isDark } = useTheme();
 
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isOpenAlerts, setIsOpenAlerts] = useState(false);
+  const [isScanModalOpen, setIsScanModalOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState("ALL");
   const dropdownRef = useRef(null);
 
-  // Initial list of interactive demo & live notifications
+  const currentPageTitle = routeTitleMap[location.pathname] || "Dashboard";
+
   const [notifications, setNotifications] = useState([
     {
       id: "n-1",
@@ -58,13 +77,11 @@ function Topbar() {
     }
   ]);
 
-  // Update clock every second
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
 
-  // React to live sensor alerts from SensorContext
   useEffect(() => {
     if (sensorData?.alerts && sensorData.alerts.length > 0) {
       const newAlerts = sensorData.alerts.map((alt, idx) => ({
@@ -75,7 +92,6 @@ function Topbar() {
         timestamp: new Date().toISOString(),
         read: false
       }));
-
       setNotifications((prev) => {
         const existingTitles = new Set(prev.map((n) => n.title));
         const filtered = newAlerts.filter((n) => !existingTitles.has(n.title));
@@ -85,7 +101,6 @@ function Topbar() {
     }
   }, [sensorData?.alerts]);
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -96,262 +111,193 @@ function Topbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const unreadCount = useMemo(
-    () => notifications.filter((n) => !n.read).length,
-    [notifications]
-  );
+  const unreadCount = useMemo(() => notifications.filter((n) => !n.read).length, [notifications]);
 
   const filteredNotifications = useMemo(() => {
     if (activeFilter === "ALL") return notifications;
     return notifications.filter((n) => n.severity === activeFilter);
   }, [notifications, activeFilter]);
 
-  const markAllAsRead = () => {
-    setNotifications((prev) => prev.map((n) => ({ ...n, read: true })));
-  };
-
-  const dismissNotification = (id) => {
-    setNotifications((prev) => prev.filter((n) => n.id !== id));
-  };
-
-  const simulateDemoAlert = () => {
-    const demoAlerts = [
-      {
-        id: `demo-${Date.now()}`,
-        title: "⚡ Scaled Temperature Excursion",
-        message: `Node ${selectedNodeId} temperature scaled to 29.8°C — Decision Engine updated.`,
-        severity: "CRITICAL",
-        timestamp: new Date().toISOString(),
-        read: false
-      },
-      {
-        id: `demo-${Date.now()}`,
-        title: "🚨 Ethylene Gas Spike Alert",
-        message: `Node ${selectedNodeId} ethylene gas scaled to 3.2 ppm — Spoilage risk elevated.`,
-        severity: "WARNING",
-        timestamp: new Date().toISOString(),
-        read: false
-      }
-    ];
-    const picked = demoAlerts[Math.floor(Math.random() * demoAlerts.length)];
-    setNotifications((prev) => [picked, ...prev]);
-  };
+  const markAllAsRead = () => setNotifications((prev) => prev.map((n) => ({ ...n, read: true })));
+  const dismissNotification = (id) => setNotifications((prev) => prev.filter((n) => n.id !== id));
 
   const getSeverityIcon = (sev) => {
     switch (sev) {
-      case "CRITICAL":
-        return <Flame size={16} className="text-rose-500" />;
-      case "WARNING":
-        return <AlertTriangle size={16} className="text-amber-500" />;
-      default:
-        return <Info size={16} className="text-blue-400" />;
+      case "CRITICAL": return <Flame size={16} className="text-rose-500" />;
+      case "WARNING": return <AlertTriangle size={16} className="text-amber-500" />;
+      default: return <Info size={16} className="text-blue-500" />;
     }
   };
 
   return (
-    <div className="bg-white border-b border-[#DDE4DF] text-[#111715] px-6 h-16 flex items-center justify-between gap-4 sticky top-0 z-40 shadow-xs">
-      {/* Title Header */}
-      <div>
-        <div className="flex items-center gap-2.5">
-          <h2 className="text-lg font-extrabold tracking-tight text-[#111715] flex items-center gap-2">
-            <span className="text-[#064C3B]">TraceFresh AI</span>
-            <span className="w-2 h-2 rounded-full bg-[#064C3B]"></span>
-          </h2>
-          <span className="text-[10px] font-mono font-bold bg-[#E4F5EC] text-[#064C3B] px-2.5 py-0.5 rounded-md border border-[#C3E9D5]">
-            ENTERPRISE
-          </span>
-        </div>
-        <p className="text-xs text-[#111715] font-semibold hidden sm:block">
-          Real-Time Food Quality Intelligence & Multi-Modal Supply Chain Monitoring
-        </p>
-      </div>
-
-      {/* Right Controls Bar */}
-      <div className="flex items-center gap-3 flex-wrap">
-        {/* Live Clock Counter */}
-        <div className="hidden lg:flex items-center gap-2 bg-[#FAFBF8] px-3 py-1.5 rounded-xl border border-[#DDE4DF] text-[#111715] text-xs font-mono font-bold">
-          <Clock3 size={15} className="text-[#064C3B]" />
-          <span>{currentTime.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })}</span>
-        </div>
-
-        {/* Day / Night Theme Switcher Button */}
-        <button
-          onClick={toggleTheme}
-          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
-            isDark
-              ? "bg-[#0D2821] text-[#42B98E] border-[#23473D]"
-              : "bg-white text-[#064C3B] border-[#DDE4DF] hover:bg-[#FAFBF8]"
-          }`}
-          title="Click to toggle Day Mode / Night Mode theme"
-        >
-          {isDark ? <Sun size={15} className="text-[#42B98E]" /> : <Moon size={15} className="text-[#064C3B]" />}
-          <span>{isDark ? "DAY MODE" : "NIGHT MODE"}</span>
-        </button>
-
-        {/* System Connection Badge */}
-        <button
-          onClick={toggleMode}
-          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
-            isLiveMode
-              ? "bg-[#E4F5EC] text-[#064C3B] border-[#C3E9D5]"
-              : "bg-[#FAFBF8] text-[#111715] border-[#DDE4DF] hover:bg-[#F4F7F4]"
-          }`}
-          title="Click to toggle Online vs Demo mode"
-        >
-          <Wifi size={15} className="text-[#064C3B]" />
-          <span>{isLiveMode ? "ONLINE" : "DEMO MODE"}</span>
-        </button>
-
-        {/* Interactive Notification Bell Icon & Drawer */}
-        <div className="relative" ref={dropdownRef}>
+    <>
+      <header className="bg-white/95 backdrop-blur-md border-b border-slate-200 text-slate-900 px-4 sm:px-6 h-16 flex items-center justify-between gap-4 sticky top-0 z-20 shadow-2xs">
+        {/* Left Area: Mobile Menu Toggle + Breadcrumbs */}
+        <div className="flex items-center gap-3">
           <button
-            onClick={() => setIsOpenAlerts(!isOpenAlerts)}
-            className="p-2 rounded-xl bg-white hover:bg-[#FAFBF8] text-[#064C3B] border border-[#DDE4DF] transition-all cursor-pointer relative font-bold"
-            aria-label="Toggle notifications"
+            onClick={onOpenMobileSidebar}
+            className="lg:hidden p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition cursor-pointer"
+            aria-label="Open sidebar menu"
           >
-            <Bell size={17} />
-            {unreadCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-rose-600 text-white text-[10px] font-extrabold rounded-full w-4 h-4 flex items-center justify-center">
-                {unreadCount}
-              </span>
-            )}
+            <Menu size={20} />
           </button>
 
+          <div>
+            <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
+              <span className="font-semibold text-slate-700">TraceFresh AI</span>
+              <span>/</span>
+              <span className="text-blue-600 font-bold">{currentPageTitle}</span>
+            </div>
+            <h1 className="text-base sm:text-lg font-black text-slate-900 tracking-tight leading-tight hidden sm:block">
+              {currentPageTitle}
+            </h1>
+          </div>
+        </div>
 
-          {/* Floating Dropdown Drawer Overlay */}
-          {isOpenAlerts && (
-            <div className="absolute right-0 mt-3 w-80 sm:w-96 bg-white border border-[#DDE4DF] rounded-2xl shadow-xl z-50 overflow-hidden text-[#111715]">
-              {/* Drawer Header */}
-              <div className="p-4 border-b border-[#DDE4DF] flex items-center justify-between bg-[#FAFBF8]">
-                <div className="flex items-center gap-2">
-                  <Bell size={17} className="text-[#064C3B]" />
-                  <h3 className="font-bold text-sm text-[#111715]">System Alerts & Notifications</h3>
-                  {unreadCount > 0 && (
-                    <span className="px-2 py-0.5 text-[10px] font-bold bg-rose-100 text-rose-800 rounded-full">
-                      {unreadCount} New
-                    </span>
-                  )}
-                </div>
-                <button
-                  onClick={() => setIsOpenAlerts(false)}
-                  className="text-[#78837D] hover:text-[#111715] p-1 rounded-lg hover:bg-white cursor-pointer"
-                >
-                  <X size={16} />
-                </button>
-              </div>
+        {/* Center: System Operational Status Pill */}
+        <div className="hidden md:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>System: Operational</span>
+        </div>
 
-              {/* Drawer Controls Bar */}
-              <div className="p-3 bg-white border-b border-[#DDE4DF] flex items-center justify-between gap-2 text-xs">
-                <div className="flex items-center gap-1 font-mono">
-                  {["ALL", "CRITICAL", "WARNING"].map((f) => (
-                    <button
-                      key={f}
-                      onClick={() => setActiveFilter(f)}
-                      className={`px-2 py-0.5 rounded-lg text-[10px] font-bold transition cursor-pointer ${
-                        activeFilter === f
-                          ? "bg-[#064C3B] text-white"
-                          : "text-[#56635D] hover:text-[#111715]"
-                      }`}
-                    >
-                      {f}
-                    </button>
-                  ))}
-                </div>
+        {/* Right Area: Search, Actions, Clock, Connection Status, Notifications, User */}
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          {/* Fruit Scan AI Action Button */}
+          <button
+            onClick={() => setIsScanModalOpen(true)}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-extrabold bg-blue-600 hover:bg-blue-700 text-white shadow-sm shadow-blue-500/20 transition-all cursor-pointer"
+            title="Upload fruit photo for AI vision inspection"
+          >
+            <Camera size={14} />
+            <span className="hidden sm:inline">Fruit Scan AI</span>
+          </button>
 
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={markAllAsRead}
-                    className="text-[11px] font-semibold text-[#064C3B] hover:underline flex items-center gap-1 cursor-pointer"
-                  >
-                    <CheckCheck size={12} /> Mark Read
+          {/* Clock Display */}
+          <div className="hidden xl:flex items-center gap-1.5 bg-slate-100 px-2.5 py-1.5 rounded-xl border border-slate-200 text-slate-700 text-xs font-mono font-medium">
+            <Clock3 size={14} className="text-blue-600" />
+            <span>{currentTime.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })}</span>
+          </div>
+
+          {/* Backend Connection Status Badge Toggle */}
+          <button
+            onClick={toggleMode}
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
+              isLiveMode
+                ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                : "bg-slate-100 text-slate-700 border-slate-200"
+            }`}
+            title="Toggle Live backend vs Demo mode"
+          >
+            <Wifi size={14} className={isLiveMode ? "text-emerald-600" : "text-slate-400"} />
+            <span className="hidden sm:inline">{isLiveMode ? "ONLINE" : "DEMO"}</span>
+          </button>
+
+          {/* Notifications Dropdown */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setIsOpenAlerts(!isOpenAlerts)}
+              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition-all cursor-pointer relative"
+              aria-label="Toggle notifications menu"
+            >
+              <Bell size={16} />
+              {unreadCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+                  {unreadCount}
+                </span>
+              )}
+            </button>
+
+            {isOpenAlerts && (
+              <div className="absolute right-0 mt-3 w-80 sm:w-96 bg-white border border-slate-200 rounded-2xl shadow-xl z-50 overflow-hidden text-slate-900">
+                <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+                  <div className="flex items-center gap-2">
+                    <Bell size={16} className="text-blue-600" />
+                    <h3 className="font-bold text-sm">System Alerts</h3>
+                    {unreadCount > 0 && (
+                      <span className="px-2 py-0.5 text-[10px] font-bold bg-rose-500 text-white rounded-full">
+                        {unreadCount} New
+                      </span>
+                    )}
+                  </div>
+                  <button onClick={() => setIsOpenAlerts(false)} className="text-slate-400 hover:text-slate-600 p-1 rounded-lg">
+                    <X size={16} />
                   </button>
                 </div>
-              </div>
-
-              {/* Notification List Body */}
-              <div className="max-h-80 overflow-y-auto divide-y divide-[#EAEFEA] p-2 space-y-1">
-                {filteredNotifications.length === 0 ? (
-                  <div className="py-8 text-center text-[#78837D] text-xs flex flex-col items-center gap-2">
-                    <ShieldCheck size={28} className="text-[#78837D]" />
-                    <span>No active notifications for selected filter.</span>
+                
+                <div className="p-3 bg-white border-b border-slate-100 flex items-center justify-between gap-2 text-xs">
+                  <div className="flex items-center gap-1">
+                    {["ALL", "CRITICAL", "WARNING"].map((f) => (
+                      <button
+                        key={f}
+                        onClick={() => setActiveFilter(f)}
+                        className={`px-2.5 py-1 rounded-lg text-[10px] font-bold transition cursor-pointer ${
+                          activeFilter === f
+                            ? "bg-blue-600 text-white"
+                            : "text-slate-500 hover:text-slate-900"
+                        }`}
+                      >
+                        {f}
+                      </button>
+                    ))}
                   </div>
-                ) : (
-                  filteredNotifications.map((item) => (
-                    <div
-                      key={item.id}
-                      className={`p-3 rounded-xl transition-colors relative group ${
-                        item.read ? "opacity-75 bg-[#FAFBF8]" : "bg-white border border-[#DDE4DF]"
-                      }`}
-                    >
+                  <button onClick={markAllAsRead} className="text-[11px] font-semibold text-blue-600 hover:underline flex items-center gap-1 cursor-pointer">
+                    <CheckCheck size={13} /> Mark Read
+                  </button>
+                </div>
+
+                <div className="max-h-72 overflow-y-auto divide-y divide-slate-100 p-2 space-y-1">
+                  {filteredNotifications.length === 0 ? (
+                    <div className="py-8 text-center text-slate-400 text-xs">No notifications.</div>
+                  ) : filteredNotifications.map((item) => (
+                    <div key={item.id} className={`p-3 rounded-xl transition-all relative group ${item.read ? "opacity-60 bg-slate-50" : "bg-white border border-slate-200/80"}`}>
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex items-start gap-2.5">
                           <div className="mt-0.5">{getSeverityIcon(item.severity)}</div>
                           <div>
-                            <div className="text-xs font-bold text-[#111715] flex items-center gap-1.5">
+                            <div className="text-xs font-bold flex items-center gap-1.5">
                               <span>{item.title}</span>
-                              {!item.read && (
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#064C3B] inline-block"></span>
-                              )}
+                              {!item.read && <span className="w-1.5 h-1.5 rounded-full bg-blue-600 inline-block"></span>}
                             </div>
-                            <p className="text-[11px] text-[#56635D] mt-1 leading-snug">{item.message}</p>
-                            <span className="text-[10px] text-[#78837D] font-mono mt-1.5 block">
-                              {new Date(item.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
-                            </span>
+                            <p className="text-[11px] text-slate-500 mt-0.5 leading-snug">{item.message}</p>
+                            <span className="text-[10px] text-slate-400 font-mono mt-1 block">{new Date(item.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
                           </div>
                         </div>
-
-                        <button
-                          onClick={() => dismissNotification(item.id)}
-                          className="text-[#78837D] hover:text-[#111715] p-1 opacity-0 group-hover:opacity-100 transition cursor-pointer"
-                          title="Dismiss"
-                        >
-                          <X size={14} />
+                        <button onClick={() => dismissNotification(item.id)} className="text-slate-400 hover:text-slate-600 p-1 opacity-0 group-hover:opacity-100 transition cursor-pointer">
+                          <X size={13} />
                         </button>
                       </div>
                     </div>
-                  ))
-                )}
+                  ))}
+                </div>
               </div>
-
-              {/* Demo Presentation Helper Footer */}
-              <div className="p-3 bg-[#FAFBF8] border-t border-[#DDE4DF] flex items-center justify-between">
-                <span className="text-[10px] text-[#78837D] font-mono">Presenters Quick Demo:</span>
-                <button
-                  onClick={simulateDemoAlert}
-                  className="px-3 py-1 rounded-lg text-xs font-bold bg-[#064C3B] text-white hover:bg-[#04382B] shadow transition cursor-pointer"
-                >
-                  ⚡ Trigger Demo Alert
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Logged In User Profile & Logout */}
-        <div className="flex items-center gap-2.5 bg-white px-3.5 py-1.5 rounded-xl border border-[#DDE4DF]">
-          <div className="w-6 h-6 rounded-lg bg-[#064C3B] text-white flex items-center justify-center font-bold text-xs">
-            {user?.username ? user.username.charAt(0).toUpperCase() : <User size={13} />}
-          </div>
-          <div className="text-left">
-            <div className="text-xs font-bold text-[#111715]">{user?.username || "Admin"}</div>
-            <div className="text-[9px] font-bold text-[#064C3B] uppercase tracking-wide">
-              {role || "OPERATOR"}
-            </div>
+            )}
           </div>
 
-          {logout && (
-            <button
-              onClick={logout}
-              className="p-1 text-[#78837D] hover:text-rose-600 transition ml-1 cursor-pointer"
-              title="Logout"
-            >
-              <LogOut size={13} />
-            </button>
-          )}
+          {/* User Profile Pill */}
+          <div className="flex items-center gap-2 bg-slate-100 px-2.5 py-1 rounded-xl border border-slate-200">
+            <div className="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-2xs">
+              {user?.username ? user.username.charAt(0).toUpperCase() : <User size={14} />}
+            </div>
+            <div className="text-left hidden md:block">
+              <div className="text-xs font-extrabold leading-tight text-slate-900">{user?.username || "Admin User"}</div>
+              <div className="text-[9px] font-bold text-blue-600 uppercase tracking-wider">{role || "OPERATOR"}</div>
+            </div>
+            {logout && (
+              <button onClick={logout} className="p-1 text-slate-400 hover:text-rose-600 transition cursor-pointer" title="Logout">
+                <LogOut size={13} />
+              </button>
+            )}
+          </div>
         </div>
-      </div>
-    </div>
+      </header>
+
+      {/* Fruit Scan Modal */}
+      <FruitScanModal
+        isOpen={isScanModalOpen}
+        onClose={() => setIsScanModalOpen(false)}
+      />
+    </>
   );
 }
 
-export default Topbar;
+export default Topbar;

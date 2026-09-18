@@ -77,19 +77,19 @@ const QRCodeCenter = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pb-12">
       <div>
         <div className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 border border-blue-500/40 rounded-full px-4 py-1.5 text-xs font-bold mb-3">
-              TraceFresh AI • Step 8 QR Identity & Passport Layer
+            <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-200 rounded-full px-4 py-1.5 text-xs font-bold mb-3">
+              TraceFresh AI • QR Identity & Passport Layer
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-black text-slate-100 tracking-tight leading-tight">
+            <h1 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-tight">
               QR Code Control Center
             </h1>
 
-            <p className="text-slate-300 text-sm mt-2 max-w-4xl leading-relaxed">
+            <p className="text-slate-500 text-sm mt-2 max-w-4xl leading-relaxed font-medium">
               Manage unique QR identities, issue consumer public verification tokens, and inspect batch passport status.
             </p>
           </div>
@@ -97,7 +97,7 @@ const QRCodeCenter = () => {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setShowScannerModal(true)}
-              className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 px-5 py-3 rounded-2xl font-bold text-xs transition-colors shadow-lg cursor-pointer"
+              className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-5 py-3 rounded-2xl font-bold text-xs transition-colors shadow-md cursor-pointer"
             >
               <QrCode size={18} className="text-emerald-400" />
               Simulate QR Scanner
@@ -106,10 +106,10 @@ const QRCodeCenter = () => {
         </div>
 
         {/* Quick Public Token Lookup Bar */}
-        <div className="glass-card bg-slate-900/90 rounded-3xl p-6 mb-6 text-white border border-slate-800 shadow-xl">
+        <div className="bg-white rounded-3xl p-6 mb-6 text-slate-900 border border-slate-200 shadow-xs">
           <form onSubmit={handleQuickVerify} className="flex flex-col md:flex-row items-center gap-4">
             <div className="flex-1">
-              <label className="text-xs font-black uppercase tracking-wider text-emerald-400 block mb-1">
+              <label className="text-xs font-black uppercase tracking-wider text-emerald-700 block mb-1">
                 🔍 Quick Public Verification Token Lookup
               </label>
               <input
@@ -117,12 +117,12 @@ const QRCodeCenter = () => {
                 value={verifyTokenInput}
                 onChange={(e) => setVerifyTokenInput(e.target.value)}
                 placeholder="Enter token (e.g. TR-VER-89A7B3E1F4C2D0E5)..."
-                className="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-3 text-xs text-white font-mono placeholder:text-slate-500 focus:outline-none focus:border-emerald-400"
+                className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-xs text-slate-900 font-mono placeholder:text-slate-400 focus:outline-none focus:border-emerald-500"
               />
             </div>
             <button
               type="submit"
-              className="w-full md:w-auto px-6 py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center justify-center gap-2 shadow-lg cursor-pointer"
+              className="w-full md:w-auto px-6 py-3 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs transition-colors flex items-center justify-center gap-2 shadow-xs cursor-pointer"
             >
               <ShieldCheck size={16} />
               Verify Passport →
@@ -130,7 +130,7 @@ const QRCodeCenter = () => {
           </form>
         </div>
 
-        <div className="glass-card bg-slate-900/80 rounded-3xl border border-slate-800 p-6 mb-6">
+        <div className="bg-white rounded-3xl border border-slate-200 p-6 mb-6 shadow-xs">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_auto] gap-4 items-center">
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
@@ -139,13 +139,13 @@ const QRCodeCenter = () => {
                 placeholder="Search by batch ID, fruit, source, location..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-800 rounded-2xl pl-11 pr-4 py-3 text-sm text-slate-100 placeholder:text-slate-400 outline-none focus:border-blue-500 transition"
+                className="w-full bg-slate-50 border border-slate-200 rounded-2xl pl-11 pr-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-blue-500 transition"
               />
             </div>
 
             <button
               onClick={loadBatches}
-              className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 px-5 py-3 rounded-2xl font-bold text-xs border border-slate-700 transition cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-5 py-3 rounded-2xl font-bold text-xs border border-slate-200 transition cursor-pointer"
             >
               <RefreshCcw size={16} />
               Refresh
@@ -153,7 +153,7 @@ const QRCodeCenter = () => {
 
             <button
               onClick={() => setShowCreateModal(true)}
-              className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-5 py-3 rounded-2xl font-bold text-xs shadow-lg transition cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-2xl font-bold text-xs shadow-xs transition cursor-pointer"
             >
               <Plus size={18} />
               Create New Batch
@@ -165,40 +165,40 @@ const QRCodeCenter = () => {
           <SummaryTile
             title="Total Batches"
             value={batches.length}
-            accent="text-blue-400 font-mono"
+            accent="text-blue-600 font-mono"
           />
           <SummaryTile
             title="Verified Fresh"
             value={batches.filter((b) => b.latestAssessment?.status === "VERIFIED FRESH").length}
-            accent="text-emerald-400 font-mono"
+            accent="text-emerald-600 font-mono"
           />
           <SummaryTile
             title="Monitor"
             value={batches.filter((b) => b.latestAssessment?.status === "MONITOR").length}
-            accent="text-amber-400 font-mono"
+            accent="text-amber-600 font-mono"
           />
           <SummaryTile
             title="Active QR Tokens"
             value={batches.length}
-            accent="text-cyan-300 font-mono"
+            accent="text-violet-600 font-mono"
           />
         </div>
 
         {loading ? (
-          <div className="glass-card bg-slate-900/80 rounded-3xl border border-slate-800 p-10 text-center">
-            <div className="w-14 h-14 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-5"></div>
-            <h2 className="text-2xl font-black text-slate-100">Loading QR batch records...</h2>
+          <div className="bg-white rounded-3xl border border-slate-200 p-10 text-center shadow-xs">
+            <div className="w-14 h-14 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-5"></div>
+            <h2 className="text-2xl font-black text-slate-900">Loading QR batch records...</h2>
           </div>
         ) : errorMsg ? (
-          <div className="glass-card bg-slate-900/80 rounded-3xl border border-slate-800 p-10 text-center">
-            <h2 className="text-2xl font-black text-rose-400 mb-3">Unable to load QR center</h2>
-            <p className="text-slate-300">{errorMsg}</p>
+          <div className="bg-white rounded-3xl border border-rose-200 p-10 text-center shadow-xs">
+            <h2 className="text-2xl font-black text-rose-600 mb-3">Unable to load QR center</h2>
+            <p className="text-slate-600">{errorMsg}</p>
           </div>
         ) : filteredBatches.length === 0 ? (
-          <div className="glass-card bg-slate-900/80 rounded-3xl border border-slate-800 p-10 text-center">
+          <div className="bg-white rounded-3xl border border-slate-200 p-10 text-center shadow-xs">
             <QrCode size={42} className="mx-auto text-slate-400 mb-4" />
-            <h2 className="text-2xl font-black text-slate-100 mb-3">No batches found</h2>
-            <p className="text-slate-300">
+            <h2 className="text-2xl font-black text-slate-900 mb-3">No batches found</h2>
+            <p className="text-slate-500 font-medium">
               Try adjusting your search or create a new batch.
             </p>
           </div>
@@ -233,22 +233,22 @@ const QRCodeCenter = () => {
 
       {/* QR Scanner Simulator Modal */}
       {showScannerModal && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-slate-900 rounded-3xl p-6 max-w-md w-full space-y-4 border border-slate-800 shadow-2xl">
-            <div className="flex items-center justify-between border-b pb-3 border-slate-800">
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl p-6 max-w-md w-full space-y-4 border border-slate-200 shadow-2xl">
+            <div className="flex items-center justify-between border-b pb-3 border-slate-100">
               <div className="flex items-center gap-2">
-                <QrCode size={20} className="text-emerald-400" />
-                <h3 className="text-lg font-black text-slate-100">QR Code Scanner Simulator</h3>
+                <QrCode size={20} className="text-emerald-600" />
+                <h3 className="text-lg font-black text-slate-900">QR Code Scanner Simulator</h3>
               </div>
               <button
                 onClick={() => setShowScannerModal(false)}
-                className="text-slate-400 hover:text-white font-bold"
+                className="text-slate-400 hover:text-slate-700 font-bold"
               >
                 ✕
               </button>
             </div>
 
-            <p className="text-xs text-slate-300 leading-relaxed">
+            <p className="text-xs text-slate-500 leading-relaxed font-medium">
               Simulate scanning a physical QR code box identity. Select a batch to resolve its token to the consumer portal.
             </p>
 
@@ -260,13 +260,13 @@ const QRCodeCenter = () => {
                     setShowScannerModal(false);
                     navigate(`/verify/TR-VER-89A7B3E1F4C2D0E5`);
                   }}
-                  className="w-full text-left p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-blue-500 hover:bg-slate-800/80 transition-all flex items-center justify-between cursor-pointer"
+                  className="w-full text-left p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-blue-500 hover:bg-blue-50/50 transition-all flex items-center justify-between cursor-pointer"
                 >
                   <div>
-                    <div className="text-xs font-extrabold text-slate-100">{b.displayName}</div>
-                    <div className="text-[10px] text-slate-400 font-mono">Batch: {b.batchId}</div>
+                    <div className="text-xs font-extrabold text-slate-900">{b.displayName}</div>
+                    <div className="text-[10px] text-slate-500 font-mono">Batch: {b.batchId}</div>
                   </div>
-                  <ExternalLink size={14} className="text-blue-400" />
+                  <ExternalLink size={14} className="text-blue-600" />
                 </button>
               ))}
             </div>
@@ -274,7 +274,7 @@ const QRCodeCenter = () => {
             <div className="pt-2">
               <button
                 onClick={() => setShowScannerModal(false)}
-                className="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs transition-colors cursor-pointer"
+                className="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-colors cursor-pointer"
               >
                 Cancel
               </button>
@@ -287,8 +287,8 @@ const QRCodeCenter = () => {
 };
 
 const SummaryTile = ({ title, value, accent }) => (
-  <div className="glass-card bg-slate-900/80 rounded-3xl border border-slate-800 p-5">
-    <p className="text-slate-300 text-xs font-bold uppercase tracking-wider">{title}</p>
+  <div className="bg-white rounded-3xl border border-slate-200 p-5 shadow-xs">
+    <p className="text-slate-500 text-xs font-bold uppercase tracking-wider">{title}</p>
     <p className={`text-3xl font-black mt-2 ${accent}`}>{value}</p>
   </div>
 );

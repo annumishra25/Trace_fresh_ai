@@ -6,22 +6,19 @@
     "source": "Demo Farm A",
     "location": "Chennai Warehouse",
     "createdAt": "2026-07-08T08:00:00",
-    "lastUpdated": "2026-09-06T16:56:13.562500",
+    "lastUpdated": "2026-09-17T20:26:10.286945",
     "latestAssessment": {
-      "visualClass": "rottenbanana",
-      "confidence": 0.72,
-      "freshnessScore": 56.4,
-      "shelfLifeDays": 5.6,
-      "spoilageRisk": 47.6,
-      "riskLevel": "HIGH RISK",
-      "status": "WARNING",
-      "qualityAdvisory": "Elevated spoilage / deterioration risk detected. This batch requires immediate inspection and operational attention before further distribution.",
+      "visualClass": "freshoranges",
+      "confidence": 0.915,
+      "freshnessScore": 91.5,
+      "shelfLifeDays": 8,
+      "spoilageRisk": 8.5,
+      "riskLevel": "ATTENTION_REQUIRED",
+      "status": "VERIFIED_FRESH",
+      "qualityAdvisory": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended.",
       "suspiciousQualityFlag": true,
       "reasons": [
-        "Visual class 'rottenbanana' does not perfectly match the expected fresh apple profile",
-        "Temperature is high enough to accelerate deterioration risk",
-        "Humidity is currently within a stable storage range",
-        "Current gas reading does not indicate a strong spoilage signal"
+        "Surface discoloration zone (4.5% area) detected near central produce region."
       ]
     },
     "latestSensors": {
@@ -33,9 +30,9 @@
     "traceability": {
       "lotId": "LOT-APL-01",
       "packedDate": "2026-07-07",
-      "lastScanTime": "2026-09-06T16:56:13.562500",
+      "lastScanTime": "2026-09-17T20:26:10.286945",
       "shipmentId": "SHIP-APL-110",
-      "node": "TF-PI-01"
+      "node": "TF-NODE-01"
     },
     "history": [
       {
@@ -235,6 +232,30 @@
         "freshnessScore": 56.4,
         "riskLevel": "HIGH RISK",
         "status": "WARNING"
+      },
+      {
+        "timestamp": "2026-09-17T20:15:58.123428",
+        "freshnessScore": 91.5,
+        "riskLevel": "ATTENTION_REQUIRED",
+        "status": "VERIFIED_FRESH"
+      },
+      {
+        "timestamp": "2026-09-17T20:20:52.979821",
+        "freshnessScore": 91.5,
+        "riskLevel": "ATTENTION_REQUIRED",
+        "status": "VERIFIED_FRESH"
+      },
+      {
+        "timestamp": "2026-09-17T20:24:47.636377",
+        "freshnessScore": 91.5,
+        "riskLevel": "ATTENTION_REQUIRED",
+        "status": "VERIFIED_FRESH"
+      },
+      {
+        "timestamp": "2026-09-17T20:26:10.286945",
+        "freshnessScore": 91.5,
+        "riskLevel": "ATTENTION_REQUIRED",
+        "status": "VERIFIED_FRESH"
       }
     ],
     "passportUrl": "http://localhost:5173/passport/TF-APL-2026-001"

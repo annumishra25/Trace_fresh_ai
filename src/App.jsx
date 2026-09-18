@@ -50,6 +50,7 @@ function App() {
                       <Route path="/devices" element={<Devices />} />
                       <Route path="/traceability" element={<Traceability />} />
                       <Route path="/qrcode" element={<QRCodeCenter />} />
+                      <Route path="/qr-center" element={<QRCodeCenter />} />
                       <Route path="/settings" element={<Settings />} />
                       <Route path="/warehouse" element={<Warehouse />} />
                       <Route path="/consumer" element={<ConsumerPortal />} />

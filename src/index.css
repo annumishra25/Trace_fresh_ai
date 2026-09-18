@@ -1,35 +1,54 @@
 @import "tailwindcss";
 
-/* -------------------------------------------------------------
- * TRACEFRESH AI — PREMIUM ENTERPRISE SAAS DESIGN SYSTEM
- * Warm Milky Off-White Canvas (#F7F9F6), Pure White Cards (#FFFFFF),
- * Dark Forest Green Accents (#064C3B), & Deep Charcoal Typography (#111715)
- * ------------------------------------------------------------- */
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-:root {
-  --font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-  
-  --bg-page: #F7F9F6;
-  --bg-surface: #FFFFFF;
-  --bg-subsurface: #FAFBF8;
-  --border-color: #DDE4DF;
-  
-  --text-main: #111715;
-  --text-secondary: #56635D;
-  --text-muted: #78837D;
-  
-  --brand-primary: #064C3B;
-  --brand-hover: #04382B;
-  --brand-accent: #0B6B52;
-  --brand-mint: #DDEFE8;
-  --brand-mint-light: #E4F5EC;
+    /* Professional Dashboard Color Tokens */
+    --bg-page: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --bg-surface-subtle: #F1F5F9;
+    --bg-sidebar: #0B0F17;
+    --bg-sidebar-active: #2563EB;
+    
+    --border-main: #E2E8F0;
+    --border-hover: #CBD5E1;
+
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+
+    --primary: #2563EB;
+    --primary-hover: #1D4ED8;
+    --primary-light: #EFF6FF;
+    --primary-border: #BFDBFE;
+
+    --secondary: #7C3AED;
+    --secondary-light: #F5F3FF;
+
+    --success: #10B981;
+    --success-light: #ECFDF5;
+    --success-border: #A7F3D0;
+
+    --warning: #F59E0B;
+    --warning-light: #FFFBEB;
+    --warning-border: #FDE68A;
+
+    --danger: #EF4444;
+    --danger-light: #FEF2F2;
+    --danger-border: #FECACA;
+
+    --info: #06B6D4;
+    --info-light: #ECFEFF;
+  }
 }
 
 html, body {
-  font-family: var(--font-body);
-  background-color: #F7F9F6 !important;
-  color: #111715 !important;
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -38,142 +57,55 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: #111715 !important;
-  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
-/* Force All Muted/Grey Text Classes to Pitch Charcoal Black (#111715) for 100% Contrast */
-.text-\[\#56635D\],
-.text-\[\#78837D\],
-.text-\[\#AEBBB4\],
-.text-slate-300,
-.text-slate-400,
-.text-slate-500,
-.text-slate-600,
-.text-gray-400,
-.text-gray-500,
-.text-gray-600,
-.text-muted {
-  color: #111715 !important;
+/* Accessibility Focus States */
+:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 2px;
 }
 
-/* Card & Surface Overrides for Bright Enterprise SaaS */
-.glass-card,
-[class*="bg-slate-900"],
-[class*="bg-slate-950"],
-[class*="03140e"],
-[class*="07261c"],
-[class*="092a1f"],
-.bg-slate-900\/80,
-.bg-slate-900\/90 {
-  background-color: #FFFFFF !important;
-  background-image: none !important;
-  border: 1px solid #DDE4DF !important;
-  box-shadow: 0 2px 8px rgba(15, 35, 27, 0.04) !important;
-  border-radius: 14px !important;
-  color: #111715 !important;
+/* Reusable Glassmorphism & Card Utilities */
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
-
-/* Inner Panels & Sub-containers */
-div[class*="bg-slate-800"],
-div[class*="041a12"],
-div[class*="093124"],
-[class*="F7F8F3"] {
-  background-color: #FAFBF8 !important;
-  border: 1px solid #DDE4DF !important;
-  border-radius: 12px !important;
-  color: #111715 !important;
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
 
-/* Primary Action Buttons */
-.btn-primary,
-button[class*="064C3B"],
-button[class*="063C2F"],
-a[class*="064C3B"] {
-  background-color: #064C3B !important;
-  color: #FFFFFF !important;
-  font-weight: 600 !important;
-  border-radius: 10px !important;
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-button[class*="064C3B"] *,
-button[class*="063C2F"] * {
-  color: #FFFFFF !important;
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 9999px;
 }
 
-/* Badges & Status Pills */
-.badge-success,
-[class*="DDEFE8"],
-[class*="E4F5EC"],
-[class*="DDF2E8"] {
-  background-color: #E4F5EC !important;
-  color: #064C3B !important;
-  border: 1px solid #C3E9D5 !important;
-  font-weight: 700 !important;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
 }
 
-.badge-warning {
-  background-color: #FEF3C7 !important;
-  color: #92400E !important;
-  border: 1px solid #FDE68A !important;
-  font-weight: 700 !important;
+/* Smooth Interactive Card Hover */
+.card-hover {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.badge-danger {
-  background-color: #FEE2E2 !important;
-  color: #991B1B !important;
-  border: 1px solid #FCA5A5 !important;
-  font-weight: 700 !important;
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.08), 0 8px 10px -6px rgba(37, 99, 235, 0.04);
 }
 
-/* Form Inputs */
-input[type="text"],
-input[type="password"],
-select,
-textarea {
-  background-color: #FFFFFF !important;
-  border: 1px solid #DDE4DF !important;
-  color: #111715 !important;
-  border-radius: 10px !important;
-  font-weight: 500 !important;
+/* Background grid pattern */
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus,
-select:focus,
-textarea:focus {
-  border-color: #064C3B !important;
-  outline: 2px solid rgba(6, 76, 59, 0.15) !important;
-}
-
-/* Data Tables */
-table {
-  background-color: #FFFFFF !important;
-  color: #111715 !important;
-}
-
-thead tr {
-  background-color: #F4F7F4 !important;
-  border-bottom: 1px solid #DDE4DF !important;
-  color: #064C3B !important;
-  font-weight: 700 !important;
-}
-
-tbody tr {
-  border-bottom: 1px solid #EAEFEA !important;
-}
-
-tbody tr:hover {
-  background-color: #FAFBF8 !important;
-}
-
-/* Strip Glowing Animations */
-.glow-emerald,
-.glow-mint,
-.glow-white,
-.glow-blue,
-.glow-purple,
-.glow-rose {
-  box-shadow: none !important;
-}

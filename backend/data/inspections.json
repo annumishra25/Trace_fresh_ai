@@ -28078,5 +28078,1639 @@
       "visualEvents": []
     },
     "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-99BA",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-10T15:11:50.387379+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-F606",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-10T15:12:08.494695+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-8A9E",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-10T15:15:12.465551+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-0D33",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-10T15:15:42.006461+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-18F5",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-10T15:15:57.578049+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "rottenapples",
+      "confidence": 94.2
+    },
+    "detections": [
+      {
+        "id": "DET-DEMO-01",
+        "label": "MOLD_LIKE",
+        "confidence": 0.94,
+        "severity": "CRITICAL",
+        "bbox": {
+          "x": 100,
+          "y": 80,
+          "width": 160,
+          "height": 160
+        },
+        "areaPercent": 6.8,
+        "explanation": "Visible irregular white/green surface region consistent with mold-like visual growth."
+      }
+    ],
+    "totalAreaPercent": 6.8,
+    "severityAssessment": {
+      "severity": "CRITICAL",
+      "overallVisualStatus": "WARNING",
+      "visualRiskScore": 53,
+      "summary": "High visual risk: 1 surface anomaly region(s) detected affecting 6.8% of surface area."
+    },
+    "fusionInterface": {
+      "visualRisk": 53,
+      "visualStatus": "WARNING",
+      "confidence": 0.94,
+      "imageQuality": 95,
+      "detections": [
+        {
+          "id": "DET-DEMO-01",
+          "label": "MOLD_LIKE",
+          "confidence": 0.94,
+          "severity": "CRITICAL",
+          "bbox": {
+            "x": 100,
+            "y": 80,
+            "width": 160,
+            "height": 160
+          },
+          "areaPercent": 6.8,
+          "explanation": "Visible irregular white/green surface region consistent with mold-like visual growth."
+        }
+      ],
+      "visualEvents": [
+        "MOLD_LIKE"
+      ]
+    },
+    "recommendation": "High visual risk: 1 surface anomaly region(s) detected affecting 6.8% of surface area."
+  },
+  {
+    "inspectionId": "INS-20260909-99C4",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-10T15:15:59.355873+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "rottenbanana",
+      "confidence": 88.5
+    },
+    "detections": [
+      {
+        "id": "DET-DEMO-02",
+        "label": "DISCOLORATION",
+        "confidence": 0.88,
+        "severity": "MEDIUM",
+        "bbox": {
+          "x": 120,
+          "y": 140,
+          "width": 140,
+          "height": 140
+        },
+        "areaPercent": 4.2,
+        "explanation": "Browning surface region consistent with thermal or mechanical discoloration."
+      }
+    ],
+    "totalAreaPercent": 4.2,
+    "severityAssessment": {
+      "severity": "HIGH",
+      "overallVisualStatus": "ATTENTION_REQUIRED",
+      "visualRiskScore": 30,
+      "summary": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+    },
+    "fusionInterface": {
+      "visualRisk": 30,
+      "visualStatus": "ATTENTION_REQUIRED",
+      "confidence": 0.89,
+      "imageQuality": 95,
+      "detections": [
+        {
+          "id": "DET-DEMO-02",
+          "label": "DISCOLORATION",
+          "confidence": 0.88,
+          "severity": "MEDIUM",
+          "bbox": {
+            "x": 120,
+            "y": 140,
+            "width": 140,
+            "height": 140
+          },
+          "areaPercent": 4.2,
+          "explanation": "Browning surface region consistent with thermal or mechanical discoloration."
+        }
+      ],
+      "visualEvents": [
+        "DISCOLORATION"
+      ]
+    },
+    "recommendation": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+  },
+  {
+    "inspectionId": "INS-20260909-E792",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-10T15:16:01.887747+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "rottenoranges",
+      "confidence": 86.0
+    },
+    "detections": [
+      {
+        "id": "DET-DEMO-03",
+        "label": "BRUISING",
+        "confidence": 0.86,
+        "severity": "MEDIUM",
+        "bbox": {
+          "x": 160,
+          "y": 100,
+          "width": 120,
+          "height": 120
+        },
+        "areaPercent": 3.1,
+        "explanation": "Indented surface zone consistent with mechanical impact or handling bruise."
+      }
+    ],
+    "totalAreaPercent": 3.1,
+    "severityAssessment": {
+      "severity": "HIGH",
+      "overallVisualStatus": "ATTENTION_REQUIRED",
+      "visualRiskScore": 27,
+      "summary": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+    },
+    "fusionInterface": {
+      "visualRisk": 27,
+      "visualStatus": "ATTENTION_REQUIRED",
+      "confidence": 0.86,
+      "imageQuality": 95,
+      "detections": [
+        {
+          "id": "DET-DEMO-03",
+          "label": "BRUISING",
+          "confidence": 0.86,
+          "severity": "MEDIUM",
+          "bbox": {
+            "x": 160,
+            "y": 100,
+            "width": 120,
+            "height": 120
+          },
+          "areaPercent": 3.1,
+          "explanation": "Indented surface zone consistent with mechanical impact or handling bruise."
+        }
+      ],
+      "visualEvents": [
+        "BRUISING"
+      ]
+    },
+    "recommendation": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+  },
+  {
+    "inspectionId": "INS-20260909-6F19",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-10T15:16:04.468039+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshapples",
+      "confidence": 96.0
+    },
+    "detections": [
+      {
+        "id": "DET-DEMO-04",
+        "label": "WAX_LIKE_APPEARANCE",
+        "confidence": 0.92,
+        "severity": "LOW",
+        "bbox": {
+          "x": 60,
+          "y": 60,
+          "width": 200,
+          "height": 200
+        },
+        "areaPercent": 5.4,
+        "explanation": "High specular light reflection consistent with a protective wax-like coating sheen."
+      }
+    ],
+    "totalAreaPercent": 5.4,
+    "severityAssessment": {
+      "severity": "MEDIUM",
+      "overallVisualStatus": "MONITOR",
+      "visualRiskScore": 21,
+      "summary": "Minor surface variations detected affecting 5.4% of produce surface."
+    },
+    "fusionInterface": {
+      "visualRisk": 21,
+      "visualStatus": "MONITOR",
+      "confidence": 0.96,
+      "imageQuality": 95,
+      "detections": [
+        {
+          "id": "DET-DEMO-04",
+          "label": "WAX_LIKE_APPEARANCE",
+          "confidence": 0.92,
+          "severity": "LOW",
+          "bbox": {
+            "x": 60,
+            "y": 60,
+            "width": 200,
+            "height": 200
+          },
+          "areaPercent": 5.4,
+          "explanation": "High specular light reflection consistent with a protective wax-like coating sheen."
+        }
+      ],
+      "visualEvents": [
+        "WAX_LIKE_APPEARANCE"
+      ]
+    },
+    "recommendation": "Minor surface variations detected affecting 5.4% of produce surface."
+  },
+  {
+    "inspectionId": "INS-20260909-6311",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-17T18:33:38.166533+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-1115",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-17T18:44:02.952494+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-FD5A",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-17T18:44:23.379166+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-1BDB",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-17T18:44:37.637047+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "rottenapples",
+      "confidence": 94.2
+    },
+    "detections": [
+      {
+        "id": "DET-DEMO-01",
+        "label": "MOLD_LIKE",
+        "confidence": 0.94,
+        "severity": "CRITICAL",
+        "bbox": {
+          "x": 100,
+          "y": 80,
+          "width": 160,
+          "height": 160
+        },
+        "areaPercent": 6.8,
+        "explanation": "Visible irregular white/green surface region consistent with mold-like visual growth."
+      }
+    ],
+    "totalAreaPercent": 6.8,
+    "severityAssessment": {
+      "severity": "CRITICAL",
+      "overallVisualStatus": "WARNING",
+      "visualRiskScore": 53,
+      "summary": "High visual risk: 1 surface anomaly region(s) detected affecting 6.8% of surface area."
+    },
+    "fusionInterface": {
+      "visualRisk": 53,
+      "visualStatus": "WARNING",
+      "confidence": 0.94,
+      "imageQuality": 95,
+      "detections": [
+        {
+          "id": "DET-DEMO-01",
+          "label": "MOLD_LIKE",
+          "confidence": 0.94,
+          "severity": "CRITICAL",
+          "bbox": {
+            "x": 100,
+            "y": 80,
+            "width": 160,
+            "height": 160
+          },
+          "areaPercent": 6.8,
+          "explanation": "Visible irregular white/green surface region consistent with mold-like visual growth."
+        }
+      ],
+      "visualEvents": [
+        "MOLD_LIKE"
+      ]
+    },
+    "recommendation": "High visual risk: 1 surface anomaly region(s) detected affecting 6.8% of surface area."
+  },
+  {
+    "inspectionId": "INS-20260909-70D9",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-17T18:44:39.694821+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "rottenbanana",
+      "confidence": 88.5
+    },
+    "detections": [
+      {
+        "id": "DET-DEMO-02",
+        "label": "DISCOLORATION",
+        "confidence": 0.88,
+        "severity": "MEDIUM",
+        "bbox": {
+          "x": 120,
+          "y": 140,
+          "width": 140,
+          "height": 140
+        },
+        "areaPercent": 4.2,
+        "explanation": "Browning surface region consistent with thermal or mechanical discoloration."
+      }
+    ],
+    "totalAreaPercent": 4.2,
+    "severityAssessment": {
+      "severity": "HIGH",
+      "overallVisualStatus": "ATTENTION_REQUIRED",
+      "visualRiskScore": 30,
+      "summary": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+    },
+    "fusionInterface": {
+      "visualRisk": 30,
+      "visualStatus": "ATTENTION_REQUIRED",
+      "confidence": 0.89,
+      "imageQuality": 95,
+      "detections": [
+        {
+          "id": "DET-DEMO-02",
+          "label": "DISCOLORATION",
+          "confidence": 0.88,
+          "severity": "MEDIUM",
+          "bbox": {
+            "x": 120,
+            "y": 140,
+            "width": 140,
+            "height": 140
+          },
+          "areaPercent": 4.2,
+          "explanation": "Browning surface region consistent with thermal or mechanical discoloration."
+        }
+      ],
+      "visualEvents": [
+        "DISCOLORATION"
+      ]
+    },
+    "recommendation": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+  },
+  {
+    "inspectionId": "INS-20260909-0A15",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-17T18:44:41.570141+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "rottenoranges",
+      "confidence": 86.0
+    },
+    "detections": [
+      {
+        "id": "DET-DEMO-03",
+        "label": "BRUISING",
+        "confidence": 0.86,
+        "severity": "MEDIUM",
+        "bbox": {
+          "x": 160,
+          "y": 100,
+          "width": 120,
+          "height": 120
+        },
+        "areaPercent": 3.1,
+        "explanation": "Indented surface zone consistent with mechanical impact or handling bruise."
+      }
+    ],
+    "totalAreaPercent": 3.1,
+    "severityAssessment": {
+      "severity": "HIGH",
+      "overallVisualStatus": "ATTENTION_REQUIRED",
+      "visualRiskScore": 27,
+      "summary": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+    },
+    "fusionInterface": {
+      "visualRisk": 27,
+      "visualStatus": "ATTENTION_REQUIRED",
+      "confidence": 0.86,
+      "imageQuality": 95,
+      "detections": [
+        {
+          "id": "DET-DEMO-03",
+          "label": "BRUISING",
+          "confidence": 0.86,
+          "severity": "MEDIUM",
+          "bbox": {
+            "x": 160,
+            "y": 100,
+            "width": 120,
+            "height": 120
+          },
+          "areaPercent": 3.1,
+          "explanation": "Indented surface zone consistent with mechanical impact or handling bruise."
+        }
+      ],
+      "visualEvents": [
+        "BRUISING"
+      ]
+    },
+    "recommendation": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+  },
+  {
+    "inspectionId": "INS-20260909-1507",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-17T18:44:44.615421+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshapples",
+      "confidence": 96.0
+    },
+    "detections": [
+      {
+        "id": "DET-DEMO-04",
+        "label": "WAX_LIKE_APPEARANCE",
+        "confidence": 0.92,
+        "severity": "LOW",
+        "bbox": {
+          "x": 60,
+          "y": 60,
+          "width": 200,
+          "height": 200
+        },
+        "areaPercent": 5.4,
+        "explanation": "High specular light reflection consistent with a protective wax-like coating sheen."
+      }
+    ],
+    "totalAreaPercent": 5.4,
+    "severityAssessment": {
+      "severity": "MEDIUM",
+      "overallVisualStatus": "MONITOR",
+      "visualRiskScore": 21,
+      "summary": "Minor surface variations detected affecting 5.4% of produce surface."
+    },
+    "fusionInterface": {
+      "visualRisk": 21,
+      "visualStatus": "MONITOR",
+      "confidence": 0.96,
+      "imageQuality": 95,
+      "detections": [
+        {
+          "id": "DET-DEMO-04",
+          "label": "WAX_LIKE_APPEARANCE",
+          "confidence": 0.92,
+          "severity": "LOW",
+          "bbox": {
+            "x": 60,
+            "y": 60,
+            "width": 200,
+            "height": 200
+          },
+          "areaPercent": 5.4,
+          "explanation": "High specular light reflection consistent with a protective wax-like coating sheen."
+        }
+      ],
+      "visualEvents": [
+        "WAX_LIKE_APPEARANCE"
+      ]
+    },
+    "recommendation": "Minor surface variations detected affecting 5.4% of produce surface."
+  },
+  {
+    "inspectionId": "INS-20260909-4FAE",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-02",
+    "timestamp": "2026-09-17T20:07:02.400603+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-37FF",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-02",
+    "timestamp": "2026-09-17T20:13:51.553471+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-ED38",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-02",
+    "timestamp": "2026-09-17T20:14:04.081391+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-3E69",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-02",
+    "timestamp": "2026-09-17T20:15:25.647880+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-2B3B",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-02",
+    "timestamp": "2026-09-17T20:15:55.984221+00:00",
+    "imagePath": "/uploads/inspections/insp_b15944ce0f05.jpg",
+    "imageHash": "817a48d9b2c4a910953bcffb84e01737b4eef17d7176cb6d8c145cfc811386dc",
+    "source": "UPLOAD",
+    "imageQuality": {
+      "qualityScore": 100,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE",
+      "metrics": {
+        "resolution": "5712x4284",
+        "brightness": 84.8,
+        "contrast": 62.3
+      }
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 91.5,
+      "class_id": 2,
+      "probabilities": {
+        "freshoranges": 91.5,
+        "rottenoranges": 8.5
+      }
+    },
+    "detections": [
+      {
+        "id": "DET-002",
+        "label": "DISCOLORATION",
+        "confidence": 0.84,
+        "severity": "MEDIUM",
+        "bbox": {
+          "x": 2856,
+          "y": 1927,
+          "width": 1713,
+          "height": 1285
+        },
+        "areaPercent": 3.0,
+        "explanation": "Surface discoloration zone (3.0% area) detected near central produce region."
+      }
+    ],
+    "totalAreaPercent": 3.0,
+    "severityAssessment": {
+      "severity": "HIGH",
+      "overallVisualStatus": "ATTENTION_REQUIRED",
+      "visualRiskScore": 27,
+      "summary": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+    },
+    "fusionInterface": {
+      "visualRisk": 27,
+      "visualStatus": "ATTENTION_REQUIRED",
+      "confidence": 0.92,
+      "imageQuality": 100,
+      "detections": [
+        {
+          "id": "DET-002",
+          "label": "DISCOLORATION",
+          "confidence": 0.84,
+          "severity": "MEDIUM",
+          "bbox": {
+            "x": 2856,
+            "y": 1927,
+            "width": 1713,
+            "height": 1285
+          },
+          "areaPercent": 3.0,
+          "explanation": "Surface discoloration zone (3.0% area) detected near central produce region."
+        }
+      ],
+      "visualEvents": [
+        "DISCOLORATION"
+      ]
+    },
+    "recommendation": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+  },
+  {
+    "inspectionId": "INS-20260909-4B41",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-02",
+    "timestamp": "2026-09-17T20:20:50.776830+00:00",
+    "imagePath": "/uploads/inspections/insp_4fa8e1ca75ac.jpg",
+    "imageHash": "817a48d9b2c4a910953bcffb84e01737b4eef17d7176cb6d8c145cfc811386dc",
+    "source": "UPLOAD",
+    "imageQuality": {
+      "qualityScore": 100,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE",
+      "metrics": {
+        "resolution": "5712x4284",
+        "brightness": 84.8,
+        "contrast": 62.3
+      }
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 91.5,
+      "class_id": 2,
+      "probabilities": {
+        "freshoranges": 91.5,
+        "rottenoranges": 8.5
+      }
+    },
+    "detections": [
+      {
+        "id": "DET-002",
+        "label": "DISCOLORATION",
+        "confidence": 0.84,
+        "severity": "MEDIUM",
+        "bbox": {
+          "x": 2856,
+          "y": 1927,
+          "width": 1713,
+          "height": 1285
+        },
+        "areaPercent": 4.6,
+        "explanation": "Surface discoloration zone (4.6% area) detected near central produce region."
+      }
+    ],
+    "totalAreaPercent": 4.6,
+    "severityAssessment": {
+      "severity": "HIGH",
+      "overallVisualStatus": "ATTENTION_REQUIRED",
+      "visualRiskScore": 30,
+      "summary": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+    },
+    "fusionInterface": {
+      "visualRisk": 30,
+      "visualStatus": "ATTENTION_REQUIRED",
+      "confidence": 0.92,
+      "imageQuality": 100,
+      "detections": [
+        {
+          "id": "DET-002",
+          "label": "DISCOLORATION",
+          "confidence": 0.84,
+          "severity": "MEDIUM",
+          "bbox": {
+            "x": 2856,
+            "y": 1927,
+            "width": 1713,
+            "height": 1285
+          },
+          "areaPercent": 4.6,
+          "explanation": "Surface discoloration zone (4.6% area) detected near central produce region."
+        }
+      ],
+      "visualEvents": [
+        "DISCOLORATION"
+      ]
+    },
+    "recommendation": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+  },
+  {
+    "inspectionId": "INS-20260909-AFE6",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-02",
+    "timestamp": "2026-09-17T20:24:45.807615+00:00",
+    "imagePath": "/uploads/inspections/insp_bda2a8bbf685.jpg",
+    "imageHash": "817a48d9b2c4a910953bcffb84e01737b4eef17d7176cb6d8c145cfc811386dc",
+    "source": "UPLOAD",
+    "imageQuality": {
+      "isProduce": true,
+      "qualityScore": 100,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE",
+      "metrics": {
+        "resolution": "5712x4284",
+        "brightness": 84.8,
+        "contrast": 62.3
+      }
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 91.5,
+      "class_id": 2,
+      "probabilities": {
+        "freshoranges": 91.5,
+        "rottenoranges": 8.5
+      }
+    },
+    "detections": [
+      {
+        "id": "DET-002",
+        "label": "DISCOLORATION",
+        "confidence": 0.84,
+        "severity": "MEDIUM",
+        "bbox": {
+          "x": 2856,
+          "y": 1927,
+          "width": 1713,
+          "height": 1285
+        },
+        "areaPercent": 2.2,
+        "explanation": "Surface discoloration zone (2.2% area) detected near central produce region."
+      }
+    ],
+    "totalAreaPercent": 2.2,
+    "severityAssessment": {
+      "severity": "HIGH",
+      "overallVisualStatus": "ATTENTION_REQUIRED",
+      "visualRiskScore": 25,
+      "summary": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+    },
+    "fusionInterface": {
+      "visualRisk": 25,
+      "visualStatus": "ATTENTION_REQUIRED",
+      "confidence": 0.92,
+      "imageQuality": 100,
+      "detections": [
+        {
+          "id": "DET-002",
+          "label": "DISCOLORATION",
+          "confidence": 0.84,
+          "severity": "MEDIUM",
+          "bbox": {
+            "x": 2856,
+            "y": 1927,
+            "width": 1713,
+            "height": 1285
+          },
+          "areaPercent": 2.2,
+          "explanation": "Surface discoloration zone (2.2% area) detected near central produce region."
+        }
+      ],
+      "visualEvents": [
+        "DISCOLORATION"
+      ]
+    },
+    "recommendation": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+  },
+  {
+    "inspectionId": "INS-20260909-E051",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-02",
+    "timestamp": "2026-09-17T20:25:23.475067+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "rottenapples",
+      "confidence": 94.2
+    },
+    "detections": [
+      {
+        "id": "DET-DEMO-01",
+        "label": "MOLD_LIKE",
+        "confidence": 0.94,
+        "severity": "CRITICAL",
+        "bbox": {
+          "x": 100,
+          "y": 80,
+          "width": 160,
+          "height": 160
+        },
+        "areaPercent": 6.8,
+        "explanation": "Visible irregular white/green surface region consistent with mold-like visual growth."
+      }
+    ],
+    "totalAreaPercent": 6.8,
+    "severityAssessment": {
+      "severity": "CRITICAL",
+      "overallVisualStatus": "WARNING",
+      "visualRiskScore": 53,
+      "summary": "High visual risk: 1 surface anomaly region(s) detected affecting 6.8% of surface area."
+    },
+    "fusionInterface": {
+      "visualRisk": 53,
+      "visualStatus": "WARNING",
+      "confidence": 0.94,
+      "imageQuality": 95,
+      "detections": [
+        {
+          "id": "DET-DEMO-01",
+          "label": "MOLD_LIKE",
+          "confidence": 0.94,
+          "severity": "CRITICAL",
+          "bbox": {
+            "x": 100,
+            "y": 80,
+            "width": 160,
+            "height": 160
+          },
+          "areaPercent": 6.8,
+          "explanation": "Visible irregular white/green surface region consistent with mold-like visual growth."
+        }
+      ],
+      "visualEvents": [
+        "MOLD_LIKE"
+      ]
+    },
+    "recommendation": "High visual risk: 1 surface anomaly region(s) detected affecting 6.8% of surface area."
+  },
+  {
+    "inspectionId": "INS-20260909-ABB2",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-02",
+    "timestamp": "2026-09-17T20:25:26.242667+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "rottenbanana",
+      "confidence": 88.5
+    },
+    "detections": [
+      {
+        "id": "DET-DEMO-02",
+        "label": "DISCOLORATION",
+        "confidence": 0.88,
+        "severity": "MEDIUM",
+        "bbox": {
+          "x": 120,
+          "y": 140,
+          "width": 140,
+          "height": 140
+        },
+        "areaPercent": 4.2,
+        "explanation": "Browning surface region consistent with thermal or mechanical discoloration."
+      }
+    ],
+    "totalAreaPercent": 4.2,
+    "severityAssessment": {
+      "severity": "HIGH",
+      "overallVisualStatus": "ATTENTION_REQUIRED",
+      "visualRiskScore": 30,
+      "summary": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+    },
+    "fusionInterface": {
+      "visualRisk": 30,
+      "visualStatus": "ATTENTION_REQUIRED",
+      "confidence": 0.89,
+      "imageQuality": 95,
+      "detections": [
+        {
+          "id": "DET-DEMO-02",
+          "label": "DISCOLORATION",
+          "confidence": 0.88,
+          "severity": "MEDIUM",
+          "bbox": {
+            "x": 120,
+            "y": 140,
+            "width": 140,
+            "height": 140
+          },
+          "areaPercent": 4.2,
+          "explanation": "Browning surface region consistent with thermal or mechanical discoloration."
+        }
+      ],
+      "visualEvents": [
+        "DISCOLORATION"
+      ]
+    },
+    "recommendation": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+  },
+  {
+    "inspectionId": "INS-20260909-5AE5",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-02",
+    "timestamp": "2026-09-17T20:25:28.922849+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "rottenoranges",
+      "confidence": 86.0
+    },
+    "detections": [
+      {
+        "id": "DET-DEMO-03",
+        "label": "BRUISING",
+        "confidence": 0.86,
+        "severity": "MEDIUM",
+        "bbox": {
+          "x": 160,
+          "y": 100,
+          "width": 120,
+          "height": 120
+        },
+        "areaPercent": 3.1,
+        "explanation": "Indented surface zone consistent with mechanical impact or handling bruise."
+      }
+    ],
+    "totalAreaPercent": 3.1,
+    "severityAssessment": {
+      "severity": "HIGH",
+      "overallVisualStatus": "ATTENTION_REQUIRED",
+      "visualRiskScore": 27,
+      "summary": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+    },
+    "fusionInterface": {
+      "visualRisk": 27,
+      "visualStatus": "ATTENTION_REQUIRED",
+      "confidence": 0.86,
+      "imageQuality": 95,
+      "detections": [
+        {
+          "id": "DET-DEMO-03",
+          "label": "BRUISING",
+          "confidence": 0.86,
+          "severity": "MEDIUM",
+          "bbox": {
+            "x": 160,
+            "y": 100,
+            "width": 120,
+            "height": 120
+          },
+          "areaPercent": 3.1,
+          "explanation": "Indented surface zone consistent with mechanical impact or handling bruise."
+        }
+      ],
+      "visualEvents": [
+        "BRUISING"
+      ]
+    },
+    "recommendation": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+  },
+  {
+    "inspectionId": "INS-20260909-FD0A",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-02",
+    "timestamp": "2026-09-17T20:25:31.105629+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshapples",
+      "confidence": 96.0
+    },
+    "detections": [
+      {
+        "id": "DET-DEMO-04",
+        "label": "WAX_LIKE_APPEARANCE",
+        "confidence": 0.92,
+        "severity": "LOW",
+        "bbox": {
+          "x": 60,
+          "y": 60,
+          "width": 200,
+          "height": 200
+        },
+        "areaPercent": 5.4,
+        "explanation": "High specular light reflection consistent with a protective wax-like coating sheen."
+      }
+    ],
+    "totalAreaPercent": 5.4,
+    "severityAssessment": {
+      "severity": "MEDIUM",
+      "overallVisualStatus": "MONITOR",
+      "visualRiskScore": 21,
+      "summary": "Minor surface variations detected affecting 5.4% of produce surface."
+    },
+    "fusionInterface": {
+      "visualRisk": 21,
+      "visualStatus": "MONITOR",
+      "confidence": 0.96,
+      "imageQuality": 95,
+      "detections": [
+        {
+          "id": "DET-DEMO-04",
+          "label": "WAX_LIKE_APPEARANCE",
+          "confidence": 0.92,
+          "severity": "LOW",
+          "bbox": {
+            "x": 60,
+            "y": 60,
+            "width": 200,
+            "height": 200
+          },
+          "areaPercent": 5.4,
+          "explanation": "High specular light reflection consistent with a protective wax-like coating sheen."
+        }
+      ],
+      "visualEvents": [
+        "WAX_LIKE_APPEARANCE"
+      ]
+    },
+    "recommendation": "Minor surface variations detected affecting 5.4% of produce surface."
+  },
+  {
+    "inspectionId": "INS-20260909-C7CC",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-17T20:26:07.674741+00:00",
+    "imagePath": "/uploads/inspections/insp_003bcb83a7d3.jpg",
+    "imageHash": "205537da24b0e45b14fba27a13c33be810d99a459a294aad9f2e1fff1b600595",
+    "source": "UPLOAD",
+    "imageQuality": {
+      "isProduce": true,
+      "qualityScore": 100,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE",
+      "metrics": {
+        "resolution": "5712x4284",
+        "brightness": 73.3,
+        "contrast": 61.5
+      }
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 91.5,
+      "class_id": 2,
+      "probabilities": {
+        "freshoranges": 91.5,
+        "rottenoranges": 8.5
+      }
+    },
+    "detections": [
+      {
+        "id": "DET-002",
+        "label": "DISCOLORATION",
+        "confidence": 0.84,
+        "severity": "MEDIUM",
+        "bbox": {
+          "x": 2856,
+          "y": 1927,
+          "width": 1713,
+          "height": 1285
+        },
+        "areaPercent": 4.5,
+        "explanation": "Surface discoloration zone (4.5% area) detected near central produce region."
+      }
+    ],
+    "totalAreaPercent": 4.5,
+    "severityAssessment": {
+      "severity": "HIGH",
+      "overallVisualStatus": "ATTENTION_REQUIRED",
+      "visualRiskScore": 30,
+      "summary": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+    },
+    "fusionInterface": {
+      "visualRisk": 30,
+      "visualStatus": "ATTENTION_REQUIRED",
+      "confidence": 0.92,
+      "imageQuality": 100,
+      "detections": [
+        {
+          "id": "DET-002",
+          "label": "DISCOLORATION",
+          "confidence": 0.84,
+          "severity": "MEDIUM",
+          "bbox": {
+            "x": 2856,
+            "y": 1927,
+            "width": 1713,
+            "height": 1285
+          },
+          "areaPercent": 4.5,
+          "explanation": "Surface discoloration zone (4.5% area) detected near central produce region."
+        }
+      ],
+      "visualEvents": [
+        "DISCOLORATION"
+      ]
+    },
+    "recommendation": "Moderate visual risk: 1 surface anomaly region(s) detected. Close monitoring recommended."
+  },
+  {
+    "inspectionId": "INS-20260909-E29A",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-18T14:01:35.404918+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-F444",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-18T14:36:59.233446+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
+  },
+  {
+    "inspectionId": "INS-20260909-CD6E",
+    "batchId": "TF-APL-2026-001",
+    "nodeId": "TF-NODE-01",
+    "timestamp": "2026-09-18T15:48:28.495824+00:00",
+    "imagePath": "/uploads/inspections/demo_sample.jpg",
+    "imageHash": "demo_hash_12345",
+    "source": "DEMO",
+    "imageQuality": {
+      "qualityScore": 95,
+      "status": "GOOD",
+      "issues": [],
+      "recommendation": "ACCEPTABLE"
+    },
+    "classification": {
+      "label": "freshoranges",
+      "confidence": 97.5
+    },
+    "detections": [],
+    "totalAreaPercent": 0.0,
+    "severityAssessment": {
+      "severity": "LOW",
+      "overallVisualStatus": "VERIFIED_FRESH",
+      "visualRiskScore": 5,
+      "summary": "No visible surface anomalies detected. Produce surface appears healthy."
+    },
+    "fusionInterface": {
+      "visualRisk": 5,
+      "visualStatus": "VERIFIED_FRESH",
+      "confidence": 0.97,
+      "imageQuality": 95,
+      "detections": [],
+      "visualEvents": []
+    },
+    "recommendation": "No visible surface anomalies detected. Produce surface appears healthy."
   }
 ]

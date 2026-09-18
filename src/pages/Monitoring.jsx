@@ -32,15 +32,15 @@ function MonitoringHeader() {
   const getStatusBadge = (status) => {
     switch (status) {
       case "ONLINE":
-        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-[#E4F5EC] text-[#064C3B] border border-[#C3E9D5]">● LIVE ONLINE</span>;
+        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-50 text-emerald-700 border border-emerald-200">● LIVE ONLINE</span>;
       case "SIMULATED":
-        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-[#FAFBF8] text-[#064C3B] border border-[#DDE4DF]">● SIMULATED</span>;
+        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-slate-50 text-slate-700 border border-slate-200">● SIMULATED</span>;
       case "STALE":
-        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-[#FEF3C7] text-[#92400E] border border-[#FDE68A]">● STALE</span>;
+        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-amber-50 text-amber-700 border border-amber-200">● STALE</span>;
       case "OFFLINE":
-        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-[#FEE2E2] text-[#991B1B] border border-[#FCA5A5]">● OFFLINE</span>;
+        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-rose-50 text-rose-700 border border-rose-200">● OFFLINE</span>;
       default:
-        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-[#F4F7F4] text-[#111715] border border-[#DDE4DF]">{status}</span>;
+        return <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-slate-50 text-slate-700 border border-slate-200">{status}</span>;
     }
   };
 
@@ -52,28 +52,28 @@ function MonitoringHeader() {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-6 border border-[#DDE4DF] shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-5 relative overflow-hidden">
+    <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-5 relative overflow-hidden">
       <div className="relative z-10">
         <div className="flex items-center gap-3 flex-wrap">
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#111715]">
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
             Multi-Node Monitoring Console
           </h1>
           {getStatusBadge(activeNode.status || connectionStatus)}
         </div>
-        <p className="text-[#111715] text-xs mt-1.5 font-semibold">
-          Active Monitoring Target: <span className="font-extrabold text-[#064C3B]">{selectedNodeId}</span> — Telemetry Heartbeat: <span className="font-extrabold text-[#064C3B]">{getTimeAgo()}</span>
+        <p className="text-slate-700 text-xs mt-1.5 font-semibold">
+          Active Monitoring Target: <span className="font-extrabold text-blue-600">{selectedNodeId}</span> — Telemetry Heartbeat: <span className="font-extrabold text-blue-600">{getTimeAgo()}</span>
         </p>
       </div>
 
       <div className="flex items-center gap-3 flex-wrap relative z-10">
         {/* Mode Switcher Segmented Control */}
-        <div className="flex items-center bg-[#FAFBF8] p-1 rounded-xl border border-[#DDE4DF]">
+        <div className="flex items-center bg-slate-50 p-1 rounded-xl border border-slate-200">
           <button
             onClick={() => { if (!isLiveMode) toggleMode(); }}
             className={`px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all cursor-pointer ${
               isLiveMode
-                ? "bg-[#064C3B] text-white shadow-xs"
-                : "text-[#111715] hover:text-[#064C3B]"
+                ? "bg-blue-600 text-white shadow-xs"
+                : "text-slate-700 hover:text-blue-600"
             }`}
           >
             📡 ONLINE MODE
@@ -82,8 +82,8 @@ function MonitoringHeader() {
             onClick={() => { if (isLiveMode) toggleMode(); }}
             className={`px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all cursor-pointer ${
               !isLiveMode
-                ? "bg-[#064C3B] text-white shadow-xs"
-                : "text-[#111715] hover:text-[#064C3B]"
+                ? "bg-blue-600 text-white shadow-xs"
+                : "text-slate-700 hover:text-blue-600"
             }`}
           >
             🎛️ DEMO MODE
@@ -91,13 +91,13 @@ function MonitoringHeader() {
         </div>
 
         {/* Node Target Switcher */}
-        <div className="flex items-center bg-[#FAFBF8] p-1 rounded-xl border border-[#DDE4DF]">
+        <div className="flex items-center bg-slate-50 p-1 rounded-xl border border-slate-200">
           <button
             onClick={() => setSelectedNodeId("TF-NODE-01")}
             className={`px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all cursor-pointer ${
               selectedNodeId === "TF-NODE-01"
-                ? "bg-[#064C3B] text-white shadow-xs"
-                : "text-[#111715] hover:text-[#064C3B]"
+                ? "bg-blue-600 text-white shadow-xs"
+                : "text-slate-700 hover:text-blue-600"
             }`}
           >
             TF-NODE-01
@@ -106,8 +106,8 @@ function MonitoringHeader() {
             onClick={() => setSelectedNodeId("TF-NODE-02")}
             className={`px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all cursor-pointer ${
               selectedNodeId === "TF-NODE-02"
-                ? "bg-[#064C3B] text-white shadow-xs"
-                : "text-[#111715] hover:text-[#064C3B]"
+                ? "bg-blue-600 text-white shadow-xs"
+                : "text-slate-700 hover:text-blue-600"
             }`}
           >
             TF-NODE-02

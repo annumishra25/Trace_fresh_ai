@@ -1,0 +1,30 @@
+{
+  "modelName": "TraceFresh-MultiModal-RandomForest",
+  "datasetSamples": 1321,
+  "trainSamples": 1056,
+  "testSamples": 265,
+  "accuracyPercent": 100.0,
+  "macroPrecisionPct": 100.0,
+  "macroRecallPct": 100.0,
+  "macroF1Pct": 100.0,
+  "freshnessMAE": 0.49,
+  "freshnessRMSE": 1.29,
+  "freshnessR2": 0.987,
+  "classes": [
+    "ATTENTION_REQUIRED",
+    "CRITICAL_ACTION_REQUIRED",
+    "NORMAL",
+    "SIGNAL_CONFLICT",
+    "WARNING_DISPATCH"
+  ],
+  "features": [
+    "sensorRisk",
+    "routeRisk",
+    "visualRisk",
+    "weightedRisk",
+    "overallConfidence",
+    "sensorConfidence",
+    "routeConfidence",
+    "visualConfidence"
+  ]
+}
